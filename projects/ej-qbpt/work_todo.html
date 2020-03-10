@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>个人工作台-待办工作</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item active">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作" class="active">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+        <div class="column clearfix">
+        	<div class="fl col-main2">
+            	<div class="title">
+                	<h3 class="fl">即时情报</h3>
+                    <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="15%">类型</th>
+                                <th width="15%">标题</th>
+                                <th width="25%">内容 </th>
+                                <th width="15%">推送时间</th>
+                                <th width="15%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="交通事故">交通事故</td>
+                                <td title="停在路边的车被刮擦">停在路边的车被刮擦</td>
+                                <td title="停在小河佳苑路边的车被刮擦">停在小河佳苑路边的车被刮擦</td>
+                                <td title="11:47">11:47</td>
+                                <td title="待确认">待确认</td>
+                                <td class="table-operate"><a href="javascript:;" title="确认" class="operate-confirm">确认</a></td>
+                            </tr>
+                            <tr>
+                                <td title="交通事故">交通事故</td>
+                                <td title="两车追尾">两车追尾</td>
+                                <td title="沈塘桥公交车站两车追尾">沈塘桥公交车站两车追尾</td>
+                                <td title="11:46">11:46</td>
+                                <td title="待确认">待确认</td>
+                                <td class="table-operate"><a href="javascript:;" title="确认" class="operate-confirm">确认</a></td>
+                            </tr>
+                            <tr>
+                                <td title="网络信息">网络信息</td>
+                                <td title="天气">天气</td>
+                                <td title="大雾预告">大雾预告</td>
+                                <td title="11:40">11:40</td>
+                                <td title="待确认">待确认</td>
+                                <td class="table-operate"><a href="javascript:;" title="确认" class="operate-confirm">确认</a></td>
+                            </tr>
+                            <tr>
+                                <td title="交通秩序">交通秩序</td>
+                                <td title="逆向行驶">逆向行驶</td>
+                                <td title="浙AJW229逆向行驶">浙AJW229逆向行驶</td>
+                                <td title="11:30">11:30</td>
+                                <td title="待确认">待确认</td>
+                                <td class="table-operate"><a href="javascript:;" title="确认" class="operate-confirm">确认</a></td>
+                            </tr>
+                            <tr>
+                                <td title="交通事故">交通事故</td>
+                                <td title="电动车撞小孩">电动车撞小孩</td>
+                                <td title="文三路学院路口电动车撞小孩">文三路学院路口电动车撞小孩</td>
+                                <td title="11:10">11:10</td>
+                                <td title="待确认">待确认</td>
+                                <td class="table-operate"><a href="javascript:;" title="确认" class="operate-confirm">确认</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt20">
+                	<div class="title">
+                        <h3 class="fl">待处理（反馈）情报</h3>
+                        <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="12%">大类 </th>
+                                    <th width="13%">子类</th>
+                                    <th width="15%">标题</th>
+                                    <th width="25%">摘要 </th>
+                                    <th width="15%">最后处理时间</th>
+                                    <th width="10%">状态</th>
+                                    <th width="10%">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td title="通知通报">通知通报</td>
+                                    <td title="会议通知">会议通知</td>
+                                    <td title="12月12日会议通知">12月12日会议通知</td>
+                                    <td title="12月12日关于11月的工作总结会议">12月12日关于11月的工作总结会议</td>
+                                    <td title="11:40">11:40</td>
+                                    <td title="待反馈">待反馈</td>
+                                	<td class="table-operate"><a href="javascript:;" title="反馈" class="operate-feedback">反馈</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="通知通报">通知通报</td>
+                                    <td title="部门联动">部门联动</td>
+                                    <td title="部门联动">部门联动</td>
+                                    <td title="年底的部门联动事宜">年底的部门联动事宜</td>
+                                    <td title="11:37">11:37</td>
+                                    <td title="待反馈">待反馈</td>
+                                	<td class="table-operate"><a href="javascript:;" title="反馈" class="operate-feedback">反馈</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="通知通报">通知通报</td>
+                                    <td title="邮件收发">邮件收发</td>
+                                    <td title="邮件收发规范通知">邮件收发规范通知</td>
+                                    <td title="邮件收发规范通知">邮件收发规范通知</td>
+                                    <td title="08:10">08:10</td>
+                                    <td title="待反馈">待反馈</td>
+                                	<td class="table-operate"><a href="javascript:;" title="反馈" class="operate-feedback">反馈</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="通知通报">通知通报</td>
+                                    <td title="会议通知">会议通知</td>
+                                    <td title="年底总结会议">年底总结会议</td>
+                                    <td title="14年的年底总结大队">14年的年底总结大队</td>
+                                    <td title="08:00">08:00</td>
+                                    <td title="待反馈">待反馈</td>
+                                	<td class="table-operate"><a href="javascript:;" title="反馈" class="operate-feedback">反馈</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="其他">其他</td>
+                                    <td title="其他">其他</td>
+                                    <td title="年底工作安排">年底工作安排</td>
+                                    <td title="关于年底的工作安排">关于年底的工作安排</td>
+                                    <td title="08:00">08:00</td>
+                                    <td title="待反馈">待反馈</td>
+                                    <td class="table-operate"><a href="javascript:;" title="反馈" class="operate-feedback">反馈</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="mt20">
+                	<div class="title">
+                        <h3 class="fl">待办事项</h3>
+                        <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="15%">来源</th>
+                                    <th width="15%">类别</th>
+                                    <th width="25%">标题 </th>
+                                    <th width="15%">开始时间</th>
+                                    <th width="15%">状态</th>
+                                    <th width="15%">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td title="工作交接">工作交接</td>
+                                    <td title="学习参观 ">学习参观 </td>
+                                    <td title="陈伟杰外出培训 ">陈伟杰外出培训</td>
+                                    <td title="11:10">11:10</td>
+                                    <td title="待签收">待签收</td>
+                                	<td class="table-operate"><a href="javascript:;" title="签收" class="operate-sign">签收</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="领导交办">领导交办</td>
+                                    <td title="其他 ">其他 </td>
+                                    <td title="参加比武比赛">参加比武比赛</td>
+                                    <td title="11:09">11:09</td>
+                                    <td title="待签收">待签收</td>
+                                	<td class="table-operate"><a href="javascript:;" title="签收" class="operate-sign">签收</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="工作交接">工作交接</td>
+                                    <td title="学习参观">学习参观</td>
+                                    <td title="魏旭松外出参观">魏旭松外出参观</td>
+                                    <td title="11:08">11:08</td>
+                                    <td title="待签收">待签收</td>
+                                	<td class="table-operate"><a href="javascript:;" title="签收" class="operate-sign">签收</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="工作交接">工作交接</td>
+                                    <td title="学习参观">学习参观</td>
+                                    <td title="陈泽重外出培训">陈泽重外出培训</td>
+                                    <td title="11:08">11:08</td>
+                                    <td title="待签收">待签收</td>
+                                    <td class="table-operate"><a href="javascript:;" title="签收" class="operate-sign">签收</a></td>
+                                </tr>
+                                <tr>
+                                    <td title="工作交接">工作交接</td>
+                                    <td title="学习参观">学习参观</td>
+                                    <td title="来倪栋外出培训">来倪栋外出培训</td>
+                                    <td title="11:07">11:07</td>
+                                    <td title="待签收">待签收</td>
+                                    <td class="table-operate"><a href="javascript:;" title="签收" class="operate-sign">签收</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="fr col-side2">
+            	<div class="col-mod fl">
+                	<div class="col-box">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">消息提醒</h3>
+                        </div>
+                        <ul class="mod-cont">
+                            <li><a href="#" title="未查看文本指令 ( 20) 条">未查看文本指令<span>（20）</span>条</a></li>
+                            <li><a href="#" title="待上报情报 ( 3 ) 条">待上报情报<span>（3）</span>条</a></li>
+                            <li><a href="#" title="待反馈情报 ( 5 ) 条">待反馈情报<span>（5）</span>条</a></li>
+                            <li><a href="#" title="待处理情报 ( 5) 条">待处理情报<span>（5）</span>条</a></li>
+                            <li><a href="#" title="待办事项 ( 10 ) 条">待办事项<span>（10）</span>条</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-mod mt20 fl">
+                    <div class="col-box">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">情报检索库</h3>
+                        </div>
+                        <div class="mod-cont">
+                            <div class="search-form">
+                                <form class="clearfix">
+                                    <div class="fl">
+                                        <p class="mt10 clearfix">
+                                            <label class="search-label" for="type">类 别</label>
+                                            <select>
+                                                <option></option>
+                                            </select>
+                                        </p>
+                                        <p class="mt10 clearfix">
+                                            <label class="search-label" for="type">关键字</label>
+                                            <input type="text" id="keyword" class="txt">
+                                        </p>
+                                    </div>
+                                    <div class="fr">
+                                        <input type="button" class="btn" value="检索">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tags">
+                                <label class="tag-label">标签：</label><p class="tag-cont"><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-mod mt20 fl">
+                    <div class="col-box">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">部门考核</h3>
+                        </div>
+                        <ul class="mod-cont rank-mod-cont">
+                            <li>今日信息：  得分<em>2</em> 扣分<em>0</em></li>
+                            <li>本周信息：  得分<em>12</em> 扣分<em>0</em></li>
+                            <li>本月信息：  得分<em>52</em> 扣分<em>0</em></li>
+                            <li class="mt30">本月信息：  综合排名<em>1</em></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column mt20">
+            <div class="title">
+            	<h3 class="fl">汇报报表</h3>
+                <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+            </div>
+            <div class="cont clearfix">
+                <div class="col-mod per2 fl">
+                	<div class="col-box br">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">月度汇报</h3>
+                            <a href="#" class="fr more" title="更多" >更多&gt;&gt;</a>
+                        </div>
+                        <ul class="col-mod-cont clearfix">
+                            <li><a href="#" title="每日酒驾整治" >每日酒驾整治</a></li>
+                            <li><a href="#" title="全市集中整治行动" >全市集中整治行动</a></li>
+                            <li><a href="#" title="重点道路交通秩序" >重点道路交通秩序</a></li>
+                            <li><a href="#" title="每日酒驾整治" >每日酒驾整治</a></li>
+                            <li><a href="#" title="每日酒驾整治" >每日酒驾整治</a></li>
+                            <li><a href="#" title="全市集中整治行动" >全市集中整治行动</a></li>
+                            <li><a href="#" title="重点道路交通秩序" >重点道路交通秩序</a></li>
+                            <li><a href="#" title="每日酒驾整治" >每日酒驾整治</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-mod per2 fl">
+                	<div class="col-box">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">年度汇报</h3>
+                            <a href="#" class="fr more" title="更多" >更多&gt;&gt;</a>
+                        </div>
+                        <ul class="col-mod-cont clearfix">
+                            <li><a href="#" title="接处警数据" >接处警数据</a></li>
+                            <li><a href="#" title="重大警情响应启动" >重大警情响应启动</a></li>
+                            <li><a href="#" title="数字城管月度汇总" >数字城管月度汇总</a></li>
+                            <li><a href="#" title="见警日、风暴行动" >见警日、风暴行动</a></li>
+                            <li><a href="#" title="接处警数据" >接处警数据</a></li>
+                            <li><a href="#" title="重大警情响应启动" >重大警情响应启动</a></li>
+                            <li><a href="#" title="数字城管月度汇总" >数字城管月度汇总</a></li>
+                            <li><a href="#" title="见警日、风暴行动" >见警日、风暴行动</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+<script>
+$(function(){
+	$('.operate-confirm').on('click',function(){
+		fnConfirm('是否确定确认？',function(){   //确定之后的操作
+			fnAlert('确认成功！')
+		});
+	});
+	$('.operate-feedback').on('click',function(){
+		fnConfirm('是否确定反馈？',function(){   //确定之后的操作
+			fnAlert('反馈成功！')
+		});
+	});
+	$('.operate-sign').on('click',function(){
+		fnConfirm('是否确定签收？',function(){   //确定之后的操作
+			fnAlert('签收成功！')
+		});
+	});
+})
+</script>
+</body>
+</html>

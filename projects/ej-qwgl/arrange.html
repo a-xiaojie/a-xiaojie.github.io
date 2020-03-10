@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>勤务排班</title>
+<link rel="stylesheet" href="css/nanoscroller.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.nanoscroller.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="js/j_common.js"></script>
+</head>
+<body>
+<div class="main-content">
+    <div class="title">
+        <h3><span>文三西路以南天目山路以北</span>岗</h3>
+        <div class="search-box arr-search-box">
+            <ul class="arr-nav slide-down-nav">
+                <li> <span>部门</span>
+                    <div class="slide-down-box"> <a>部门1</a> <a>部门2</a> <a>部门3</a> </div>
+                </li>
+                <li id="years"> <span>年份</span>
+                    <div class="slide-down-box"> <a class="active">2014年</a> <a>2013年</a> <a>2012年</a> <a>2011年</a> </div>
+                </li>
+                <li id="months"> <span>月份</span>
+                    <div class="slide-down-box"><a>1月</a><a>2月</a><a>3月</a><a>4月</a><a>5月</a><a>6月</a><a>7月</a><a>8月</a><a class="active">9月</a><a>10月</a><a>11月</a><a>12月</a> </div>
+                </li>
+                <li id="weeks"> <span>周</span><div class="slide-down-box"><a>第1周</a><a>第2周</a><a>第3周</a><a>第4周</a><a>第5周</a> </div>
+                </li>
+            </ul>
+            <div class="time-search">
+                <input type="text" class="txt" placeholder="请输入搜索日期" onClick="WdatePicker()">
+                <button class="search-btn"></button>
+            </div>
+        </div> 
+    </div>
+    <div class="arr-content">
+        <div class="arr-box clear">
+            <div class="pb-detail">
+                <p class="pb-date"><span>周一</span><span>2014-08-11</span><a class="icon-plus">+</a></p>
+                <div class="nano">
+                    <ol class="nano-content">
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear error">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear edit">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        <li class="clear edit">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="pb-detail">
+                <p class="pb-date"><span>周二</span><span>2014-08-11</span><a class="icon-plus">+</a></p>
+                <div class="nano">
+                    <ol class="nano-content">
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear edit">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear edit">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="pb-detail">
+                <p class="pb-date"><span>周三</span><span>2014-08-11</span><a class="icon-plus">+</a></p>
+                <div class="nano">
+                    <ol class="nano-content">
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear edit">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                        <li class="clear edit">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span>路人甲</span><span>路人乙</span><span>张三<em></em></span><span>路人丙</span><span>路人丁</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="pb-detail">
+                <p class="pb-date"><span>周四</span><span>2014-08-11</span><a class="icon-plus">+</a></p>
+                <div class="nano">
+                    <ol class="nano-content">
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="pb-detail">
+                <p class="pb-date"><span>周五</span><span>2014-08-11</span><a class="icon-plus">+</a></p>
+                <div class="nano">
+                    <ol class="nano-content">
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="pb-detail">
+                <p class="pb-date"><span>周六</span><span>2014-08-11</span><a class="icon-plus">+</a></p>
+                <div class="nano">
+                    <ol class="nano-content">
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="pb-detail">
+                <p class="pb-date"><span>周日</span><span>2014-08-11</span><a class="icon-plus">+</a></p>
+                <div class="nano">
+                    <ol class="nano-content">
+                        <li class="clear">
+                            <div class="pb-time">07:15 — 09:30</div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                        <li class="clear">
+                            <div class="pb-time"><input type="text" class="txt short" value="07:15" onClick="WdatePicker({dateFmt:'HH:mm'})"> — <input type="text" class="txt short" value="09:30" onClick="WdatePicker({dateFmt:'HH:mm'})"><i class="icon-del"></i></div>
+                            <div class="pb-name"><span class="placeholder">请添加警员</span></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="pb-other">
+                <div class="pb-tips">
+                    <div class="nano">
+                        <div class="nano-content">
+                            <h3 class="tit"><em></em>提示</h3>
+                            <div class="pb-tips-cont">
+                                <p>8-11 确认是否正确</p>
+                                <p>8-16 人员XXX请假调休，确认是否继续给他安排班次。</p>
+                                <p>8-11 确认是否正确</p>
+                                <p>8-16 人员XXX请假调休，确认是否继续给他安排班次。</p>
+                                <p>8-11 确认是否正确</p>
+                                <p>8-16 人员XXX请假调休，确认是否继续给他安排班次。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-btns"> <input type="button" name="" class="btn reset-btn" value="重 置"><input type="button" name="" class="btn save-btn" value="保 存"><input type="button" name="" class="btn check-btn" value="校 验"><input type="button" name="" class="btn reuse-btn" value="复 用"></div>
+            </div>
+        </div>
+
+        <div class="arr-footer clear">
+            <div class="pb-people">
+                <div class="pb-t-tit">
+                    <h3>警员列表</h3>
+                    <ul class="pb-t-tit-nav slide-down-nav">
+                        <li> <span>选择大队</span>
+                            <div class="slide-down-box"> <a>大队1</a> <a>大队2</a> <a>大队3</a> </div>
+                        </li>
+                        <li> <span>选择中队</span>
+                            <div class="slide-down-box"> <a>中队1</a> <a>中队2</a> <a>中队3</a> <a>中队4</a> </div>
+                        </li>
+                        <li> <span>人员类型</span>
+                            <div class="slide-down-box"><a>人员类型1</a><a>人员类型2</a><a>人员类型3</a> </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nano">
+                    <ul class="pb-t-list nano-content clear">
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军1</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police2.png">罗军2</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军3</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军4</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police2.png">罗军5</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军6</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军7</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军1</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police2.png">罗军2</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军3</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军4</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police2.png">罗军5</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军6</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军7</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军1</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police2.png">罗军2</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军3</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军4</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police2.png">罗军5</span></a></li>
+                        <li><a href="javascript:;" class="police"><span><img src="images/police1.png">罗军6</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pb-tab">
+                <ul class="pb-f-tab clear">
+                    <li>信息<em></em></li>
+                    <li class="active">排班<em></em></li>
+                    <li>其他<em></em></li>
+                </ul>
+                <div class="pb-f-tabcont nano">
+                    <div class="pb-f-content nano-content"> 信息 </div>
+                    <div class="pb-f-content nano-content" style="display:block">
+                        <h3>已安排的任务：</h3>
+                        <p>8-16 /  13:30-15:00   文三西路以南天目山路以北  岗</p>
+                        <p>8-18 /   07:00-09:30  文三西路以南天目山路以北  岗</p>
+                        <h3>休息时段：</h3>
+                        <p>8-16 /  13:30-15:00   文三西路以南天目山路以北  岗</p>
+                    </div>
+                    <div class="pb-f-content nano-content"> 其他安排： </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+	$(function(){
+        $(".nano").nanoScroller({alwaysVisible: true});
+        /* 增加一行时间 */
+		$('.icon-plus').click(function(e){
+			var _str='<li class="clear edit"><div class="pb-time"><input type="text" class="txt short" onClick="WdatePicker({dateFmt:\'H:mm\'})"> — <input type="text" class="txt short" onClick="WdatePicker({dateFmt:\'H:mm\'})"><i class="icon-del"></i></div><div class="pb-name"><span class="placeholder ui-draggable ui-draggable-handle">请添加警员</span></div></li>'
+			$(this).parents('.pb-detail').find('ol').append(_str);
+			// alert(1);
+			/* 删除该行 */
+			$('.icon-del').on('click',function(){
+                e.stopPropagation();
+                $(this).parents('li').remove();
+                $(".nano").nanoScroller({alwaysVisible: true});
+            });
+
+			$('.pb-detail li').off();
+			$('.pb-detail li').on('click',function(){
+				$(this).toggleClass('active');
+			});
+			$('.pb-people li').off('click');
+			$('.pb-people li').on({
+				click:function(){
+					$(this).toggleClass('active');
+				},
+				mouseover:function(){
+					var _this=$(this);
+					$('.pb-detail li span').each(function(){
+						if($(this).text()==_this.text()){
+							$(this).addClass('high-light');
+						}
+					})
+				},
+				mouseout:function(){
+					$('.pb-detail li span').removeClass('high-light');
+				}
+			});
+			fnDragAdd();
+		});
+		$('.pb-detail li').on('click',function(){
+			$(this).toggleClass('active');
+		});
+		$('.pb-people li').on('click',function(){
+			$(this).toggleClass('active');
+		});
+        $('.icon-del').click(function(e){
+                e.stopPropagation();
+                $(this).parents('li').remove();
+                $(".nano").nanoScroller({alwaysVisible: true});
+            });
+		$('.pb-people li').mouseover(function(){
+			var _this=$(this);
+			$('.pb-detail li span').each(function(){
+				if($(this).text()==_this.text()){
+					$(this).addClass('high-light');
+				}
+			})
+		}).mouseout(function(){
+			$('.pb-detail li span').removeClass('high-light');
+		});
+	
+		fnDragAdd();
+		fnKeyAdd();
+	})
+</script>
+</html>

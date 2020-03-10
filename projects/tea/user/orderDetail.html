@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>爱茶叶</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/iscroll.js"></script>
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>订单详情</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="../index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+    </header>
+   <div class="wrap nofoot-wrap">
+        <div class="order-tips">
+            <p>交易成功</p>
+        </div>
+        <div class="order-user">
+           <span class="name">收货人：sunny</span> 
+           <span class="num">运单编号:856565553</span> 
+           <p class="address">收货地址：浙江省杭州市西湖区萍水街竞舟北路优盘时代1幢13</p> 
+        </div>
+        <ul class="order-list">
+            <li>
+                <div class="order-tit">
+                    <p class="order-num">订单编号：135896532</p>
+                </div>
+                <div class="order-item">
+                    <ul class="order-tea-list">
+                        <li>
+                            <a href="orderDetail.html">
+                                <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                <div class="order-tea-info">
+                                    <h3>这里你可以写一写产品的名称</h3>
+                                </div>
+                                <div class="order-tea-price">
+                                    <span class="price">￥7.40</span>
+                                    <del class="price">￥19.90</del>
+                                    <span class="num">X1</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="orderDetail.html">
+                                <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                <div class="order-tea-info">
+                                    <h3>这里你可以写一写产品的名称</h3>
+                                </div>
+                                <div class="order-tea-price">
+                                    <span class="price">￥7.40</span>
+                                    <del class="price">￥19.90</del>
+                                    <span class="num">X1</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-extra">
+                    <button class="btn" type="button">我要评价</button>
+                    <button class="btn" type="button">申请售后</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function() {
+            $('.tab li').click(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                $(this).parent().next().find('.order-tab-cont').hide().eq($('.tab li').index(this)).show();
+            })
+        })
+    </script>
+</body>
+</html>

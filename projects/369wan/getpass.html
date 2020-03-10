@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>忘记密码，找回密码</title>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script src="js/jquery.js" ></script>
+</head>
+
+<body>
+<!--网站头部部分-->
+<div class="main" style="*z-index:999;">
+    <div class="all_games_up" id="all_game_div" style="display: none;"> <span class="all_gemes_tra"><img src="images/all_game_tra.jpg" width="16" height="9" /></span>
+        <p class="all_wel"><strong>欢迎来到369wan，现在就开始您的游戏之旅吧!</strong> <span> <img src="images/all_n.jpg"  />最新游戏</span><span> <img src="images/all_b.jpg"  />测试游戏</span><span> <img src="images/all_h.jpg"  />热门游戏</span></p>
+        <ul class="all_games_list">
+            <li><a href="game_box.html">烈焰</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">赤月传说</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">暗黑屠龙</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">绝代双骄</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">烈火战神</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">屠龙传说</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">屠龙战</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">欧冠足球</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">胜利11人</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">逐日战神</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">剑踪</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">街机三国</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">热血战纪</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">问剑</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">新五虎上将</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">枪魂</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">怒斩</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">傲视遮天</a> </li>
+            <li><a href="game_box.html">玄仙传奇</a> </li>
+            <li><a href="game_box.html">赤月</a> </li>
+            <li><a href="game_box.html">神仙道</a> </li>
+            <li><a href="game_box.html">沙之城主</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">盛世三国</a> </li>
+            <li><a href="game_box.html">龙魂天下</a> </li>
+            <li><a href="game_box.html">霸域</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">凡人修真2</a> </li>
+            <li><a href="game_box.html">悍将传世</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">斗破苍穹2</a> </li>
+            <li><a href="game_box.html">霸刀</a> </li>
+            <li><a href="game_box.html">神将三国</a> </li>
+            <li><a href="game_box.html">神座</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">炼妖录</a> <img src="images/all_b.jpg" /> </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="main">
+        <h1 class="logo"><a href="index.html"></a></h1>
+        <div class="top_menu"> <a href="javascript:;" onclick="if(document.all){document.body.style.behavior = 'url(#default#homepage)'; document.body.setHomePage('www.369wan.html'); }else{ alert('浏览器不支持此操作, 请手动设为首页'); }">设为首页</a><a href="javascript:;" onclick="try{ window.external.addFavorite('www.369wan.html', '369wan游戏平台'); } catch(e) {  try{ window.sidebar.addPanel('369wan游戏平台', 'www.369wan.html', ''); }catch (e) { alert('http://www.369wan.com/加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.');  } }">加入收藏</a><a href="javascript:;">把369wan保存到桌面</a><span id="all_game_hover" 369wan游戏</span> </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">首  页<br />
+                    <span>HOME</span></a></li>
+                <li><a href="users/users_index.html" rel="nofollow">用户中心<br />
+                    <span>USER</span></a></li>
+                <li><a href="game_center.html">游戏中心<br />
+                    <span>GAME</span></a></li>
+                <li><a href="pay/pay_index.html" target="_blank" rel="nofollow">充值中心<br />
+                    <span>PAY</span></a></li>
+                <li><a href="kefu/kefu.html" rel="nofollow">客服中心<br />
+                    <span>SERVICE</span></a></li>
+                <li><a href="http://bbs.369wan.com/" target="_blank">官方论坛<br />
+                    <span>BBS</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var timeout = null;
+	$('#all_game_hover').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		timeout = setTimeout(function(){ $('#all_game_div').hide(); }, 300);
+	});
+	
+	$('#all_game_div').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		$('#all_game_div').hide();
+	});
+});
+</script> 
+<!--网站头部部分结束-->
+
+<div class="main">
+    <div class="getpass_box">
+        <div class="user_list_tab">
+            <ul>
+                <li class="current">邮箱找回密码</li>
+                <li >密保找回密码</li>
+                <li >手机找回密码</li>
+            </ul>
+        </div>
+        <div class="usercen_cen">
+            <div class="usercen_getpwd" style="display:none;">
+                    <form action="" method="post" name="post">
+                <table border="0" cellpadding="0" cellspacing="0">
+                        <input name="do" value="getpass_email" type="hidden" />
+                        <tr>
+                            <td>用户名：</td>
+                            <td class="int"><input type="text"  class="input" name="username" id="username" dataType="Limit"  min="4" max="30"  msg="请填写你的登陆账号!"/>
+                                &nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>电子邮箱：</td>
+                            <td class="int"><input type="text" name="email"  class="input" id="email" dataType="Email" msg="请认真填写邮箱地址！" />
+                                &nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>验证码：</td>
+                            <td class="int"><input name="code" type="text" id="code" class="input"style='width:50px;text-transform:uppercase;' dataType="Limit"  min="4" max="4"  msg="请填写验证码!"   onKeyUp="value=value.replace(/[^0-9,]/g,'');" maxlength="4" />
+                                &nbsp;&nbsp;<img id="img_sec" onclick="javascript:;" src="images/code.png" alt="点击更换"/></&nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td ><input type="submit" class="submit" value="提　交"/></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                </table>
+                    </form>
+            </div>
+            
+            <div class="usercen_getpwd" style="display:none;">
+                    <form action="" method="post" name="post">
+                <table border="0" cellpadding="0" cellspacing="0">
+                        <input name="do" value="answer" type="hidden" />
+                        <tr>
+                            <td >用户名：</td>
+                            <td class="int"><input type="text" class="input"  name="username" id="username" dataType="Limit"  min="4" max="30"  msg="请填写你的登陆账号!"/>
+                                &nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>提示问题：</td>
+                            <td class="int"><select title="密码保护问题" class="sel_ques" name="question" id="question" dataType="Require"  msg="请选择密保问题!" >
+                                    <option value="">请选择一个问题</option>
+                                    <option value="我就读的第一所学校的名称？">我就读的第一所学校的名称？</option>
+                                    <option value="我最喜欢的休闲运动是什么？">我最喜欢的休闲运动是什么？</option>
+                                    <option value="我最喜欢的运动员是谁？">我最喜欢的运动员是谁？</option>
+                                    <option value="我最喜欢的物品的名称？">我最喜欢的物品的名称？</option>
+                                    <option value="我最喜欢的歌曲？">我最喜欢的歌曲？</option>
+                                    <option value="我最喜欢的食物？">我最喜欢的食物？</option>
+                                    <option value="我最爱的人的名字？">我最爱的人的名字？</option>
+                                    <option value="我最爱的电影？">我最爱的电影？</option>
+                                    <option value="我妈妈的生日？">我妈妈的生日？</option>
+                                    <option value="我的初恋日期？">我的初恋日期？</option>
+                                </select>
+                                &nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>问题答案：</td>
+                            <td class="int"><input type="text" class="input" name="answer" id="answer" dataType="Limit"  min="4" max="30"  msg="请填写你的答案!"/>
+                                &nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>新密码：</td>
+                            <td class="int"><input type="password" class="input" name="password" id="password" dataType="Limit"  min="6" max="20"  msg="请输入6-20位的原始密码!"/>
+                                &nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>确认密码：</td>
+                            <td class="int"><input type="password" class="input" name="password1" id="password1" dataType="Repeat" to="password" msg="两次输入的密码不一致"/>
+                                &nbsp;&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input type="submit"   class="submit" value="提　交"/></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                </table>
+                    </form>
+                    </div>
+                    
+            <div class="usercen_getpwd" style="display:none;">
+                    <form action="" method="post" id="form">
+                <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td >用户名：</td>
+                                <td class="int"><input type="text" name="username" class="input"/>
+                                    &nbsp;&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><input type="submit"  value="提　交"  class="submit" /></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                </table>
+                    </form>
+                    </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+			$('.user_list_tab ul li').each(function(k){
+				var li = $(this);
+				(function(i){
+					li.click(function(){
+						$('.user_list_tab ul li').removeClass('current');
+						li.addClass('current');
+						
+						$('div.usercen_getpwd').hide().eq(i).show();
+					});
+				})(k);
+			}).eq(0).click();
+			</script> 
+</div>
+
+<!--网站底部部分-->
+<div class="foot">
+    <p> 上海橙盛网络科技有限公司 </p>
+</div>
+<!--网站底部部分结束-->
+</body>
+</html>

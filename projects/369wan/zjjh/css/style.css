@@ -1,0 +1,46 @@
+@charset "utf-8";
+*{ padding:0; margin:0;}
+body{font-size:12px; line-height:22px; color:#5f5f5f; font-family:"Arial", Gadget, sans-serif; background:#fff url(../images/bg.gif) repeat-x;}
+img {border:0;}
+a{color:#5f5f5f;text-decoration:none}
+a:hover {color: #000;text-decoration: underline;}
+H1,H2,H3,H4,H5,H6,h7 { font-size:13px;}
+ul, li{list-style-type: none;}
+.color1{color:#ff8101}
+.color2{color:#ff8101; font-size:14px;}
+.color3{color:#999}
+
+#header{ margin:0 auto; width:909px; height:53px; padding-top:11px;}
+#header #guild{float:right; width:400px; height:22px; text-align:right; padding:29px 10px 0 0;}
+#header #guild a{ padding:0 8px}
+
+#nav{ margin:0 auto; width:909px; height:38px;}
+#nav ul{float:left; height:38px;}
+#nav ul li{ float:left; width:99px; height:32px; line-height:32px; font-size:15px; font-weight:bold; text-align:center; padding:6px 20px 0 20px}
+#nav ul li a{ display:block;width:99px; height:32px; color:#fff}
+#nav .current{background: url(../images/li.png) no-repeat center; color:#000}
+#nav .current a{color:#000; text-decoration:none;}
+
+#breadCrumb{margin:0 auto 10px auto; width:900px; height:30px; padding:9px 0 0 9px}
+
+#hf{margin:0 auto 10px auto;width:909px;}
+
+#footer{margin:0 auto; width:909px; border-top:1px solid #CCC; color:#444; text-align:center; padding:15px 0 20px 0; clear:both;}
+#footer a{ color:#333}
+
+#wrap{margin:0 auto 10px auto;width:909px; overflow:hidden;}
+.content{ float:left; width:605px; padding:0 15px; font-size:13px; line-height:24px;}
+.content h1{ font-size:15px; color:#bc2214; font-weight:bold; border-bottom:1px solid #d7d7d7;padding-left:12px; line-height:24px; margin-bottom:12px;}
+.content_b{margin:0 auto 10px auto; width:889px; float:none; padding:0 10px;}
+#wrap .left_con{ float:right; width:260px;}
+
+.gghh {font-size:14px; line-height:26px; padding:180px 0 25px 0; background:url(../images/2c_03.png) no-repeat center top;}
+a.jk{ font-size:16px; color:#06F; text-decoration: underline; font-weight:bold;}
+a:hover.jk{color:#039;}
+
+.tigg{ width:260px; margin-bottom:10px;}
+.tigg h3{ color:#000; height:29px; line-height:29px; background:url(../images/tibg.gif) no-repeat; padding-left:8px}
+.tigg .txts{ width:238px; border-left:1px solid #dbe1e6; border-right:1px solid #dbe1e6; background:#FFF; padding:4px 10px 2px 10px;}
+.tigg .botom{ background:url(../images/botm.gif) no-repeat; height:6px;}
+
+.txt_q{padding:8px 20px 10px 20px; border-bottom:1px dashed #CCC; margin-bottom:10px; text-indent:26px}

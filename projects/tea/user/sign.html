@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>爱茶叶</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/iscroll.js"></script>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/layer.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>我要签到</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="../index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+    </header>
+    <div class="wrap nofoot-wrap sign-wrap">
+        <div class="sign-info">
+            <p>宝宝累计签到<span>3</span>天咯</p>
+            <p>连续签到一周，赢100积分</p>
+        </div>
+        <div class="sign-img">
+            <img src="../images/sign-bg.png" alt="">
+        </div>
+        <div class="sign-btns">
+            <p>签到可得10个积分</p>
+            <button type="button" class="btn" id="signBtn">我要签到</button>
+        </div>
+    </div>
+    <div class="pop-box">
+        <div class="pop-title">签到成功</div>
+        <div class="pop-cont">
+            <div class="success-sign">
+                <img src="../images/gift.jpg" alt="">
+            </div>
+            <p class="tips">连续签到7天可额外获得30积分</p>
+            <button class="btn" type="button">确定</button>
+        </div>
+    </div>
+    <script>
+        /* 弹窗 */
+        $(function() {
+            $('#signBtn').click(function() {
+                layer.open({
+                    className: 'pop-box',
+                    type: 1,
+                    content: $('.pop-box').html()
+                });
+
+                $('.pop-box .btn').on('click', function() {
+                    layer.closeAll();
+                });
+            });
+        })
+    </script>
+</body>
+</html>

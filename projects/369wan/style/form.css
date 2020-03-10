@@ -1,0 +1,83 @@
+/*选择问题类型*/
+.kefu_center_left{ background:#f5f4f4;float:left;  width:200px;  border:solid 1px #d9d9d9; padding:10px;}
+.kefu_center_menu a{ background:url(../images/form/kefu_main_left.jpg) 0px -292px;display:block;width:201px;height:48px;line-height:48px;margin-top:5px; color:#484848; text-align:center;font-size:14px; }
+.kefu_center_menu a:hover{ background-position:0px -341px; font-size:14px; color:#fff; text-decoration:none;}
+.kefu_center_menu .menu_on{ background-position:0px -341px; font-size:14px; color:#fff; text-decoration:none;}
+.kefu_center_menu a.my_ques{ background-position:0px 0px;}
+.kefu_center_menu a.often{ background-position:0px -49px;}
+.kefu_center_menu a.online{background-position:0px -98px;}
+.kefu_center_menu a.my_code{height:35px !important;line-height:30px !important;margin-top:0px;!important; border-bottom:solid 1px #d9d9d9; }
+
+.kefu_center_menu a:hover.my_ques{ background-position:0px -146px;}
+.kefu_center_menu a:hover.often{ background-position:0px -195px;}
+.kefu_center_menu a:hover.online{ background-position:0px -244px;}
+.kefu_center_menu b{ font-size:15px;}
+
+.r_c{ background:#FFF !important;}
+.kefu_center_right{background:#e9faff;float:right; width:730px; min-height:200px; border:solid 1px #d9d9d9; }
+.kefu_cetner_title{background:url(../images/form/title_bg.jpg) repeat-x; height:40px; line-height:40px; border-bottom:solid 1px #d9d9d9; padding:0px 10px; font-size:14px; color:#000;}
+.kefu_main_choice{ margin:10px 20px 10px 50px;}
+.kefu_main_choice ul li {  float:left; width:320px; height:100px; text-align:left; }
+.kefu_main_choice ul li span { font-size:14px; color:#0081ba; font-weight:bold; display:block; margin-top:4px;}
+.kefu_main_choice ul li img { float: left; width:60px; height:60px; margin-right:20px;}
+.kefu_main_choice ul li a { display:block; width:250px; height:70px; line-height:10px;text-decoration:none;_text-decoration:none; padding:10px; color:#535353; border:#E9FAFF solid 1px;}
+.kefu_main_choice ul li a:hover { border-color:#cd4fa1; background:#d3e3f5; border-color:#75c1e3; border-radius:3px; text-decoration:none;}
+.kefu_main_choice ul li p{line-height:20px;}
+.kefu_main_choice ul li p.red{color:#f00;}
+
+/*问题页面*/
+.question{ margin:20px; }
+.question p{ margin:10px 0px; line-height:30px;}
+.question p span{ display:inline-block; width:90px; text-align:right; margin-right:10px;}
+.question p input{  height:25px; line-height:25px; border: solid 1px #73afca; padding-left:3px;}
+.question p label{ display:inline-block; line-height:50px;}
+.question p label input{ margin-top:5px; _vertical-align: text-bottom;}
+.question p textarea{ vertical-align:middle; padding:4px;}
+.que_submit{ background:url(../images/form/submit.jpg) repeat-x; height:47px; width:153px; border:none; color:#FFFFFF; font-size:14px; margin:10px 0px;}
+.que_submit:hover{ color:#0297ad;}
+
+.question table th{ text-align:left; padding-left:10px; color:#ffffcc;background:#0793ce; }
+.question table tr{ line-height:30px;}
+.question table tr td textarea { padding:4px; border: solid 1px #7b99a0;}
+.question table tr td img{ vertical-align:middle;}
+
+.question table tr td input{_height:22px; _line-height:22px; padding-left:4px;}
+.question table tr td input[type="text"]{ height:22px; line-height:22px; border: solid 1px #7b99a0;}
+.question table tr td .input_text{ height:22px; line-height:22px; border: solid 1px #7b99a0;}
+/*切换*/
+#outer{width:690px; margin:0 auto; padding:11px 0;}
+#tab{overflow:hidden;zoom:1; margin-left:10px; }
+#tab ul{ margin-left:4px;}
+#tab li{ background:url(../images/form/title_bg.jpg) repeat-x;float:left;color:#684a35;height:30px;line-height:30px; text-align:center;  z-index:99;cursor:pointer; padding:0px 10px; border:solid 1px #d9d9d9; margin-right:10px; }
+#tab li span{ font-weight:bold; color:#003399;}
+#tab li.current{background:#fff; border-bottom:none!important; }
+#content{border-top:1px solid #d9d9d9;z-index:1; margin-top:-1px; overflow:hidden; margin-bottom:20px;}
+#content .tab_content{padding:10px 0; display:none; } 
+.tab_content table{border-collapse:collapse; border: solid 1px #d9d9d9; margin-top:10px;}
+.tab_content table tr{ line-height:30px;}
+.tab_content table th{ background: #f2f2f2; color:#333333;text-align:left; padding-left:10px;}
+.tab_content table tr td{  line-height:30px;text-align:left; padding-left:10px;}
+.tab_content table tr td img{ margin:5px 0px;}
+.tab_content table tr td a.detail{ background:url(../images/form/detail_btn.jpg) no-repeat; height:28px; width:109px; display:block;}
+.tab_content table tr td .pbg { width:150px; height:10px; margin:0 0 8px; background: url(../images/form/pllb.png) 0 0 repeat-x; -webkit-border-radius: 0 6px 6px 0; -moz-border-radius: 0 6px 6px 0; border-radius: 0 6px 6px 0; }
+.tab_content table tr td .bar{height:10px; width:470px;  background-color:#0081ba;-webkit-border-radius: 0 6px 6px 0; -moz-border-radius: 0 6px 6px 0; border-radius: 0 6px 6px 0;}
+.red{ color:#FF0000;}
+
+.success{ height:200px; margin:100px !important; font-size:30px; font-weight:bold; color: #FF0000;}
+.success a{ color:#666666; text-decoration: underline;}
+.success a:hover{ text-decoration:none;}
+
+/****弹出框框*****/
+.deal_box_1{ background: url(../images/form/deal_bg.png) no-repeat;width:558px; height:464px; padding:30px; color:#000;}
+.deal_box_1 .deal_con{ margin:23px 0px 0px 0px; *margin-top:50px; line-height:25px;}
+.deal_box_1 .con_box{ height:230px; width:520px; background:#fff;padding:20px; border:solid 1px #b7cedf; overflow:scroll;}
+.deal_box_1 .agren{width:558px; height:40px; margin:10px 80px 10px 0px; text-align:right;}
+.deal_box_1 .agren input{ margin-right:3px;}
+.deal_box_1 .agren span{margin:0px 20px; vertical-align:middle;}
+.deal_box_1 .deal_btn{ width:558px;height:35px; margin:15px 0px; text-align:right; }
+.deal_box_1 .deal_btn a{ background:url(../images/form/deal_btn.jpg) no-repeat; width:125px; height:31px; display: inline-block; margin:0px 20px;}
+.deal_box_1 .deal_btn a.next{ background-position:0px 0px;}
+.deal_box_1 .deal_btn a.reset{ background-position:-125px 0px;}
+.deal_box_1 .deal_btn a:hover.next{ background-position:0px -31px;}
+.deal_box_1 .deal_btn a:hover.reset{ background-position:-125px -31px;}
+.gray{width:100%; position:absolute;left:0;top:0;z-index:100;background-color:#000; opacity:0.7;filter:alpha(opacity=70);}

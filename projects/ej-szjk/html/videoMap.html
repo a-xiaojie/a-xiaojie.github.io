@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>电子地图——杭州交警数字监控联网平台</title>
+<link rel="stylesheet" href="../css/jquery-ui/jquery-ui-1.9.2.custom.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/inner.css">
+<link rel="stylesheet" href="../css/theme/default/skin.css">
+<link rel="stylesheet" href="../css/layout.css">
+<script src="../js/jquery.min.1.8.2.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.js"></script>
+<script src="../js/ztree/js/jquery.ztree.core-3.5.js"></script>
+<script src="../js/global.js"></script>
+</head>
+<body>
+	<div id="mapbar" class="mapbar m-mapbar">
+        <ul>
+            <li>
+                <span>地图工具:</span>
+                <a id="aRemove" class="min-btn map-btn" href="javascript:;" title="移动" onclick="MapPan()"></a>
+                <a id="aAmplify" class="min-btn map-btn" href="javascript:;" title="放大" onclick="MapZoomIn()"></a>
+                <a id="aReduce" class="min-btn map-btn" href="javascript:;" title="缩小"></a>
+                <a id="aRestore" class="min-btn map-btn" href="javascript:;" title="全图" onclick="MapZoomToAll()"></a>
+                <a id="aEdit" class="min-btn map-btn" href="javascript:;" title="编辑" onclick="MapEdit()"></a>
+                <a id="aSure" class="min-btn map-btn" href="javascript:;" title="确定" onclick="MapConfirm()"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="m-map-box">
+    	<div id="mainMap" style="height:100%;"></div>
+    </div>
+</body>
+</html>

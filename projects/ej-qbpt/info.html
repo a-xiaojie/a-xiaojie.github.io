@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>工作管理-辅助信息</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item active">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息" class="active">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+        <div class="column">
+        	<div class="title">
+            	<h3 class="fl">系统管理 &gt; 辅助信息</h3>
+            </div>
+            <div class="col-form">
+                <div class="report-form">
+                    <form>
+                        <div class="pd20">
+                            <div class="input-form clearfix">
+                                <p class="report-form-item fl">
+                                    <label class="report-label">部   门</label>
+                                    <input type="text" class="text-input">
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">姓   名</label>
+                                    <input type="text" class="text-input">
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">警   号</label>
+                                    <input type="text" class="text-input">
+                                </p>
+                                <input type="button" class="btn fl" value="查   询">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-box table-form">
+                    <div class="table-toolbar">
+                        <a href="javascript:;" class="new-btn"><i class="qb-icon icon-add"></i>新建</a>
+                        <a href="javascript:;" class="edit-btn"><i class="qb-icon icon-edit"></i>编辑</a>
+                        <a href="javascript:;" class="del-btn"><i class="qb-icon icon-del"></i>删除</a>
+                    </div>
+                    <div class="table border-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="5%"></th>
+                                    <th width="5%">序号</th>
+                                    <th>部门</th>
+                                    <th>职务</th>
+                                    <th>姓名</th>
+                                    <th>警号</th>
+                                    <th>手机</th>
+                                    <th>虚拟号</th>
+                                    <th>警车号牌</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td title="1">1</td>
+                                    <td title="办公室">办公室</td>
+                                    <td title="总队领导">总队领导</td>
+                                    <td title="王海峰">王海峰</td>
+                                    <td title="011564">011564</td>
+                                    <td title="13588035184">13588035184</td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                </tr>
+                                <tr class="trDoubleRow">
+                                    <td><input type="checkbox"></td>
+                                    <td title="2">2</td>
+                                    <td title="临安大队">临安大队</td>
+                                    <td title="警员">警员</td>
+                                    <td title="王帅婷">王帅婷</td>
+                                    <td title="113500">113500</td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td title="3">3</td>
+                                    <td title="下沙大队">下沙大队</td>
+                                    <td title="警员">警员</td>
+                                    <td title="沈鑫">沈鑫</td>
+                                    <td title="015352">015352</td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                </tr>
+                                <tr class="trDoubleRow">
+                                    <td><input type="checkbox"></td>
+                                    <td title="4">4</td>
+                                    <td title="余杭大队">余杭大队</td>
+                                    <td title="二级警督">二级警督</td>
+                                    <td title="冯震宇">王帅婷</td>
+                                    <td title="017569">017569</td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td title="5">5</td>
+                                    <td title="西湖二中队">西湖二中队</td>
+                                    <td title="二级警督">二级警督</td>
+                                    <td title="陈俊">陈俊</td>
+                                    <td title="011577">011577</td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                    <td title=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page-box">
+                        <div class="total-count">
+                            第<span class="active">1</span>页 | 共4页，共34条记录
+                        </div>
+                        <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+</body>
+</html>

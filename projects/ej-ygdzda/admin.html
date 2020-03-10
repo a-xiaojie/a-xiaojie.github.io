@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8">
+	<title>银江股份通讯录</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/nanoscroller.css">
+	<link rel="stylesheet" type="text/css" href="css/zTreeStyle.css"> 
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="header admin-header">
+            <div class="logo">
+                <h1>员工电子档案管理系统</h1>
+            </div>
+            <div class="m-admin">
+            	<p>欢迎你，<a class="u-admin" id="">管理员</a></p>
+                <a class="btn set-btn" title="设置">设置</a>
+                <a class="btn pwd-btn" title="修改密码">修改密码</a>
+                <a class="btn help-btn" title="智能查询/帮助">智能查询/帮助</a>
+                <a class="btn quit-btn" title="退出">退出</a>
+            </div>
+            <div class="header-search-box">
+                
+                <div class="search-filter">
+                    <input type="text" value="搜索" class="search-input" autocomplete="off">
+                    <input type="button" class="btn name-search-btn" title="搜索">
+                </div>
+                
+            </div>
+	</div>
+	<div class="main">
+		<div class="seperate-bar"></div>
+		<div class="aside">
+        	<div class="m-title">
+            	<label>部门列表</label>
+                <div class="btn-bar">
+					<a class="btn add-btn" title="添加公司/部门" id="depAdd">添加公司/部门</a>
+					<a class="btn edit-btn" title="编辑公司/部门" id="depEdit">编辑公司/部门</a>
+                    <a class="btn del-btn" title="删除公司/部门" id="depDel">删除公司/部门</a>
+					<a class="btn up-btn" title="人员排名上移" id="depUp">人员排名上移</a>
+					<a class="btn down-btn" title="人员排名下移" id="depDown">人员排名下移</a>
+				</div>
+            </div>
+			<div class="search-box">
+				<form class="search-form">
+					<div class="search-filter">
+						<input type="text" value="按部门搜索"  class="search-input" autocomplete="off">
+						<span class="input-placeholder">按部门搜索</span>
+					</div>
+					<input type="button" class="btn dep-search-btn" title="搜索">
+				</form>
+			</div>
+			<div class="dep-box">
+				<div class="nano dep-box-nano">
+					<div class="nano-content">
+						<div class="dep-tree">
+							<ul id="depTree" class="ztree"></ul>
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div class="main-content">
+        	<div class="m-title">
+            	<label>人员列表</label>
+                <div class="btn-bar">
+                    <a class="btn add-btn" title="添加人员" id="recordAdd">添加人员</a>
+                    <a class="btn edit-btn" title="编辑人员" id="recordEdit">编辑人员</a>
+                    <a class="btn del-btn" title="删除人员" id="recordDel">删除人员</a>
+                    <a class="btn up-btn" title="人员排名上移" id="depUp">人员排名上移</a>
+					<a class="btn down-btn" title="人员排名下移" id="depDown">人员排名下移</a>
+                    <a class="btn transfer-btn" title="转移人员" id="recordTransfer">转移人员</a>
+                    <a class="btn export-btn" title="导出人员" id="recordExport">导出人员</a>
+                    <!--<a class="btn import-btn" title="导入人员" id="recordImport">导入人员</a> -->
+				</div>
+            </div>
+			<div class="contact-table">
+				<div class="contact-head-box">
+					<table>
+						<thead>
+							<tr>
+								<th class="col1">公司/部门</th>
+								<th class="col2">职位</th>
+								<th class="col3">姓名</th>
+								<th class="col4">分机/电话</th>
+								<th class="col5">移动电话</th>
+								<th class="col6">电子邮箱</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="contact-list-box" style="bottom:40px">
+					<div class="nano contanct-list-nano">
+						<div class="nano-content">
+							<table>
+								<colgroup>
+									<col class="col1">
+									<col class="col2">
+									<col class="col3">
+									<col class="col4">
+									<col class="col5">
+									<col class="col6">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+									<tr>
+										<td>基础应用研究所</td>
+										<td>工程师</td>
+										<td>张三</td>
+										<td>/</td>
+										<td>/</td>
+										<td><a href="mailto:zhangsan@123.net" class="mail">zhangsan@enjoyor.net</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="btn-bar">
+				<a class="btn add-btn" title="添加人员" id="recordAdd">添加人员</a>
+				<a class="btn edit-btn" title="编辑人员" id="recordEdit">编辑人员</a>
+				<a class="btn del-btn" title="删除人员" id="recordDel">删除人员</a>
+				<a class="btn transfer-btn" title="转移人员" id="recordTransfer">转移人员</a>
+				<a class="btn export-btn" title="导出人员" id="recordExport">导出人员</a>
+                <a class="btn import-btn" title="导入人员" id="recordImport">导入人员</a>
+			</div>
+		</div>
+	</div>
+	<div class="dialog" id="depAddDia">
+		<form>
+			<p class="form-row" id="parentDep"><label class="label">当前父类：</label><span class="form-value"></span></p>
+			<p class="form-row" id="newDep"><label class="label">新增子类：</label><input type="text" class="input-text"></p>
+			<p class="form-btns"><input type="button" class="dia-btn cancel-btn" value="取 消"><input type="button" class="dia-btn submit-btn" value="确 定"></p>
+		</form>
+	</div>
+	<div class="dialog" id="recordAddDia">
+		<form>
+			<p class="form-row" id=""><label class="label">姓名：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">固定电话：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">移动电话：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">电子邮箱：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">所属公司：</label><select class="select"><option selected="select">--请选择--</option><option>银江股份通讯录</option></select></p>
+			<p class="form-row" id=""><label class="label"> </label><select class="select"><option selected="select">--请选择--</option><option>财务管理中心</option></select></p>
+			<p class="form-row" id=""><label class="label">所属部门：</label><select class="select"><option selected="select">--请选择--</option><option>管理层</option></select></p>
+			<p class="form-row" id=""><label class="label"> </label><select class="select"><option selected="select">--请选择--</option><option>技术管理</option></select></p>
+			<p class="form-row" id=""><label class="label">职位：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">备注：</label><textarea class="textarea-text"></textarea></p>
+			<p class="form-btns"><input type="button" class="dia-btn cancel-btn" value="取 消"><input type="button" class="dia-btn submit-btn" value="确 定"></p>
+		</form>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.1.8.2.js"></script> 
+	<script type="text/javascript" src="jquery-ui-1.11.2/jquery-ui.js"></script> 
+	<script type="text/javascript" src="js/jquery.nanoscroller.js"></script>
+	<script type="text/javascript" src="js/jquery.ztree.all-3.5.js"></script> 
+	<script type="text/javascript" src="js/jquery.color.js"></script> 
+	<script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+	<!-- 树 -->
+	<script type="text/javascript">
+		var setting = {   
+	        view: {
+				showLine: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				beforeExpand: beforeExpand,
+				onExpand: onExpand,
+				onClick: onClick
+			}
+		};  
+		  
+		var zNodes =[
+			{ name:"银江股份", open:true,iconOpen:"images/2.png",iconClose:"images/1.png",
+				children: [
+					{ name:"董事会",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"证券中心",icon:"images/3.png"},
+							{ name:"并购中心",icon:"images/3.png"},
+							{ name:"监管中心",icon:"images/3.png"},
+							{ name:"企业大战中心",icon:"images/3.png"}
+						]},
+					{ name:"公司高管",icon:"images/3.png"},
+					{ name:"中国区域总部",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"企业管理中心",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"财务管理中心",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"战略总包总部",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"资本管理中心",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"中央研究院",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"院办公室",icon:"images/3.png"},
+							{ name:"技术发展研究院",icon:"images/3.png"},
+							{ name:"智慧交通研究院",iconOpen:"images/2.png",iconClose:"images/1.png",
+								children:[
+									{ name:"集成管控研究所",icon:"images/3.png"},
+									{ name:"基础应用研究所",icon:"images/3.png"}
+								]},
+							{ name:"新品研发研究院",icon:"images/3.png"},
+							{ name:"大数据研究院",icon:"images/3.png"},
+							{ name:"产品管理研究院",icon:"images/3.png"}
+						]},
+					{ name:"交通集团",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"医疗集团",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"城市集团",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"银江大学",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"人力人才部",icon:"images/3.png"}
+						]},
+					{ name:"健康宝互联网技术有限公司",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"商务部",icon:"images/3.png"},
+							{ name:"行政人力部",icon:"images/3.png"},
+							{ name:"财务部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"}
+						]}
+					
+				]},
+		];  
+
+
+		var curExpandNode = null;
+		function beforeExpand(treeId, treeNode) {
+			var pNode = curExpandNode ? curExpandNode.getParentNode():null;
+			var treeNodeP = treeNode.parentTId ? treeNode.getParentNode():null;
+			var zTree = $.fn.zTree.getZTreeObj("depTree");
+			for(var i=0, l=!treeNodeP ? 0:treeNodeP.children.length; i<l; i++ ) {
+				if (treeNode !== treeNodeP.children[i]) {
+					zTree.expandNode(treeNodeP.children[i], false);
+				}
+			}
+			while (pNode) {
+				if (pNode === treeNode) {
+					break;
+				}
+				pNode = pNode.getParentNode();
+			}
+			if (!pNode) {
+				singlePath(treeNode);
+			}
+
+		}
+		function singlePath(newNode) {
+			if (newNode === curExpandNode) return;
+			if (curExpandNode && curExpandNode.open==true) {
+				var zTree = $.fn.zTree.getZTreeObj("depTree");
+				if (newNode.parentTId === curExpandNode.parentTId) {
+					zTree.expandNode(curExpandNode, false);
+				} else {
+					var newParents = [];
+					while (newNode) {
+						newNode = newNode.getParentNode();
+						if (newNode === curExpandNode) {
+							newParents = null;
+							break;
+						} else if (newNode) {
+							newParents.push(newNode);
+						}
+					}
+					if (newParents!=null) {
+						var oldNode = curExpandNode;
+						var oldParents = [];
+						while (oldNode) {
+							oldNode = oldNode.getParentNode();
+							if (oldNode) {
+								oldParents.push(oldNode);
+							}
+						}
+						if (newParents.length>0) {
+							zTree.expandNode(oldParents[Math.abs(oldParents.length-newParents.length)-1], false);
+						} else {
+							zTree.expandNode(oldParents[oldParents.length-1], false);
+						}
+					}
+				}
+			}
+			curExpandNode = newNode;
+		}
+
+		function onExpand(event, treeId, treeNode) {
+			curExpandNode = treeNode;
+		}
+
+		function onClick(e,treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("depTree");
+			zTree.expandNode(treeNode, null, null, null, true);
+		}
+	</script>
+</body>
+<script type="text/javascript">
+	$(window).on('load resize',function(){
+		$('#depAddDia').dialog({
+			title:'新增公司/部门',
+			autoOpen: false,
+			resizable: false,
+			width:"340px",
+			zIndex:1000,
+			show: {
+				effect: "blind",
+		        duration: 300
+		    },
+		    hide: {
+		        effect: "explode",
+		        duration: 300
+		    },
+		    close: function() { 
+			    $(this).find('form')[0].reset();
+		    	$('.mask').remove();
+		    }	
+		})
+		$('#recordAddDia').dialog({
+			title:'添加人员',
+			autoOpen: false,
+			resizable: false,
+			width:"340px",
+			zIndex:1000,
+			show: {
+				effect: "blind",
+		        duration: 300
+		    },
+		    hide: {
+		        effect: "explode",
+		        duration: 300
+		    },
+		    close: function() { 
+			    $(this).find('form')[0].reset();
+		    	$('.mask').remove();
+		    }
+		})
+		$('#depAdd').on('click',function(){
+			$('<div class="mask"></div>').appendTo('body');
+			$('#depAddDia').dialog('open');
+		});
+		//确定
+		$('#depAddDia .submit-btn').on('click',function(){
+			$('#depAddDia').dialog('close');
+		});
+
+		//取消
+		$('.cancel-btn').on('click',function(){
+			$(this).parents('.dialog').dialog('close');
+		});
+
+		$('#recordAdd').on('click',function(){
+			$('<div class="mask"></div>').appendTo('body');
+			$('#recordAddDia').dialog('open');
+		});
+		//确定
+		$('#recordAddDia .submit-btn').on('click',function(){
+			$('#recordAddDia').dialog('close');
+		});
+	})
+</script>
+</html>

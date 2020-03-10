@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title 李林洁的简历
+        link(href="../images/jie.ico" rel="shortcut icon" type="x-icon")
+        link(href="dist/css/font-awesome.css" rel="stylesheet")
+        link(href="dist/css/main.css" rel="stylesheet")
+        script(src="dist/js/jquery.min.1.8.2.js")
+        script(src="dist/js/main.js")
+    body
+        header
+            div.logo 李林洁的简历
+            nav
+                ul.nav
+                    //
+                        - var navs = {"#home": "首页", "#skills": "专业技能", "#works": "工作经历", "#projects": "项目经验", "../src/resume.pdf": "简历下载"}
+                        each key, val in navs
+                            li
+                                a(title="#{key}" href="#{val}") #{key}
+                    li
+                        a(title="简历下载" href="../src/resume.pdf") 简历下载
+                            i.fa.fa-download
+
+        block con
+
+        footer
+            ul.share-group
+                li
+                    a(title="qq" href="#" target="_blank")
+                        i.fa(class="fa-qq")
+                li
+                    a(title="邮箱" href="mailto:2364889565@qq.com")
+                        i.fa(class="fa-envelope")
+                li
+                    a(title="微博" href="http://weibo.com/linda2009 " target="_blank")
+                        i.fa(class="fa-weibo")
+                li
+                    a(title="github" href="https://github.com/LiLinjie" target="_blank")
+                        i.fa(class="fa-github")

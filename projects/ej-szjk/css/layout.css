@@ -1,0 +1,56 @@
+/*  布局 */
+html,body{ width: 100%; height: 100%; overflow:hidden;}
+
+.g-hd{ position: absolute; left: 0; top: 0; height: 65px; width: 100%; z-index: 1000;}
+.g-bd{ position: absolute; top:66px; left: 0; bottom: 0; right: 0; overflow: hidden;}
+
+.m-logo{ float: left; display: inline; width: 221px; height: 38px; margin-left: 13px; margin-top: 13px; padding-left: 42px; overflow: hidden; background: url(../images/logo-badge.png) no-repeat left center;}
+.m-logo p{ margin-left: 4px; color : #fff; font-size: 18px; font-weight: normal; font-family: "Microsoft Yahei"; line-height: 26px;}
+.m-logo span{ display: block; line-height:1; font-family: arial; font-size:8px;  -webkit-transform: scale(0.65999) translateX(-55px); white-space: nowrap; color:#717070; }
+
+.m-nav{/*  float: left; display: inline; */ position: absolute; left: 311px; top:0; /*  margin-left: 35px; */ height: 65px;}
+.m-nav  ul{ display: inline-block;}
+.m-nav li{ float: left;}
+.m-nav li a{ display: inline-block; height: 65px; width: 90px; line-height: 32px; font-size: 14px; text-align: center;}
+.m-nav li a .icon{ display: block; margin: 8px auto 0;}
+
+/* 
+.m-attr-box{ position: absolute; right: 170px; top: 13px; width: 300px; height: 39px; background: url(../images/attr-bg.png) no-repeat;}
+.m-attr-box ul{ padding: 9px 0 10px;}
+.m-attr-box ul li{ float: left; display:inline; margin-left: 18px;}
+.m-attr-box label{ float: left;}
+.m-attr-box .u-attr-bar{ float: left; display: inline; width: 68px; height: 8px; margin-top: 6px; margin-left: 8px; overflow: hidden; background: url(../images/attr-bar-bg.png) no-repeat 0 0;}
+.m-attr-box .u-attr-active{ float: left; display: inline; width: 24px; height: 8px; overflow: hidden; background: url(../images/attr-bar-bg.png) no-repeat 0 -8px;}
+*/
+.m-attr-box{ position: absolute; right: 170px; top: 8px; width: 170px; height: 50px; background: url(../images/attr-bg2.png) no-repeat;}
+.m-attr-box ul{ width: 150px; margin: 0 auto;}
+.m-attr-box ul li{ height: 25px; line-height: 25px;}
+.m-attr-box label{ float: left; width: 3em; text-align: right;}
+.m-attr-box .u-attr-bar{ float: left; display: inline; width: 68px; height: 8px; margin-top: 8px; margin-left: 8px; overflow: hidden; background: url(../images/attr-bar-bg.png) no-repeat 0 0;}
+.m-attr-box .u-attr-active{ float: left; display: inline; width: 24px; height: 8px; overflow: hidden; background: url(../images/attr-bar-bg.png) no-repeat 0 -8px;}
+
+.m-top-nav{ position: absolute; right: 0; top: 0; _width:160px; height: 65px; line-height: 44px;}
+.m-top-nav li{ position: relative; float: left; height: 65px; line-height: 32px; border-left: 1px solid #000;}
+.m-top-nav li .u-quit{ display: block; padding: 25px 0 24px; height:16px; width: 49px; overflow:hidden; text-align: center;}
+.m-top-nav .m-user{ padding: 5px 8px 0 0; border-left: none; line-height: 28px;}
+.m-top-nav .m-user .u-dropdown-btn{ position: relative; display: block; width: 100px; cursor: pointer;}
+.m-top-nav .m-user img{ margin-right: 5px;}
+.m-top-nav .m-dropdown .arrow-down{ position: absolute; top: 5px; right: 0; width: 18px; height: 18px; margin: 0;}
+.m-top-nav .m-dropdown.open .arrow-down{ background-color: #444; background-position: -18px -90px}
+.m-dropdown-list{ display: none; position: absolute; top: 28px; right: 8px; width: 82px; background: #444; z-index: 1;}
+.m-dropdown-list li{ float: none; border: none; height: 30px; line-height: 30px; padding: 0;}
+.m-dropdown-list li a{ position: relative; display: block; height: 30px; padding: 0 8px; color: #9a9a9a;}
+.m-dropdown-list li a em{ position: absolute; right: 0; top:0; width:12px; height:30px; background:url(../images/icon.png) no-repeat 0 -108px;}
+.m-dropdown-list li a:hover{ color:#2887f0; background: #111;}
+.m-dropdown-list li a:hover em{ background-position: 0 -138px;}
+
+.m-iframe{
+display:none;
+position: absolute;/*绝对定位保证iframe不会占用流布局空间*/
+right:8px;
+top:28px;
+width: 82px; /*100%保证可以覆盖整个div*/
+z-index:-1; /*-1保证iframe显示在div下方*/
+background: #1e1e1e;
+height:60px;
+}

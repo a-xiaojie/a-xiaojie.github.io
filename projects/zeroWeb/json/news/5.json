@@ -1,0 +1,78 @@
+{
+	"data": {
+		"id": 5,
+		"title": "传奇现身背后的AR技术",
+		"date": "2017-11-07",
+		"content": [
+			{
+				"text": "刚刚过去的11月4号，第七届英雄联盟全球总决赛在北京举行。下午的鸟巢体育馆坐满了热情的观众，当主题歌《Legends Never Die》唱到一半时，天空忽然飞来一条巨龙。"
+			},
+			{
+				"videoUrl": "http://5g18kh4s.vod2.hongshiyun.net/target/mp4/2017/11/29/973_8f207943f7954f789ce3897161bd8192_10_1920x1080.mp4"
+			},
+			{
+				"text": "在线观看直播的数千万观众亲眼见证了传奇的复活，现场观众也通过大屏幕看到了这条龙。在英雄联盟里这条龙是作为图腾存在的，打开登录界面就会看到这条玉石的龙。游戏中打败这条龙，将使队伍获得一段时间的能力提升。"
+			},
+			{
+				"imgUrl": "https://mmbiz.qpic.cn/mmbiz_png/ojPDRmdic43bMM5e6X7o3f0JPic1S2slCawvMqMPic7cYnEtN4vmFoicYhHHzxduRqXIuaZCQRXeHF253T20W5OkQg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1"
+			},
+			{
+				"text": "当看到条龙出现在现场时，观众们都张大了嘴巴，因为这是传奇的复活。就像主题歌里唱的“Legends Never Die”，传奇和英雄们从来都没有死去，他们只是不轻易在真实世界中现身。"
+			},
+			{
+				"text": "这次在北京龙的现身正是借助了Zero Density的现场AR系统。"
+			},
+			{
+				"text": "AR 全称Augmented reality中文译作“增强现实”，是一种实时用计算机生成的物体来丰富现实世界的技术。现在AR的具体应用有很多，最常见最实用的就是有些汽车的影像倒车雷达显示汽车行进路线，手机也有很多AR应用App，去年流行的抓宠物小精灵游戏就是其中之一。"
+			},
+			{
+				"text": "其实AR技术也早已运用于电视节目制作之中，在比赛间隔出一个比分牌、立体字、徽标、广告之类，大多用于静态展示，用于向观众传递额外的信息。"
+			},
+			{
+				"imgUrl": "https://mmbiz.qpic.cn/mmbiz_png/ojPDRmdic43bMM5e6X7o3f0JPic1S2slCa0Z68Yk5l5OBNOkxyJNY9WxBhJoJvGykpAsJjlfXOUx3mueHfKIG8Qg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1"
+			},
+			{
+				"text": "11月4号这次英雄联盟总决赛直播，可以载入电视现场节目制作技术发展的史册，因为这是第一次利用AR技术实时呈现了一条活的巨大的龙，它不是装饰，也不是广告，它是万众瞩目的焦点，舞台的灵魂。它从远处飞来，降落在鸟巢顶上，然后俯身下探，飞下来绕场一周停在舞台中央，一声咆哮之后振翅高飞扬长而去。这个龙是活的，不仅仅是因为它形象生动，动作威猛，它还有个性，有态度。它的现身就是证明歌里面唱的“Legends never die”，它到现场当然是要占领舞台的。"
+			},
+			{
+				"text": "要做到这个效果并不容易，传统的虚拟演播室系统做不到，单纯的游戏引擎也做不到，只有Zero Density的Reality做到了。"
+			},
+			{
+				"text": "业内的朋友看了直播之后都能体会到其中难点，下面列出三点。"
+			},
+			{
+				"text": "其一、模型材质逼真，细节丰富，让它看上去既不粗燥也不卡通，而是真的是一条龙。它有鳞甲，发光的爪子和牙齿，甚至仿佛能感受到它呼吸时皮肤的起伏。"
+			},
+			{
+				"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43bMM5e6X7o3f0JPic1S2slCazR8bL7yjwePm2p4F9WY30OL8NZ09lUsib6tPWACVVCWKhic8kZZ2HcXg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+			},
+			{
+				"text": "其二、实时阴影可以投到鸟巢现场。就像这帧截图展现的，在龙飞行的过程中，它巨大身躯投下的阴影遮蔽了场内的观众席。"
+			},
+			{
+				"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43bMM5e6X7o3f0JPic1S2slCamkgYcvAMBViagAjHGcUgJyv70a6K2O7H8hEIUlHjH1NcKviaCX4KwpBw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+			},
+			{
+				"text": "其三、龙的动作和现场环境惊人匹配。"
+			},
+			{
+				"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43bMM5e6X7o3f0JPic1S2slCaJJbBS42yY2EDLVOlpqp58KffAJlydPsDvlbXmbPyRJfZ3d03g33e9g/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+			},
+			{
+				"text": "龙这个角色从出现到离开一直都在运动，先是落在体育馆顶部，然后飞行绕场一周，稳稳地落着舞台中央并跑动咆哮，观众当然会认为它是对现场环境是有感知和互动的。注意看上面这帧截图，它的前爪甚至是抓着舞台边缘。"
+			},
+			{
+				"text": "下面是揭密时间，究竟是怎样的黑科技让这一切实现的呢？"
+			},
+			{
+				"text": "Reality利用摄像机跟踪系统获取精确的摄像机位置和运动信息，与提前测量并输入系统的场地位置和大小信息进行匹配。读取摄像机镜头的变焦和聚焦信息，调整AR物体的视角和焦点。这样，就保证了龙和鸟巢的大小和位置的匹配。"
+			},
+			{
+				"text": "关于影子这是Zero Density的独门绝技。众所周知在纯虚拟游戏中，物体有影子需要有一个光源照在它上面，再有影子投射的面。但要把这个影子和实拍画面结合起来，那完全是另外一个故事。里面的奥秘是在Zero Density的虚拟物体中，不只有这条龙，还有一个1:1的鸟巢体育馆。龙着落的时候是在虚拟的鸟巢上，影子也是投在了虚拟鸟巢上，在直播时将摄像机实拍的鸟巢替代了虚拟的鸟巢。"
+			},
+			{
+				"text": "Zero Density是让虚拟和现实完美结合的公司，也能让现场视频制作者梦想成真。英雄联盟现场转播可以做到的大家也一定能做。"
+			}
+		]
+	}
+}

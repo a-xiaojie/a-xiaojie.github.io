@@ -1,0 +1,336 @@
+@import "mixins/common.less";
+@color: #333;
+@linkColor: #666;
+@bgColor: #000;
+@themeColor: #00a0e9;
+.font(@size: 14px, @weight: normal, @style: normal, @family: "Microsoft Yahei"){
+  font: @size/1 @weight @style @family;
+}
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+  margin: 0;
+  padding:0;
+}
+ul,ol{
+  list-style: none;
+}
+img{
+  vertical-align: top;
+}
+a{
+  text-decoration: none;
+}
+header,footer,nav,section{
+  display: block;
+}
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+::selection{
+  color: #fff;
+  background: @themeColor;
+}
+/*html,body{
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}*/
+body{
+  color: @color;
+  .font;
+  background: #fff;
+}
+/* 头部 */
+header{
+  position:fixed;
+  top:0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height:60px;
+  background: #333;
+  color: #fff;
+  .logo{
+    float: left;
+    padding-left: 30px;
+    .font(20px);
+    line-height: 60px;
+    letter-spacing: 2px;
+  }
+  nav{
+    float: right;
+    height:30px;
+    padding:15px 30px;
+    line-height: 30px;
+    li{
+      display: inline-block;
+      padding: 0 10px;
+      a{
+        display: block;
+        height:30px;
+        color: #fff;
+        .transition(all,0.3s);
+        .fa{
+          margin-left: 5px;
+        }
+        &:hover{
+          color: @themeColor + #333;
+        }
+      }
+    }
+  }
+}
+
+/* 底部 */
+footer{
+  margin-top:20px;
+  padding: 40px 0;
+  text-align: center;
+  background: #333;
+  li{
+    display: inline-block;
+    padding: 0 30px;
+    a{
+      display: block;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      line-height: 60px;
+      text-align: center;
+      color: #fff;
+      background: @themeColor + #333333;
+      transform: rotate(45deg);
+      transition: 0.5s;
+      i{
+        transform:rotate(-45deg);
+      }
+      &:hover{
+        background: @themeColor;
+        transform: rotate(405deg);
+      }
+    }
+  }
+}
+
+.section{
+ /* position: absolute;
+  width: 100%;
+  height:100%;*/
+  margin-bottom:40px;
+  .inner{
+    width: 1000px;
+    margin:0 auto;
+    border-bottom:1px dashed #ddd;
+    h2{
+      span{
+        display: inline-block;
+        .font(24px);
+        line-height: 30px;
+        border-bottom: 4px solid @themeColor;
+      }
+      border-bottom:1px solid @themeColor;
+    }
+  }
+}
+
+/* 首页 */
+#baseInfo{
+  padding-top: 100px;
+  padding-bottom: 40px;
+  text-align: center;
+  line-height:20px;
+  h2{
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: normal;
+    border:none;
+  }
+  p{
+    margin-bottom: 10px;
+  }
+  ul li{
+    display: inline-block;
+    margin:0 10px;
+    color: @linkColor;
+    a{
+      color: @linkColor;
+    }
+  }
+}
+
+/* 教育经历 */
+#school{
+  margin: 40px 0;
+  .school-info{
+    margin-top: 20px;
+    p{
+      float: left;
+      width: 33.333%;
+      margin-bottom: 10px;
+      color: @themeColor;
+      font-size:16px;
+    }
+    >.major{
+      line-height: 20px;
+      color: #666;
+      &:before{
+        content: '';
+        clear:both;
+        display: block;
+      }
+    }
+  }
+}
+
+/* 专业技能 */
+#skillList{
+  width: 100%;
+  margin: 40px 0;
+  li{
+    height:28px;
+    padding:4px 0;
+    margin:8px 0;
+    background: rgba(37, 145, 202, 0.3);
+    .border-radius(20px);
+  }
+  h4{
+    float: left;
+    width: 120px;
+    height:20px;
+    padding: 0 10px;
+    .font(16px);
+    line-height: 20px;
+    text-align: right;
+  }
+  .skill-bar{
+    height:20px;
+    line-height:20px;
+    margin-left:120px;
+    text-align: center;
+    color: #666;
+    .border-radius(20px);
+    >div{
+      .border-radius(20px);
+      width: 0;
+      .opacity(0)
+    }
+  }
+}
+
+
+/* 工作经历 */
+#workList{
+  margin: 40px 0 40px 200px;
+  border-left: 1px solid @themeColor;
+  >li{
+    position: relative;
+    padding-left:20px;
+    margin-bottom: 40px;
+    .time{
+      position: absolute;
+      left:-200px;
+      top:0;
+      width: 200px;
+      padding-right:20px;
+      text-align: right;
+      color: @themeColor;
+      .font(16px);
+    }
+    .company{
+      color: @themeColor;
+
+    }
+    .work{
+      margin-top:10px;
+      padding:10px;
+      .border-radius(5px);
+      .box-shadow(0, 0, 10px, @themeColor);
+      li{
+        line-height: 20px;
+      }
+    }
+    &:after{
+      position: absolute;
+      top:4px;
+      left:-4px;
+      width:8px;
+      height:8px;
+      background: @themeColor;
+      .border-radius(8px);
+      box-shadow: 0 0 0 3px #fff, 0 0 0 5px @themeColor;
+      content: '';
+      .transition(all,0.5s);
+    }
+  }
+}
+
+/* 项目经验 */
+#projectsList{
+  margin:40px 0;
+  dt{
+    text-align: center;
+    .font(20px);
+  }
+  dd{
+    margin-top: 20px;
+    width: 110%;
+    a{
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      height:165px;
+      padding:6px;
+      margin:0 40px 40px 0;
+      background: #fff;
+      .box-shadow(0, 0, 5px, rgba(0,0,0,0.3));
+      overflow: hidden;
+      img{
+        width: 208px;
+        height:153px;
+        .transform(0, 1, 0, 0);
+        .transition(all, 0.35s, ease-in-out);
+      }
+      .project-detail{
+        position: absolute;
+        top: 0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin:auto;
+        width: 208px;
+        height:153px;
+        text-align: center;
+        background: #333;
+        .opacity(0);
+        -webkit-backface-visibility: hidden;  // 隐藏被旋转的 div 元素的背面
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        .transition(all, 0.35s, ease-in-out);
+        .transform(180deg, 0, 0, 0);
+        h4{
+          .font(20px);
+          line-height:138px;
+          color: #fff;
+        }
+      }
+
+      &:hover{
+        img{
+          .transform(0, 0, 0, 0);
+        }
+        .project-detail{
+          visibility: visible;
+          .opacity(100);
+          .transform(0deg, 1, 0, 0);
+          -webkit-transition-delay: 0.3s;
+          -moz-transition-delay: 0.3s;
+          -ms-transition-delay: 0.3s;
+          -o-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,button,select,textarea,iframe{ margin:0; padding:0;}
+table{ border-collapse: collapse; border-spacing: 0;}
+i,em{ font-style: normal;}
+li{ list-style: none; outline:none;}
+h1,h2,h3,h4,h5,h6,small{ font-size: 100%; font-weight: normal;}
+textarea{ overflow: auto; resize: none;}
+a,button,input,textarea,select{ outline: none;}
+a{ text-decoration: none; cursor: pointer; color: #fff;}
+img{ border: none; vertical-align: middle;}
+body,input,textarea,button,select{ font: 14px/20px arial,"Microsoft Yahei",\5b8b\4f53;}
+body{ color: #fff; background: #151e25;}
+
+/* 浮动 */
+.fl{ float: left;}
+.fr{ float: right;}
+/* 清除浮动 */
+.clearfix{ zoom: 1;}
+.clearfix:after{ content: ''; display: block; clear: both;}
+
+/* 定位 */
+.g-posl{ position:absolute; left:0;}
+.g-posr{ position:absolute; right:0;}
+
+/* 外边距 */
+.mt10{ margin-top: 10px;}
+.mt20{ margin-top: 20px;}
+
+/* 内边距 */
+.pd20{ padding: 20px;}
+
+/* 图标 */
+.icon{ display: inline-block; width: 32px; height: 32px; background: url(../images/icon.png) no-repeat; vertical-align: middle;}
+.icon-open-screen{ background-position: 0 0;}
+.icon-close-screen{ background-position: -32px 0;}
+.icon-restart-equip{ background-position: -64px 0;}
+.icon-save-scene{ background-position: -96px 0;}
+.icon-scene-carousel{ background-position: -128px 0;}
+.icon-signal-carousel{ background-position: -160px 0;}
+.icon-program-manage{ background-position: -192px 0;}
+.icon-system-manage{ background-position: -224px 0;}
+.icon-user{ width: 24px; height: 24px; background-position: 0 -32px;}
+.icon-close{ width: 24px; height: 24px; background-position: -24px -32px;}
+.icon-search{ width: 20px; height: 21px; background-position: 0 -56px;}
+.icon-normal{ width: 16px; height: 16px; background-position: -24px -56px;}
+.icon-username{ width: 16px; height: 18px; background-position: 0 -80px;}
+.icon-password{ width: 14px; height: 18px; background-position: -24px -80px;}
+.icon-menu-user{ background-position: -120px -104px;}
+.icon-menu-device{ background-position: -144px -104px;}
+.icon-menu-operate{ background-position: -168px -104px;}
+.icon-menu-log{ background-position: -192px -104px;}
+.icon-add{ background-position: -48px -32px;}
+.icon-edit{ background-position: -72px -32px;}
+.icon-del{ background-position: -96px -32px;}
+.icon-export{ background-position: -120px -32px;}
+.icon-import{ background-position: -144px -32px;}
+.icon-print{ background-position: -168px -32px;}
+.icon-prev{ width: 10px; height: 16px; background-position: -63px -56px;}
+.icon-next{ width: 10px; height: 16px; background-position: -88px -56px;}
+.screen-tool-btns .icon-used{ background-position: -120px -56px;}
+.screen-tool-btns .icon-edit{ background-position: -144px -56px;}
+.screen-tool-btns .icon-del{ background-position: -168px -56px;}
+
+/* form */
+.u-ipt,.u-sel{ width: 124px; height: 22px; line-height: 22px; color: #fff; text-indent: 7px; font-size: 12px; vertical-align: middle; border: 1px solid #606266; border: 1px solid rgba(255, 255, 255, 0.2);  background: rgba(20,20,20,.35); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6141414,endColorstr=#E6141414);}
+.u-sel{ width: 126px; padding: 1px 0;}
+.u-textarea{ width: 110px; height: 80px; line-height: 22px; color: #fff; padding: 5px 7px; font-size: 12px; border: 1px solid #606266; border: 1px solid rgba(255, 255, 255, 0.2);  background: rgba(20,20,20,.35); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6141414,endColorstr=#E6141414);}
+.u-btn{ width: 65px; height: 25px; line-height: 25px; text-align: center; font-size: 12px; border: none; border-radius: 2px; background: #33800d; color: #fff; cursor: pointer;}
+.u-btn:hover{ opacity: .9; filter:alpha(opacity=90);}
+.u-page-btn{ width: 60px; height: 28px; line-height: 28px;}
+.u-cancel-btn{ background: #555;}
+.u-page-btn{ width: 60px; height: 28px; line-height: 28px;}

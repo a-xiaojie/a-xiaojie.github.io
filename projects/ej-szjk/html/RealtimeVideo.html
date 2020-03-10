@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>实时监控——杭州交警数字监控联网平台</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/inner.css">
+<link rel="stylesheet" href="../css/theme/default/skin.css">
+<link rel="stylesheet" href="../css/layout.css">
+<script src="../js/jquery.min.1.8.2.js"></script>
+<script src="../js/ztree/js/jquery.ztree.core-3.5.js"></script>
+<script src="../js/global.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+<div class="g-hd">
+	<h1 class="m-logo">
+		<p>杭州交警数字监控联网平台</p>
+		<p><span>Hangzhou Traffic Police Digital Monitoring Network Platform</span></p>
+	</h1>
+	<div class="m-nav">
+		<ul class="clearfix" id="ulMenu"><li class="cur"><a href="RealtimeVideo.html"><i class="icon icon-realtime"></i>实时监控</a></li><li><a href="Playback.html"><i class="icon icon-remote"></i>监控回放</a></li><li><a href="gis.html"><i class="icon icon-gis"></i>电子地图</a></li><li><a href="system.html"><i class="icon icon-system"></i>系统设置</a></li><li><a href="running.html"><i class="icon icon-running"></i>运维管理</a></li><li><a href="help.html"><i class="icon icon-help"></i>使用帮助</a></li></ul>
+	</div>
+	<div class="m-attr-box"> 
+		<ul>
+			<li>
+				<label>CPU:</label>
+				<label id="cper">100%</label>
+				<div class="u-attr-bar" id="u-attr-bar">
+					<div class="u-attr-active" id="cpu_u_attr_active"></div>
+				</div>
+			</li>
+			<li>
+				<label>内存:</label>
+				<label id="mper"> 100%</label>
+				<div class="u-attr-bar">
+					<div class="u-attr-active" id="m_u_attr_active"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="m-top-nav">
+		<ul class="m-top-menu clearfix">
+			<li class="m-user">
+				<div class="m-dropdown">
+					<a class="u-dropdown-btn" href="javascript:;"><img src="http://localhost:8080/ejvideo//images/user-head.png"><span>Admin</span><em class="arrow-down"></em></a>
+					<ul class="m-dropdown-list">
+						<li><a onclick="getLimit()" href="javascript:;">权限申请<em></em></a></li>
+						<li><a onclick="changePwd()" href="javascript:;">密码修改<em></em></a></li>
+					</ul>
+					<iframe class="m-iframe" frameborder="0"></iframe>
+				</div>
+				<p id="pTime">2015-05-19 09:31</p>
+			</li>
+			<li><a href="javascript:;" class="u-quit" onclick="aLogOut_click()" title="退出"><i class="icon icon-quit"></i></a></li>
+		</ul>
+	</div>
+</div>	
+<!-- 主体 -->
+<div class="g-bd">
+	<div class="g-inner clearfix">
+		<div class="g-sd">
+			<div class="g-sdc">
+				<div class="m-side-title m-panel-title">
+					<h2>监控点列表</h2>
+				</div>
+				<div class="m-side-cont m-panel-cont">
+					<div class="m-search-box">
+						<div class="m-search-bg">
+							<input type="text" id="tbSearch" class="u-search-text" value="点位查找"> 
+							<a href="javascript:;" id="btSearch" class="u-search-btn" title="搜索" onclick="getTree();">
+							<i class="icon-btn icon-btn-search"></i></a>
+						</div>
+					</div>
+					<div class="m-side-list">
+						<ul class="m-side-menu ztree" id="treeNode"></ul>
+					</div>
+					<div class="g-side-ft">
+						<div class="m-ft-tab">
+							<ul class="m-tab">
+								<li class="cur"><i class="icon icon-cloud"></i>云台控制</li>
+								<li ><i class="icon icon-preset"></i>预置点</li>
+							</ul>
+							<div class="m-cloud-control m-tab-cont">
+								<div class="m-cloud-bg">
+									<div class="m-dot-control">
+										<a href="javascript:;" title="-" class="minbtn minbtn-minus"></a>
+										<a href="javascript:;" title="+" class="minbtn minbtn-plus"></a>
+										<div class="m-dot-control-bg"><div class="m-dot-control-active"></div></div>
+									</div>
+									<div class="m-cloud-box">
+										<a href="javascript:;" id="aLeftUp" class="m-cloud m-cloud-1" title="左上"></a> 
+										<a href="javascript:;" id="aUp" class="m-cloud m-cloud-2" title="上"></a> 
+										<a href="javascript:;" id="aRightUp" class="m-cloud m-cloud-3" title="右上"></a> 
+										<a href="javascript:;" id="aLeft" class="m-cloud m-cloud-4" title="左"></a> 
+										<a href="javascript:;" id="aCenter" class="m-cloud m-cloud-5"></a> 
+										<a href="javascript:;" id="aRight" class="m-cloud m-cloud-6" title="右"></a> 
+										<a href="javascript:;" id="aLeftDown" class="m-cloud m-cloud-7" title="左下"></a> 
+										<a href="javascript:;" id="aDown" class="m-cloud m-cloud-8" title="下"></a> 
+										<a href="javascript:;" id="aRightDown" class="m-cloud m-cloud-9" title="右下"></a>
+									</div>
+									<div class="m-btns-group g-posr">
+										<div class="m-cloud-btns">
+											<label>光圈</label> 
+											<a href="javascript:;" id="ApertureSmall" title="-" class="minbtn minbtn-minus"></a> 
+											<a href="javascript:;" id="ApertureLarge" title="+" class="minbtn minbtn-plus"></a>
+										</div>
+										<div class="m-cloud-btns">
+											<label>变焦</label> 
+											<a href="javascript:;" id="ZoomIn" title="-" class="minbtn minbtn-minus"></a> 
+											<a href="javascript:;" id="ZoomOut" title="+" class="minbtn minbtn-plus"></a>
+										</div>
+										<div class="m-cloud-btns">
+											<label>聚焦</label> 
+											<a href="javascript:;" id="IrisSmall" title="-" class="minbtn minbtn-minus"></a> 
+											<a href="javascript:;" id="IrisLarge" title="+" class="minbtn minbtn-plus"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="m-preset m-tab-cont" style="display:none">
+								<div class="m-preset-toolbar">
+									<a href="javascript:;" title="添加"  id="aNewPreset" onclick="newPeset()" class="pre-add"><i class="icon icon-plus"></i>新建预置点</a>
+									<div class="m-preset-form" id="divAddPreset">
+										<i class="icon icon-preset"></i>
+										<input type="text" class="u-ipt" id="btAddPresetName">
+										<input type="hidden" id="hfNum"></input>
+										<input type="hidden" id="hfVideoid"></input>										
+										<a href="javascript:;" onclick="addPreset()" class="pre-btn pre-btn-submit" title="确定"></a>
+										<a href="javascript:;" onclick="concelPreset()" class="pre-btn pre-btn-cancel" title="取消"></a>
+									</div>
+								</div>
+								<ul class="m-preset-list" id="ulPreset">
+									<li>
+										<a href="javascript:;" class="u-name"><i class="icon icon-preset"></i>预置点1</a>
+										<div class="m-btns-group g-posr">
+											<a href="javascript:;" class="pre-btn pre-btn-play" title="播放"></a>
+											<a href="javascript:;" class="pre-btn pre-btn-edit" title="编辑"></a>
+											<a href="javascript:;" class="pre-btn pre-btn-del" title="删除"></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g-mn">
+			<div class="g-mnc">
+				<div class="m-video-panel">
+					<div class="m-video-show clearfix">
+						<div class="m-video-box">
+							<div class="m-video-cell clearfix" id="divPlayer">
+								<div id="videoimg" style="border:1px solid #2887f3;height:100%;width:100%">
+									<img style="height:100%;width:100%" src="../images/video.jpg" />
+								</div>
+								<!-- 播放控件 -->
+								<!-- <object id="AVRealPlay" style="width: 100%; height: 100%; z-index: -1;" classid="CLSID:7219606E-5147-4BCF-BC89-4F77B3144A54">
+									<param name="_Version" value="65536">
+									<param name="_ExtentX" value="22357">
+									<param name="_ExtentY" value="16589">
+									<param name="_StockProps" value="0">
+									<param name="wmode" value="opaque">
+								</object>
+								控制代理
+								<object classid="clsid:10A9EA01-9DBA-44C4-9127-9BFF062B2D3D" id="PtzControl1" style="width: 0px; height: 0px; ">
+									<param name="_Version" value="65536">
+									<param name="_ExtentX" value="2646">
+									<param name="_ExtentY" value="1323">
+									<param name="_StockProps" value="0">
+								</object> -->
+							</div>
+						</div>
+					</div>
+					<div class="m-video-toolbar">
+						<div class="m-btns-group g-posr">
+							<div class="m-video-toolbtns">
+								<label id="lbInfo"></label>
+								<a id="aCapture" href="javascript:;" onclick="capture_click()" title="抓图" class="video-btn"></a>
+								<a id="aRecord" href="javascript:;" onclick="record_click()" title="录像" class="video-btn"></a>
+								<a id="aRecording" onclick="stopRecord_click()" href="javascript:;"  title="录像中"></a>
+								<a id="aCatalog" href="javascript:;" onclick="catalog_click()" title="目录" class="video-btn"></a>
+							</div>
+							<a id="aScreenOne" onclick="setScreen(this,1)" href="javascript:;" class="video-btn active" title="一屏"></a>
+							<a id="aScreenFour" onclick="setScreen(this,4)" href="javascript:;" class="video-btn" title="四屏"></a>
+							<a id="aScreenSix" onclick="setScreen(this,6)" href="javascript:;" class="video-btn" title="六屏"></a>
+							<a id="aScreenNine" onclick="setScreen(this,9)" href="javascript:;" class="video-btn" title="九屏"></a>
+							<a id="aScreenFull" onclick="setScreen(this,0)" href="javascript:;" class="video-btn" title="全屏"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(function(){
+		var setting = {
+			data: {
+				simpleData: {
+					enable: true
+				}
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:0, name:"杭州市", open:true},
+				{ id:11, pId:1, name:"上城区", open:true},
+					{ id:111, pId:11, name:"南山路"},
+					{ id:112, pId:11, name:"河坊街"},
+				{ id:12, pId:1, name:"下城区"},
+					{ id:121, pId:12, name:"潮王路"},
+				{ id:13, pId:1, name:"西湖区"},
+					{ id:131, pId:13, name:"文三路"},
+				{ id:14, pId:1, name:"江干区"},
+					{ id:141, pId:14, name:"文三路"},
+				{ id:15, pId:1, name:"拱墅区"},
+					{ id:151, pId:15, name:"文三路"},
+				{ id:16, pId:1, name:"滨江区"},
+					{ id:161, pId:16, name:"文三路"},
+				{ id:17, pId:1, name:"下沙"},
+					{ id:171, pId:17, name:"下沙"},
+				{ id:18, pId:1, name:"机动指挥"},
+					{ id:181, pId:18, name:"下沙"},
+				{ id:19, pId:1, name:"景区"},
+					{ id:191, pId:19, name:"景区"},
+				{ id:20, pId:1, name:"支队热控室录像"},
+					{ id:201, pId:20, name:"景区"},
+				{ id:21, pId:1, name:"绕城"},
+					{ id:211, pId:21, name:"景区"}
+		];
+		$.fn.zTree.init($("#treeNode"), setting, zNodes);
+	});
+
+	$(window).on("load resize",function(){
+		var $height=$(".g-inner").height();
+		$(".g-mnc").width($(".g-mn").width()-281).height($height);
+		$(".m-side-cont").height($height-$(".m-side-title").height());
+		$(".m-side-list").height($(".m-side-cont").height()-230-38);
+		$(".m-video-cell,#AVRealPlay").height($height-$(".m-video-toolbar").height()-20-4);	
+		$(".m-preset-list").height($(".g-side-ft").height()-$(".m-tab").height()-$(".m-preset-toolbar").height());
+		$("#lbInfo").width($(".g-mnc").width()-370);
+	});
+	var num=0;
+	function setSpeed(speed)
+	{
+		var intSpeed=parseInt(speed);
+		intSpeed<9?(num=intSpeed):num=9;
+		$(".m-dot-control-active").removeClass("w"+(num-1)).addClass("w"+num);
+	}
+	$(function(){
+		$(".m-dot-control .minbtn-plus").on("click",function(){
+			num<9?(num++):num=9;
+			$(".m-dot-control-active").removeClass("w"+(num-1)).addClass("w"+num);
+		});
+		$(".m-dot-control .minbtn-minus").on("click",function(){
+			num>0?(num--):num=0;
+			$(".m-dot-control-active").removeClass("w"+(num+1)).addClass("w"+num);
+		});
+		$(".m-dot-control-bg").on("click",function(e){
+			var $left=$(".m-dot-control-bg").offset().left;
+			var $top=$(".m-dot-control-bg").offset().top;
+			var $mouseX=e.pageX;
+			var $mouseY=e.pageY;
+			var $width=$mouseX-$left;
+			var $height=$mouseY-$top;
+			if(  $width>=0 && $width<=20 && $height>=47 && $height<=58){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=1;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=10 && $width<=20 && $height>=27 && $height<=38){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=2;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=25 && $width<=35 && $height>=13 && $height<=23){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=3;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=44 && $width<=54 && $height>=3 && $height<13){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=4;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=65 && $width<=75 && $height>=0 && $height<=10){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=5;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=86 && $width<=96 && $height>=4 && $height<=14){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=6;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=105 && $width<=115 && $height>=13 && $height<=23){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=7;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=120 && $width<=130 && $height>=29 && $height<=39){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=8;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+			else if( $width>=130 && $width<=140 && $height>=47 && $height<=58){
+				$(".m-dot-control-active").removeClass("w"+(num));
+				num=9;
+				$(".m-dot-control-active").addClass("w"+num);
+			}
+		});
+		//云台预置位切换
+		$(".m-tab li").on("click",function(){
+			$(this).addClass("cur").siblings().removeClass("cur");
+			$(".m-tab-cont").hide().eq($(".m-tab li").index(this)).show();
+		});
+		$(".m-preset-list li").on({
+			mouseover:function(){
+				$(this).addClass("hover");
+			},
+			mouseout:function(){
+				$(this).removeClass("hover");
+			},
+			click: function(){
+				$(this).addClass("active").siblings().removeClass("active");
+			}
+		})
+	});
+</script>	
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+	<script type="text/javascript" src="../js/IE6PNG.js"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix('*');
+	</script>
+<![endif]-->
+</body>
+</html>

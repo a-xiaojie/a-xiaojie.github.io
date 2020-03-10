@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>电子地图——杭州交警数字监控联网平台</title>
+<link rel="stylesheet" href="../css/jquery-ui/jquery-ui-1.9.2.custom.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/inner.css">
+<link rel="stylesheet" href="../css/theme/default/skin.css">
+<link rel="stylesheet" href="../css/layout.css">
+<script src="../js/jquery.min.1.8.2.js"></script>
+<script src="../js/ztree/js/jquery.ztree.core-3.5.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+<div class="g-hd">
+	<h1 class="m-logo">
+		<p>杭州交警数字监控联网平台</p>
+		<p><span>Hangzhou Traffic Police Digital Monitoring Network Platform</span></p>
+	</h1>
+	<div class="m-nav">
+		<ul class="clearfix" id="ulMenu">
+			<li><a href="RealtimeVideo.html"><i class="icon icon-realtime"></i>实时监控</a></li>
+			<li><a href="Playback.html"><i class="icon icon-remote"></i>监控回放</a></li>
+			<li><a href="gis.html"><i class="icon icon-gis"></i>电子地图</a></li>
+			<li class="cur"><a href="system.html"><i class="icon icon-system"></i>系统设置</a></li>
+			<li><a href="javascript:;"><i class="icon icon-help"></i>使用帮助</a></li></ul>
+	</div>
+	<div class="m-attr-box"> 
+		<ul>
+			<li><label>CPU</label>
+			<div class="u-attr-bar" id="u-attr-bar">
+			<div class="u-attr-active" id="cpu_u_attr_active" style="width:0px"></div>
+			</div></li>
+			<li><label>内存</label>
+			<div class="u-attr-bar">
+			<div class="u-attr-active" id="m_u_attr_active"></div></div></li>
+		</ul>
+	</div>
+	<div class="m-top-nav">
+		<ul class="m-top-menu clearfix">
+			<li class="m-user">
+				<div class="m-dropdown">
+					<a class="u-dropdown-btn" href="javascript:;"><img src="http://localhost:8080/ejvideo//images/user-head.png"><span>Admin</span><em class="arrow-down"></em></a>
+					<ul class="m-dropdown-list">
+						<li><a onclick="getLimit()" href="javascript:;">权限申请<em></em></a></li>
+						<li><a onclick="changePwd()" href="javascript:;">密码修改<em></em></a></li>
+					</ul>
+					<iframe class="m-iframe" frameborder="0"></iframe>
+				</div>
+				<p id="pTime">2015-05-19 09:31</p>
+			</li>
+			<li><a href="javascript:;" class="u-quit" onclick="aLogOut_click()" title="退出"><i class="icon icon-quit"></i></a></li>
+		</ul>
+	</div>
+</div>	
+<!-- 主体 -->
+<div class="g-bd">
+	<div class="g-inner clearfix">
+		<div class="g-sd">
+			<div class="g-sdc">
+				<div class="m-side-nav">
+					<div class="m-side-title m-panel-title"><h2>用户管理</h2></div>
+					<ul class="m-side-subnav m-list">
+						<li class="active"><a href="javascript:;">用户管理</a></li>
+						<li><a href="javascript:;">角色管理</a></li>
+						<li><a href="javascript:;">用户审核</a></li>
+						<li><a href="javascript:;">权限审批</a></li>
+					</ul>
+				</div>
+				<div class="m-side-nav">
+					<div class="m-side-title m-panel-title"><h2>设备管理</h2></div>
+					<ul class="m-side-subnav m-list">
+						<li><a href="javascript:;">监控点管理</a></li>
+						<li><a href="javascript:;">回放设备</a></li>
+						<li><a href="javascript:;">上下级平台</a></li>
+					</ul>
+				</div>
+				<div class="m-side-nav">
+					<div class="m-side-title m-panel-title"><h2>参数配置</h2></div>
+					<ul class="m-side-subnav m-list">
+						<li><a href="javascript:;">区域管理</a></li>
+						<li><a href="javascript:;">单位管理</a></li>
+						<li><a href="javascript:;">控制代理</a></li>
+						<li><a href="javascript:;">流媒体</a></li>
+						<li><a href="javascript:;">矩阵管理</a></li>
+						<li><a href="javascript:;">系统参数</a></li>
+					</ul>
+				</div>
+				<div class="m-side-nav">
+					<div class="m-side-title m-panel-title"><h2>日志管理</h2></div>
+					<ul class="m-side-subnav m-list">
+						<li><a href="javascript:;">系统日志</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="g-mn" >
+			<div class="g-mnc">
+				<div class="m-search-content">
+					<div class="m-search-top m-content-border">
+						<div class="m-content-title">
+							<h3>查询条件</h3>
+						</div>
+						<div class="m-content-main">
+							<ul class="m-form-list clearfix">
+								<li><label class="font-w9">警号（用户名）：</label>
+									<input type="text" class="u-ipt">
+								</li>
+								<li><label class="font-w9">姓名：</label>
+									<input type="text" class="u-ipt">
+								</li>
+							</ul>
+							<ul class="m-form-list clearfix">
+								<li><label class="font-w9">角色：</label>
+									<select class="u-sel">
+										<option selected="selected">所有角色</option>
+									</select>
+								</li>
+								<li><label class="font-w9">在线用户：</label>
+									<select class="u-sel">
+										<option selected="selected">全部用户</option>
+									</select>
+								</li>
+								<li class="m-form-btn">
+									<button type="button" class="u-btn short">查询</button>
+									<button type="button" class="u-btn long">点位同步到所属区域</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="m-search-table m-content-border mt10">
+						<div class="m-content-title">
+							<h3>查询列表</h3>
+							<div class="m-btns-group g-posr">
+								<button type="button" class="u-btn min"><i class="icon-btn icon-btn-sys-export"></i>导出</button>
+								<button type="button" class="u-btn min" onclick="addUser()"><i class="icon-btn icon-btn-sys-add"></i>添加</button>
+							</div>
+						</div>
+						<div class="m-content-main">
+							<table class="m-table m-content-border">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>所属区域</th>
+										<th>警号（用户名）</th>
+										<th>真实姓名</th>
+										<th>角色</th>
+										<th>电话</th>
+										<th>注册时间</th>
+										<th>最后登录时间</th>
+										<th>有效期</th>
+										<th>是否开通</th>
+										<th>是否在线</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>杭州市</td>
+										<td>admin</td>
+										<td>admin</td>
+										<td>管理员</td>
+										<td>666666</td>
+										<td>2015-4-3 8:26:12</td>
+										<td>2015-4-22 9:06:33</td>
+										<td>永久</td>
+										<td><input type="checkbox" class="u-che" disabled="disabled"></td>
+										<td><input type="checkbox" class="u-che" disabled="disabled"></td>
+										<td>
+											<a href="javascript:;" title="编辑">编辑</a>
+											<a href="javascript:;" title="删除">删除</a>
+											<a href="javascript:;" title="授权">授权</a>
+										</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>杭州市</td>
+										<td>admin</td>
+										<td>admin</td>
+										<td>管理员</td>
+										<td>666666</td>
+										<td>2015-4-3 8:26:12</td>
+										<td>2015-4-22 9:06:33</td>
+										<td>永久</td>
+										<td><input type="checkbox" class="u-che" disabled="disabled"></td>
+										<td><input type="checkbox" class="u-che" disabled="disabled"></td>
+										<td>
+											<a href="javascript:;" title="编辑">编辑</a>
+											<a href="javascript:;" title="删除">删除</a>
+											<a href="javascript:;" title="授权">授权</a>
+										</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>杭州市</td>
+										<td>admin</td>
+										<td>admin</td>
+										<td>管理员</td>
+										<td>666666</td>
+										<td>2015-4-3 8:26:12</td>
+										<td>2015-4-22 9:06:33</td>
+										<td>永久</td>
+										<td><input type="checkbox" class="u-che" disabled="disabled"></td>
+										<td><input type="checkbox" class="u-che" disabled="disabled"></td>
+										<td>
+											<a href="javascript:;" title="编辑">编辑</a>
+											<a href="javascript:;" title="删除">删除</a>
+											<a href="javascript:;" title="授权">授权</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div id="pager" class="pager" align="center" style="">
+								<div class="fl tl">
+									<span id="lIndex">第1页</span><span id="lCount">/共16页，</span><span id="totalCountSpan">共155条记录</span>
+								</div>
+								<div class="fr">
+									<a class="selected">1</a><a page="2">2</a><a page="3">3</a><a page="4">4</a><a page="5">5</a><a page="6">6</a><a page="7">7</a><a page="8">8</a><a page="9">9</a><a page="10">10</a><a page="2" title="下一页" class="disabled">&gt;</a><a page="16" title="末页" class="disabled">&gt;&gt;</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+<div class="pop-box" id="addUserDiv">
+	<div class="m-content-main pop-main">
+		<div class="pop-cont">
+			<div class="m-content-border">
+				<ul class="m-form-list clearfix">
+					<li><label class="font-w9">名称：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips"><span class="u-req">*</span>(2~20个字符，无非法字符)</p>
+						</div>
+					</li>
+					<li><label class="font-w9">简称：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips"><span class="u-req">*</span>(1~10个字符，无非法字符，建议输入拼音首字母)</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li><label class="font-w9">地图上X坐标：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips">(范围0~180,小数点6位)</p>
+						</div>
+					</li>
+					<li><label class="font-w9">地图上Y坐标：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt"><a href="javascript:;" class="u-icon-btn u-locate"><i class="icon-btn icon-btn-locate"></i>定位坐标</a>
+							<p class="u-tips">(范围0~90,小数点6位)</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">警号（用户名）：</label>
+					<div class="m-controls">
+						<input type="text" class="u-ipt">
+						<p class="u-tips"><span class="u-req">*</span>(1～18个字符，无非法字符)</p>
+					</div>
+				</li>
+				<li><label class="font-w9">姓名：</label>
+					<div class="m-controls">
+						<input type="text" class="u-ipt">
+						<p class="u-tips"><span class="u-req">*</span>(1～18个字符，无非法字符)</p>
+					</div>
+				</li>
+			</ul>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">密码：</label>
+					<div class="m-controls">
+						<input type="password" class="u-ipt">
+						<p class="u-tips"><span class="u-req">*</span>(4～18个字符，无非法字符)</p>
+					</div>
+				</li>
+				<li><label class="font-w9">确认密码：</label>
+					<div class="m-controls">
+						<input type="password" class="u-ipt">
+						<p class="u-tips"></p>
+					</div>
+				</li>
+			</ul>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">所属区域：</label>
+					<div class="m-controls">
+						<select class="u-sel">
+							<option selected="selected">杭州市</option>
+						</select>
+					</div>
+				</li>
+				<li><label class="font-w9">角色：</label>
+					<div class="m-controls">
+						<select class="u-sel">
+							<option>超极管理员</option>
+							<option>指挥室管理员</option>
+							<option>管理员</option>
+						</select>
+					</div>
+				</li>
+			</ul>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">电话：</label>
+					<div class="m-controls">
+						<input type="text" class="u-ipt">
+						<p class="u-tips"><span class="u-req">*</span>(电话号码，4～13个字符，中间无空格)</p>
+					</div>
+				</li>
+				<li><label class="font-w9">E-mail：</label>
+					<div class="m-controls">
+						<input type="text" class="u-ipt">
+						<p class="u-tips">(格式：用户名@邮件服务器)</p>
+					</div>
+				</li>
+			</ul>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">身份证：</label>
+					<div class="m-controls">
+						<input type="text" class="u-ipt">
+					</div>
+				</li>
+				<li><label class="font-w9">单位：</label>
+					<div class="m-controls">
+						<select class="u-sel">
+							<option selected="selected">市交警支队</option>
+						</select>
+					</div>
+				</li>
+			</ul>
+			<div class="m-content-border">
+				<ul class="m-form-list clearfix">
+					<li><label class="font-w9">名称：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips"><span class="u-req">*</span>(2~20个字符，无非法字符)</p>
+						</div>
+					</li>
+					<li><label class="font-w9">简称：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips"><span class="u-req">*</span>(1~10个字符，无非法字符，建议输入拼音首字母)</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li><label class="font-w9">地图上X坐标：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips">(范围0~180,小数点6位)</p>
+						</div>
+					</li>
+					<li><label class="font-w9">地图上Y坐标：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt"><a href="javascript:;" class="u-icon-btn u-locate"><i class="icon-btn icon-btn-locate"></i>定位坐标</a>
+							<p class="u-tips">(范围0~90,小数点6位)</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">用户控制级别：</label>
+					<div class="m-controls">
+						<select class="u-sel">
+							<option selected="selected">0</option>
+						</select>
+					</div>
+				</li>
+				<li><label class="font-w9">是否开通：</label>
+					<div class="m-controls">
+						<input type="checkbox" class="u-che" checked="checked">
+					</div>
+				</li>
+			</ul>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">有效期：</label>
+					<div class="m-controls">
+						<select class="u-sel">
+							<option selected="selected">一天</option>
+						</select>
+					</div>
+				</li>
+				<li><label class="font-w9">必需PKI：</label>
+					<div class="m-controls">
+						<input type="checkbox" class="u-che" checked="checked">
+					</div>
+				</li>
+			</ul>
+			<ul class="m-form-list clearfix">
+				<li><label class="font-w9">控制代理：</label>
+					<div class="m-controls">
+						<select class="u-sel">
+							<option selected="selected">控制代理</option>
+						</select>
+					</div>
+				</li>
+			</ul>
+			<div class="m-content-border mt10">
+				<ul class="m-form-list clearfix">
+					<li><label class="font-w9">名称：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips"><span class="u-req">*</span>(2~20个字符，无非法字符)</p>
+						</div>
+					</li>
+					<li><label class="font-w9">简称：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips"><span class="u-req">*</span>(1~10个字符，无非法字符，建议输入拼音首字母)</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li><label class="font-w9">地图上X坐标：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips">(范围0~180,小数点6位)</p>
+						</div>
+					</li>
+					<li><label class="font-w9">地图上Y坐标：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt">
+							<p class="u-tips">(范围0~90,小数点6位)</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="pop-btn">
+			<button class="u-btn" type="button" id="addBtn">新增</button>
+			<button class="u-btn" type="button" id="cancelBtn">取消</button>
+		</div>
+	</div>
+</div>
+<script>
+function addUser(){
+	var $divHeight=$("#addUserDiv").height()>500?500:"auto";
+	$("#addUserDiv").dialog({
+		resizable : false,
+		modal : true,
+		width : 850,
+		height : $divHeight,
+		title : "审核",
+		close : function(){
+			$(".pop-iframe").remove();
+		}
+	});
+		$(".ui-widget-overlay").append("<iframe class='pop-iframe' frameborder='0'></iframe>");
+		$(".pop-iframe").height($(".ui-widget-overlay").height()).width($(".ui-widget-overlay").width());
+	}	
+	$(window).on("load resize",function(){
+		var $height=$(".g-inner").height();
+		$(".g-side,.g-mnc").height($height);
+		$(".g-mnc").css("overflow-y","auto");
+	})
+	$(function(){
+		$("#cancelBtn").on("click",function(){
+			$("#addUserDiv").dialog("close");
+		});
+		$("#addBtn").on("click",function(){
+			$("#addUserDiv").dialog("close");
+		});
+	});
+</script>
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+	<script type="text/javascript" src="../js/IE6PNG.js"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix('*');
+	</script>
+<![endif]-->
+</body>
+</html>

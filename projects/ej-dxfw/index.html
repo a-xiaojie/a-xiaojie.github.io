@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>短信服务平台</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.1.8.2.js"></script>
+</head>
+<body>
+<div class="g-hd">
+    <h1 class="m-logo">
+        <p class="u-name">短信服务平台</p>
+        <p class="u-name-en">SMS Service Platform</p>
+    </h1>
+    <div class="m-nav">
+        <ul class="clearfix">
+            <li class="cur"><a href="javascript:;" title="短信发送" data-url="smsSend.html"><i class="icon icon-send"></i>短信发送</a></li>
+            <li><a href="javascript:;" title="短信管理" data-url="smsManage.html"><i class="icon icon-manage"></i>短信管理</a></li>
+            <li><a href="javascript:;" title="短信模板" data-url="smsTemplet.html"><i class="icon icon-templet"></i>短信模板</a></li>
+            <li><a href="javascript:;" title="通讯录" data-url="smsAddress.html"><i class="icon icon-address"></i>通讯录</a></li>
+            <li><a href="javascript:;" title="系统管理" data-url="system.html"><i class="icon icon-system"></i>系统管理</a></li>
+            <li><a href="javascript:;" title="使用帮助" data-url="help.html"><i class="icon icon-help"></i>使用帮助</a></li>
+        </ul>
+    </div>
+    <div class="m-userinfo">
+        <img src="images/icon-head.png" alt=""/>
+        <div class="m-user">
+            <span>管理员</span>，[<a href="javascript:;" class="u-quit">退出</a>]
+            <p class="m-time"></p>
+        </div>
+    </div>
+</div>
+<div class="g-bd">
+    <iframe src="smsSend.html" frameborder="0" width="100%;" height="100%" class="m-mainframe"></iframe>
+</div>
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/IE6PNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+<script>
+$(function(){
+   $('.m-nav a').on("click",function(){
+       var url=$(this).attr('data-url');
+       $('.m-mainframe').attr('src',url);
+       $(this).parent().addClass('cur').siblings().removeClass('cur');
+   })
+});
+$(window).on('load resize',function(){
+    $('.g-bd').height($(window).height()-80);
+
+    /* 获取时间 */
+    getTime();
+    function getTime(){
+        var d=new Date();
+        var year=d.getFullYear();
+        var month=(d.getMonth()+1)<10?"0"+(d.getMonth()+1):d.getMonth()+1;
+        var date=d.getDate()<10?"0"+d.getDate():d.getDate();
+        var hour=d.getHours()<10?"0"+d.getHours():d.getHours();
+        var minute=d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes();
+        var second=d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds();
+        var day=d.getDay();
+        $(".m-time").html(year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second);
+        setTimeout(getTime,1000);
+    }
+
+    /* 退出 */
+    $('.u-quit').on('click', function () {
+        if(confirm('确定要退出本系统吗？')){
+            window.location.href='login.html';
+        }
+    })
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>岗位新增</title>
+		<link rel="stylesheet" href="css/nanoscroller.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.nanoscroller.js"></script>
+		<script src="My97DatePicker/WdatePicker.js"></script>
+        <script src="js/j_common.js"></script>
+	</head>
+	<body>
+		<div class="main-content">
+			<div class="title">
+				<h3>岗位新增</h3>
+			</div>
+			<div class="form-box form-edit-box clear">
+    			<form>
+    				<div class="form-row clear">
+                        <label>岗位编号</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>警力配置</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt short" value="">警
+                            <input type="text" class="txt short" value="">协
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>审核时间</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt" onClick="WdatePicker({dateFmt:'H:mm'})">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位名称</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>是否有效</label>
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="是" selected="selected">是</option>
+                                <option value="否">否</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>审核人</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位所属组织</label>
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="请选择" selected="selected">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>录入时间</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt" onClick="WdatePicker({dateFmt:'yyyy-M-d H:mm'})">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位排班所属组织</label>
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="请选择" selected="selected">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位所属责任区</label>
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="请选择" selected="selected">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>生效时间</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt" onClick="WdatePicker({dateFmt:'yyyy-M-d H:mm'})">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>审核状态</label>
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="请选择" selected="selected">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位类型</label>
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="请选择" selected="selected">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>无效时间</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt" onClick="WdatePicker({dateFmt:'yyyy-M-d H:mm'})">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>审核说明</label>
+                        <div class="dropdown">
+                            <select name="" id="">
+                                <option value="请选择" selected="selected">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位方式</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位排班所属组织</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt long">
+                        </div>
+                    </div>
+                    <div class="form-row clear">
+                        <label>岗位排班所属组织</label>
+                        <div class="dropdown">
+                            <input type="text" class="txt long">
+                        </div>
+                    </div>
+    			</form>
+			</div>
+			<div class="form-option clear">
+                <div class="form-row clear">
+                    <span>勤务时间</span>
+                    <div class="form-time nano">
+                        <div class="nano-content">
+                            <ul>
+                                <li><input type="checkbox" name="time"><label>周一</label><input type="checkbox" name="time"><label>周二</label><input type="checkbox" name="time"><label>周三</label><input type="checkbox" name="time"><label>周四</label><input type="checkbox" name="time"><label>周五</label><input type="checkbox" name="time"><label>周六</label><input type="checkbox" name="time"><label>周日</label><div class="times-box"><input type="text" class="txt short" value="00:00" onclick="WdatePicker({dateFmt:'HH:mm'})"> —— <input type="text" class="txt short" value="00:00" onclick="WdatePicker({dateFmt:'HH:mm'})"></div> <a class="li-close-btn" onclick="fnDel(this)"></a> </li>
+                                <li><input type="checkbox" name="time"><label>周一</label><input type="checkbox" name="time"><label>周二</label><input type="checkbox" name="time"><label>周三</label><input type="checkbox" name="time"><label>周四</label><input type="checkbox" name="time"><label>周五</label><input type="checkbox" name="time"><label>周六</label><input type="checkbox" name="time"><label>周日</label><div class="times-box"><input type="text" class="txt short" value="00:00" onclick="WdatePicker({dateFmt:'HH:mm'})"> —— <input type="text" class="txt short" value="00:00" onclick="WdatePicker({dateFmt:'HH:mm'})"></div> <a class="li-close-btn" onclick="fnDel(this)"></a> <a class="li-add-btn" onclick="fnAdd(this)"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row clear">
+                    <span>GIS排班</span>
+                    <input type="button" name="" class="btn option-btn" value="操 作">
+                </div>
+                <div class="form-btns">
+                    <input type="button" name="" class="btn edit-btn" value="修 改">
+                    <input type="button" name="" class="btn save-btn" value="保 存">
+                </div>
+            </div>
+		</div>
+	</body>
+<script src="js/jquery.select.js"></script>
+</html>

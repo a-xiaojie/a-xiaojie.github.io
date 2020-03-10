@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>游戏充值</title>
+<link rel="stylesheet" type="text/css" href="../style/style.css">
+<link rel="stylesheet" type="text/css" href="../style/pay.css">
+<script src="../js/jquery.js" ></script>
+</head>
+
+<body>
+<!--网站头部部分-->
+<div class="main" style="*z-index:999;">
+    <div class="all_games_up" id="all_game_div" style="display: none;"> <span class="all_gemes_tra"><img src="../images/all_game_tra.jpg" width="16" height="9" /></span>
+        <p class="all_wel"><strong>欢迎来到369wan，现在就开始您的游戏之旅吧!</strong> <span> <img src="../images/all_n.jpg"  />最新游戏</span><span> <img src="../images/all_b.jpg"  />测试游戏</span><span> <img src="../images/all_h.jpg"  />热门游戏</span></p>
+        <ul class="all_games_list">
+            <li><a href="../game_box.html">烈焰</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">赤月传说</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">暗黑屠龙</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">绝代双骄</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">烈火战神</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">屠龙传说</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">屠龙战</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">欧冠足球</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">胜利11人</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">逐日战神</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">剑踪</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">街机三国</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">热血战纪</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">问剑</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">新五虎上将</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">枪魂</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">怒斩</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">傲视遮天</a> </li>
+            <li><a href="../game_box.html">玄仙传奇</a> </li>
+            <li><a href="../game_box.html">赤月</a> </li>
+            <li><a href="../game_box.html">神仙道</a> </li>
+            <li><a href="../game_box.html">沙之城主</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">盛世三国</a> </li>
+            <li><a href="../game_box.html">龙魂天下</a> </li>
+            <li><a href="../game_box.html">霸域</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">凡人修真2</a> </li>
+            <li><a href="../game_box.html">悍将传世</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">斗破苍穹2</a> </li>
+            <li><a href="../game_box.html">霸刀</a> </li>
+            <li><a href="../game_box.html">神将三国</a> </li>
+            <li><a href="../game_box.html">神座</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">炼妖录</a> <img src="../images/all_b.jpg" /> </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="main">
+        <h1 class="logo"><a href="../index.html"></a></h1>
+        <div class="top_menu"> <a href="javascript:;" onclick="if(document.all){document.body.style.behavior = 'url(#default#homepage)'; document.body.setHomePage('www.369wan.html'); }else{ alert('浏览器不支持此操作, 请手动设为首页'); }">设为首页</a><a href="javascript:;" onclick="try{ window.external.addFavorite('www.369wan.html', '369wan游戏平台'); } catch(e) {  try{ window.sidebar.addPanel('369wan游戏平台', 'www.369wan.html', ''); }catch (e) { alert('http://www.369wan.com/加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.');  } }">加入收藏</a><a href="javascript:;">把369wan保存到桌面</a><span id="all_game_hover" 369wan游戏</span> </div>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">首  页<br />
+                    <span>HOME</span></a></li>
+                <li><a href="../users/users_index.html" rel="nofollow">用户中心<br />
+                    <span>USER</span></a></li>
+                <li><a href="../game_center.html">游戏中心<br />
+                    <span>GAME</span></a></li>
+                <li><a href="pay_index.html" target="_blank" rel="nofollow">充值中心<br />
+                    <span>PAY</span></a></li>
+                <li><a href="../kefu/kefu.html" rel="nofollow">客服中心<br />
+                    <span>SERVICE</span></a></li>
+                <li><a href="http://bbs.369wan.com/" target="_blank">官方论坛<br />
+                    <span>BBS</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var timeout = null;
+	$('#all_game_hover').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		timeout = setTimeout(function(){ $('#all_game_div').hide(); }, 300);
+	});
+	
+	$('#all_game_div').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		$('#all_game_div').hide();
+	});
+});
+</script> 
+<!--网站头部部分结束-->
+
+<div class="main">
+    <div class="cent_box"><!--左边-->
+        <div class="cz_left fl">
+            <div class="cz_left11"><B>选择充值方式</B></div>
+            <div class="cz_left22">
+                <ul>
+                    <li class="li_1" ><a href="pay_index.html">网上银行支付(易宝)</a></li >
+                    <li class="li_10"><a href="pay_index10.html">网上银行支付(快钱)</a></li>
+                    <li class="li_14" ><a href="pay_index14.html">神州付充值</a></li >
+                    <li class="li_2" ><a href="pay_index2.html">支付宝支付</a></li >
+                    <li class="li_27" ><a href="pay_index27.html">网上银行支付(汇付宝)</a></li >
+                    <li class="li_26" ><a href="pay_index26.html">财付通</a></li >
+                    <li class="li_4" ><a href="pay_index4.html">人工充值</a></li >
+                    <li class="li_5" ><a href="pay_index5.html">盛大游戏卡支付</a></li >
+                    <li class="li_6" ><a href="pay_index6.html">骏卡官方直充</a></li >
+                    <li class="li_3_bg" ><a href="pay_index3.html">神州行(易宝)支付</a></li >
+                    <li class="li_12" ><a href="pay_index12.html">联通卡支付</a></li >
+                    <li class="li_8" ><a href="pay_index8.html">易宝e卡通</a></li >
+                    <li class="li_7" ><a href="pay_index7.html">征途卡</a></li >
+                    <li class="li_11" ><a href="pay_index11.html">神州行(快钱)支付</a></li >
+                    <li class="li_13" ><a href="pay_index13.html">全国固话充值(V币)</a></li >
+                    <li class="li_15" ><a href="pay_index15.html">移动/电信/联通短信直充</a></li >
+                </ul>
+            </div>
+        </div>
+        <!--左边END--><!--充值中心-->
+        <form id="form" action="" method="post">
+            <input type="hidden" name="pid" value="1" />
+            <div class="cz_right fr">
+                <div class="cz_right22 fl">
+                    <div class="cz_right2211">
+                        <div class="fl"><img src="../images/pay/czzx_16.jpg"></div>
+                        <div class="fl">您当前选择的是"<strong class="corl03">神州行(易宝)支付</strong>"的充值方式</div>
+                        <div class="corl04 fr"><a href="#" target="_blank">充值遇到问题？</a></div>
+                    </div>
+                    
+                    <!--充值页面的内容-->
+                    
+                    <div  class="cz_right2222">
+                        <table class="tab_cz11" cellSpacing="0" cellPadding="0">
+                            <tr>
+                                <td class="tbaa">选择充入的游戏：</td>
+                                <td width="220"><select name="gid" id="gid" onchange="">
+                                        <option value="0">选择游戏</option>
+                                        <option value="55">烈焰</option>
+                                        <option value="61">赤月传说</option>
+                                        <option value="83">暗黑屠龙</option>
+                                        <option value="52">烈火战神</option>
+                                        <option value="50">屠龙传说</option>
+                                        <option value="63">绝代双骄</option>
+                                        <option value="42">欧冠足球</option>
+                                        <option value="89">屠龙战</option>
+                                        <option value="87">逐日战神</option>
+                                        <option value="74">热血战纪</option>
+                                        <option value="57">街机三国</option>
+                                        <option value="77">问剑</option>
+                                        <option value="59">怒斩</option>
+                                        <option value="82">枪魂</option>
+                                        <option value="70">剑踪</option>
+                                        <option value="27">斗破苍穹2</option>
+                                        <option value="93">胜利11人</option>
+                                        <option value="16">傲视遮天</option>
+                                        <option value="13">盛世三国</option>
+                                        <option value="35">赤月</option>
+                                        <option value="11">神仙道</option>
+                                        <option value="51">神座</option>
+                                        <option value="39">霸刀</option>
+                                        <option value="45">神曲</option>
+                                        <option value="32">梦幻飞仙</option>
+                                        <option value="34">武林3</option>
+                                        <option value="58">神将三国</option>
+                                        <option value="60">悍将传世</option>
+                                        <option value="81">龙魂天下</option>
+                                        <option value="37">玄仙传奇</option>
+                                        <option value="86">炼妖录</option>
+                                        <option value="76">三国论剑</option>
+                                        <option value="73">南帝北丐2</option>
+                                        <option value="71">世界足球</option>
+                                        <option value="69">金球先生</option>
+                                        <option value="20">凡人修真2</option>
+                                        <option value="66">霸域</option>
+                                        <option value="15">仙逆</option>
+                                        <option value="75">大海贼时代</option>
+                                        <option value="91">剑影</option>
+                                        <option value="88">新传奇国度</option>
+                                        <option value="84">大闹天宫</option>
+                                        <option value="80">沙之城主</option>
+                                        <option value="53">三国演义</option>
+                                    </select></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="tbaa">选择服务器：</td>
+                                <td><select name="sid" id="sid" onchange="change_server();">
+                                        <option value="0">选择服务器</option>
+                                    </select></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="tbaa">您需要充值的帐号：</td>
+                                <td><input id="uname" name="uname" type="text" value="" class="inptu_cz" /></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="tbaa">确认您充值的帐号：</td>
+                                <td><input id="uname2" name="uname2" type="text" value="" class="inptu_cz" /></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="tbaa">请选择充值金额：</td>
+                                <td><select name="money" id="money" onchange="$('#money2').val('');get_game_coin();">
+                                        <option value="0">请选择金额</option>
+                                        <option value="10">10元</option>
+                                        <option value="20">20元</option>
+                                        <option value="50">50元</option>
+                                        <option value="100" selected>100元</option>
+                                        <option value="200">200元</option>
+                                        <option value="300">300元</option>
+                                        <option value="500">500元</option>
+                                        <option value="800">800元</option>
+                                        <option value="1000">1000元</option>
+                                        <option value="2000">2000元</option>
+                                        <option value="3000">3000元</option>
+                                        <option value="5000">5000元</option>
+                                        <option value="10000">10000元</option>
+                                        <option value="20000">20000元</option>
+                                    </select></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                        <div class="cz_suer tc">
+                            <input type="image" src="../images/pay/czzx_26.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <!--充值页面的内容end-->
+                
+                <div class="cz_right33 fl"> 
+                    <!--客服中心-->
+                    <div class="cz_right_service marb1">
+                        <div class="cz_right2211">
+                            <div class="fl"><img src="../images/pay/czzx_31.jpg"></div>
+                            <div class="fl"><strong>客服中心</strong></div>
+                        </div>
+                        <div class="cz_right3322">联系电话(7x24)：020-37039849</div>
+                        <div class="cz_right3344"><a href="../kefu/kefu.html" target="_blank"><img src="../images/pay/czzx_28.jpg"></a></div>
+                    </div>
+                    <!--客服中心end--
+         <!--常见问题-->
+                    <div class="cz_right_quest">
+                        <div class="cz_right2211">
+                            <div class="fl"><img src="../images/pay/czzx_30.jpg"></div>
+                            <div class="fl"><strong>常见问题解答</strong></div>
+                            <div class="fr"><a href="#" target="_blank">更多&gt;&gt; </a></div>
+                        </div>
+                        <div class="cz_right3322">
+                            <ul>
+                                <li ><a href="../kefu/pay/17839.html" target="_blank">支付宝充值指南</a></li >
+                                <li ><a href="../kefu/pay/17837.html" target="_blank">神州行(易宝)充值指南</a></li >
+                                <li ><a href="../kefu/pay/17836.html" target="_blank">银行卡支付(支付宝)指南</a></li >
+                                <li ><a href="../kefu/pay/17835.html" target="_blank">移动手机话费支付</a></li >
+                                <li ><a href="../kefu/pay/17834.html" target="_blank">神州行(快钱)充值指南</a></li >
+                                <li ><a href="../kefu/pay/17803.html" target="_blank">充值中心FAQ指南</a></li >
+                            </ul>
+                        </div>
+                    </div>
+                    <!--常见问题end--> 
+                </div>
+            </div>
+        </form>
+        <!--充值中心END--></div>
+    <br clear="all"/>
+    <div class="bottom_service">
+        <ul>
+            <li>
+                <p class="title bottom_ico"> <i class="ser1">&nbsp;</i>热门游戏</p>
+                <a href="#" target="_blank">烈&nbsp; 焰</a><a href="#" target="_blank">赤月传说</a><a href="#" target="_blank">烈火战神</a> <a href="#" target="_blank">绝代双骄</a><a href="#" target="_blank">欧冠足球</a></li>
+            <li>
+                <p class="title bottom_ico"> <i class="play_s">&nbsp;</i>玩家服务</p>
+                <a href="../kefu/kefu.html" rel="nofollow" target="_blank">客服首页 </a><a href="../kefu/kefu.html" rel="nofollow" target="_blank">我要提问&nbsp;</a> <a href="../customer.html" rel="nofollow" target="_blank">常见问题</a></li>
+            <li>
+                <p class="title bottom_ico"> <i class="rechar_s">&nbsp;</i>充值服务</p>
+                <a href="pay_index.html" rel="nofollow" target="_blank">网上银行充值</a> <a href="pay_index.html" rel="nofollow" target="_blank">支付宝充值</a> <a href="pay_index.html" rel="nofollow" target="_blank">神州付充值</a> <a href="pay_index.html" rel="nofollow" target="_blank">移动短信充值</a> <a href="pay_index.html" rel="nofollow" target="_blank">全国电话充值（V币）</a></li>
+            <li>
+                <p class="title bottom_ico"> <i class="hot_bbs">&nbsp;</i> 热门论坛</p>
+                <a href="#" rel="nofollow" target="_blank">烈&nbsp; 焰</a><a href="#" rel="nofollow" target="_blank">赤月传说</a><a href="#" rel="nofollow" target="_blank">烈火战神</a> <a href="#" rel="nofollow" target="_blank">绝代双骄</a> <a href="#" rel="nofollow" target="_blank">欧冠足球</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--网站底部部分-->
+<div class="foot">
+    <p> 上海橙盛网络科技有限公司 </p>
+</div>
+<!--网站底部部分结束-->
+</body>
+</html>

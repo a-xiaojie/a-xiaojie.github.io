@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>远程回放——杭州交警数字监控联网平台</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/inner.css">
+<link rel="stylesheet" href="../css/theme/default/skin.css">
+<link rel="stylesheet" href="../css/layout.css">
+<script src="../js/jquery.min.1.8.2.js"></script>
+<script src="../js/ztree/js/jquery.ztree.core-3.5.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+<div class="g-hd">
+	<h1 class="m-logo">
+		<p>杭州交警数字监控联网平台</p>
+		<p><span>Hangzhou Traffic Police Digital Monitoring Network Platform</span></p>
+	</h1>
+	<div class="m-nav">
+		<ul class="clearfix" id="ulMenu">
+			<li><a href="RealtimeVideo.html"><i class="icon icon-realtime"></i>实时监控</a></li>
+			<li class="cur"><a href="Playback.html"><i class="icon icon-remote"></i>监控回放</a></li>
+			<li><a href="gis.html"><i class="icon icon-gis"></i>电子地图</a></li>
+			<li><a href="system.html"><i class="icon icon-system"></i>系统设置</a></li>
+			<li><a href="javascript:;"><i class="icon icon-help"></i>使用帮助</a></li></ul>
+	</div>
+	<div class="m-attr-box"> 
+		<ul>
+			<li><label>CPU</label>
+			<div class="u-attr-bar" id="u-attr-bar">
+			<div class="u-attr-active" id="cpu_u_attr_active" style="width:0px"></div>
+			</div></li>
+			<li><label>内存</label>
+			<div class="u-attr-bar">
+			<div class="u-attr-active" id="m_u_attr_active"></div></div></li>
+		</ul>
+	</div>
+	<div class="m-top-nav">
+		<ul class="m-top-menu clearfix">
+			<li class="m-user">
+				<div class="m-dropdown">
+					<a class="u-dropdown-btn" href="javascript:;"><img src="http://localhost:8080/ejvideo//images/user-head.png"><span>Admin</span><em class="arrow-down"></em></a>
+					<ul class="m-dropdown-list">
+						<li><a onclick="getLimit()" href="javascript:;">权限申请<em></em></a></li>
+						<li><a onclick="changePwd()" href="javascript:;">密码修改<em></em></a></li>
+					</ul>
+					<iframe class="m-iframe" frameborder="0"></iframe>
+				</div>
+				<p id="pTime">2015-05-19 09:31</p>
+			</li>
+			<li><a href="javascript:;" class="u-quit" onclick="aLogOut_click()" title="退出"><i class="icon icon-quit"></i></a></li>
+		</ul>
+	</div>
+</div>	
+<!-- 主体 -->
+<div class="g-bd">
+	<div class="g-inner clearfix">
+		
+		<div class="g-sd">
+			<div class="g-sdc">
+				<div class="m-tab-box">
+					<ul class="m-tab">
+						<li class="cur">远程回放</li>
+						<li onclick="localback()">本地播放</li>
+					</ul>
+					<div class="m-tab-cont m-side-cont">
+						<div class="m-search-box">
+							<div class="m-search-bg">
+								<input type="text" class="u-search-text" id="tbSearch" value="点位查找">
+								<a href="javascript:;" class="u-search-btn" onclick="getTree()" title="搜索">
+									<i class="icon-btn icon-btn-search"></i>
+								</a>
+							</div>
+						</div>
+						<div class="m-side-list m-side-list-full">
+							<ul class="m-side-menu ztree" id="treeNode"></ul>		
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g-mn">
+			<!-- 远程回放 -->
+			<div class="g-mnc" id="remotePlayBack">
+				<div class="g-mnl" style="height: 583px; width: 923px;">
+					<div class="m-video-panel">
+						<div class="m-video-show">
+							<div class="m-video-box">
+								<div class="m-video-cell" style="height: 526px;">
+									<object id="AVRemoteVideo" style="width: 100%; height: 100%; background-color: #000000;" classid="CLSID:06965A19-D82F-4203-B4A7-177280D11356">
+							            <param name="_Version" value="65536">
+							            <param name="_ExtentX" value="22357">
+							            <param name="_ExtentY" value="16589">
+							            <param name="_StockProps" value="0">
+							        </object>							
+								</div>
+								<div class="m-videobar">
+									<div class="m-btns-group g-posl" id="videoPlayBtns">
+										<a id="aPlay" href="javascript:;" onclick="play_click()" title="播放" class="video-btn"></a>
+										<a id="aPause" href="javascript:;" onclick="pause_click()" title="暂停" class="video-btn"></a>
+										<a id="aStop" href="javascript:;" onclick="stop_click()" title="停止" class="video-btn"></a>
+										<a id="aFastBack" href="javascript:;" onclick="fast_back_click()" title="快退" class="video-btn"></a>
+										<a id="aFastForward" href="javascript:;" onclick="fast_forward_click()" title="快进" class="video-btn"></a>
+										<a id="aFrameBack" href="javascript:;" onclick="frame_back_click()" title="单帧后退" class="video-btn"></a>
+										<a id="aFramePlay" href="javascript:;" onclick="frame_play_click()" title="单帧播放" class="video-btn"></a>
+									</div>
+									<div class="m-btns-group g-posr">
+										<a id="aCapture" href="javascript:;" onclick="capture_click()" title="抓图" class="video-btn"></a>
+										<a id="aSave" href="javascript:;" onclick="save_click()" title="保存" class="video-btn"></a>
+										<a id="aDownLoad" href="javascript:;" onclick="download_click()" title="下载" class="video-btn"></a>
+										<a id="aSynchro" href="javascript:;" onclick="synchro_click()" title="同步" class="video-btn"></a>
+										<a id="aCatalog" href="javascript:;" onclick="catalog_click()" title="目录" class="video-btn"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="g-mnr">
+					<div class="m-right-box">
+						<div class="m-search-form">
+							<p><label>监控点：</label><input type="text" class="u-ipt" id="txtNodename" disabled></p>
+							<p><label>状&emsp;态：</label><input type="text" class="u-ipt" id="txtNodeStatus" disabled></p>
+						</div>
+						<div class="m-timepicker" id="timeDiv"></div>
+						<div class="m-search-btn">
+							<!-- <input type="button" class="minbtn search-btn" onclick="search_click()"> -->
+							<button type="button" class="u-btn" onclick="search_click()"><i class="icon-btn icon-btn-search"></i>查找</button>
+						</div>					
+						<div class="m-video-locate">
+							<p><input type="text" id="txtHour" title="00到24" class="u-ipt">
+							<span>:</span><input type="text" title="00到60" id="txtMin" class="u-ipt">
+							<span>:</span><input type="text" title="00到60" id="txtSec" class="u-ipt">
+							<input type="button" class="u-btn-goto" id="jumpTo" onclick="jumpTo_click()"></p>
+						</div>
+					</div>
+				</div>
+				<div class="g-mnf" style="height:150px">
+					<div class="m-timeaxis-box" style="height:150px">
+						<div class="m-timeaxis-bar" style="display:none"></div>
+						<div id="container" class="m-time-line" style="width:100%;height:200px"></div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+</div>
+<script>
+	function localback(){
+		window.location="Playlocalback.html";
+	}
+	$(function(){
+		var setting = {
+			data: {
+				simpleData: {
+					enable: true
+				}
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:0, name:"杭州市", open:true},
+				{ id:11, pId:1, name:"上城区", open:true},
+					{ id:111, pId:11, name:"南山路"},
+					{ id:112, pId:11, name:"河坊街"},
+				{ id:12, pId:1, name:"下城区"},
+					{ id:121, pId:12, name:"潮王路"},
+				{ id:13, pId:1, name:"西湖区"},
+					{ id:131, pId:13, name:"文三路"},
+				{ id:14, pId:1, name:"江干区"},
+					{ id:141, pId:14, name:"文三路"},
+				{ id:15, pId:1, name:"拱墅区"},
+					{ id:151, pId:15, name:"文三路"},
+				{ id:16, pId:1, name:"滨江区"},
+					{ id:161, pId:16, name:"文三路"},
+				{ id:17, pId:1, name:"下沙"},
+					{ id:171, pId:17, name:"下沙"},
+				{ id:18, pId:1, name:"机动指挥"},
+					{ id:181, pId:18, name:"下沙"},
+				{ id:19, pId:1, name:"景区"},
+					{ id:191, pId:19, name:"景区"},
+				{ id:20, pId:1, name:"支队热控室录像"},
+					{ id:201, pId:20, name:"景区"},
+				{ id:21, pId:1, name:"绕城"},
+					{ id:211, pId:21, name:"景区"}
+		];
+		$.fn.zTree.init($("#treeNode"), setting, zNodes);
+
+
+		//获取时间
+		WdatePicker({eCont:"timeDiv",onpicked:function(dp){
+
+		$("#hDate").val(dp.cal.getDateStr());
+		}});
+	});
+</script>	
+</body>
+</html>

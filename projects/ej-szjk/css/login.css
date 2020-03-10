@@ -1,0 +1,36 @@
+/* ---用户登录--- */
+.m-login-bg{overflow:hidden;height:100%; color: #fff;background:#000 url(../images/bg-login.jpg) no-repeat center -20px;}
+.m-login-box {position:absolute;top:0; bottom:0; right:0; left:0; width: 100%; height:100%;}
+.m-login-form{position:absolute; top: 130px; left:50%; width:821px;height:467px; margin-left:-380px; background: url(../images/bg-loginbox.png) no-repeat center 0;}
+/* .m-login-form h1{position:absolute;left:30px; top: 82px; width:274px;height:39px;margin:0;padding:0;background: url(../images/logo-login.png) no-repeat;} */
+.m-login-logo{ position:absolute;left:35px; top: 82px; width:274px;height:39px; }
+.m-login-logo h1{ font-size:22px; font-weight: normal;line-height: 28px; font-family:"MicroSoft Yahei";}
+.m-login-logo p{ padding-top:3px;}
+.m-login-logo p span{ display: block;  line-height:1; font-family: arial; font-size:10px;  -webkit-transform: scale(0.7977) translateX(-33px); white-space: nowrap; color:#808080; }
+.m-login{ position: absolute; top: 165px; left: 33px; width: 274px; color: #fff;}
+.m-login-tab{ height: 27px; border-bottom: 1px solid #3192dd;}
+.m-login-tab li{ float: left; width: 137px; height: 27px; line-height: 27px; text-align: center; background: url(../images/login-img.png) no-repeat; _background-image: url(../images/login-img.gif); cursor: pointer;}
+.m-login-tab .cur{ font-weight: bold; background-position: 0 -27px;}
+.m-login-tabcont{ display: none;}
+ ul.m-login-tabcont{ padding: 10px 0;}
+.m-login-tabcont li{ padding-top: 17px; padding-left: 10px;}
+.m-login-tabcont li .ipt{ width: 204px; height: 20px; padding: 2px 5px; background: #fff; border: none;}
+.m-login-tabcont .m-login-btns{ margin-left: 48px; padding-top: 20px;}
+.m-login-tabcont .m-login-btns label{ float: left;}
+.m-login-tabcont .m-login-btns label *{ vertical-align: middle;}
+.m-login-tabcont .m-login-btns .btn{ width: 83px; height: 25px; border: none; text-indent: -999em; overflow: hidden; background: url(../images/login-img.png) no-repeat; _background-image: url(../images/login-img.gif); cursor: pointer;}
+.m-login-tabcont .m-login-btns .btn:hover{ opacity: .9; filter: alpha(opacity=90);}
+.m-login-tabcont .m-login-btns .btn-login{ float: right; background-position: 0 -54px;}
+.m-login-tabcont .m-login-btns .btn-login-pki{ float: right; background-position: 0 -79px;}
+
+.m-login-guid{ position: absolute; right: 80px; top: 330px;}
+.m-login-guid a{ color: #fff; text-decoration: underline;}
+.m-login-guid a:hover{ color: #3192dd;}
+
+.m-login-ft{ position: absolute; top: 410px; left: 0; width: 760px; color: #fff;}
+.m-login-ft .m-copyright{ padding-left: 15px;}
+.m-login-help{ position: absolute; right: 0; top: 0;}
+.m-login-help li{ float: left; padding-right: 13px;}
+.m-login-help li a{ color: #fff;}
+.m-login-help li a:hover{ text-decoration: underline; color: #3192dd;}
+.m-login-help li a img{ margin-right: 5px;}

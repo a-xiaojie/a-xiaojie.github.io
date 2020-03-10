@@ -1,0 +1,20 @@
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, form, input, button, select, textarea { margin: 0; padding: 0; }
+
+ol, ul { list-style: none; }
+
+img { border: none; vertical-align: top; }
+
+a { text-decoration: none; cursor: pointer; color: #dcf7ff; transition: .5s; }
+
+a:hover { color: #72e4f1; }
+
+em, i { font-style: normal; }
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+
+body, input, button, select, textarea { font: 400 14px/1.5 arial, "Microsoft Yahei", sans-serif; }
+
+article, aside, footer, header, hgroup, nav, section { display: block; }
+
+* { box-sizing: border-box; }

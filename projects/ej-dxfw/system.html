@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理 - 短信服务平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.1.8.2.js"></script>
+    <script src="js/ztree/js/jquery.ztree.core-3.5.js"></script>
+</head>
+<body>
+<div class="g-layout">
+    <div class="g-inner">
+        <div class="g-sd">
+            <div class="m-panel m-full-panel">
+                <div class="m-title">
+                    <h3>系统管理</h3>
+                </div>
+                <div class="m-cont">
+                    <ul class="m-list m-menu">
+                        <li class="cur"><a href="javascript:;" data-url="userManage.html">用户管理</a></li>
+                        <li><a href="javascript:;" data-url="rightsManage.html">权限管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="g-mn">
+            <iframe src="userManage.html" frameborder="0" width="100%;" height="100%" class="m-subframe"></iframe>
+        </div>
+    </div>
+</div>
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/IE6PNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+<script>
+    $(window).on("load resize",function(){
+        var innerHeight = $('.g-layout').height();
+        $('.m-full-panel').height(innerHeight - 20 - 2);
+    });
+    $(function () {
+        $('.m-list a').on("click",function(){
+            var url=$(this).attr('data-url');
+            $('.m-subframe').attr('src',url);
+            $(this).parent().addClass('cur').siblings().removeClass('cur');
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>勤务管理系统——登录</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="login-box">
+		<div class="login-form">
+			<form action="" method="" >
+				<div class="form-row">
+					<div class="input-box"><label for="pno">用户名</label><input type="text" id="pno" name="pno" value=""></div>
+				</div>
+				<div class="form-row">
+					<div class="input-box"><label for="password">密 码</label><input type="password" id="password" name="password" value=""></div>
+				</div>
+				<div class="form-row">
+					<p class="error-tips">用户名或密码错误，请重新输入</p>
+				</div>
+				<div class="form-btn">
+					<input type="button" value="" class="login-btn">
+				</div>
+			</form>
+			<div class="copyright">
+				Copyright&copy; 2014 银江股份 版权所有
+			</div>
+		</div>
+	</div>
+	<script>
+	$(function(){
+		$(":input").focus(function(){
+			$(this).prev('label').hide();
+		}).blur(function(){
+			if ($(this).val() == '') {
+				$(this).prev('label').show();
+			}
+		});
+
+		$('.login-btn').click(function(){
+			$('.error-tips').fadeIn();
+		})
+	})
+	</script>
+</body>
+</html>

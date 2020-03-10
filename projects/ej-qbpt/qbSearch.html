@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>情报流转-情报检索</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item active">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索" class="active">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+        <div class="column clearfix">
+        	<div class="title">
+                <h3 class="fl">情报流转 &gt; 情报检索</h3>
+            </div>
+            <div class="cont pd20">
+                <div class="tags">
+                    <label class="tag-label">热词</label><p class="tag-cont"><a class="tag-hot" href="javascript:;" title="事故">事故</a><a class="tag-hot" href="javascript:;" title="活动">活动</a><a class="tag-hot" href="javascript:;" title="限行">限行</a><a class="tag-hot" href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="堵路">堵路</a><a href="javascript:;" title="事故">事故</a><a href="javascript:;" title="活动">活动</a><a href="javascript:;" title="限行">限行</a><a href="javascript:;" title="堵路">堵路</a></p>
+                </div>
+                <div class="input-form" style="padding-bottom:15px;">
+                    <div class="retrieval-box">检索：<input id="retrievalInput" class="search-text text-input" type="text"><input type="button" id="retrievalBtn" class="retrieval-btn qb-icon icon-retrieval"></div>
+                    <div class="retrieval-result"><p><a href="javascript:;">西湖<span class="retrieval-keywords">事故</span>多发路段</a></p><p><a href="javascript:;">莫干山路<span class="retrieval-keywords">事故</span>发生点</a><a href="#" title="附件" class="qb-icon icon-doc" target="_blank"></a></p></div>
+                </div>
+                <div class="clearfix">
+                    <div class="fl search-side">
+                        <div class="search-form qb-search-form">
+                            <form class="clearfix">
+                                    <p class="report-form-item fl">
+                                        <label class="search-label">标   题</label>
+                                        <input type="text" class="text-input">
+                                    </p>
+                                    <p class="report-form-item fl">
+                                        <label class="search-label">上报单位</label>
+                                        <input type="text" class="text-input">
+                                    </p>
+                                    <p class="report-form-item fl">
+                                        <label class="search-label">是否续报</label>
+                                        <select class="select">
+                                            <option selected>是</option>
+                                            <option>否</option>
+                                        </select>
+                                    </p>
+                                    <p class="report-form-item fl">
+                                        <label class="search-label">状   态</label>
+                                        <select class="select">
+                                            <option selected>待处理</option>
+                                        </select>
+                                    </p>
+                                    <p class="report-form-item fl">
+                                        <label class="search-label">采纳方式</label>
+                                        <select class="select">
+                                            <option selected>全部</option>
+                                        </select>
+                                    </p>
+                                    <p class="report-form-item fl">
+                                        <label class="search-label">类   别</label>
+                                        <select class="select">
+                                            <option selected>道路交通秩序</option>
+                                            <option>交通事故及刑事案件</option>
+                                            <option>社会动态类</option>
+                                            <option>灾害事故类</option>
+                                            <option>反管理情况</option>
+                                            <option>协查通报</option>
+                                            <option>预警通报</option>
+                                            <option>分析研判</option>
+                                            <option>其他</option>
+                                        </select>
+                                    </p>
+                                    <p class="report-form-item fl">
+                                        <label class="search-label">上报时间</label>
+                                        <input id="startTime" type="text" class="text-input time-text-input" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime\')}'})"> - 
+                                        <input id="endTime" type="text" class="text-input time-text-input" onclick="WdatePicker({minDate:'#F{$dp.$D(\'startTime\')}'})">
+                                    </p>
+                            </form>
+                            <div class="btns mt20"><input id="searchBtn" type="button" class="btn" value="查 询"></div>
+                        </div>
+                    </div>
+                    <div class="fr search-main">
+                        <div class="table pd20">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>预警预报</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>道路交通秩序</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>交通事故及刑事案件</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>社会动态</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>灾害事故</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>反管理情况</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>协查通报</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>分析研判信息</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="5%"><input type="checkbox" name="checkbox"></td>
+                                        <td>其他信息</td>
+                                        <td>总上报数为：1032 条</td>
+                                        <td>2014/12/3 上报</td>
+                                        <td>12 条</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+<script>
+    $(function(){
+        $('#retrievalBtn').on('click', function(event) {
+            event.preventDefault();
+            $('.retrieval-result').show();
+        });
+    })
+</script>
+</body>
+</html>

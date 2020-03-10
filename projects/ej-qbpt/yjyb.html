@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>预警预报详情</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item active">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+    	
+        <div class="column">
+            <div class="title">
+                <h3 class="fl">首页 &gt; 预警预报 &gt; 正文</h3>
+            </div>
+            <div class="cont news-cont">
+            	<div class="news-title">
+                	<h3>拱墅大队11月份数字城管工作分析</h3>
+                	<p><span id="date">2014-12-3</span><span id="time">08:23</span><span id="source">来源：拱墅大队</span></p>
+                    <div id="visited"><i class="qb-icon icon-eye"></i>历史浏览：<span>23次</span></div>
+                </div>
+                <div class="news-content">
+                	<h4>一、总体情况：</h4>
+                	<p>11月1日至31日，大队数字城管派单数210件，二次派单及多次派单7件，合格率为96.67%。</p>
+                	<p>1、从中队分布情况来看：二中队的数字城管派单数为51件，二次及多次派单数为1件，合格率为98%；三中队的数字城管派单数为17件，二次及多次派单数为0件，合格率为100%；四中队的数字城管派单数为26件，二次及多次派单数为0件，合格率为100%;五中队的数字城管派单数为108件，二次及多次派单数为4件，合格率为96.3%;六中队的数字城管派单数为6件，二次及多次派单数为0件，合格率为100%。</p>
+                	<p>2、从二次派单及多次派单类型来看，全部都是机动车乱停放问题。</p>
+                	<p>3、从可申诉的情况来看，经大队初步审核， 7件二次派单中，有7件有条件在月底向支队进行申诉。(其中2起是在董家路属于西湖区，已和数字城管值班长联系，月底可以申述;还有五中队4起、二中队1起已发照片给大队说明已去处理过，大队也把照片发给数字城管值班长说明情况)</p>
+                	<h4>二、产生二次及多次派单的原因分析及建议：</h4>
+                	<p>1、从这个月的情况来看，中队干部在思想上对数字城管工作已经引起了高度重视，但作为具体执行人员的勤务室协勤和路面协勤在思想上对该项工作仍缺乏足够的重视，对数字城管处理程序的掌握也存在不平衡的情况，建议中队进一步加强学习教育，切实加强对该项工作重要性的认识。</p>
+                </div>
+                <div class="news-btns">
+                	<a id="prev" class="btn" href="yjyb.html" title="上一篇">上一篇</a>
+                	<a id="next" class="btn" href="yjyb.html" title="下一篇">下一篇</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>影视FM</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/slides.js"></script>
+</head>
+
+<body>
+<div class="nav">
+    <h2><a href="javascript:;">返回首页</a></h2>
+    <div class="menu"><a href="javascript:;" class="fav-btn" title="加入收藏"></a><a href="javascript:;" class="refresh-btn" title="换一个影片"></a><a href="javascript:;" class="back-btn" title="后退"></a></div>
+</div>
+<div class="sliders" id="sliders">
+    <ul class="silder_con">
+        <li style="display:block; background-image:url(images/pipi-default.png); background-position:50% 50%;">
+        	<a  href="javascript:;" class="bg" ><img src="images/pic01.jpg"></a>
+            <div class="content">
+                <div class="detail">
+                    <div class="tt"><h3><a href="javascript:;" title="点击查看《摩登时代》的详细资料">摩登时代</a></h3>吕雉——汉朝开国皇后，项羽终生挚爱之人吕雉——汉朝开国皇后，项羽终生挚爱之人</div>
+                    <p>10.25国内上映，特洛伊里的大美女，熟悉的看着就想笑的老朋友般的面庞，异国风情，幽默诙谐，闲暇时光不可或缺的好片！10.25国内上映，特洛伊里的大美女，熟悉的看着就想笑的老朋友般的面庞，异国风情，幽默诙谐，闲暇时光不可或缺的好片！10.25国内上映，特洛伊里的大美女，熟悉的看着就想笑的老朋友般的面庞，异国风情，幽默诙谐，闲暇时光不可或缺的好片！</p>
+                </div>
+                <div class="mark">
+                    <div class="btn-group clearfix"><a href="javascript:;" class="history"><i class="icon-white icon-his">最近浏览</i></a> <a href="javascript:;" class="favorite" title="加入收藏"><i class="icon-white icon-fav">收藏</i></a></div>
+                    <div class="btn-group clearfix"> <a class="btn-prev" href="javascript:;"><i class="icon-white icon-left"></i></a> <a id="show_next" href="javascript:;" class="btn-next" title="换一个影片 ( 快捷键 N )"><i class="icon-white icon-right">换一个看看</i></a></div>
+                    <div class="his-list" style="display:none"> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> </div>
+                </div>
+            </div>
+        </li>
+        <li style="background-image:url(images/pipi-default.png); background-position:50% 50%;">
+           	<a href="javascript:;" class="bg"><img src="images/pic02.jpg"></a>
+            <div class="content">
+                <div class="detail">
+                    <div class="tt"><h3><a href="javascript:;" title="点击查看《有希望的男人》的详细资料">有希望的男人</a></h3>
+                    <span>吕雉——汉朝开国皇后，项羽终生挚爱之人</span></div>
+                    <p>10.25国内上映，特洛伊里的大美女，熟悉的看着就想笑的老朋友般的面庞，异国风情，幽默诙谐，闲暇时光不可或缺的好片！</p>
+                </div>
+                <div class="mark">
+                    <div class="btn-group clearfix"><a href="javascript:;" class="history"><i class="icon-white icon-his">最近浏览</i></a> <a href="javascript:;" class="favorite" title="加入收藏"><i class="icon-white icon-fav">收藏</i></a></div>
+                    <div class="btn-group clearfix"> <a class="btn-prev" href="javascript:;"><i class="icon-white icon-left"></i></a> <a id="show_next" href="javascript:;" class="btn-next" title="换一个影片 ( 快捷键 N )"><i class="icon-white icon-right">换一个看看</i></a></div>
+                    <div class="his-list" style="display:none"> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> <a href="javascript:;" target="">星际传奇3</a> </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="show-detail"><i class="icon-white icon-hide"></i></a> </div>
+</body>
+<script>
+$(function(){
+	var timer=null;
+	$('.favorite').toggle(function(){
+		$(this).addClass('favorite-on').attr('title','取消收藏');
+		},function(){
+			$(this).removeClass('favorite-on').attr('title','加入收藏');
+			});
+	
+	$('.history').toggle(function(){
+		$(this).addClass('history-on');
+		$(this).parent().parent().find('.his-list').animate({ height: 'show' }, 300);
+		},function(){
+			$(this).removeClass('history-on');
+			$('.his-list').animate({ height: 'hide' }, 300);
+			});	
+			
+	$('.show-detail').toggle(function(){
+		$('.content').fadeOut(300);
+		$('.show-detail').html('<i class="icon-white icon-show"></i>');
+		},function(){
+			$('.content').fadeIn(300);
+			$('.show-detail').html('<i class="icon-white icon-hide"></i>');
+			})
+			
+	$('.fav-btn').toggle(function(){
+		$(this).addClass('fav-btn-on').attr('title','取消收藏');
+		},function(){
+			$(this).removeClass('fav-btn-on').attr('title','加入收藏');
+			});
+})
+</script>
+
+<script>
+$(function(){
+	Reset();
+	$(window).resize( function(){ Reset();})
+	
+	function Reset()
+	{
+		var _oWidth=$(window).width();
+		var _oHeight=$(window).height();
+		_oWidth=_oWidth<960?960:_oWidth;
+		var _oNum=_oWidth/_oHeight;
+		
+		var _sNum=1600/900;
+		
+		if(_oNum<=_sNum){
+			$('.bg img').width('auto').height(_oHeight);
+		}
+		else{
+			$('.bg img').height('auto').width(_oWidth);
+		}
+	}
+})
+</script>
+
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js"></script>
+<script>
+DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+</html>

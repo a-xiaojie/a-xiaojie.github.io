@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>爱茶叶</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/iscroll.js"></script>
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>修改收货地址</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="../index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+    </header>
+    <div class="wrap nofoot-wrap">
+        <form class="form">
+            <div class="form-row">
+                <label for="name">姓名</label>
+                <input type="text" class="txt" id="name">
+            </div>
+            <div class="form-row">
+                <label for="phone">手机号码</label>
+                <input type="text" class="txt" id="phone">
+            </div>
+            <div class="form-row">
+                <label for="regional">地区信息</label>
+                <input type="text" class="txt" id="regional" placeholder="省市区信息" readonly>
+            </div>
+            <div class="form-row">
+                <label for="address">详细地址</label>
+                <input type="text" class="txt" id="address" placeholder="街道门牌信息">
+            </div>
+            <div class="form-row">
+                <input type="checkbox" id="yes" class="checkbox">
+                <label for="yes">设为默认地址</label>
+            </div>
+            <div class="form-btns">
+                <button class="btn" type="button">确认</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

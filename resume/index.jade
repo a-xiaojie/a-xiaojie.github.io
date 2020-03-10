@@ -1,0 +1,146 @@
+extends ./layout.jade
+
+block con
+    section.section.section1
+        div.inner
+            div#baseInfo
+                h2 李林洁
+                p 梦想还是要有的，万一实现了呢！
+                ul.contact-box
+                    li QQ：2364889565
+                    li
+                        a(href="mailto:2364889565@qq.com") email: 2364889565@qq.com
+    section.section
+        div.inner
+            div#school
+                h2
+                    span 教育背景
+                div.school-info
+                    p 2007.09 – 2011.06
+                    p 浙江科技学院
+                    p 数字媒体技术
+                    div.major  主修课程：游戏设计与开发，移动设备开发，Web 程序设计，面向对象程序设计，流媒体，数字图像处理，音视频信号处理，计算机图形学，Maya，虚拟现实，Photoshop，Flash 等
+    section.section.section2
+        div.inner
+            div#skills
+                h2
+                    span 专业技能
+                ul#skillList.skill-list
+                    - var skills = {"HTML": "85%", "CSS": "80%", "HTML5": "50%", "CSS3": "55%", "Javascript": "60%", "jQuery": "75%", "Zepto": "60%", "Bootstrap": "60%", "SASS": "50%", "LESS": "50%", "Grunt": "40%"}
+                    each key,val in skills
+                        li
+                            h4 #{val}
+                            div.skill-bar(title="#{val}:#{key}")
+                                div(id="#{val}") #{key}
+
+    section.section.section3
+        div.inner
+            div#works
+                h2
+                    span 工作经历
+                ul#workList.work-list
+                    li
+                        div.time 2014.08 - 至今
+                        div.company 浙江银江研究院有限公司(前端工程师)
+                        div.work
+                            ul
+                                li 根据设计稿制作B/S系统的前端html交互原型
+                                li 协助后台开发人员修改系统样式，调整至少在ie8及以上的兼容性
+                    li
+                        div.time 2014.04 - 2014.08
+                        div.company 杭州世翔信息技术有限公司(网页前端)
+                        div.work
+                            ul
+                                li 负责公司web端官网，移动端官网及各个专题页的前端制作
+                                li 学习phonegap，制作公司的APP
+                    li
+                        div.time 2012.05 - 2014.03
+                        div.company 杭州搜视网络有限公司(网页设计)
+                        div.work
+                            ul
+                                li 负责皮皮游戏的所有设计及前端工作
+                                li 负责皮皮官网及皮皮播放器视频库页面的前端工作
+                                li 负责皮皮影视及皮皮乐天的一些专题页面
+                    li
+                        div.time 2011.03 – 2012.04
+                        div.company 杭州东部智汇科技有限公司(设计)
+                        div.work
+                            ul
+                                li 负责公司B/S系统的网页设计及界面的维护
+                                li 使用C#编写简单的后台代码
+    section.section.section4
+        div.inner
+            div#projects
+                h2
+                    span 项目经验
+                dl#projectsList
+                    dt Web端
+                    dd
+                        a(target="_blank" href="../project/pro1/index.html")
+                            img(src="images/pro01.jpg" alt="团队定制")
+                            div.project-detail
+                                h4 团队定制
+                        a(target="_blank" href="../project/pro2/index.html")
+                            img(src="images/pro02.jpg" alt="微隐官网")
+                            div.project-detail
+                                h4 微隐官网
+                        a(target="_blank" href="../project/pro3/index.html")
+                            img(src="images/pro03.jpg" alt="厚源财务官网")
+                            div.project-detail
+                                h4 厚源财务官网
+                        a(target="_blank" href="../project/pro3/index.html")
+                            img(src="images/pro04.jpg" alt="369wan游戏官网")
+                            div.project-detail
+                                h4 369wan游戏官网
+                        a(target="_blank" href="../project/pro3/index.html")
+                            img(src="images/pro05.jpg" alt="皮皮官网")
+                            div.project-detail
+                                h4 皮皮官网
+                        a(target="_blank" href="../project/pro3/index.html")
+                            img(src="images/pro06.jpg" alt="皮皮影视FM")
+                            div.project-detail
+                                h4 皮皮影视FM
+                        a(target="_blank" href="../project/pro3/index.html")
+                            img(src="images/pro07.jpg" alt="皮皮播放器（第二版）")
+                            div.project-detail
+                                h4 皮皮播放器（第二版）
+                        a(target="_blank" href="../project/pro3/index.html")
+                            img(src="images/pro08.jpg" alt="皮皮播放器（第一版）")
+                            div.project-detail
+                                h4 皮皮播放器（第一版）
+                    dt B/S系统
+                    dd
+                        a(target="_blank" href="../project/pro9/index.html")
+                            img(src="images/pro09.jpg" alt="大屏控制系统")
+                            div.project-detail
+                                h4 大屏控制系统
+                        a(target="_blank" href="../project/pro10/index.html")
+                            img(src="images/pro10.jpg" alt="电子档案管理系统")
+                            div.project-detail
+                                h4 电子档案管理系统
+                        a(target="_blank" href="../project/pro11/index.html")
+                            img(src="images/pro11.jpg" alt="短信服务平台")
+                            div.project-detail
+                                h4 短信服务平台
+                        a(target="_blank" href="../project/pro12/index.html")
+                            img(src="images/pro12.jpg" alt="分析研判系统")
+                            div.project-detail
+                                h4 分析研判系统
+                        a(target="_blank" href="../project/pro13/index.html")
+                            img(src="images/pro13.jpg" alt="勤务管理系统")
+                            div.project-detail
+                                h4 勤务管理系统
+                        a(target="_blank" href="../project/pro14/index.html")
+                            img(src="images/pro14.jpg" alt="情报信息系统")
+                            div.project-detail
+                                h4 情报信息系统
+                        a(target="_blank" href="../project/pro15/index.html")
+                            img(src="images/pro15.jpg" alt="视频监控系统")
+                            div.project-detail
+                                h4 视频监控系统
+                    dt 移动端
+                    dd
+                        a(target="_blank" href="../project/pro16/index.html")
+                            img(src="images/pro16.jpg" alt="北极光微信公众号")
+                            div.project-detail
+                                h4 北极光微信公众号

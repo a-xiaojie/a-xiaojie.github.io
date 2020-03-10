@@ -1,0 +1,124 @@
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,button,select,textarea,iframe{ margin:0; padding:0;}
+table{ border-collapse: collapse; border-spacing: 0;}
+i,em{ font-style: normal;}
+li{ list-style: none; outline:none;}
+h1,h2,h3,h4,h5,h6,small{ font-size: 100%;}
+textarea{ overflow: auto; resize: none;}
+a,button,input,textarea,select{ outline: none;}
+a{ text-decoration: none; cursor: pointer;}
+img{ border: none; vertical-align: middle;}
+body,input,textarea,button,select{ font: 12px/20px arial,\5b8b\4f53;}
+
+.fl{ float: left;}
+.fr{ float: right;}
+.clearfix{ zoom: 1;}
+.clearfix:after{ content: ''; display: block; clear: both;}
+
+.g-posl{ position:absolute; left:10px;}
+.g-posr{ position:absolute; right:10px;}
+
+.mt10{ margin-top: 10px;}
+.mr10{ margin-right: 10px;}
+.pd10{ padding: 10px;}
+
+.font-w6{ width:6em !important;}
+.font-w7{ width:7em !important;}
+.font-w8{ width:8em !important;}
+.font-w9{ width:9em !important;}
+
+.icon{ display: inline-block; width: 24px; height: 24px; vertical-align: middle; background: url(../images/icon.png) no-repeat;_background-image: url(../images/icon.gif);}
+.icon-realtime{ background-position: 0 0;}
+.icon-remote{ background-position: -24px 0;}
+/* .icon-local{ background-position: -48px 0;} */
+.icon-gis{ background-position: -48px 0;}
+.icon-running{ background-position: -72px 0;}
+.icon-system{ background-position: -96px 0;}
+.icon-help{ background-position: -120px 0;}
+.icon-quit{ width: 14px; height: 16px;}
+.icon-cloud{ width:16px; height:18px; background-position: 0 -53px;}
+.icon-preset{ width:16px; height:18px; background-position: -23px -53px;}
+.cur .icon-cloud{ background-position: 0 -71px;}
+.cur .icon-preset{ background-position: -23px -71px;}
+.icon-plus{ width:12px; height:12px; background-position: -49px -54px; _background-image: url(../images/icon.gif)}
+a:hover .icon-plus{ background-position: -49px -73px;}
+
+.arrow-down,.arrow-right{ display: inline-block; *display:inline; *zoom:1; width: 18px; height: 18px; overflow: hidden; margin-right: 5px; vertical-align: middle; background: url(../images/icon.png) no-repeat; *background-image: url(../images/icon.gif);}
+.arrow-down{ background-position: 0 -90px;}
+
+.minbtn{ display: inline-block; *display:inline; zoom:1; height: 26px; width: 26px; margin: -4px 0px; padding : 4px 5px 6px; border: none;  overflow: hidden; cursor: pointer;}
+.m-cloud-btns .minbtn{ width: 21px; padding: 4px 3px 7px 5px; margin-top: -4px;}
+.m-dot-control .minbtn{ width: 18px; height: 18px; padding: 3px 4px; margin-top: -3px;}
+.icon-btn{ display: inline-block;*display:inline;zoom:1; width: 16px; height: 18px;vertical-align: middle;}
+.video-btn,
+.map-btn{ display: inline-block;*display:inline;zoom:1; width: 30px; height:30px; padding: 3px 4px 5px;vertical-align: middle;}
+.pre-btn{ display: inline-block;*display:inline;zoom:1; width: 14px; height:14px;}
+.btn{ display: inline-block;*display:inline;zoom:1; width: 28px; height: 28px; padding: 4px 5px 6px; vertical-align: middle; border: none; background: url(../images/icon.png) no-repeat; _background-image: url(../images/icon.gif); overflow: hidden; cursor: pointer; }
+.u-ipt{ width: 124px; height:20px; padding: 1px 5px; line-height:20px;}
+
+.u-btn{ width: 104px; height: 28px; line-height: 28px; text-align: center; border: none; cursor: pointer;}
+.u-btn.min{ width: 62px; height: 20px; line-height: 20px;}
+.u-btn .icon-btn{ width: 16px; height: 28px; margin-right: 5px;}
+.u-btn.min .icon-btn{ width: 12px; height: 18px;}
+.u-sel{ width: 126px; height: 24px;}
+
+/* ztree */
+.ztree li span.button {line-height:0; margin:0; width:16px; height:16px; display: inline-block; vertical-align:middle;
+	border:0 none; cursor: pointer;outline:none;
+	background: url("../images/tree/tree-icon.png") no-repeat; _background-image: url(../images/tree/tree-icon.gif);}
+/*.ztree li .curSelectedNode span.button{ background-position: -33px 0;}
+ .ztree li span.button{ margin-right:6px; vertical-align:middle; background-position:0 0;} */
+.ztree li span.button.switch{ position: absolute; left: 0; top: 10px;  width: 8px; height: 8px; overflow: hidden;}
+.ztree li span.button.root_open,
+.ztree li span.button.center_open,
+.ztree li span.button.bottom_open{ background-position:0 -21px}
+.ztree li span.button.root_close,
+.ztree li span.button.center_close,
+.ztree li span.button.bottom_close{ background-position:-12px -21px}
+.ztree li span.button.center_docu,
+.ztree li span.button.bottom_docu{ background: none;}
+
+.ztree li span.button.videoicon_ico_docu{  margin-right:6px; vertical-align:middle; background-position:0 0;}
+.ztree li .curSelectedNode span.button.videoicon_ico_docu,
+.ztree li a:hover span.button.videoicon_ico_docu{ background-position: -49px 0;}
+
+.ztree li a .button.ico_open,
+.ztree li a .button.ico_close{  margin-right:6px; background-position:-16px 0;}
+
+.ztree li span.button.switch.level0{ margin-left: 17px;}
+.ztree li span.button.switch.level1{ margin-left: 37px;}
+.ztree li span.button.switch.level2{ margin-left: 57px;}
+.ztree li span.button.switch.level3{ margin-left: 77px;}
+
+.ztree li a.level0 .button{ margin-left: 33px; background-position: -66px 0;}
+.ztree li a.level1 .button{ margin-left: 51px;}
+.ztree li a.level2 .button{ margin-left: 72px;}
+.ztree li a.level3 .button{ margin-left: 93px;}
+.ztree li a.level4 .button{ margin-left: 114px;}
+
+.ztree li span.button.chk{ position: absolute; left: 0; top: 7px; width: 14px; height: 14px; cursor: auto; background-position: 0 -36px;}
+.ztree li span.button.chk.checkbox_true_full,
+.ztree li span.button.chk.checkbox_true_full_focus{ background-position: -14px -36px;}
+.ztree .level0 span.button.chk{ margin-left: 30px;}
+.ztree .level1 span.button.chk{ margin-left: 48px;}
+.ztree .level2 span.button.chk{ margin-left: 69px;}
+.ztree .level3 span.button.chk{ margin-left: 90px;}
+
+
+/* 重置jquery-ui 样式 */
+.ui-widget{ font-family: arial,\5b8b\4f53;}
+.ui-dialog{ position: fixed; _position: absolute; padding: 0; border: 1px solid #111; border-radius: 0;}
+.ui-widget-header{ border: none; color: #9a9a9a; font-weight: normal; background: #1f1f1f; border-radius: 0;}
+.ui-dialog .ui-dialog-titlebar-close { width: 12px; right: 10px; margin: -6px 0 0; padding: 0; height: 12px; }
+.ui-dialog .ui-dialog-titlebar-close span { margin: 0; }
+.ui-widget-header .ui-icon{ width: 12px; height: 12px; }
+.ui-dialog .ui-dialog-content{ padding: 0; background: #333; max-height: 500px; overflow-y: auto; overflow-x: hidden;}
+.ui-widget-content{ color: #9a9a9a; font-size: 12px;}
+.ui-widget-overlay{ background: #000;}
+.ui-state-hover, 
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover, 
+.ui-state-focus, 
+.ui-widget-content .ui-state-focus, 
+.ui-widget-header .ui-state-focus { border: none;}
+.ui-widget-content a{ color: #9a9a9a;}

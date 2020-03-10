@@ -1,0 +1,75 @@
+html{height:100%;overflow:hidden}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,pre,code,form,fieldset,legend,input,button,textarea,select,blockquote,th,td{ margin:0; padding:0;}
+
+table{ border-collapse:collapse; border-spacing:0;}
+fieldset,img{border:0;}
+li,dd{ list-style:none;}
+em,i{font-style:normal;}
+body{ font:normal 12px Verdana, Tahoma, Arial, Helvetica, "宋体", sans-serif; color:#666666; background-color:#262626;}
+
+a{outline:none;color:#E5E5E5; text-decoration:none;}
+a:hover{text-decoration:none;color:#FF6600;}
+a:active{star:expression(this.onFocus=this.blur());}
+img,a .img{border:0}
+
+p{ color:#999999}
+
+.clearfix:after {content:"."; clear:both; display:block; visibility:hidden; height:0;}
+.clearfix {display:inline-block;}
+.clearfix {display:block;}
+
+.fleft{ float:left;}
+.fright{ float:right;}
+.ovhide{ overflow:hidden;}
+.liend{ border:none !important;}
+
+.mt5{ margin-top:5px !important;}
+.mt10{ margin-top:10px !important;}
+.mt20{ margin-top:20px !important;}
+.mt25{ margin-top:25px !important;}
+.mt30{ margin-top:30px !important;}
+.mt15{ margin-top:15px !important;}
+.ml10{ margin-left:10px !important;}
+.ml20{ margin-left:20px !important;}
+.mr5{ margin-right:5px !important;}
+.mb5{ margin-bottom:5px !important;}
+.mb10{ margin-bottom:10px !important;}
+
+/*slider*/
+.slider_box{width:950px; margin:0 auto;height: 360px;overflow: hidden;position: relative;z-index:1;}
+.silder_tip{width: 67px;height: 67px;overflow: hidden;position: absolute;top: 0;right: 0;z-index:1; text-indent:-999px; background:url(../images/images2013/tv2.png) no-repeat;
+_background-image:none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/images2013/tv2.png");
+}
+.tv{ background:url(../images/images2013/tv.png) no-repeat;
+_background-image:none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/images2013/tv.png");
+}
+#movie_tip{background-position: -93px 0;}
+.silder_con{height:360px;overflow: hidden;position:relative;}
+.silder_panel{ width:950px;height:360px;overflow: hidden;float: left;position:absolute; top:0; left:0;}
+.silder_panel img{width: 950px;height: 360px;display: block;overflow: hidden;}
+.silder_intro_bg{ position:absolute; top:0; right:0; width:235px; height:360px;background: #000; opacity:0.4;filter:alpha(opacity=40); z-index:0;}
+.silder_intro{ position:absolute; right:0; top:0; width: 195px;height: 210px;line-height: 20px;overflow: hidden;color: #fff;padding: 40px 20px 20px;}
+.silder_intro h3{ height:24px;line-height:24px; font-family: "Microsoft YaHei";font-size: 24px;overflow: hidden; font-weight:normal;}
+.silder_intro h3 a{ color: #fff;}
+.silder_intro span{ display:block; margin-top:8px; margin-bottom:8px;}
+.silder_intro p{ margin-bottom:20px; color:#fff; line-height:22px; height:44px; overflow:hidden;}
+.silder_intro p.silder_intro_detail{ margin-top:20px; height:44px; overflow:hidden;}
+.silder_play{display: block;width:50px;height:50px;overflow: hidden;text-indent: -999px;position: absolute;bottom:15px;right: 20px;background:url(../images/images2013/play_btn.png) no-repeat; z-index:100; cursor:pointer;
+_background-image:none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/images2013/play_btn.png");
+}
+
+.silder_nav{width:655px;height:42px;bottom: 11px; left:45px;position: absolute;overflow: hidden;}
+.silder_nav li{float: left;padding:0px;border:1px solid #7a7a7a; margin:4px 7px; display:inline;}
+.silder_nav li.current{border:1px solid #ccc; margin:0 2px; width:67px; height:40px;}
+.silder_nav li,.silder_nav img{display: block;width:54px;height:32px;overflow: hidden;}
+.silder_nav li.current img{ width:67px; height:40px;}
+
+.slider_box a.prev,.slider_box a.next{ display: block;width:17px;height:34px;overflow:hidden;text-indent: -999px;position: absolute; bottom:15px;cursor: pointer;z-index:10000}	
+.slider_box a.prev{ left:25px; background:url(../images/images2013/left.png);_background-image:none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/images2013/left.png"); }
+.slider_box a.next{ right:245px; background:url(../images/images2013/right.png);_background-image:none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/images2013/right.png");}
+.silderBox{ height:8px; line-height:8px;}

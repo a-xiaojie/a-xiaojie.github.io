@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>运维管理</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/inner.css">
+<link rel="stylesheet" href="../css/theme/default/skin.css">
+<script src="../js/jquery.min.1.8.2.js"></script>
+<script src="../js/ztree/js/jquery.ztree.core-3.5.js"></script>
+<script src="../js/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+<script src="../js/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<div class="g-inner clearfix">
+	<div class="g-sd">
+		<div class="g-sdc">
+			<div class="m-side-nav">
+				<div class="m-side-title m-panel-title"><h2>运维管理</h2></div>
+				<ul class="m-side-subnav m-list">
+					<li><a href="javascript:;">视频状态</a></li>
+					<li><a href="javascript:;">存储状态</a></li>
+					<li class="active"><a href="javascript:;">轮巡播放</a></li>
+					<li><a href="javascript:;">检测结果</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="g-mn" >
+		<div class="g-mnc">
+			<div class="g-mnl">
+				<div class="m-video-panel">
+					<div class="m-video-show">
+						<div class="m-video-box">
+							<div class="m-video-cell"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="g-mnr">
+				<div class="m-side-title m-panel-title">
+					<h2>轮巡播放</h2>
+				</div>
+				<div class="m-panel-cont">
+					<div class="m-scheme-box">
+						<div class="m-list-toolbar m-scheme-bar">
+							<p><label>名称：</label><input type="text" class="u-ipt"></p>
+							<div class="m-btns-group g-posr">
+								<a href="javascript:;" title="添加" class="icon-btn icon-btn-add"></a>
+								<a href="javascript:;" title="删除" class="icon-btn icon-btn-del"></a>
+								<a href="javascript:;" title="编辑" class="icon-btn icon-btn-edit"></a>
+							</div>
+						</div>
+						<div class="m-scheme-list">
+							<div class="m-dropdown">
+								<a class="u-dropdown-btn"><span>-------- 方案名称 --------</span>
+								<em class="arrow-down"></em></a>
+								<ul class="m-dropdown-list">
+									<li><a href="javascript:;">方案1</a></li>
+									<li><a href="javascript:;">方案2</a></li>
+									<li><a href="javascript:;">方案3</a></li>
+									<li><a href="javascript:;">方案4</a></li>
+									<li><a href="javascript:;">方案5</a></li>
+								</ul>
+							</div>
+							<div class="m-scheme-cont">
+								<ul class="m-side-menu ztree" id="treeNode">
+									
+								</ul>
+							</div>
+						</div>
+						<div class="m-scheme-ft">
+							<p><label>切换速度：</label><input type="text" class="u-ipt"> 秒 （最低5秒）</p>
+							<p>
+								<label>视图模式：</label>
+								<a id="aScreenOne"  onclick="setScreen(this,1)" class="video-btn video-btn-one" title="一屏"></a>
+								<a id="aScreenFour"  onclick="setScreen(this,4)" class="video-btn video-btn-four active" title="四屏"></a>
+								<a id="aScreenSix"  onclick="setScreen(this,6)" class="video-btn video-btn-six" title="六屏"></a>
+							</p>
+							<div class="m-scheme-btn">
+								<button class="u-btn" type="button">保存方案</button>
+								<button class="u-btn" type="button">开始轮巡</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var setting = {
+	data: {
+		simpleData: {
+			enable: true
+		}
+	},
+	check: {
+		enable: true
+	},
+	view: {
+		showIcon: false
+	}
+};
+
+var zNodes =[
+	{ id:1, pId:0, name:"杭州市", open:true},
+		{ id:11, pId:1, name:"上城区", open:true},
+			{ id:111, pId:11, name:"南山路"},
+			{ id:112, pId:11, name:"河坊街"},
+		{ id:12, pId:1, name:"下城区"},
+			{ id:121, pId:12, name:"潮王路"},
+		{ id:13, pId:1, name:"西湖区"},
+			{ id:131, pId:13, name:"文三路"},
+		{ id:14, pId:1, name:"江干区"},
+			{ id:141, pId:14, name:"文三路"},
+		{ id:15, pId:1, name:"拱墅区"},
+			{ id:151, pId:15, name:"文三路"},
+		{ id:16, pId:1, name:"滨江区"},
+			{ id:161, pId:16, name:"文三路"},
+		{ id:17, pId:1, name:"下沙"},
+			{ id:171, pId:17, name:"下沙"},
+		{ id:18, pId:1, name:"机动指挥"},
+			{ id:181, pId:18, name:"下沙"},
+		{ id:19, pId:1, name:"景区"},
+			{ id:191, pId:19, name:"景区"},
+		{ id:20, pId:1, name:"支队热控室录像"},
+			{ id:201, pId:20, name:"景区"},
+		{ id:21, pId:1, name:"绕城"},
+			{ id:211, pId:21, name:"景区"}
+];
+	
+		$(window).on("load resize",function(){
+			var $height=$(".g-inner").height();
+			$(".g-mnl,.g-mnr").css({
+				"bottom" : 0,
+				"height" : $height
+			});
+			$(".m-video-cell").height($height-20);
+			$(".m-scheme-box").height($height-$(".m-panel-title").height());
+			$(".m-scheme-cont").height($(".m-scheme-box").height()-40-175-32);
+		});
+		
+		$(function(){
+			$.fn.zTree.init($("#treeNode"), setting, zNodes);
+			$(".m-tab li").on("click",function(){
+				$(this).addClass("cur").siblings().removeClass("cur");
+				$(this).parent().siblings(".m-tab-cont").hide().eq($(".m-tab li").index(this)).show();
+				$(".g-mnc").hide().eq($(".m-tab li").index(this)).show();
+				$("#LocalList li").on("click",function(){
+					$(this).addClass("active").siblings().removeClass("active");
+				});
+			});
+		});
+		$(function(){
+			$(".m-scheme-list .m-dropdown").on({
+				click: function(){
+					$(this).find(".m-dropdown-list").slideToggle();
+					$(this).toggleClass("open");
+				}
+			});
+			$(".m-scheme-list .m-dropdown-list li").on({
+				click: function(e){
+					$(".m-scheme-list .u-dropdown-btn span").text($(this).text());
+				}
+			});
+		});
+	</script>
+</body>
+</html>

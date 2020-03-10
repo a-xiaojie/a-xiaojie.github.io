@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>场景轮播-电视墙拼接控制系统</title>
+	<link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<script src="js/jquery.min.1.8.2.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="js/ztree/js/jquery.ztree.all-3.5.js"></script>	
+</head>
+<body>
+<div class="g-bg"><img src="images/bg.jpg"></div>
+<!-- 头部 -->
+<div class="g-hd">
+    <div class="m-top">
+     	<div class="m-userinfo g-posl"><span><i class="icon icon-user"></i>Admin</span></div>
+     	<h1 class="m-logo"><span>电视墙拼接控制系统</span></h1>
+     	<a href="javascript:;" class="m-close"><i class="icon icon-close"></i></a>
+    </div>
+    <div class="m-nav-box">
+     	<a class="m-nav-btn" href="javascript:;"></a>
+		<ul class="m-nav">
+			<li><a href="javascript:;" title="开启屏幕"><i class="icon icon-open-screen"></i><span>开启屏幕</span></a></li>
+			<li><a href="javascript:;" title="关闭屏幕"><i class="icon icon-close-screen"></i><span>关闭屏幕</span></a></li>
+			<li><a href="javascript:;" title="重启设备"><i class="icon icon-restart-equip"></i><span>重启设备</span></a></li>
+			<li><a href="javascript:;" title="保存场景"><i class="icon icon-save-scene"></i><span>保存场景</span></a></li>
+			<li class="cur" style="margin-left: 87px"><a href="sceneCarousel.html" title="场景轮播"><i class="icon icon-scene-carousel"></i><span>场景轮播</span></a></li>
+			<li><a href="signalCarousel.html" title="信号轮播"><i class="icon icon-signal-carousel"></i><span>信号轮播</span></a></li>
+			<li><a href="javascript:;" title="节目管理"><i class="icon icon-program-manage"></i><span>节目管理</span></a></li>
+			<li><a href="system.html" title="系统管理"><i class="icon icon-system-manage"></i><span>系统管理</span></a></li>
+		</ul>
+    </div>
+</div>
+<!-- 主体 -->
+<div class="g-bd">
+	<div class="g-sd">
+		<div class="g-sdc">
+			<div class="m-menu-box">
+				<ul class="ztree" id="video_tree"></ul>
+			</div>
+		</div>
+	</div>
+	<div class="g-mn">
+	    <div class="g-mnc">
+	    	<div id="drawBox" class="m-draw-box" unselectable="on" onselectstart="return false;">
+		    	<ul class="m-screen-group clearfix" id="ScreenGroup"></ul>
+	    	</div>
+	    </div>
+	</div>
+</div>
+<!-- 底部 -->
+<div class="g-ft">
+    <p class="m-statue fl"><i class="icon icon-normal"></i><span>设备链接正常</span></p>
+    <p class="m-time fr">当前时间：<span>10:18</span></p>
+</div> 
+<div id="rMenu">
+	<ul>
+		<li><a id="" href="javascript:;" onclick="">轮巡</a></li>
+		<li><a id="m_add" href="javascript:;" onclick="addTreeNode();">增加节点</a></li>
+		<li><a id="m_edit" href="javascript:;" onclick="editTreeNode();">编辑节点</a></li>
+		<li><a id="m_del" href="javascript:;" onclick="removeTreeNode();">删除节点</a></li>
+	</ul>
+</div>
+<div class="m-pop-box" id="popDiv">
+	<div class="m-pop-cont">
+		<div class="m-form-row clearfix">
+	        <div class="m-form-cell">
+	            <label>场景名称：</label><select name="" class="u-sel">
+	            	<option value=""></option>
+	            </select>
+	        </div>
+	        <div class="m-form-cell">
+	            <label>轮播周期：</label><input type="text" class="u-ipt"/>
+	        </div>
+	        <div class="m-form-cell">
+	            <label>点位信息：</label><textarea name="" class="u-textarea"></textarea>
+	        </div>
+	    </div>
+	</div>
+	<div class="m-pop-btn">
+		<button type="button" class="u-btn u-save-btn">保存</button>
+		<button type="button" class="u-btn u-cancel-btn">取消</button>
+	</div>
+</div>
+<script>
+var offsetX    = $("#drawBox").offset().left;
+var offsetY    = $("#drawBox").offset().top;
+
+var rectNum=1;;
+var screenDataArr = [];
+
+// 根据保存的数组信息绘制区域
+function drawBox (arr) {
+	if(arr.length==0)return;
+	$("#drawBox .new-rect").remove();
+	for( var i=0; i<arr.length; i++){
+		var drawBoxLeft, drawBoxTop, drawBoxWidth, drawBoxHeight;
+		for( var j=0; j<arr[i].activeScreen.length; j++){
+			$('#ScreenGroup li[data-id="'+arr[i].activeScreen[j]+'"]').addClass('active'+arr[i].screenId);
+		};
+		drawBoxLeft = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[0]+'"]').offset().left - offsetX + 1;
+		drawBoxTop = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[0]+'"]').offset().top - offsetY + 1;
+		drawBoxWidth = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[arr[i].activeScreen.length-1]+'"]').offset().left - drawBoxLeft + $('#ScreenGroup li').width() - offsetX;
+		drawBoxHeight = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[arr[i].activeScreen.length-1]+'"]').offset().top - drawBoxTop + $('#ScreenGroup li').height() - offsetY;
+
+
+		var _appendHtml = '';
+		_appendHtml += '<div class="new-rect" style="left:' + drawBoxLeft + 'px;top:' + drawBoxTop + 'px; width:' + drawBoxWidth + 'px; height:' + drawBoxHeight + 'px" name="' + arr[i].screenId + '" title="第' + arr[i].screenId + '个">'+
+			'<p>群组：' + arr[i].screenId + '</p>'+
+			'<p>分组：' + arr[i].screenId + '</p>'+
+			'<p>视频名称：<span class="video-name">' + arr[i].videoName + '</span></p>'+
+			'<p>视频ID：<span class="video-id">' + arr[i].videoId + '</span></p>'+
+			'<p>位置：</p>'+
+			'<p>X:<span class="rect-x">' + drawBoxLeft + '</span>; Y:<span class="rect-y">' + drawBoxTop + '</span>; W:<span class="rect-w">' + drawBoxWidth + '</span>; H:<span class="rect-h">' + drawBoxHeight + '</span></p>'+
+		'</div>';
+		$("#drawBox").append(_appendHtml);
+		rectNum = arr[i].screenId>rectNum? (parseInt(arr[i].screenId)+1): rectNum;
+	}
+}
+window.onresize = function() {
+	 
+	var percent =3/4;
+	var col     =5;  // 列数
+	var row     =4;  // 行数
+	var str     = '';
+	for(var i = 0; i < col*row; i++){
+		str += '<li data-id="screen_' + (i+1) + '"></li>';
+	}
+	$("#ScreenGroup").html(''); // 添加屏幕
+	$("#ScreenGroup").append(str); // 添加屏幕
+	$oWidth     =$("#drawBox").width();
+	$("#ScreenGroup li").width($oWidth/col-5);
+	//$("#ScreenGroup li").height($("#ScreenGroup li").width()*percent);
+	
+	
+	$oheight =$(window).height()-$(".g-hd").height();
+	$("#ScreenGroup li").height($oheight/row-13);
+		drawBox(screenDataArr); // 根据保存的数组信息绘制区域
+ };
+ 
+$(window).on("load",function(){
+	window.onresize();
+	
+	showscreendata()
+
+	// 获取时间
+    getTime();
+    function getTime(){
+        var d=new Date();
+        var year=d.getFullYear();
+        var month=(d.getMonth()+1)<10?"0"+(d.getMonth()+1):d.getMonth()+1;
+        var date=d.getDate()<10?"0"+d.getDate():d.getDate();
+        var hour=d.getHours()<10?"0"+d.getHours():d.getHours();
+        var minute=d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes();
+        var second=d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds();
+        var day=d.getDay();
+        $(".m-time span").html(year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second);
+        setTimeout(getTime,1000);
+    }
+});
+$(window).on("load resize",function(){
+	$(".m-scroll-box").height($(".g-sdc").height() - $(".m-title").outerHeight() - $(".m-search-box").outerHeight() - 20)
+})
+</script>
+<script>
+    var setting = {
+        view: {
+            showLine: false,
+            selectedMulti: false,
+            dblClickExpand: false
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback: {
+            beforeExpand: beforeExpand,
+            onExpand: onExpand,
+            onClick: onClick,
+            onRightClick: onRightClick
+        }
+    };
+
+    var zNodes =[
+		{ id:1, pId:0, name:"场景组1", open:true},
+			{ id:11, pId:1, name:"场景1"},
+			{ id:12, pId:1, name:"场景2"},
+			{ id:13, pId:1, name:"场景3"},
+			{ id:14, pId:1, name:"场景4"},
+			{ id:15, pId:1, name:"场景5"}
+	];
+
+    var curExpandNode = null;
+    function beforeExpand(treeId, treeNode) {
+        var pNode = curExpandNode ? curExpandNode.getParentNode():null;
+        var treeNodeP = treeNode.parentTId ? treeNode.getParentNode():null;
+        var zTree = $.fn.zTree.getZTreeObj("video_tree");
+        for(var i=0, l=!treeNodeP ? 0:treeNodeP.children.length; i<l; i++ ) {
+            if (treeNode !== treeNodeP.children[i]) {
+                zTree.expandNode(treeNodeP.children[i], false);
+            }
+        }
+        while (pNode) {
+            if (pNode === treeNode) {
+                break;
+            }
+            pNode = pNode.getParentNode();
+        }
+        if (!pNode) {
+            singlePath(treeNode);
+        }
+
+    }
+    function singlePath(newNode) {
+        if (newNode === curExpandNode) return;
+        if (curExpandNode && curExpandNode.open==true) {
+            var zTree = $.fn.zTree.getZTreeObj("video_tree");
+            if (newNode.parentTId === curExpandNode.parentTId) {
+                zTree.expandNode(curExpandNode, false);
+            } else {
+                var newParents = [];
+                while (newNode) {
+                    newNode = newNode.getParentNode();
+                    if (newNode === curExpandNode) {
+                        newParents = null;
+                        break;
+                    } else if (newNode) {
+                        newParents.push(newNode);
+                    }
+                }
+                if (newParents!=null) {
+                    var oldNode = curExpandNode;
+                    var oldParents = [];
+                    while (oldNode) {
+                        oldNode = oldNode.getParentNode();
+                        if (oldNode) {
+                            oldParents.push(oldNode);
+                        }
+                    }
+                    if (newParents.length>0) {
+                        zTree.expandNode(oldParents[Math.abs(oldParents.length-newParents.length)-1], false);
+                    } else {
+                        zTree.expandNode(oldParents[oldParents.length-1], false);
+                    }
+                }
+            }
+        }
+        curExpandNode = newNode;
+    }
+
+    function onExpand(event, treeId, treeNode) {
+        curExpandNode = treeNode;
+        var zTree = $.fn.zTree.getZTreeObj("video_tree");
+        zTree.selectNode(treeNode);
+    }
+
+    function onClick(e,treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj("video_tree");
+        zTree.expandNode(treeNode, null, null, null, true);
+    }
+
+    function onRightClick(event, treeId, treeNode) {
+		if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
+			zTree.cancelSelectedNode();
+			showRMenu("root", event.clientX, event.clientY);
+		} else if (treeNode && !treeNode.noR) {
+			zTree.selectNode(treeNode);
+			showRMenu("node", event.clientX, event.clientY);
+		}
+	}
+	function showRMenu(type, x, y) {
+		$("#rMenu").show();
+		if (type=="root") {
+			$("#m_del").hide();
+			$("#m_check").hide();
+			$("#m_unCheck").hide();
+		} else {
+			$("#m_del").show();
+			$("#m_check").show();
+			$("#m_unCheck").show();
+		}
+		rMenu.css({"top":y+"px", "left":x+"px"});
+
+		$("body").bind("mousedown", onBodyMouseDown);
+	}
+	function hideRMenu() {
+		if (rMenu) rMenu.hide();
+		$("body").unbind("mousedown", onBodyMouseDown);
+	}
+	function onBodyMouseDown(event){
+		if (!(event.target.id == "rMenu" || $(event.target).parents("#rMenu").length>0)) {
+			rMenu.hide();
+		}
+	}
+	var addCount = 1;  // 默认无子节点
+	function addTreeNode() {
+		hideRMenu();
+		$('#popDiv').dialog({title: '添加场景'}).dialog('open');
+	}
+	function editTreeNode() {
+		hideRMenu();
+		$('#popDiv').dialog({title: '编辑场景'}).dialog('open');
+	}
+	function removeTreeNode() {
+		hideRMenu();
+		var nodes = zTree.getSelectedNodes();
+		if (nodes && nodes.length>0) {
+			if (nodes[0].children && nodes[0].children.length > 0) {
+				var msg = "要删除的节点是父节点，如果删除将连同子节点一起删掉。\n\n请确认！";
+				if (confirm(msg)==true){
+					zTree.removeNode(nodes[0]);
+				}
+			} else {
+				zTree.removeNode(nodes[0]);
+			}
+		}
+	}
+	var zTree, rMenu;
+    $(function() {
+        $.fn.zTree.init($("#video_tree"), setting, zNodes);
+		zTree = $.fn.zTree.getZTreeObj("video_tree");
+        rMenu = $("#rMenu");
+        $('#popDiv').dialog({
+        	autoOpen: false,
+        	resizable : false,
+            modal : true,
+            width: 390
+        });
+        $('#popDiv .u-btn').on('click',function(){
+        	$('#popDiv').dialog('close');
+        });
+
+    });
+
+    function showscreendata(){
+	
+		screenDataArr=[{"videoId":"111","videoName":"南山路","screenId":"11","activeScreen":["screen_1","screen_2","screen_3","screen_4","screen_5","screen_6","screen_7","screen_8","screen_9","screen_10"]},{"videoId":"112","videoName":"河坊街","screenId":"22","activeScreen":["screen_11","screen_12","screen_16","screen_17"]},{"videoId":"121","videoName":"潮王路","screenId":"33","activeScreen":["screen_13","screen_14","screen_15","screen_18","screen_19","screen_20"]}];
+		drawBox(screenDataArr); // 根据保存的数组信息绘制区域
+    }
+</script>
+</body>
+</html>

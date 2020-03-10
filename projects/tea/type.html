@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"> 
+  	<meta content="yes" name="apple-touch-fullscreen"> 
+  	<meta content="telephone=no,email=no" name="format-detection">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<title>爱茶叶</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/iscroll.js"></script>
+	<script src="js/zepto.min.js"></script>
+</head>
+<body>
+	<header class="header">
+        <h1>分类</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+	</header>
+	<div class="wrap type-wrap" id="wrapper">
+        <div id="scroller">
+            <ul class="list type-list">
+                <li>
+                    <a href="subType.html">
+                        <img src="images/type-img.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="subType.html">
+                        <img src="images/type-img.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="subType.html">
+                        <img src="images/type-img.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="subType.html">
+                        <img src="images/type-img.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="subType.html">
+                        <img src="images/type-img.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="subType.html">
+                        <img src="images/type-img.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="subType.html">
+                        <img src="images/type-img.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div id="pullUp">
+                <span class="pullUpLabel">↑上拉加载更多...</span>
+            </div>
+        </div>
+	</div>
+	<footer class="footer">
+		<nav class="nav">
+			<ul>
+				<li><a href="index.html"><i class="icon icon-home"></i>首页</a></li>
+                <li class="active"><a href="type.html"><i class="icon icon-type"></i>分类</a></li>
+                <li><a href="cart.html"><i class="icon icon-cart"></i>购物车</a></li>
+                <li><a href="user.html"><i class="icon icon-user"></i>我的</a></li>
+			</ul>
+		</nav>
+	</footer>
+    <script>
+        var myScroll;
+
+        function loaded () {
+            myScroll = new IScroll('#wrapper', {
+                preventDefault:false,
+
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('DOMContentLoaded', loaded, false);
+        window.onload = function () {
+            setTimeout(function(){
+                myScroll.refresh();
+            }, 100);
+        }
+    </script>
+</body>
+</html>

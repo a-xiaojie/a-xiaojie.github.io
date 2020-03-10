@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>短信模板 - 短信服务平台</title>
+    <link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.1.8.2.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
+</head>
+<body>
+<div class="g-layout">
+    <div class="g-inner">
+        <div class="m-panel m-full-panel">
+            <div class="m-title">
+                <h3>短信模板</h3>
+                <div class="m-tool-btns">
+                    <a href="javascript:;" class="u-icon-btn u-add" title="添加" onclick="addTemplet()"><i class="icon icon-add"></i></a>
+                    <a href="javascript:;" class="u-icon-btn u-export" title="导出"><i class="icon icon-export"></i></a>
+                    <a href="javascript:;" class="u-icon-btn u-empty" title="清空"><i class="icon icon-empty"></i></a>
+                </div>
+            </div>
+            <div class="m-cont">
+                <div class="m-table-form">
+                    <div class="m-form-row clearfix">
+                        <div class="m-form-cell">
+                            <label>类型：</label><select id="" class="u-sel"></select>
+                        </div>
+                        <div class="m-form-cell">
+                            <label>短信内容：</label><input type="text" class="u-ipt"/>
+                        </div>
+                    </div>
+                    <div class="m-form-row clearfix">
+                        <div class="m-form-cell">
+                            <button class="u-btn u-search-btn">查询</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-table-box">
+                    <table class="m-table">
+                        <thead>
+                        <tr>
+                            <th width="5%"><input type="checkbox"></th>
+                            <th width="10%">序号</th>
+                            <th width="15%">类型</th>
+                            <th width="60%">内容</th>
+                            <th width="10%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>1</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>2</td>
+                            <td>违章通知</td>
+                            <td><p>违反道路信号灯通行的交通违法行为已被记录。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>3</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>5</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>6</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>7</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>8</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>9</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>10</td>
+                            <td>罚款通知</td>
+                            <td><p>您2015年04月24日的交通违法处罚罚款尚未缴纳，即将产生滞纳金，请尽快缴纳。</p></td>
+                            <td><a href="javascript:;" title="编辑">编辑</a><a href="javascript:;" title="删除">删除</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="m-pager"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="m-pop-box" id="templetDiv">
+    <div class="m-pop-cont">
+        <div class="m-form-cell">
+            <label>类型：</label>
+            <select class="u-sel"></select>
+        </div>
+        <div class="m-form-cell">
+            <label>短信内容：</label>
+            <textarea class="u-txtarea"></textarea>
+        </div>
+        <div class="m-form-cell clearfix">
+	        <label>权限：</label>
+	        <div id="rightdiv" class="m-controls"><span><input type="checkbox"><label>发送短信</label></span><span><input type="checkbox"><label>发送短信</label></span></div>
+        </div>
+        <div class="m-pop-btn">
+            <input type="submit" name="submit" value="提交" class="u-btn">
+        </div>
+    </div>
+</div>
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/IE6PNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+<script>
+    $(window).on("load resize",function(){
+        var innerHeight = $('.g-layout').height();
+        $('.m-full-panel').height(innerHeight - 20 - 2);
+        $('.m-table-box').height($('.m-full-panel').height() - $('.m-title').height() - $('.m-table-form').outerHeight() -$('.m-pager').outerHeight() -20 - 1);
+    });
+    $(function(){
+        $(".m-pop-box .u-btn").on("click",function(){
+            $(this).closest(".m-pop-box").dialog("close");
+        });
+    });
+    function addTemplet(){
+        $("#templetDiv").dialog({
+            resizable : false,
+            modal : true,
+            bgiframe: true,
+            width: 390,
+            title: "添加模板"
+        });
+    }
+    function EditTemplet(){
+        $("#templetDiv").dialog({
+            resizable : false,
+            modal : true,
+            bgiframe: true,
+            width: 390,
+            title: "编辑模板"
+        });
+    }
+</script>
+</body>
+</html>

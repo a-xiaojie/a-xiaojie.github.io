@@ -1,0 +1,382 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+a {
+  text-decoration: none;
+}
+header,
+footer,
+nav,
+section {
+  display: block;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+::selection {
+  color: #fff;
+  background: #00a0e9;
+}
+/*html,body{
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}*/
+body {
+  color: #333;
+  font: 14px/1 normal normal "Microsoft Yahei";
+  background: #fff;
+}
+/* 头部 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 60px;
+  background: #333;
+  color: #fff;
+}
+header .logo {
+  float: left;
+  padding-left: 30px;
+  font: 20px/1 normal normal "Microsoft Yahei";
+  line-height: 60px;
+  letter-spacing: 2px;
+}
+header nav {
+  float: right;
+  height: 30px;
+  padding: 15px 30px;
+  line-height: 30px;
+}
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+header nav li a {
+  display: block;
+  height: 30px;
+  color: #fff;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+header nav li a .fa {
+  margin-left: 5px;
+}
+header nav li a:hover {
+  color: #33d3ff;
+}
+/* 底部 */
+footer {
+  margin-top: 20px;
+  padding: 40px 0;
+  text-align: center;
+  background: #333;
+}
+footer li {
+  display: inline-block;
+  padding: 0 30px;
+}
+footer li a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  background: #33d3ff;
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+footer li a i {
+  transform: rotate(-45deg);
+}
+footer li a:hover {
+  background: #00a0e9;
+  transform: rotate(405deg);
+}
+.section {
+  /* position: absolute;
+  width: 100%;
+  height:100%;*/
+  margin-bottom: 40px;
+}
+.section .inner {
+  width: 1000px;
+  margin: 0 auto;
+  border-bottom: 1px dashed #ddd;
+}
+.section .inner h2 {
+  border-bottom: 1px solid #00a0e9;
+}
+.section .inner h2 span {
+  display: inline-block;
+  font: 24px/1 normal normal "Microsoft Yahei";
+  line-height: 30px;
+  border-bottom: 4px solid #00a0e9;
+}
+/* 首页 */
+#baseInfo {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  text-align: center;
+  line-height: 20px;
+}
+#baseInfo h2 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: normal;
+  border: none;
+}
+#baseInfo p {
+  margin-bottom: 10px;
+}
+#baseInfo ul li {
+  display: inline-block;
+  margin: 0 10px;
+  color: #666;
+}
+#baseInfo ul li a {
+  color: #666;
+}
+/* 教育经历 */
+#school {
+  margin: 40px 0;
+}
+#school .school-info {
+  margin-top: 20px;
+}
+#school .school-info p {
+  float: left;
+  width: 33.333%;
+  margin-bottom: 10px;
+  color: #00a0e9;
+  font-size: 16px;
+}
+#school .school-info > .major {
+  line-height: 20px;
+  color: #666;
+}
+#school .school-info > .major:before {
+  content: '';
+  clear: both;
+  display: block;
+}
+/* 专业技能 */
+#skillList {
+  width: 100%;
+  margin: 40px 0;
+}
+#skillList li {
+  height: 28px;
+  padding: 4px 0;
+  margin: 8px 0;
+  background: rgba(37, 145, 202, 0.3);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#skillList h4 {
+  float: left;
+  width: 120px;
+  height: 20px;
+  padding: 0 10px;
+  font: 16px/1 normal normal "Microsoft Yahei";
+  line-height: 20px;
+  text-align: right;
+}
+#skillList .skill-bar {
+  height: 20px;
+  line-height: 20px;
+  margin-left: 120px;
+  text-align: center;
+  color: #666;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#skillList .skill-bar > div {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  width: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+/* 工作经历 */
+#workList {
+  margin: 40px 0 40px 200px;
+  border-left: 1px solid #00a0e9;
+}
+#workList > li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+#workList > li .time {
+  position: absolute;
+  left: -200px;
+  top: 0;
+  width: 200px;
+  padding-right: 20px;
+  text-align: right;
+  color: #00a0e9;
+  font: 16px/1 normal normal "Microsoft Yahei";
+}
+#workList > li .company {
+  color: #00a0e9;
+}
+#workList > li .work {
+  margin-top: 10px;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px #00a0e9;
+  -moz-box-shadow: 0 0 10px #00a0e9;
+  box-shadow: 0 0 10px #00a0e9;
+}
+#workList > li .work li {
+  line-height: 20px;
+}
+#workList > li:after {
+  position: absolute;
+  top: 4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: #00a0e9;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #00a0e9;
+  content: '';
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+/* 项目经验 */
+#projectsList {
+  margin: 40px 0;
+}
+#projectsList dt {
+  text-align: center;
+  font: 20px/1 normal normal "Microsoft Yahei";
+}
+#projectsList dd {
+  margin-top: 20px;
+  width: 110%;
+}
+#projectsList dd a {
+  position: relative;
+  display: inline-block;
+  width: 220px;
+  height: 165px;
+  padding: 6px;
+  margin: 0 40px 40px 0;
+  background: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+#projectsList dd a img {
+  width: 208px;
+  height: 153px;
+  -webkit-transform: rotate(0) scale(1) skew(0) translate(0);
+  -moz-transform: rotate(0) scale(1) skew(0) translate(0);
+  -o-transform: rotate(0) scale(1) skew(0) translate(0);
+  -ms-transform: rotate(0) scale(1) skew(0) translate(0);
+  transform: rotate(0) scale(1) skew(0) translate(0);
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+#projectsList dd a .project-detail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 208px;
+  height: 153px;
+  text-align: center;
+  background: #333;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  -webkit-transform: rotate(180deg) scale(0) skew(0) translate(0);
+  -moz-transform: rotate(180deg) scale(0) skew(0) translate(0);
+  -o-transform: rotate(180deg) scale(0) skew(0) translate(0);
+  -ms-transform: rotate(180deg) scale(0) skew(0) translate(0);
+  transform: rotate(180deg) scale(0) skew(0) translate(0);
+}
+#projectsList dd a .project-detail h4 {
+  font: 20px/1 normal normal "Microsoft Yahei";
+  line-height: 138px;
+  color: #fff;
+}
+#projectsList dd a:hover img {
+  -webkit-transform: rotate(0) scale(0) skew(0) translate(0);
+  -moz-transform: rotate(0) scale(0) skew(0) translate(0);
+  -o-transform: rotate(0) scale(0) skew(0) translate(0);
+  -ms-transform: rotate(0) scale(0) skew(0) translate(0);
+  transform: rotate(0) scale(0) skew(0) translate(0);
+}
+#projectsList dd a:hover .project-detail {
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: rotate(0deg) scale(1) skew(0) translate(0);
+  -moz-transform: rotate(0deg) scale(1) skew(0) translate(0);
+  -o-transform: rotate(0deg) scale(1) skew(0) translate(0);
+  -ms-transform: rotate(0deg) scale(1) skew(0) translate(0);
+  transform: rotate(0deg) scale(1) skew(0) translate(0);
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -ms-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+/*# sourceMappingURL=main.css.map */

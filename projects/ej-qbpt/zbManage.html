@@ -1,0 +1,1684 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>工作管理-值班管理</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item active">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理" class="active">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+        <div class="column manage">
+            <div class="title">
+            	<h3 class="fl">任务管理</h3>
+                <a href="javascript:;" class="fr btn add-btn" title="新建">新建</a>
+            </div>
+            <div class="cont tabs">
+                <ul class="tab-list clearfix">
+                    <li><a href="javascript:;" class="active">群众来电<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">领导交办<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">重要工作<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">传真收发<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">邮件收发<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">部门联动<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">参观接待<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">会议通知<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">数字城管<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">其他<i class="qb-icon icon-blue-down"></i></a></li>
+                </ul>
+                <div class="tab-cont table" style="display:block;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">路况询问</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">交通事故反应</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">路况询问</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">交通事故反应</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">路况询问</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="王海峰">王海峰</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-cont  table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">序号</th>
+                                <th width="10%">来电时间</th>
+                                <th width="10%">来电姓名</th>
+                                <th width="10%">来电类型</th>
+                                <th width="10%">联系电话</th>
+                                <th width="15%">来电事项</th>
+                                <th width="10%">录入人</th>
+                                <th width="10%">状态</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="">1</td>
+                                <td title=" ">2014/12/3 10:30</td>
+                                <td title="">张大山</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">2</td>
+                                <td title=" ">2014/12/3 08:30</td>
+                                <td title="">孙坚</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">3</td>
+                                <td title=" ">2014/12/2 19:30</td>
+                                <td title="">赵蕾</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="">4</td>
+                                <td title=" ">2014/12/2 18:30</td>
+                                <td title="">王君安</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">15858131313</td>
+                                <td title="">文一西路发生交通事故</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td title="" class="table-operate"><a href="javascript:;" class="table-link">修改</a>  | <a href="javascript:;" class="table-link">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td title="">5</td>
+                                <td title=" ">2014/12/2 12:45</td>
+                                <td title="">张大发</td>
+                                <td title="">咨询投诉</td>
+                                <td title=" ">13456788765</td>
+                                <td title="">民警执法不公</td>
+                                <td title="">王海峰</td>
+                                <td title=""></td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-edit">修改</a>  | <a href="javascript:;" class="operate-del">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="column mt20">
+            <div class="title">
+                <h3 class="fl">值班日志</h3>
+            </div>
+            <div class="cont clearfix">
+            	<div class="fl time-box">
+                    <div id="time-div"></div>
+                    <div class="time-search mt5"><input type="text" class="time-text-input" placeholder="请选择搜索日期" readonly ><input type="button" class="search-btn qb-icon icon-search"></div>
+                </div>
+                <div class="table zb-table fr">
+                	<div class="table-title"><span>部门：指挥中心</span> <span>值班长：于淼</span> <span>值班人：王海峰</span></div>
+                	<table>
+                    	<thead>
+                        	<tr>
+                            	<th width="5%">序号</th>
+                            	<th width="15%">任务大类</th>
+                            	<th width="15%">任务子类</th>
+                            	<th width="20%">标题</th>
+                            	<th width="15%">状态</th>
+                            	<th width="30%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td title="1">1</td>
+                                <td title="待办事项 ">待办事项 </td>
+                            	<td title="群众来电">群众来电</td>
+                                <td title="文件签收">文件签收</td>
+                                <td title="待签收">待签收</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-sign">签收</a> | <a href="javascript:;" class="operate-transfer">移交</a></td>
+                            </tr>
+                        	<tr>
+                            	<td title="2">2</td>
+                                <td title="信息处理 ">信息处理 </td>
+                            	<td title="每日交通">每日交通</td>
+                                <td title="事故处理">事故处理</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-handle">处理</a> | <a href="javascript:;" class="operate-appoint">指派</a> | <a href="javascript:;" class="operate-transfer">移交</a></td>
+                            </tr>
+                            <tr>
+                                <td title="3">3</td>
+                                <td title="待办事项 ">待办事项 </td>
+                                <td title="群众来电">群众来电</td>
+                                <td title="咨询">咨询</td>
+                                <td title="待签收">待签收</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-sign">签收</a> | <a href="javascript:;" class="operate-transfer">移交</a></td>
+                            </tr>
+                            <tr>
+                                <td title="4">4</td>
+                                <td title="信息处理 ">信息处理 </td>
+                                <td title="每日交通">每日交通</td>
+                                <td title="事故处理">事故处理</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-handle">处理</a> | <a href="javascript:;" class="operate-appoint">指派</a> | <a href="javascript:;" class="operate-transfer">移交</a></td>
+                            </tr>
+                            <tr>
+                                <td title="5">5</td>
+                                <td title="信息处理 ">信息处理 </td>
+                                <td title="每日交通">每日交通</td>
+                                <td title="事故处理">事故处理</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-handle">处理</a> | <a href="javascript:;" class="operate-appoint">指派</a> | <a href="javascript:;" class="operate-transfer">移交</a></td>
+                            </tr>
+                            <tr>
+                                <td title="6">6</td>
+                                <td title="信息处理 ">信息处理 </td>
+                                <td title="每日交通">每日交通</td>
+                                <td title="事故处理">事故处理</td>
+                                <td title="待处理">待处理</td>
+                                <td class="table-operate"><a href="javascript:;" class="operate-handle">处理</a> | <a href="javascript:;" class="operate-appoint">指派</a> | <a href="javascript:;" class="operate-transfer">移交</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="column mt10">
+            <div class="title">
+                <h3 class="fl">值班信息</h3>
+            </div>
+            <div class="cont tabs">
+                <ul class="tab-list clearfix">
+                    <li><a href="javascript:;" class="active">支队<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">上城<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">下城<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">西湖<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">江干<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">拱墅<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">滨江<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">下沙<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">机动<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">绕城<i class="qb-icon icon-blue-down"></i></a></li>
+                    <li><a href="javascript:;">景区<i class="qb-icon icon-blue-down"></i></a></li>
+                </ul>
+                <div class="tab-cont pd20" style="display:block;">
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">
+                    <div class="zb-info clearfix">
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                        <p><span>指挥调度岗（联警）：</span>民警A 民警B</p>
+                        <p><span>警情管理岗（联警）：</span>民警A</p>
+                        <p><span>指挥调度岗（联警）：</span>民警A 民警B</p>
+                        <p><span>警情管理岗（联警）：</span>民警A</p>
+                        <p><span>检查信号岗：</span>民警</p>
+                        <p><span>警情管理岗（处理）：</span>民警A</p>
+                        <p><span>检查信号岗：</span>民警</p>
+                        <p><span>警情管理岗（处理）：</span>民警A</p>
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                        <p><span>指挥调度岗（联警）：</span>民警A 民警B</p>
+                        <p><span>警情管理岗（联警）：</span>民警A</p>
+                        <p><span>指挥调度岗（联警）：</span>民警A 民警B</p>
+                        <p><span>警情管理岗（联警）：</span>民警A</p>
+                        <p><span>检查信号岗：</span>民警</p>
+                        <p><span>警情管理岗（处理）：</span>民警A</p>
+                        <p><span>检查信号岗：</span>民警</p>
+                        <p><span>警情管理岗（处理）：</span>民警A</p>
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                        <p><span>值班长：</span>陈896</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="tab-cont pd20">3
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">4
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">5
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">6
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">7
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">8
+                   <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">9
+                   <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">10
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="tab-cont pd20">11
+                    <div class="zb-info clearfix">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                        <td><span>指挥调度岗（联警）：</span>民警A 民警B</td>
+                                        <td><span>警情管理岗（联警）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                        <td><span>检查信号岗：</span>民警</td>
+                                        <td><span>警情管理岗（处理）：</span>民警A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                        <td><span>值班长：</span>陈896</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+<div id="newDia">
+	<form>
+        <div class="input-form clearfix" style="padding-bottom:20px;">
+            <p class="dia-form-item fl">
+                <label class="dia-label">任务类别</label>
+                <select class="select">
+                    <option value="0" selected>请选择</option>
+                    <option value="1">群众来电</option>
+                    <option value="2">领导交办</option>
+                    <option value="3">重要工作</option>
+                    <option value="4">传真收发</option>
+                    <option value="5">邮件收发</option>
+                    <option value="6">部门联动</option>
+                    <option value="7">参观接待</option>
+                    <option value="8">会议通知</option>
+                    <option value="9">数字城管</option>
+                    <option value="10">其他</option>
+                </select>
+            </p>
+        </div>
+        <div class="input-form clearfix">
+            <p class="dia-form-item fl">
+                <label class="dia-label">来电时间</label>
+                <input type="text" class="text-input" onclick="WdatePicker({dateFmt:'yyyy/MM/dd HH:mm'});">
+            </p>
+            <p class="dia-form-item fl">
+                <label class="dia-label">来电人姓名</label>
+                <input type="text" class="text-input" >
+            </p>
+            <p class="dia-form-item fl">
+                <label class="dia-label">来电类型</label>
+                <select class="select">
+                    <option value="0" selected>请选择</option>
+                    <option value="1">咨询投诉</option>
+                </select>
+            </p>
+            <p class="dia-form-item fl">
+                <label class="dia-label">联系电话</label>
+                <input type="text" class="text-input" >
+            </p>
+            <p class="mt20 fl">
+                <label class="dia-label">来电事项</label>
+                <textarea class="textarea-input"></textarea>
+            </p>
+            <p class="mt20 fl">
+                <label class="dia-label">处理方式</label>
+                <textarea class="textarea-input"></textarea>
+            </p>
+            <p class="mt20 mb20 fl" style="width:100%;">
+                <label class="dia-label">附件</label>
+                <input type="text" class="text-input file-text-input" >
+                <input type="button" class="btn ml10 fr" value="增 加">
+                <input type="button" class="btn fr" value="浏 览">
+            </p>
+        </div>
+    </form>
+</div>
+<script>
+	WdatePicker({eCont:'time-div',onpicked:function(dp){
+		$('.time-text-input').val(dp.cal.getDateStr());
+	}});
+	$('#newDia').dialog({
+		autoOpen: false,
+		dialogClass: "no-close",
+		resizable: false,
+		width:"470px"	,
+		buttons: {
+			'新 建': function() {
+				$(this).dialog('close');
+				$('.pop-mask').hide();
+			},
+			'完 成': function() {
+				$(this).dialog('close');
+				$('.pop-mask').hide();
+			},
+			'关 闭': function() {
+				$(this).dialog('close');
+				$('.pop-mask').hide();
+			}
+		}
+	})	
+	
+	$('.add-btn').on('click',function(){
+		$('.pop-mask').show();
+		$('#newDia').dialog( "open" );
+		$('#newDia').dialog({
+			title : "新增任务"	
+		})
+	});
+	$('.operate-edit').on('click',function(){
+		$('.pop-mask').show();
+		$('#newDia').dialog( "open" );
+		$('#newDia').dialog({
+			title : "编辑任务"	
+		});	
+	});
+	$('.operate-del').on('click',function(){
+		fnConfirm('是否确定删除这一行？',function(){   //确定之后的操作
+			fnAlert('删除成功成功！')
+		});
+	});
+	$('.operate-transfer').on('click',function(){
+		fnConfirm('是否确定移交？',function(){   //确定之后的操作
+			fnAlert('移交成功！')
+		});
+	});
+	$('.operate-sign').on('click',function(){
+		fnConfirm('是否确定签收？',function(){   //确定之后的操作
+			fnAlert('签收成功！')
+		});
+	});
+	$('.operate-handle').on('click',function(){
+		fnConfirm('是否确定处理？',function(){   //确定之后的操作
+			fnAlert('处理成功！');
+		});
+	});
+	$('.operate-appoint').on('click',function(){
+		fnConfirm('是否确定指派？',function(){   //确定之后的操作
+			fnAlert('指派成功！')
+		});
+	});
+</script>
+</body>
+</html>

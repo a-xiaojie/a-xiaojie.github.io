@@ -1,0 +1,666 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>勤务查询</title>
+<link rel="stylesheet" href="css/nanoscroller.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.nanoscroller.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="js/j_common.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <h1><a href="index.html" title="返回首页">杭州交警支队勤务管理系统</a></h1>
+    <div class="header-info">
+        <p class="h-user-info">欢迎回来，<span>王海峰</span> <em>011564 </em>单位：杭州市公安局交通警察支队</p>
+        <ul class="quick-menu">
+            <li class="h-menu-item" id="setting">
+                <a class="h-menu-hd" href="javascript:;" rel="nofollow" title="设置"><span class="ico-set"></span><b></b></a>
+                <div class="h-menu-bd">
+                    <dl>
+                        <dt><span>基本设置</span></dt>
+                        <dd>
+                            <a href="javascript:;" title="个人信息">个人信息</a> 
+                            <a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+                        </dd>
+                    </dl>
+                    <dl class="last">
+                        <dt><span>安全设置</span></dt>
+                        <dd>
+                           <a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a> 
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            <li id="fullscreen">
+                <a class="h-menu-hd" href="javascript:;" rel="nofollow" title="全屏"><span class="ico-fullscreen"></span></a>
+            </li>
+            <li id="logout">
+                <a class="h-menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="ico-quit"></span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="option">
+        <div class="op-tit">
+            <h3>排班周次</h3>
+            <div class="op-table"><a href="javascript:;" onclick="fnOpenWin('table.html','table')">时间维度</a><a href="javascript:;" onclick="fnOpenWin('table.html','table')">警员维度</a><a href="javascript:;" onclick="fnOpenWin('table.html','table')">岗位维度</a></div>
+            <div class="search-box">
+                <ul class="op-nav slide-down-nav">
+                    <li> <span>部门</span>
+                        <div class="slide-down-box"> <a>部门1</a> <a>部门2</a> <a>部门3</a> </div>
+                    </li>
+                    <li id="years"> <span>年份</span>
+                        <div class="slide-down-box"> <a class="active">2014年</a> <a>2013年</a> <a>2012年</a> <a>2011年</a> </div>
+                    </li>
+                    <li id="months"> <span>月份</span>
+                        <div class="slide-down-box"><a>1月</a><a>2月</a><a>3月</a><a>4月</a><a>5月</a><a>6月</a><a>7月</a><a>8月</a><a class="active">9月</a><a>10月</a><a>11月</a><a>12月</a> </div>
+                    </li>
+                    <li id="weeks"> <span>周</span><div class="slide-down-box"><a>第1周</a><a>第2周</a><a>第3周</a><a>第4周</a><a>第5周</a> </div>
+                    </li>
+                </ul>
+                <div class="time-search">
+                    <input type="text" class="txt" placeholder="请输入搜索日期" onClick="WdatePicker()">
+                    <button class="search-btn"></button>
+                </div>
+            </div>
+        </div>
+        <div class="op-cont clear">
+            <div class="c1">
+                <div class="c-info"> <span>班次: XXXXX</span> <span>状态: XXXXX</span> <span>警力投入：<img src="images/tt.png" ></span> <span>审核时间: 2014-9-1</span> <span>审核说明: XXXXX</span> </div>
+            </div>
+            <div class="c2 clear"> <a href="javascript:;" class="btn save-btn">提交</a><a href="javascript:;" class="btn reuse-btn">复用</a> </div>
+        </div>
+    </div>
+    <div class="result">
+        <div class="r-tit">
+            <div class="c1">岗位排班</div>
+            <div class="c2">变更历史记录</div>
+        </div>
+        <ul class="finlist">
+            <li class="list-info">
+                <div class="list-short clear">
+                    <div class="c1">
+                        <h3 class="c-title"><span>文三西路以南天目山路以北</span>岗<img src="images/tt.png" style="margin-left:20px;"></h3>
+                        <div class="c-info"> <span>责任区: XXXXX</span> <span>负责人: XXXXX</span> <span>方式: XXXXX</span> <span>类型: XXXXX</span> <span>时间: 7：00-19：00</span> <span>警力配置: XXXXX</span> <span>备注: XXXXX</span> <span>排班部门: XXXXX</span> </div>
+                    </div>
+                    <div class="c2 clear">
+                        <div class="detail-box" onclick="fnDetail(this)"><a href="javascript:;" class="detail-btn btn">详细信息</a><em></em></div>
+                        <a href="javascript:;" class="option-btn btn" onclick="fnOpenWin('arrange.html','arrange')">排班</a> </div>
+                </div>
+                <div class="list-detail">
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date"></p>
+                                <ol>
+                                   
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+            <li class="list-info">
+                <div class="list-short clear">
+                    <div class="c1">
+                        <h3 class="c-title"><span>文三西路以南天目山路以北</span>岗<img src="images/tt.png" style="margin-left:20px;"></h3>
+                        <div class="c-info"> <span>责任区: XXXXX</span> <span>负责人: XXXXX</span> <span>方式: XXXXX</span> <span>类型: XXXXX</span> <span>时间: 7：00-19：00</span> <span>警力配置: XXXXX</span> <span>备注: XXXXX</span> <span>排班部门: XXXXX</span> </div>
+                    </div>
+                    <div class="c2 clear">
+                        <div class="detail-box" onclick="fnDetail(this)"><a href="javascript:;" class="detail-btn btn">详细信息</a><em></em></div>
+                        <a href="javascript:;" class="option-btn btn" onclick="fnOpenWin('arrange.html','arrange')">排班</a> </div>
+                </div>
+                <div class="list-detail">
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date"></p>
+                                <ol>
+                                   
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+            <li class="list-info">
+                <div class="list-short clear">
+                    <div class="c1">
+                        <h3 class="c-title"><span>文三西路以南天目山路以北</span>岗<img src="images/tt.png" style="margin-left:20px;"></h3>
+                        <div class="c-info"> <span>责任区: XXXXX</span> <span>负责人: XXXXX</span> <span>方式: XXXXX</span> <span>类型: XXXXX</span> <span>时间: 7：00-19：00</span> <span>警力配置: XXXXX</span> <span>备注: XXXXX</span> <span>排班部门: XXXXX</span> </div>
+                    </div>
+                    <div class="c2 clear">
+                        <div class="detail-box" onclick="fnDetail(this)"><a href="javascript:;" class="detail-btn btn">详细信息</a><em></em></div>
+                        <a href="javascript:;" class="option-btn btn" onclick="fnOpenWin('arrange.html','arrange')">排班</a> </div>
+                </div>
+                <div class="list-detail">
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date"></p>
+                                <ol>
+                                   
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+            <li class="list-info">
+                <div class="list-short clear">
+                    <div class="c1">
+                        <h3 class="c-title"><span>文三西路以南天目山路以北</span>岗<img src="images/tt.png" style="margin-left:20px;"></h3>
+                        <div class="c-info"> <span>责任区: XXXXX</span> <span>负责人: XXXXX</span> <span>方式: XXXXX</span> <span>类型: XXXXX</span> <span>时间: 7：00-19：00</span> <span>警力配置: XXXXX</span> <span>备注: XXXXX</span> <span>排班部门: XXXXX</span> </div>
+                    </div>
+                    <div class="c2 clear">
+                        <div class="detail-box" onclick="fnDetail(this)"><a href="javascript:;" class="detail-btn btn">详细信息</a><em></em></div>
+                        <a href="javascript:;" class="option-btn btn" onclick="fnOpenWin('arrange.html','arrange')">排班</a> </div>
+                </div>
+                <div class="list-detail">
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date"></p>
+                                <ol>
+                                   
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+            <li class="list-info">
+                <div class="list-short clear">
+                    <div class="c1">
+                        <h3 class="c-title"><span>文三西路以南天目山路以北</span>岗<img src="images/tt.png" style="margin-left:20px;"></h3>
+                        <div class="c-info"> <span>责任区: XXXXX</span> <span>负责人: XXXXX</span> <span>方式: XXXXX</span> <span>类型: XXXXX</span> <span>时间: 7：00-19：00</span> <span>警力配置: XXXXX</span> <span>备注: XXXXX</span> <span>排班部门: XXXXX</span> </div>
+                    </div>
+                    <div class="c2 clear">
+                        <div class="detail-box" onclick="fnDetail(this)"><a href="javascript:;" class="detail-btn btn">详细信息</a><em></em></div>
+                        <a href="javascript:;" class="option-btn btn" onclick="fnOpenWin('arrange.html','arrange')">排班</a> </div>
+                </div>
+                <div class="list-detail">
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date"></p>
+                                <ol>
+                                   
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+            <li class="list-info">
+                <div class="list-short clear">
+                    <div class="c1">
+                        <h3 class="c-title"><span>文三西路以南天目山路以北</span>岗<img src="images/tt.png" style="margin-left:20px;"></h3>
+                        <div class="c-info"> <span>责任区: XXXXX</span> <span>负责人: XXXXX</span> <span>方式: XXXXX</span> <span>类型: XXXXX</span> <span>时间: 7：00-19：00</span> <span>警力配置: XXXXX</span> <span>备注: XXXXX</span> <span>排班部门: XXXXX</span> </div>
+                    </div>
+                    <div class="c2 clear">
+                        <div class="detail-box" onclick="fnDetail(this)"><a href="javascript:;" class="detail-btn btn">详细信息</a><em></em></div>
+                        <a href="javascript:;" class="option-btn btn" onclick="fnOpenWin('arrange.html','arrange')">排班</a> </div>
+                </div>
+                <div class="list-detail">
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="list-row clear">
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date">2014-8-11</p>
+                                <ol>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                                    <li><em></em><span class="d-time">07:00-09:30</span><span class="d-name">路人甲/ 路人乙/ 张三</span></li>
+                                </ol>
+                            </div>
+                            <div class="date-detail">
+                                <p class="d-date"></p>
+                                <ol>
+                                   
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- 侧边菜单 -->
+<div class="left-bar" style="width:0">
+    <ul id="menu">
+        <li> <a href="#" class="item" id="gwlb" onclick="fnOpenWin('post.html','post')">岗位管理</a>
+        </li>
+        <li> <a href="#" class="item active">勤务管理</a>
+            <ul style="display:block;">
+                <li><a href="search.html" class="active">勤务排班</a></li>
+                <li><a href="#">季节性布警要求</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">考核管理</a>
+            <ul>
+                <li><a href="#">考核管理</a></li>
+                <li><a href="#">考核指标维护</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">查询统计</a>
+            <ul>
+                <li><a href="#">责任区查询统计</a></li>
+                <li><a href="#">岗位查询统计</a></li>
+                <li><a href="#">警力投入情况统计</a></li>
+                <li><a href="#">各时段警力统计</a></li>
+                <li><a href="#">民警勤务时间统计</a></li>
+                <li><a href="#">考核统计</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">基础信息管理</a>
+            <ul>
+                <li><a href="#">机构信息维护</a></li>
+                <li><a href="#">警员信息维护</a></li>
+                <li><a href="#">责任区维护</a></li>
+                <li><a href="#">车辆设备维护</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">系统管理</a>
+            <ul>
+                <li><a href="#">数据字典维护</a></li>
+                <li><a href="#">角色信息维护</a></li>
+                <li><a href="#">菜单信息维护</a></li>
+                <li><a href="#">用户权限配置</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="bar-btn bar-close"> </div>
+</div>
+
+
+<!-- 右侧图 -->
+<div class="right-bar" style="width:0">
+    <div class="time-search mb20 ml10">
+        <input type="text" class="txt" placeholder="请输入搜索条件">
+        <button class="search-btn"></button>
+    </div>
+    <img src="images/pic.jpg">
+    <div class="bar-btn bar-close"> </div>
+</div>
+
+</body>
+</html>

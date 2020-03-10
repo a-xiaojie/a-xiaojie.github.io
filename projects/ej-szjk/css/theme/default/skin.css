@@ -1,0 +1,241 @@
+body{ color: #9a9a9a; background-color: #1f1f1f;}
+a{ color: #9a9a9a; outline: none;}
+a:focus{ outline: none;}
+div{
+	scrollbar-face-color: #868787; 
+	scrollbar-highlight-color: #1f1f1f; 
+	scrollbar-shadow-color: #1f1f1f; 
+	scrollbar-3dlight-color: #1f1f1f; 
+	scrollbar-arrow-color: #240024; 
+	scrollbar-track-color: #1f1f1f; 
+	scrollbar-darkshadow-color: #1f1f1f; 
+	scrollbar-base-color: #1f1f1f;
+}
+
+.u-ipt,
+.u-textarea,
+.u-sel{ color: #9a9a9a; border: 1px solid #111; background: #282828;}
+.typecore{ border-color: #f00; }
+.u-req{ color: #f00;}
+.u-btn{ color: #868787; background: url(images/form-btn.png) no-repeat 0 -28px; _background-image: url(images/form-btn.gif);}
+.u-btn.min{ background-position: 0 -84px;}
+.u-btn:hover{ color: #2888f3;}
+
+
+/* 头部及导航 */
+.g-hd{ background: url(images/bgs.jpg) repeat-x 0 0; border-bottom: 1px solid #000;}
+.m-top-nav a{ color: #2888f3;}
+.m-user{ color:#9a9a9a;}
+.m-nav li a{ color: #9a9a9a;}
+.m-nav li a:hover,
+.m-nav .cur a{ color: #fff; background: url(images/bgs.jpg) repeat-x 0 -65px;}
+.m-nav li a:hover .icon-realtime,
+.m-nav li.cur a .icon-realtime{ background-position: 0 -24px;}
+.m-nav li a:hover .icon-remote,
+.m-nav li.cur a .icon-remote{ background-position: -24px -24px;}
+/* .m-nav li a:hover .icon-local,
+.m-nav li.cur a .icon-local{ background-position: -48px -24px;} */
+.m-nav li a:hover .icon-gis,
+.m-nav li.cur a .icon-gis{ background-position: -48px -24px;}
+.m-nav li a:hover .icon-running,
+.m-nav li.cur a .icon-running{ background-position: -72px -24px;}
+.m-nav li a:hover .icon-system,
+.m-nav li.cur a .icon-system{ background-position: -96px -24px;}
+.m-nav li a:hover .icon-help,
+.m-nav li.cur a .icon-help{ background-position: -120px -24px;}
+
+/* 布局 */
+.g-mnl{ background: #1f1f1f;}
+.g-mnr{ background: #1e1e1e;}
+.g-mnf{ background: #111;}
+.g-sdc{  background: #333;}
+.g-side-ft{ background: #1e1e1e;}
+.m-panel-title{ color: #fff; background-color: #1f1f1f;}
+.m-content-border{ border: 1px solid #111;}
+.m-content-main{ background-color: #333;}
+.m-side-title{ background: url(images/bgs.jpg) repeat-x 0 -130px;}
+.m-search-bg{ background:#1e1e1e; border-radius: 13px; background: url(images/input-bg.png) no-repeat \9;}
+.m-tab-box .m-tab li{ background: url(images/bgs.jpg) repeat-x 0 -169px;}
+.m-tab-box .m-tab .cur{ color: #fff; background-position: 0 -208px;}
+.m-ft-tab .m-tab{ background:#111;}
+.m-ft-tab .m-tab li:hover{ color:#2887f0;}
+.m-ft-tab .m-tab-cont{ background-color: #1e1e1e;}
+.m-video-toolbar{ background:#1e1e1e; border-top:1px solid #111;}
+.m-mapbar{ background: url(images/bgs.jpg) repeat-x 0 -247px;}
+.m-videobar{ background: #121212;}
+.m-list-toolbar{ background: url(images/bgs.jpg) repeat-x 0 -284px;}
+
+.m-preset-toolbar{ border-bottom:1px solid #111;}
+.m-preset-toolbar .pre-add{ color:#9a9a9a;}
+.m-preset-toolbar .pre-add:hover{ color:#2887f0;}
+
+/* 列表 */
+.m-list li{ border-bottom: 1px solid #1f1f1f;}
+.m-list li a:hover,
+.m-list li.active a{ color: #2887f0; background-color: #1f1f1f;}
+/* 预置位列表 */
+.m-preset-list li{ border-bottom:1px solid #111;}
+.m-preset-list li .u-name{ color:#9a9a9a;}
+.m-preset-list li:hover .u-name,
+.m-preset-list li.hover .u-name,
+.m-preset-list li.active .u-name{ background:#111; color:#2887f0;}
+.m-preset-list li:hover .u-name .icon-preset,
+.m-preset-list li.hover .u-name .icon-preset,
+.m-preset-list li.active .u-name .icon-preset{ background-position: -23px -71px;}
+/* ztree */
+.ztree li a{ color: #9a9a9a; border-bottom: 1px solid #1f1f1f;}
+.ztree li a:hover{ color:#2887f0; background: #1f1f1f;}
+.ztree li a.level0:hover{ color:#9a9a9a; background:none;}
+.ztree li a.curSelectedNode{ color: #2887f0; background: #1f1f1f; outline: none;}
+
+/* 表格 */
+.m-table th,
+.m-table td{ border: 1px solid #1f1f1f;}
+.m-table a{ color: #9a9a9a;}
+.m-table a:hover{ color: #2888f3;}
+.m-table tr:hover td,
+.m-table tr.hover td{ color: #fff; background-color: #1f1f1f;}
+
+/* 分页 */
+.pager .fr a{ border: 1px solid #1f1f1f;}
+.pager .fr a:hover,
+.pager .fr a.selected{ color: #2887f3; background: #1f1f1f; border-color: #1f1f1f;}
+.pager .fr a.disabled{ color: #565555; border-color: #565555;}
+.pager .fr a.disabled:hover{ border-color: #565555; background:none;}
+
+
+/******************  按钮  ******************/
+/* 预置位按钮 */
+.pre-btn{ background: url(images/pre-btn.png) no-repeat;}
+.pre-btn-play{ background-position: 0 0;}
+.pre-btn-play:hover{ background-position: 0 -18px;}
+.pre-btn-edit{ background-position: -26px 0;}
+.pre-btn-edit:hover{ background-position: -26px -18px;}
+.pre-btn-del{ background-position: -52px 0;}
+.pre-btn-del:hover{ background-position: -52px -18px;}
+.pre-btn-submit,
+.pre-btn-cancel{ width:22px; height:22px; background-color:#282828; border:1px solid #111;}
+.pre-btn-submit:hover,
+.pre-btn-cancel:hover{ background-color:#111;}
+.pre-btn-submit{ background-position: -73px 0;}
+.pre-btn-cancel{ background-position: -103px 0;}
+
+/* 云控制按钮 */
+.minbtn{ background: url(images/min-btn.png) no-repeat;}
+.minbtn-minus{ background-position: 0 0;}
+.minbtn-minus:hover{ background-position: 0 -36px;}
+.minbtn-plus{ background-position: -36px 0;}
+.minbtn-plus:hover{ background-position: -36px -36px;}
+.m-cloud-btns .minbtn-minus{ background-position: -72px 0;}
+.m-cloud-btns .minbtn-minus:hover{ background-position: -72px -36px;}
+.m-cloud-btns .minbtn-plus{ background-position: -101px 0;}
+.m-cloud-btns .minbtn-plus:hover{ background-position: -101px -36px;}
+.m-dot-control .minbtn-minus{ background-position: -132px 0;}
+.m-dot-control .minbtn-minus:hover{ background-position: -132px -36px;}
+.m-dot-control .minbtn-plus{ background-position: -158px 0;}
+.m-dot-control .minbtn-plus:hover{ background-position: -158px -36px;}
+
+/* 图标按钮 */
+.icon-btn{ background: url(images/icon-btn.png) no-repeat;}
+.icon-btn-add{ background-position: -16px 0;}
+.icon-btn-add:hover{ background-position: -16px -28px;}
+.icon-btn-del{ background-position: -32px 0;}
+.icon-btn-del:hover{ background-position: -32px -28px;}
+.icon-btn-empty{ background-position: -48px 0;}
+.icon-btn-empty:hover{ background-position: -48px -28px;}
+.icon-btn-edit{ background-position: -64px 0;}
+.icon-btn-edit:hover{ background-position: -64px -28px;}
+.icon-quit{ background: url(images/icon-btn.png) no-repeat 0 0;}
+.u-quit:hover .icon-quit{ background-position: 0 -28px;}
+.icon-btn-search{ background-position: -144px 0;}
+.u-btn .icon-btn-search{ background-position: -144px 6px;}
+.u-search-btn:hover .icon-btn-search{ background-position: -144px -28px;}
+.u-btn:hover .icon-btn-search{ background-position: -144px -22px;}
+.icon-btn-sys-export{ background-position: -96px 0;}
+.u-btn:hover .icon-btn-sys-export{ background-position: -96px -28px;}
+.icon-btn-sys-add{ background-position: -112px 0;}
+.u-btn:hover .icon-btn-sys-add{ background-position: -112px -28px;}
+.ui-widget-header .ui-icon{ background: url(images/icon-btn.png) no-repeat -80px 0; _background-image: url(images/icon-btn.gif);}
+.ui-state-hover .ui-icon, 
+.ui-state-focus .ui-icon,
+.ui-widget-header .ui-state-focus{ background-position: -80px -28px; background-color: #1f1f1f;}
+.icon-btn-locate{ background-position: -128px 0; _background-image: url(images/icon-btn.gif);}
+.u-locate:hover .icon-btn-locate{ background-position: -128px -28px;}
+
+/* 播放器相关按钮 */
+.video-btn{ background: url(images/video-btn.png) no-repeat;}
+#aPlay{ background-position: 0 0;}
+#aPlay:hover,
+#aPlay.active{ background-position: 0 -38px;}
+#aPause{ background-position: -38px 0;}
+#aPause:hover,
+#aPause.active{ background-position: -38px -38px;}
+#aStop{ background-position: -76px 0;}
+#aStop:hover,
+#aStop.active{ background-position: -76px -38px;}
+#aFastBack{ background-position: -114px 0;}
+#aFastBack:hover,
+#aFastBack.active{ background-position: -114px -38px;}
+#aFastForward{ background-position: -152px 0;}
+#aFastForward:hover,
+#aFastForward.active{ background-position: -152px -38px;}
+#aFrameBack{ background-position: -190px 0;}
+#aFrameBack:hover,
+#aFrameBack.active{ background-position: -190px -38px;}
+#aFramePlay{ background-position: -228px 0;}
+#aFramePlay:hover,
+#aFramePlay.active{ background-position: -228px -38px;}
+#aCapture{ background-position: -266px 0;}
+#aCapture:hover,
+#aCapture.active{ background-position: -266px -38px;}
+#aSave{ background-position: -304px 0;}
+#aSave:hover,
+#aSave.active{ background-position: -304px -38px;}
+#aSynchro{ background-position: -342px 0;}
+#aSynchro:hover,
+#aSynchro.active{ background-position: -342px -38px;}
+#aCatalog{ background-position: -380px 0;}
+#aCatalog:hover,
+#aCatalog.active{ background-position: -380px -38px;}
+#aScreenOne{ background-position: -418px 0;}
+#aScreenOne:hover,
+#aScreenOne.active{ background-position: -418px -38px;}
+#aScreenFour{ background-position: -456px 0;}
+#aScreenFour:hover,
+#aScreenFour.active{ background-position: -456px -38px;}
+#aScreenSix{ background-position: -494px 0;}
+#aScreenSix:hover,
+#aScreenSix.active{ background-position: -494px -38px;}
+#aScreenNine{ background-position: -532px 0;}
+#aScreenNine:hover,
+#aScreenNine.active{ background-position: -532px -38px;}
+#aScreenFull{ background-position: -570px 0;}
+#aScreenFull:hover,
+#aScreenFull.active{ background-position: -570px -38px;}
+#aRecord{ background-position: -608px 0;}
+#aRecord:hover,
+#aRecord.active{ background-position: -608px -38px;}
+#aDownLoad{ background-position: -646px 0;}
+#aDownLoad:hover,
+#aDownLoad.active{ background-position: -646px -38px;}
+#aOpen{ background-position: -684px 0;}
+#aOpen:hover,
+#aOpen.active{ background-position: -684px -38px;}
+#aRecording{ background: url(images/recording.gif) no-repeat;display:none}
+
+/* 地图按钮 */
+.map-btn{ background: url(images/map-btn.png) no-repeat;}
+#aRemove{ background-position:0 0;}
+#aRemove:hover{ background-position:0 -38px;}
+#aAmplify{ background-position:-38px 0;}
+#aAmplify:hover{ background-position:-38px -38px;}
+#aReduce{ background-position:-76px 0;}
+#aReduce:hover{ background-position:-76px -38px;}
+#aRestore{ background-position:-114px 0;}
+#aRestore:hover{ background-position:-114px -38px;}
+#aMonitor{ background-position:-152px 0;}
+#aMonitor:hover{ background-position:-152px -38px;}
+#aEdit{ background-position:-190px 0;}
+#aEdit:hover{ background-position:-190px -38px;}
+#aSure{ background-position:-228px 0;}
+#aSure:hover{ background-position:-228px -38px;}

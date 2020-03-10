@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>情报流转-情报处理</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item active">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理" class="active">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+        <div class="column">
+        	<div class="title">
+            	<h3>情报流转 &gt; 情报处理</h3>
+            </div>
+            <div class="col-form">
+                <div class="report-form">
+                    <form>
+                        <div class="pd20">
+                            <div class="input-form clearfix">
+                                <p class="report-form-item fl">
+                                    <label class="report-label">编   号</label>
+                                    <input type="text" class="text-input">
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">时   间</label>
+                                    <input id="startTime" type="text" class="text-input time-text-input" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime\')}'})">
+                                    -
+                                    <input id="endTime" type="text" class="text-input time-text-input" onclick="WdatePicker({minDate:'#F{$dp.$D(\'startTime\')}'})">
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">类   别</label>
+                                    <select class="select">
+                                        <option selected>道路交通秩序</option>
+                                        <option>交通事故及刑事案件</option>
+                                        <option>社会动态类</option>
+                                        <option>灾害事故类</option>
+                                        <option>反管理情况</option>
+                                        <option>协查通报</option>
+                                        <option>预警通报</option>
+                                        <option>分析研判</option>
+                                        <option>其他</option>
+                                    </select>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">状   态</label>
+                                    <select class="select">
+                                        <option selected>待处理</option>
+                                    </select>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">标   题</label>
+                                    <input type="text" class="text-input">
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">采纳方式</label>
+                                    <select class="select">
+                                        <option selected>全部</option>
+                                    </select>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">上报人</label>
+                                    <input type="text" class="text-input">
+                                <p class="report-form-item fl">
+                                    <label class="report-label">是否续报</label>
+                                    <select class="select">
+                                        <option selected>是</option>
+                                        <option>否</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="btns mt20"><input type="button" class="btn" value="新   建"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-box table-form mt20">
+                    <div class="mod-tit">
+                        <h3 class="fl">情报信息</h3>
+                        <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+                    </div>
+                    <div class="table border-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="5%">编号</th>
+                                    <th>上报时间</th>
+                                    <th>标题</th>
+                                    <th>类别</th>
+                                    <th>简要</th>
+                                    <!-- <th width="10%">最后处理时间</th>
+                                    <th>状态</th>
+                                    <th>采纳方式</th>
+                                    <th>上报人</th>
+                                    <th>积分</th>
+                                    <th>是否续报</th>
+                                    <th width="25%">操作</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td title="1">1</td>
+                                    <td title="2014/12/3">2014/12/3</td>
+                                    <td title="反管理情况">反管理情况</td>
+                                    <td title="反管理情况">反管理情况</td>
+                                    <td title="物华小区24幢两车擦">物华小区24幢两车擦</td>
+                                    <!-- <td title="2014/12/3">2014/12/3</td>
+                                    <td title="待处理">待处理</td>
+                                    <td title="全部">全部</td>
+                                    <td title="王海峰">王海峰</td>
+                                    <td title="1">1</td>
+                                    <td title="否">否</td>
+                                    <td class="table-operate"><a href="javascript:;" class="operate-report" title="上报">上报</a> | 
+                                    	<a href="javascript:;" class="operate-collect" title="采编">采编</a> |
+                                    	<a href="javascript:;" class="operate-edit" title="编辑">编辑</a> |
+                                    	<a href="javascript:;" class="operate-del" title="删除">删除</a> |
+                                    	<a href="javascript:;" class="operate-check" title="查看">查看</a>
+                                    </td> -->
+                                </tr>
+                                <tr>
+                                    <td title="2">2</td>
+                                    <td title="2014/12/3">2014/12/3</td>
+                                    <td title="恶劣天气预警预报">恶劣天气预警预报</td>
+                                    <td title="预警预报">预警预报</td>
+                                    <td title="今明两天将会有大雾  能见度低">今明两天将会有大雾  能见度低</td>
+                                    <!-- <td title="2014/12/3">2014/12/3</td>
+                                    <td title="待处理">待处理</td>
+                                    <td title="全部">全部</td>
+                                    <td title="王海峰">王海峰</td>
+                                    <td title="2">2</td>
+                                    <td title="是">是</td>
+                                    <td class="table-operate"><a href="javascript:;" class="operate-re-report" title="续报">续报</a> | 
+                                    	<a href="javascript:;" class="operate-feedback" title="反馈">反馈</a> 
+                                    </td> -->
+                                </tr>
+                                <tr>
+                                    <td title="3">3</td>
+                                    <td title="2014/12/3">2014/12/3</td>
+                                    <td title="道路堵塞">道路堵塞</td>
+                                    <td title="道路交通秩序">道路交通秩序</td>
+                                    <td title="甘AD2367 占车位导致道路堵塞">甘AD2367 占车位导致道路堵塞</td>
+                                    <!-- <td title="2014/12/3">2014/12/3</td>
+                                    <td title="待处理">待处理</td>
+                                    <td title="全部">全部</td>
+                                    <td title="王海峰">王海峰</td>
+                                    <td title="1">1</td>
+                                    <td title="是">是</td>
+                                    <td class="table-operate"><a href="javascript:;" class="operate-re-report" title="续报">续报</a> | 
+                                    	<a href="javascript:;" class="operate-feedback" title="反馈">反馈</a> 
+                                    </td> -->
+                                </tr>
+                                <tr>
+                                    <td title="4">4</td>
+                                    <td title="2014/12/3">2014/12/3</td>
+                                    <td title="马拉松">马拉松</td>
+                                    <td title="社会动态">社会动态</td>
+                                    <td title="杭州马拉松即将举办">杭州马拉松即将举办</td>
+                                    <!-- <td title="2014/12/3">2014/12/3</td>
+                                    <td title="待处理">待处理</td>
+                                    <td title="全部">全部</td>
+                                    <td title="王海峰">王海峰</td>
+                                    <td title="1">1</td>
+                                    <td title="是">是</td>
+                                    <td class="table-operate"><a href="javascript:;" class="operate-re-report" title="续报">续报</a> | 
+                                    	<a href="javascript:;" class="operate-feedback" title="反馈">反馈</a> 
+                                    </td> -->
+                                </tr>
+                                <tr>
+                                    <td title="5">5</td>
+                                    <td title="2014/12/3">2014/12/3</td>
+                                    <td title="协查浙A-9370D">协查浙A-9370D</td>
+                                    <td title="协查通报">协查通报</td>
+                                    <td title="协查浙A-9370D别克小型普通客车">协查浙A-9370D别克小型普通客车</td>
+                                </tr>
+                                <tr>
+                                    <td title="6">6</td>
+                                    <td title="2014/12/3">2014/12/3</td>
+                                    <td title="有毒气体泄漏">有毒气体泄漏</td>
+                                    <td title="灾害事故">灾害事故</td>
+                                    <td title="杭金衢高速有毒气体泄露">杭金衢高速有毒气体泄露</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page-box">
+                        <div class="total-count">
+                            第<span class="active">1</span>页 | 共4页，共34条记录
+                        </div>
+                        <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+</body>
+</html>

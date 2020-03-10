@@ -1,0 +1,46 @@
+{
+	"data": [
+		{
+			"id": 7,
+			"title": "Reality让虚拟演播室节目达到全新高度",
+			"content": "Ziggo体育从阿姆斯特丹搬到Hilversum使用Reality虚拟系统制作节目已经有一年的时间了。",
+			"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43a0UcTjWvH5D4ogKYGtdeDicIgdiaKOU0UEaXFnFM8ciawYrWMAD9pUhrIxHZX5ebDhDW4YP43KOodLg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+		},
+		{
+			"id": 6,
+			"title": "水立方AR创作新高度",
+			"content": "Zero Density的Reality虚拟系统做到了虚拟和实景真正相融的效果。除了逼真的水面倒影，还可以根据现场太阳方位在直播进行中实时调整虚拟灯光方向和强度，根据天空实时调整水面颜色。",
+			"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43ZA8WuQrLBaTHA0ibXLiacVLmKHd4WJs9X0xM1WPkXsSgIOKOKy7KSFhUjIXkFfVEmMf310kKWFA8NA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+		},
+		{
+			"id": 5,
+			"title": "传奇现身背后的AR技术",
+			"content": "刚刚过去的11月4号，第七届英雄联盟全球总决赛在北京举行。下午的鸟巢体育馆坐满了热情的观众，当主题歌《Legends Never Die》唱到一半时，天空忽然飞来一条巨龙。",
+			"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43bMM5e6X7o3f0JPic1S2slCazR8bL7yjwePm2p4F9WY30OL8NZ09lUsib6tPWACVVCWKhic8kZZ2HcXg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+		},
+		{
+			"id": 4,
+			"title": "神奇的虚拟技术让未来照进现实",
+			"content": "广播电视是传递信息普及知识的重要途径，而虚拟演播室技术在呈现真实世界中并不存在的或无法展示的事物时拥有强大的表现能力。近日，法国的一家电视台利用虚拟演播室技术制作了一档科普节目。节目中，利用逼真的实时三维特效，主持人带着观众一起体验未来的宇宙飞船，探索神奇的太空。",
+			"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43bMM5e6X7o3f0JPic1S2slCazR8bL7yjwePm2p4F9WY30OL8NZ09lUsib6tPWACVVCWKhic8kZZ2HcXg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+		},
+		{
+			"id": 3,
+			"title": "Zero Density 为 TFO 赢得 IBC2017 创新大奖",
+			"content": "9月26日荷兰阿姆斯特丹，IBC2017 创新奖内容创作奖和评委奖最终花落加拿大的 TFO媒体集团。2016年美国拉斯维加斯的NAB，虚拟演播室技术公司 Zero Density 和加拿大TFO第一次相遇，一年后帮助后者在IBC上赢得了两个重要奖项。",
+			"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43bLXVmQug1KD95KHLMkBeEthVvRuRCyJLzNibOicQZHV2p8o6YgPTLZIDaQfYUDiaV9zz29Niac408dlA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+		},
+		{
+			"id": 2,
+			"title": "法国电视台再度选择Zero Density制作周播电视新闻杂志",
+			"content": "今年上半年法国电视频道France 2利用虚实结合演播室报道法国总统大选的节目让我们印象深刻，现在他又有新动作。再度选择Zero Density为一档周播电视新闻杂志节目“Envoyé Spécial”进行改版。这次应用的不是虚拟演播室，而是虚拟前景（AR）。早在20多年前虚拟技术就开始应用于电视节目制作中，但在改版前这档节目是在室外搭的真实场景中拍摄的。世界上很多节目制作者也和France 2 一样，有很多理由让他们不去考虑虚拟技术。",
+			"imgUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/ojPDRmdic43bIjxOpXkpMt696vjJZ8VeJHgXibqqTaicTtP2b3QYnPf7BFRPXtafuynSNceicvNPia0XCAWyAKnkUhA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1"
+		},
+		{
+			"id": 1,
+			"title": "简议4K摄像机",
+			"content": "关于4K，也许我们只需要知道这些就够了：它是4个高清。像素提高了，带来最显而易见的好处就是更适合在更大的电视机上观看了。65寸以上的电视机，看高清是不舒服的。4K要追求的是“身临其境”的感觉。",
+			"imgUrl": "http://mmbiz.qpic.cn/mmbiz/ojPDRmdic43YBMSibDFmCVqhzqvnhoYSoRzApae6w9jPv13F2EntYEeQgfiaS2lM9NiaUDK9VSSP6kcrDn5Vwbd3Xg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1"
+		}
+	]
+}

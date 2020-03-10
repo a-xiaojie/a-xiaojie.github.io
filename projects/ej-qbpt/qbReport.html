@@ -1,0 +1,1189 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>情报流转-情报上报</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+<!-- 配置文件 -->
+<script type="text/javascript" src="Ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="Ueditor/ueditor.all.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item active">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集" class="active">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+        <div class="column tabs qb-tabs">
+        	<ul class="tab-list qb-tab-list clearfix">
+                <li><a href="javascript:;" class="active">警情信息</a></li>
+                <li><a href="javascript:;">自主上报</a></li>
+                <li><a href="javascript:;">支队收集</a></li>
+                <li><a href="javascript:;">智能推送</a></li>
+            </ul>
+            <div class="col-form tab-cont qb-tab-cont" style="display: block">
+                <div class="border-table table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="5%">状态</th>
+                                <th width="8%">报警时间</th>
+                                <th width="9%">报警人电话</th>
+                                <th width="15%">事发地址</th>
+                                <th width="15%">报警内容</th>
+                                <th width="8%">警情来源</th>
+                                <th width="6%">警情级别</th>
+                                <th width="8%">警情类型</th>
+                                <th width="8%">收集部门</th>
+                                <th width="8%">处结类型</th>
+                                <th width="10%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="紧急">紧急</td>
+                                <td title="12/03 23:52">12/03 23:52</td>
+                                <td title="13221801268">13221801268</td>
+                                <td title="古墩路莲花街">古墩路莲花街</td>
+                                <td title="两车事故">两车事故</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="西湖大队">西湖大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="紧急">紧急</td>
+                                <td title="12/03 23:48">12/03 23:48</td>
+                                <td title="13777454714">13777454714</td>
+                                <td title="沈塘桥公交车站">沈塘桥公交车站</td>
+                                <td title="两车事故">两车事故</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="拱墅大队">拱墅大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="紧急">紧急</td>
+                                <td title="12/03 23:45">12/03 23:45</td>
+                                <td title="15325884594">15325884594</td>
+                                <td title="停车：黄龙饭店">停车：黄龙饭店</td>
+                                <td title="A22V85银白色雪佛兰 挡道 请回复报警人">A22V85银白色雪佛兰 挡道 请回复报警人</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="群众求助">群众求助</td>
+                                <td title="西湖大队">西湖大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="紧急">紧急</td>
+                                <td title="12/03 23:40">12/03 23:40</td>
+                                <td title="13282840928">13282840928</td>
+                                <td title="东新路381号院子里面">东新路381号院子里面</td>
+                                <td title="单车事故">单车事故</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="下城大队直属中队">下城大队直属中队</td>
+                                <td title="派警处置">派警处置</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="重大">重大</td>
+                                <td title="12/03 23:39">12/03 23:39</td>
+                                <td title="18698575631">18698575631</td>
+                                <td title="复兴路高架上口往北匝道">复兴路高架上口往北匝道</td>
+                                <td title="单方事故 撞护栏">单方事故 撞护栏</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title=""></td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="紧急">紧急</td>
+                                <td title="12/03 23:32">12/03 23:32</td>
+                                <td title="13958185311">13958185311</td>
+                                <td title="物华小区24幢-三方转">物华小区24幢-三方转</td>
+                                <td title="两车擦-三方转">两车擦-三方转</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="西湖大队">西湖大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="重大">重大</td>
+                                <td title="12/03 23:31">12/03 23:31</td>
+                                <td title="18957125237">18957125237</td>
+                                <td title="假山新村">假山新村</td>
+                                <td title="甘AD2367 占车位">甘AD2367 占车位</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="拱墅大队">拱墅大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="紧急">紧急</td>
+                                <td title="12/03 23:31">12/03 23:31</td>
+                                <td title="13736111755">13736111755</td>
+                                <td title="停车：闸弄口新村57号">停车：闸弄口新村57号</td>
+                                <td title="A195H6白色尼桑 挡道 请回复报警人">A195H6白色尼桑 挡道 请回复报警人</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="群众求助">群众求助</td>
+                                <td title="江干大队">江干大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="重大">重大</td>
+                                <td title="12/03 23:27">12/03 23:27</td>
+                                <td title="13757141025">13757141025</td>
+                                <td title="杨家墩">杨家墩</td>
+                                <td title="浙A0226M 堵路">浙A0226M 堵路</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="交通堵塞">交通堵塞</td>
+                                <td title="滨江大队">滨江大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="紧急">紧急</td>
+                                <td title="12/03 23:20">12/03 23:20</td>
+                                <td title="13600417341">13600417341</td>
+                                <td title="停车：大关南七苑">停车：大关南七苑</td>
+                                <td title="A9H961黑色别克 挡道">A9H961黑色别克 挡道</td>
+                                <td title="三台合一">三台合一</td>
+                                <td title="三级">三级</td>
+                                <td title="群众求助">群众求助</td>
+                                <td title="拱墅大队">拱墅大队</td>
+                                <td title=""></td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="接收" class="operate-confirm">接收</a>
+                                    <a href="javascript:;" title="派发" class="operate-cancel">派发</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="page-box">
+                        <div class="total-count">
+                            第<span class="active">1</span>页 | 共4页，共34条记录
+                        </div>
+                        <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-form tab-cont qb-tab-cont">
+                <div class="report-form">
+                    <form>
+                        <div class="pd20">
+                            <div class="input-form clearfix">
+                                <p class="report-form-item fl">
+                                    <label class="report-label">标题</label>
+                                    <input type="text" class="text-input" value="">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">类别</label>
+                                    <select class="select">
+                                    	<option selected>道路交通秩序</option>
+                                    	<option>交通事故及刑事案件</option>
+                                    	<option>社会动态类</option>
+                                    	<option>灾害事故类</option>
+                                    	<option>反管理情况</option>
+                                    	<option>协查通报</option>
+                                    	<option>预警通报</option>
+                                    	<option>分析研判</option>
+                                    	<option>其他</option>
+                                    </select>
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">时间</label>
+                                    <input type="text" class="text-input" onclick="WdatePicker()">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">地点</label>
+                                    <input type="text" class="text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">信息来源</label>
+                                    <input type="text" class="text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">对象</label>
+                                    <input type="text" class="text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">事由</label>
+                                    <input type="text" class="text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">程度</label>
+                                    <input type="text" class="text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item long fl">
+                                    <label class="report-label">过程</label>
+                                    <input type="text" class="text-input long-text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item long fl">
+                                    <label class="report-label">已采取的措施</label>
+                                    <input type="text" class="text-input long-text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item long fl">
+                                    <label class="report-label">结果</label>
+                                    <input type="text" class="text-input long-text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item long fl">
+                                    <label class="report-label">趋势研判</label>
+                                    <input type="text" class="text-input long-text-input">
+                                    <span class="form-need">*</span>
+                                </p>
+                                <p class="report-form-item long fl">
+                                    <label class="report-label">附件</label>
+                                    <input type="text" class="text-input long-text-input">
+                                    <span></span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">签发人</label>
+                                    <input type="text" class="text-input">
+                                    <span></span>
+                                </p>
+                                <p class="report-form-item fl">
+                                    <label class="report-label">是否加锁</label>
+                                    <select class="select">
+                                    	<option>是</option>
+                                        <option selected>否</option>
+                                    </select>
+                                    <span class="form-need">*</span>
+                                </p>
+                            </div>
+                            <div class="btns mt20"><input id="createBtn" class="btn" type="button" value="生成文本信"></div>
+                        </div>
+                        <div class="edit-form mt20">
+                            <!-- 加载编辑器的容器 -->
+                            <script id="container" class="edit-cont" name="content">
+                            </script>
+                        </div>
+                        <div class="btns mt20">
+                            <input id="saveBtn" class="btn" type="button" value="保存草稿">
+                            <input id="previewBtn" class="btn" type="button" value="预   览">
+                            <input id="SubmitBtn" class="btn" type="button" value="上   报">
+                            <input id="printBtn" class="btn" type="button" value="打   印">
+                            <input id="cancelBtn" class="btn" type="button" value="取   消">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-form tab-cont qb-tab-cont">
+                <div class="qb-collect">
+                    <div class="qb-collect-search clearfix">
+                        <h3 class="fl">搜索条件</h3>
+                        <div class="fl qb-collect-search-box">
+                            <span>• 标题
+                            </span><input class="search-input" id="serchText" type="text">
+                        </div>
+                        <ul class="fl slidedown-select clearfix">
+                            <li id="years">
+                                <span>• 年</span>
+                                <div class="slide-down-box"> 
+                                    <a class="active">2014年</a> <a>2013年</a> <a>2012年</a> <a>2011年</a> 
+                                </div>
+                            </li>
+                            <li id="months">
+                                <span>• 月</span>
+                                <div class="slide-down-box">
+                                    <a class="active">1月</a><a>2月</a><a>3月</a><a>4月</a><a>5月</a><a>6月</a><a>7月</a><a>8月</a><a>9月</a><a>10月</a><a>11月</a><a>12月</a> 
+                                </div>
+                            </li>
+                            <li id="weeks">
+                                <span>• 周</span>
+                                <div class="slide-down-box">
+                                    <a class="active">第1周</a><a>第2周</a><a>第3周</a><a>第4周</a><a>第5周</a> 
+                                </div>
+                            </li>
+                            <li>
+                                <span>• 状态</span>
+                                <div class="slide-down-box">
+                                    <a>待下发</a>
+                                    <a>待上报</a>
+                                    <a>已上报</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="fr qb-add" href="javascript:;" title="添加">+</a>
+                    </div>
+                    <ul class="qb-collect-list">
+                        <li>
+                            <div class="qb-collect-list-title clearfix">
+                                <div class="fl qb-list-time"><span class="qb-list-start-time">2014-11-30</span>至<span class="qb-list-end-time">2014-12-06</span></div>
+                                <span class="qb-list-name fl">晚上整治点收集</span>
+                                <a href="javascript:;" class="fr cont-toggle"><i class="arrow-down-blue"></i></a>
+                                <div class="fr qb-list-operate">
+                                    <a href="javascript:;" class="table-btn"><i class="qb-icon icon-table"></i>表格</a>
+                                    <a href="javascript:;" class="export-btn"><i class="qb-icon icon-export"></i>导出</a>
+                                </div>
+                            </div>
+                            <div class="qb-collect-list-content">
+                                <h3 class="qb-list-title">晚上整治点收集</h3>
+                                <div class="qb-list-cont">
+                                    <p>2014年12月3日7时10分，姚锋（男，31岁，江苏省溧阳市）驾驶苏DLF133号小型轿车，行驶至天目山路教工路口时，因涉嫌酒后驾驶机动车被民警查获，经呼吸酒精测试后得出酒精浓34.7mg/100ml。</p>
+                                </div>
+                                <div class="border-table table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>单位</th>
+                                                <th>日期</th>
+                                                <th>整治点</th>
+                                                <th>警力数</th>
+                                                <th>带队领导</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>下城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>上城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>11</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>西湖</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>12</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>滨江</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>9</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>拱墅</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>江干</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>合计</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>62</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="qb-collect-list-title clearfix">
+                                <div class="fl qb-list-time"><span class="qb-list-start-time">2014-11-23</span>至<span class="qb-list-end-time">2014-11-29</span></div>
+                                <span class="qb-list-name fl">晚上整治点收集</span>
+                                <a href="javascript:;" class="fr cont-toggle"><i class="arrow-down-blue"></i></a>
+                                <div class="fr qb-list-operate">
+                                    <a href="javascript:;" class="table-btn"><i class="qb-icon icon-table"></i>表格</a>
+                                    <a href="javascript:;" class="export-btn"><i class="qb-icon icon-export"></i>导出</a>
+                                </div>
+                            </div>
+                            <div class="qb-collect-list-content">
+                                <h3 class="qb-list-title">晚上整治点收集</h3>
+                                <div class="qb-list-cont">
+                                    <p>2014年11月23日7时10分，姚锋（男，31岁，江苏省溧阳市）驾驶苏DLF133号小型轿车，行驶至天目山路教工路口时，因涉嫌酒后驾驶机动车被民警查获，经呼吸酒精测试后得出酒精浓34.7mg/100ml。</p>
+                                </div>
+                                <div class="border-table table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>单位</th>
+                                                <th>日期</th>
+                                                <th>整治点</th>
+                                                <th>警力数</th>
+                                                <th>带队领导</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>下城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>上城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>11</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>西湖</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>12</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>滨江</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>9</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>拱墅</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>江干</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>合计</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>62</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="qb-collect-list-title clearfix">
+                                <div class="fl qb-list-time"><span class="qb-list-start-time">2014-11-16</span>至<span class="qb-list-end-time">2014-11-22</span></div>
+                                <span class="qb-list-name fl">晚上整治点收集</span>
+                                <a href="javascript:;" class="fr cont-toggle"><i class="arrow-down-blue"></i></a>
+                                <div class="fr qb-list-operate">
+                                    <a href="javascript:;" class="table-btn"><i class="qb-icon icon-table"></i>表格</a>
+                                    <a href="javascript:;" class="export-btn"><i class="qb-icon icon-export"></i>导出</a>
+                                </div>
+                            </div>
+                            <div class="qb-collect-list-content">
+                                <h3 class="qb-list-title">晚上整治点收集</h3>
+                                <div class="qb-list-cont">
+                                    <p>2014年11月13日7时10分，姚锋（男，31岁，江苏省溧阳市）驾驶苏DLF133号小型轿车，行驶至天目山路教工路口时，因涉嫌酒后驾驶机动车被民警查获，经呼吸酒精测试后得出酒精浓34.7mg/100ml。</p>
+                                </div>
+                                <div class="border-table table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>单位</th>
+                                                <th>日期</th>
+                                                <th>整治点</th>
+                                                <th>警力数</th>
+                                                <th>带队领导</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>下城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>上城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>11</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>西湖</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>12</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>滨江</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>9</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>拱墅</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>江干</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>合计</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>62</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="qb-collect-list-title clearfix">
+                                <div class="fl qb-list-time"><span class="qb-list-start-time">2014-11-09</span>至<span class="qb-list-end-time">2014-11-15</span></div>
+                                <span class="qb-list-name fl">晚上整治点收集</span>
+                                <a href="javascript:;" class="fr cont-toggle"><i class="arrow-down-blue"></i></a>
+                                <div class="fr qb-list-operate">
+                                    <a href="javascript:;" class="table-btn"><i class="qb-icon icon-table"></i>表格</a>
+                                    <a href="javascript:;" class="export-btn"><i class="qb-icon icon-export"></i>导出</a>
+                                </div>
+                            </div>
+                            <div class="qb-collect-list-content">
+                                <h3 class="qb-list-title">晚上整治点收集</h3>
+                                <div class="qb-list-cont">
+                                    <p>2014年11月13日7时10分，姚锋（男，31岁，江苏省溧阳市）驾驶苏DLF133号小型轿车，行驶至天目山路教工路口时，因涉嫌酒后驾驶机动车被民警查获，经呼吸酒精测试后得出酒精浓34.7mg/100ml。</p>
+                                </div>
+                                <div class="border-table table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>单位</th>
+                                                <th>日期</th>
+                                                <th>整治点</th>
+                                                <th>警力数</th>
+                                                <th>带队领导</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>下城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>上城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>11</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>西湖</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>12</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>滨江</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>9</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>拱墅</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>江干</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>合计</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>62</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="qb-collect-list-title clearfix">
+                                <div class="fl qb-list-time"><span class="qb-list-start-time">2014-11-02</span>至<span class="qb-list-end-time">2014-11-08</span></div>
+                                <span class="qb-list-name fl">晚上整治点收集</span>
+                                <a href="javascript:;" class="fr cont-toggle"><i class="arrow-down-blue"></i></a>
+                                <div class="fr qb-list-operate">
+                                    <a href="javascript:;" class="table-btn"><i class="qb-icon icon-table"></i>表格</a>
+                                    <a href="javascript:;" class="export-btn"><i class="qb-icon icon-export"></i>导出</a>
+                                </div>
+                            </div>
+                            <div class="qb-collect-list-content">
+                                <h3 class="qb-list-title">晚上整治点收集</h3>
+                                <div class="qb-list-cont">
+                                    <p>2014年11月3日7时10分，姚锋（男，31岁，江苏省溧阳市）驾驶苏DLF133号小型轿车，行驶至天目山路教工路口时，因涉嫌酒后驾驶机动车被民警查获，经呼吸酒精测试后得出酒精浓34.7mg/100ml。</p>
+                                </div>
+                                <div class="border-table table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>单位</th>
+                                                <th>日期</th>
+                                                <th>整治点</th>
+                                                <th>警力数</th>
+                                                <th>带队领导</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>下城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>上城</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>11</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>西湖</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>12</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>滨江</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>9</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>拱墅</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>江干</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>10</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>合计</td>
+                                                <td>12/03</td>
+                                                <td></td>
+                                                <td>62</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="add-qb-collect">
+                   <form>
+                        <div class="pd20 clearfix">
+                            <div class="report-form-item form-readonly fl">
+                                <label class="report-label">编号</label>
+                                <input type="text" class="text-input" value="201412021542">
+                            </div>
+                            <div class="report-form-item form-readonly fl">
+                                <label class="report-label">下发时间</label>
+                                <input type="text" class="text-input" value="2014/12/02 15:42:01">
+                            </div>
+                            <div class="report-form-item fl">
+                                <label class="report-label">拟稿人</label>
+                                <input type="text" class="text-input">
+                            </div>
+                            <div class="report-form-item fl">
+                                <label class="report-label">签发人</label>
+                                <input type="text" class="text-input">
+                            </div>
+                            <div class="report-form-item fl">
+                                <label class="report-label">标题</label>
+                                <input type="text" class="text-input" value="晚上整治点收集">
+                            </div>
+                            <div class="report-form-item max fl">
+                                <label class="report-label">内容</label>
+                                <textarea class="add-qb-textarea"></textarea>
+                            </div>
+                            <div class="report-form-item max fl">
+                                <label class="report-label">表单</label>
+                                <div class="fl report-form-box">
+                                    <div class="table clearfix">
+                                        <a href="javascript:;" class="fr qb-his-link">选择历史表单</a>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>序号</th>
+                                                    <th>属性</th>
+                                                    <th>数据类型</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>日期</td>
+                                                    <td>日期</td>
+                                                    <td rowspan="4"><a class="btn" href="javascript:;">添加属性</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>整治点</td>
+                                                    <td>文本</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>警力数</td>
+                                                    <td>数值</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>带队领导</td>
+                                                    <td>文本</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="report-form-item fl">
+                                <label class="report-label">开始时间</label>
+                                <input id="startTime" type="text" class="text-input" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime\')}'})">
+                            </div>
+                            <div class="report-form-item fl">
+                                <label class="report-label">结束时间</label>
+                                <input id="endTime" type="text" class="text-input" onclick="WdatePicker({minDate:'#F{$dp.$D(\'startTime\')}'})">
+                            </div>
+                            <div class="report-form-item fl">
+                                <label class="report-label">周期</label>
+                                <select class="select">
+                                    <option>第一周</option>
+                                    <option selected>第二周</option>
+                                </select>
+                            </div>
+                            <div class="report-form-item fl">
+                                <label class="report-label">接收单位</label>
+                                <select class="select">
+                                    <option>上城大队</option>
+                                    <option selected>下城大队</option>
+                                </select>
+                            </div>
+                            <div class="report-form-item long fl">
+                                <label class="report-label">附件</label>
+                                <input type="text" class="text-input long-text-input">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="btns mt20">
+                            <input id="qbPreviewBtn" class="btn" type="button" value="预   览">
+                            <input id="qbSaveBtn" class="btn" type="button" value="保存草稿">
+                            <input id="qbSubmitBtn" class="btn" type="button" value="下  发">
+                            <input id="qbCloselBtn" class="btn" type="button" value="关  闭">
+                        </div>
+                    </form> 
+                </div>
+            </div>
+            <div class="col-form tab-cont qb-tab-cont">
+                <div class="border-table table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>来源</th>
+                                <th>类别</th>
+                                <th>推送时间</th>
+                                <th>处理时间</th>
+                                <th>处理人</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="1">1</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 09:30">12/03 09:30</td>
+                                <td title="12/03 09:30">12/03 09:30</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="2">2</td>
+                                <td title="气象">气象</td>
+                                <td title="天气预告">天气预告</td>
+                                <td title="12/03 09:00">12/03 09:00</td>
+                                <td title="12/03 09:00">12/03 09:00</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="3">3</td>
+                                <td title="政务督查">政务督查</td>
+                                <td title="政务督查">政务督查</td>
+                                <td title="12/03 08:30">12/03 11:30</td>
+                                <td title="12/03 08:30">12/03 11:30</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="4">4</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 08:20">12/03 08:20</td>
+                                <td title="12/03 08:20">12/03 08:20</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="5">5</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 08:16">12/03 08:16</td>
+                                <td title="12/03 08:16">12/03 08:16</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="6">6</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 08:15">12/03 08:15</td>
+                                <td title="12/03 08:15">12/03 08:15</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="7">7</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 08:10">12/03 08:10</td>
+                                <td title="12/03 08:10">12/03 08:10</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="8">8</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 08:09">12/03 08:09</td>
+                                <td title="12/03 08:09">12/03 08:09</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td title="5">5</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 08:08">12/03 08:08</td>
+                                <td title="12/03 08:08">12/03 08:08</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                            <tr class="trDoubleRow">
+                                <td title="6">6</td>
+                                <td title="分析研判">分析研判</td>
+                                <td title="交通事故">交通事故</td>
+                                <td title="12/03 08:00">12/03 08:00</td>
+                                <td title="12/03 08:00">12/03 08:00</td>
+                                <td title="王海峰">王海峰</td>
+                                <td class="table-operate">
+                                    <a href="javascript:;" title="确认" class="operate-confirm">确认</a>
+                                    <a href="javascript:;" title="取消" class="operate-cancel">取消</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="page-box">
+                        <div class="total-count">
+                            第<span class="active">1</span>页 | 共4页，共34条记录
+                        </div>
+                        <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+</body>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container',{
+		autoHeight: false
+	});
+    ue.ready(function() {
+        ue.setContent('2014年12月3日7时10分，姚锋（男，31岁，江苏省溧阳市）驾驶苏DLF133号小型轿车，行驶至天目山路教工路口时，因涉嫌酒后驾驶机动车被民警查获，经呼吸酒精测试后得出酒精浓34.7mg/100ml。')
+        $('#previewBtn').on('click',function(){
+            var html=ue.getContent();
+            //alert(html)
+            window.location.href="preview.html";
+        });
+        $('#saveBtn').on('click',function(){
+            getLocalData();
+        });
+
+        $('#cancelBtn').on('click',function(){
+            ue.setContent('');
+        });
+    });
+
+    function getLocalData () {
+        alert(UE.getEditor('container').execCommand( "getlocaldata" ));
+    }
+</script>
+<script>
+$(function(){
+	$('#createBtn').on('click',function(){
+		$('.form-need').each(function(index, element) {
+            if($(this).prev('input').val()==''){
+				fnAlert($(this).siblings('.report-label').text()+'必填！');
+				return false;	
+			}
+        });	
+	});
+
+    // 内容的收缩与展开
+    $('.cont-toggle').click(function(){
+        $(this).children().toggleClass('arrow-up-blue').toggleClass('arrow-down-blue');
+        $(this).parents('li').siblings().find('.qb-collect-list-content').slideUp().end().find('.cont-toggle i').removeClass('arrow-up-blue').addClass('arrow-down-blue');
+        $(this).parents('.qb-collect-list-title').next().slideToggle();
+    });	
+
+    var cdate=new fnGetDate(new Date()).gotoMonday();
+    $('#years').find("span").text("• "+cdate.year+"年").end().find("a:contains("+cdate.year+"年)").addClass('active').siblings().removeClass('active');;
+    $('#months').find("span").text("• "+cdate.month+"月").end().find("a:contains("+cdate.month+"月)").addClass('active').siblings().removeClass('active');;
+    fnGetWeek(cdate.year,cdate.month,$('.search-box #weeks'));
+    $('#weeks').find("span").text("• 第"+cdate.getWeekIndex()+"周").end().find("a:contains(第"+cdate.getWeekIndex()+"周)").addClass('active').siblings().removeClass('active');
+
+    $('.qb-add').on('click',function(){
+        $('.qb-collect').hide();
+        $('.add-qb-collect').show();
+    });
+    $('#qbPreviewBtn').on('click',function(){
+        $('.qb-collect').show();
+        $('.add-qb-collect').hide();
+    });
+    $('#qbSaveBtn').on('click',function(){
+        //保存草稿
+    });
+    $('#qbSubmitBtn').on('click',function(){
+        //下发 
+        $('.qb-collect').show();
+        $('.add-qb-collect').hide();
+    });
+    $('#qbCloselBtn').on('click',function(){
+        $('.qb-collect').show();
+        $('.add-qb-collect').hide();
+    });
+})
+</script>
+</html>

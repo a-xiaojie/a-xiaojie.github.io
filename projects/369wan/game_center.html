@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>游戏中心-网页游戏</title>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script src="js/jquery.js" ></script>
+</head>
+
+<body>
+<!--网站头部部分-->
+<div class="main" style="*z-index:999;">
+    <div class="all_games_up" id="all_game_div" style="display: none;"> <span class="all_gemes_tra"><img src="images/all_game_tra.jpg" width="16" height="9" /></span>
+        <p class="all_wel"><strong>欢迎来到369wan，现在就开始您的游戏之旅吧!</strong> <span> <img src="images/all_n.jpg"  />最新游戏</span><span> <img src="images/all_b.jpg"  />测试游戏</span><span> <img src="images/all_h.jpg"  />热门游戏</span></p>
+        <ul class="all_games_list">
+            <li><a href="game_box.html">烈焰</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">赤月传说</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">暗黑屠龙</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">绝代双骄</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">烈火战神</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">屠龙传说</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">屠龙战</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">欧冠足球</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">胜利11人</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">逐日战神</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">剑踪</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">街机三国</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">热血战纪</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">问剑</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">新五虎上将</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">枪魂</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">怒斩</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">傲视遮天</a> </li>
+            <li><a href="game_box.html">玄仙传奇</a> </li>
+            <li><a href="game_box.html">赤月</a> </li>
+            <li><a href="game_box.html">神仙道</a> </li>
+            <li><a href="game_box.html">沙之城主</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">盛世三国</a> </li>
+            <li><a href="game_box.html">龙魂天下</a> </li>
+            <li><a href="game_box.html">霸域</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">凡人修真2</a> </li>
+            <li><a href="game_box.html">悍将传世</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">斗破苍穹2</a> </li>
+            <li><a href="game_box.html">霸刀</a> </li>
+            <li><a href="game_box.html">神将三国</a> </li>
+            <li><a href="game_box.html">神座</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">炼妖录</a> <img src="images/all_b.jpg" /> </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="main">
+        <h1 class="logo"><a href="index.html"></a></h1>
+        <div class="top_menu"> <a href="javascript:;" onclick="if(document.all){document.body.style.behavior = 'url(#default#homepage)'; document.body.setHomePage('www.369wan.html'); }else{ alert('浏览器不支持此操作, 请手动设为首页'); }">设为首页</a><a href="javascript:;" onclick="try{ window.external.addFavorite('www.369wan.html', '369wan游戏平台'); } catch(e) {  try{ window.sidebar.addPanel('369wan游戏平台', 'www.369wan.html', ''); }catch (e) { alert('http://www.369wan.com/加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.');  } }">加入收藏</a><a href="javascript:;">把369wan保存到桌面</a><span id="all_game_hover" 369wan游戏</span> </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">首  页<br />
+                    <span>HOME</span></a></li>
+                <li><a href="users/users_index.html" rel="nofollow">用户中心<br />
+                    <span>USER</span></a></li>
+                <li><a href="game_center.html">游戏中心<br />
+                    <span>GAME</span></a></li>
+                <li><a href="pay/pay_index.html" target="_blank" rel="nofollow">充值中心<br />
+                    <span>PAY</span></a></li>
+                <li><a href="kefu/kefu.html" rel="nofollow">客服中心<br />
+                    <span>SERVICE</span></a></li>
+                <li><a href="http://bbs.369wan.com/" target="_blank">官方论坛<br />
+                    <span>BBS</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var timeout = null;
+	$('#all_game_hover').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		timeout = setTimeout(function(){ $('#all_game_div').hide(); }, 300);
+	});
+	
+	$('#all_game_div').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		$('#all_game_div').hide();
+	});
+});
+</script> 
+<!--网站头部部分结束-->
+<div class="main">
+    <div class="center_left game_border">
+        <div class="title">火爆游戏</div>
+        <div class="hot_game game_center">
+            <ul>
+                <li>
+                    <div class="btn_over" > <a class="btn" href="#" target="_blank" >进入官网</a> </span> <a class="btn btn2" href="#" target="_blank">进入游戏</a> </span> </div>
+                    <p class="roud_bg"></p>
+                    <img src="images/game_center_ly.jpg"  />
+                    <p><a href="#" class="gred">烈焰</a></p>
+                </li>
+                <li>
+                    <div class="btn_over" > <a class="btn" href="#" target="_blank" >进入官网</a> </span> <a class="btn btn2" href="#" target="_blank">进入游戏</a> </span> </div>
+                    <p class="roud_bg"></p>
+                    <img src="images/game_center_cycs.jpg"  />
+                    <p><a href="#" class="gred">赤月传说</a></p>
+                </li>
+                <li>
+                    <div class="btn_over" > <a class="btn" href="#" target="_blank" >进入官网</a> </span> <a class="btn btn2" href="#" target="_blank">进入游戏</a> </span> </div>
+                    <p class="roud_bg"></p>
+                    <img src="images/game_center_ahtl.jpg"  />
+                    <p><a href="#" class="gred">暗黑屠龙</a></p>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+	$(function(){
+		$(".hot_game li").hover(function(){
+			$(this).find(".btn_over").show();
+		},function(){
+			$(this).find(".btn_over").hide();
+		});
+	});
+	</script> 
+        <a name="type"></a>
+        <div class="classify_list"><span class="all_game"><a href="game_center.html">全部游戏>></a></span>
+            <p class="game_style"> <span class="game_style_bg">游戏类型</span> <a href="game_center.html">角色扮演</a> <a href="game_center.html">休闲竞技</a> <a href="game_center.html">体育竞技</a> </p>
+            <p class="game_style2"> <span class="game_style_bg2">按首字母</span> <a href="game_center.html">A</a> <a href="game_center.html">B</a> <a href="game_center.html">C</a> <a href="game_center.html">D</a> <a href="game_center.html">F</a> <a href="game_center.html">H</a> <a href="game_center.html">J</a> <a href="game_center.html">L</a> <a href="game_center.html">M</a> <a href="game_center.html">N</a> <a href="game_center.html">O</a> <a href="game_center.html">Q</a> <a href="game_center.html">R</a> <a href="game_center.html">S</a> <a href="game_center.html">T</a> <a href="game_center.html">W</a> <a href="game_center.html">X</a> <a href="game_center.html">Z</a> </p>
+        </div>
+        <div class="hot_game2">
+            <div >
+                <ul class="game_center_list" >
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/ly.jpg" />
+                        <p>烈焰</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/cycs.jpg" />
+                        <p>赤月传说</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/ahtl.jpg" />
+                        <p>暗黑屠龙</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/lhzs.jpg" />
+                        <p>烈火战神</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/tlcs.jpg" />
+                        <p>屠龙传说</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/jdsj.jpg" />
+                        <p>绝代双骄</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/ogzq.jpg" />
+                        <p>欧冠足球</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/tlz.jpg" />
+                        <p>屠龙战</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/zrzs.jpg" />
+                        <p>逐日战神</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/rxzj.jpg" />
+                        <p>热血战纪</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/jjsg.jpg" />
+                        <p>街机三国</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/wj.jpg" />
+                        <p>问剑</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/nz.jpg" />
+                        <p>怒斩</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/qh.jpg" />
+                        <p>枪魂</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/jz.jpg" />
+                        <p>剑踪</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/dpcq.jpg" />
+                        <p>斗破苍穹2</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/slsyr.jpg" />
+                        <p>胜利11人</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/aszt.jpg" />
+                        <p>傲视遮天</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/sg.jpg" />
+                        <p>盛世三国</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/cy.jpg" />
+                        <p>赤月</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/sxd.jpg" />
+                        <p>神仙道</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/sz.jpg" />
+                        <p>神座</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/bd.jpg" />
+                        <p>霸刀</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/sq.jpg" />
+                        <p>神曲</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/x5.jpg" />
+                        <p>侠武英雄传</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/mhfx.jpg" />
+                        <p>梦幻飞仙</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/503.jpg" />
+                        <p>武林3</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/sjsg.jpg" />
+                        <p>神将三国</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/hjcs.jpg" />
+                        <p>悍将传世</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/lhtx.jpg" />
+                        <p>龙魂天下</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/xxcq.jpg" />
+                        <p>玄仙传奇</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/lyl.jpg" />
+                        <p>炼妖录</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/sglj.jpg" />
+                        <p>三国论剑</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/nb2.jpg" />
+                        <p>南帝北丐2</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/sjzq.jpg" />
+                        <p>世界足球</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/jqxs.jpg" />
+                        <p>金球先生</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/frxz2.jpg" />
+                        <p>凡人修真2</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/by.jpg" />
+                        <p>霸域</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/op.jpg" />
+                        <p>大海贼时代</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/jy.jpg" />
+                        <p>剑影</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/xwh.jpg" />
+                        <p>新五虎上将</p>
+                        </a> </li>
+                    <li> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/xcq.jpg" />
+                        <p>新传奇国度</p>
+                        </a> </li>
+                    <li> <a href="#"><span class="round_70"></span></a> <a href="#"><img src="images/hot_70/dntg.jpg" />
+                        <p>大闹天宫</p>
+                        </a> </li>
+                    <li> <span class="news_ico"></span> <a href="#" target="_blank"><span class="round_70"></span></a> <a href="#" target="_blank"><img src="images/hot_70/sc.jpg" />
+                        <p>沙之城主</p>
+                        </a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="center_right game_border">
+        <div class="newServer_list"> <span class="title">最新开服表</span>
+            <ul class="list_tab" id="tab">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <div class="content" id="content">
+                <div class="right_server_top">
+                    <div class="r_s_image"> <a href="#" target="_blank"><img src="images/ly_logo.jpg" /></a> </div>
+                    <div class="r_s_txt">
+                        <p class="n"><a href="#" target="_blank">烈焰</a></p>
+                        <p class="t">04-06 14:00</p>
+                        <p class="s"><a href="#" target="_blank" class="gred">双线2732区</a></p>
+                    </div>
+                </div>
+                <table width="95%" border="0" cellpadding="0" cellspacing="0"  style="display: none;">
+                    <tr>
+                        <th >游戏名称</th>
+                        <th > 服数 </th>
+                        <th >开服时间</th>
+                        <th >礼包 </th>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">烈焰</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线2733区</a></td>
+                        <td >04-06 16:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                </table>
+                <table width="95%" border="0" cellpadding="0" cellspacing="0"  style="display: none;">
+                    <tr>
+                        <th >游戏名称</th>
+                        <th > 服数 </th>
+                        <th >开服时间</th>
+                        <th >礼包 </th>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">赤月传说</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线556区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                </table>
+                <table width="95%" border="0" cellpadding="0" cellspacing="0"  style="display: none;">
+                    <tr>
+                        <th >游戏名称</th>
+                        <th > 服数 </th>
+                        <th >开服时间</th>
+                        <th >礼包 </th>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                    <tr>
+                        <td ><a href="#" target="_blank" class="cred">问剑</a></td>
+                        <td class="s2"><a href="#" target="_blank" class="gred">双线53区</a></td>
+                        <td >04-05 14:00</td>
+                        <td class="s1"><a href="xsk.html" target="_blank">礼</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script type="text/javascript">
+		$('ul.list_tab li').each(function(k){
+			var li = $(this);
+			(function(i){
+				li.click(function(){
+					$('ul.list_tab li').removeClass('current');
+					li.addClass('current');
+					
+					$('div.content table').hide().eq(i).show();
+				});
+			})(k);
+		}).eq(0).click();
+		</script>
+        <div class="title" style="background:none; padding-left:0px;"><i class="cup"></i>用户喜欢排行</div>
+        <div class="fast_road love">
+            <table width="94%" border="0" cellpadding="0" cellspacing="0" align="center" class="table">
+                <tr>
+                    <td width="41" ><span class="number_red">1</span></td>
+                    <td width="53" ><img src="images/icon/ly.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">烈焰</a></td>
+                    <td width="73" ><span class="enter_red"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_red">2</span></td>
+                    <td width="53" ><img src="images/icon/cycs.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">赤月传说</a></td>
+                    <td width="73" ><span class="enter_red"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_red">3</span></td>
+                    <td width="53" ><img src="images/icon/ahtl.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">暗黑屠龙</a></td>
+                    <td width="73" ><span class="enter_red"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">4</span></td>
+                    <td width="53" ><img src="images/icon/lhzs.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">烈火战神</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">5</span></td>
+                    <td width="53" ><img src="images/icon/tlcs.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">屠龙传说</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">6</span></td>
+                    <td width="53" ><img src="images/icon/jdsj.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">绝代双骄</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">7</span></td>
+                    <td width="53" ><img src="images/icon/ogzq.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">欧冠足球</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">8</span></td>
+                    <td width="53" ><img src="images/icon/zrzs.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">逐日战神</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">9</span></td>
+                    <td width="53" ><img src="images/icon/tlz.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">屠龙战</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">10</span></td>
+                    <td width="53" ><img src="images/icon/jjsg.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">街机三国</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">11</span></td>
+                    <td width="53" ><img src="images/icon/rxzj.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">热血战纪</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">12</span></td>
+                    <td width="53" ><img src="images/icon/dpcq.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">斗破苍穹2</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">13</span></td>
+                    <td width="53" ><img src="images/icon/nz.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">怒斩</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+                <tr>
+                    <td width="41" ><span class="number_blue">14</span></td>
+                    <td width="53" ><img src="images/icon/wj.jpg" width="27" height="28" /></td>
+                    <td width="84"><a href="#" class="red">问剑</a></td>
+                    <td width="73" ><span class="enter_blue"><a href="#" target="_blank">进入新服</a></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br clear="all" />
+    <div class="bottom_service">
+        <ul>
+            <li>
+                <p class="title bottom_ico"> <i class="ser1">&nbsp;</i>热门游戏</p>
+                <a href="#" target="_blank">烈&nbsp; 焰</a><a href="#" target="_blank">赤月传说</a><a href="#" target="_blank">烈火战神</a> <a href="#" target="_blank">绝代双骄</a><a href="#" target="_blank">欧冠足球</a></li>
+            <li>
+                <p class="title bottom_ico"> <i class="play_s">&nbsp;</i>玩家服务</p>
+                <a href="kefu/kefu.html" rel="nofollow" target="_blank">客服首页 </a><a href="kefu/kefu.html" rel="nofollow" target="_blank">我要提问&nbsp;</a> <a href="customer.html" rel="nofollow" target="_blank">常见问题</a></li>
+            <li>
+                <p class="title bottom_ico"> <i class="rechar_s">&nbsp;</i>充值服务</p>
+                <a href="pay/pay_index.html" rel="nofollow" target="_blank">网上银行充值</a> <a href="pay/pay_index.html" rel="nofollow" target="_blank">支付宝充值</a> <a href="pay/pay_index.html" rel="nofollow" target="_blank">神州付充值</a> <a href="pay/pay_index.html" rel="nofollow" target="_blank">移动短信充值</a> <a href="pay/pay_index.html" rel="nofollow" target="_blank">全国电话充值（V币）</a></li>
+            <li>
+                <p class="title bottom_ico"> <i class="hot_bbs">&nbsp;</i> 热门论坛</p>
+                <a href="#" rel="nofollow" target="_blank">烈&nbsp; 焰</a><a href="#" rel="nofollow" target="_blank">赤月传说</a><a href="#" rel="nofollow" target="_blank">烈火战神</a> <a href="#" rel="nofollow" target="_blank">绝代双骄</a> <a href="#" rel="nofollow" target="_blank">欧冠足球</a></li>
+        </ul>
+    </div>
+</div>
+<!--网站底部部分-->
+<div class="foot">
+    <p> 上海橙盛网络科技有限公司 </p>
+</div>
+<!--网站底部部分结束-->
+</body>
+</html>

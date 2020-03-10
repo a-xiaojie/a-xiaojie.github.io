@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>爱茶叶</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+	<header class="header">
+		<h1>我的分销</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="../index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+	</header>
+	<div class="wrap user-wrap nofoot-wrap">
+        <div class="user">
+            <a class="user-shop" href="myshop.html">
+                <img src="../images/code-min.jpg" alt="">
+                <span>我的店铺</span>
+            </a>
+            <div class="user-photo">
+                <img src="../images/user.jpg" alt="">
+            </div>
+            <div class="user-credit">
+                积分：25
+            </div>      
+        </div>
+		<ul class="tab distribute-tab">
+            <li class="active">下级会员</li>
+            <li>我的佣金</li>      
+        </ul>
+        <div class="tab-cont">
+            <div class="distribute-tab-cont" style="display: block;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>头像</th>
+                            <th>会员信息</th>
+                            <th>加入日期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="user-img"><img src="../images/user-img.jpg" alt=""></div></td>
+                            <td><p>昵称：我要好好学习</p><p>级别：直属下级</p></td>
+                            <td>2016年01月08日</td>
+                        </tr>
+                        <tr>
+                            <td><div class="user-img"><img src="../images/user-img.jpg" alt=""></div></td>
+                            <td><p>昵称：我要好好学习</p><p>级别：直属下级</p></td>
+                            <td>2016年01月08日</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="distribute-tab-cont">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>会员</th>
+                            <th>订单完成日期</th>
+                            <th>金额</th>
+                            <th>佣金</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>我要好好学习</td>
+                            <td>2016.01.08</td>
+                            <td>￥ 76.00</td>
+                            <td>￥3.80</td>
+                        </tr>
+                        <tr>
+                            <td>我要好好学习</td>
+                            <td>2016.01.08</td>
+                            <td>￥ 76.00</td>
+                            <td>￥3.80</td>
+                        </tr>
+                        <tr>
+                            <td>我要好好学习</td>
+                            <td>2016.01.08</td>
+                            <td>￥ 76.00</td>
+                            <td>￥3.80</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="dis-extra">
+                    <div class="fl">
+                        <p>佣金合计：<span>￥11.20</span></p>
+                        <p>可记入提现：<span>￥8.40</span></p>
+                    </div>
+                    <button class="btn" type="button">提现</button>
+                    <p class="dis-tips">记录提现佣金累计达到50即可提现</p>
+                </div>
+            </div>
+        </div>
+	</div>
+    <script>
+        $(function() {
+            $('.tab li').click(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                $(this).parent().next().find('.distribute-tab-cont').hide().eq($('.tab li').index(this)).show();
+            })
+        })
+    </script>
+</body>
+</html>

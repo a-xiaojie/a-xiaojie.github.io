@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>游戏中心</title>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script src="js/jquery.js" ></script>
+</head>
+
+<body>
+<!--网站头部部分-->
+<div class="main" style="*z-index:999;">
+    <div class="all_games_up" id="all_game_div" style="display: none;"> <span class="all_gemes_tra"><img src="images/all_game_tra.jpg" width="16" height="9" /></span>
+        <p class="all_wel"><strong>欢迎来到369wan，现在就开始您的游戏之旅吧!</strong> <span> <img src="images/all_n.jpg"  />最新游戏</span><span> <img src="images/all_b.jpg"  />测试游戏</span><span> <img src="images/all_h.jpg"  />热门游戏</span></p>
+        <ul class="all_games_list">
+            <li><a href="game_box.html">烈焰</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">赤月传说</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">暗黑屠龙</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">绝代双骄</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">烈火战神</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">屠龙传说</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">屠龙战</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">欧冠足球</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">胜利11人</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">逐日战神</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">剑踪</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">街机三国</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">热血战纪</a> <img src="images/all_h.jpg" /> </li>
+            <li><a href="game_box.html">问剑</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">新五虎上将</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">枪魂</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">怒斩</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">傲视遮天</a> </li>
+            <li><a href="game_box.html">玄仙传奇</a> </li>
+            <li><a href="game_box.html">赤月</a> </li>
+            <li><a href="game_box.html">神仙道</a> </li>
+            <li><a href="game_box.html">沙之城主</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">盛世三国</a> </li>
+            <li><a href="game_box.html">龙魂天下</a> </li>
+            <li><a href="game_box.html">霸域</a> <img src="images/all_n.jpg" /> </li>
+            <li><a href="game_box.html">凡人修真2</a> </li>
+            <li><a href="game_box.html">悍将传世</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">斗破苍穹2</a> </li>
+            <li><a href="game_box.html">霸刀</a> </li>
+            <li><a href="game_box.html">神将三国</a> </li>
+            <li><a href="game_box.html">神座</a> <img src="images/all_b.jpg" /> </li>
+            <li><a href="game_box.html">炼妖录</a> <img src="images/all_b.jpg" /> </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="main">
+        <h1 class="logo"><a href="index.html"></a></h1>
+        <div class="top_menu"> <a href="javascript:;" onclick="if(document.all){document.body.style.behavior = 'url(#default#homepage)'; document.body.setHomePage('www.369wan.html'); }else{ alert('浏览器不支持此操作, 请手动设为首页'); }">设为首页</a><a href="javascript:;" onclick="try{ window.external.addFavorite('www.369wan.html', '369wan游戏平台'); } catch(e) {  try{ window.sidebar.addPanel('369wan游戏平台', 'www.369wan.html', ''); }catch (e) { alert('http://www.369wan.com/加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.');  } }">加入收藏</a><a href="javascript:;">把369wan保存到桌面</a><span id="all_game_hover" 369wan游戏</span> </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">首  页<br />
+                    <span>HOME</span></a></li>
+                <li><a href="users/users_index.html" rel="nofollow">用户中心<br />
+                    <span>USER</span></a></li>
+                <li><a href="game_center.html">游戏中心<br />
+                    <span>GAME</span></a></li>
+                <li><a href="pay/pay_index.html" target="_blank" rel="nofollow">充值中心<br />
+                    <span>PAY</span></a></li>
+                <li><a href="kefu/kefu.html" rel="nofollow">客服中心<br />
+                    <span>SERVICE</span></a></li>
+                <li><a href="http://bbs.369wan.com/" target="_blank">官方论坛<br />
+                    <span>BBS</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var timeout = null;
+	$('#all_game_hover').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		timeout = setTimeout(function(){ $('#all_game_div').hide(); }, 300);
+	});
+	
+	$('#all_game_div').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		$('#all_game_div').hide();
+	});
+});
+</script> 
+<!--网站头部部分结束-->
+<div class="main">
+    <div class="center_left"> 
+    	<div class="center_top"><span class="game_detail_img"><em></em> <img src="images/tlcs.jpg" width="308" height="233" /></span>
+        <div class="game_detail">
+            <p class="game_center_t">屠龙传说<span>[类型：角色扮演]</span></p>
+            <p class="game_center_f"> 369wan屠龙传说是次世代即时战斗类的网页大作。屠龙传说网页游戏延续传奇经典，曲折的故事演绎传奇的世界，三大职业互为攻守，加上怪物攻城和全新骑宠，来屠龙传说官网感受多彩多姿的PK战斗吧！ </p>
+            <span class="game_center_b"><a href="#" target="_blank"></a></span><span class="game_center_b2"><a href="xsk.html" target="_blank"></a></span></div>
+        </div>
+        <!--服务器列表开始--> 
+        <br clear="all" />
+        <div class="recommend_server"><span class="recommend_left">推荐服务器： <a href="#" target="_blank"> [双线20区] </a> <a href="#" target="_blank"> [双线19区] </a> </span>
+            <form onSubmit="return check_go()">
+                <span class="recommend_right">快速输入服数进入游戏:
+                <input id="go_sid" type="text" name="sid" class="input" />
+                <input id="go_game" type="hidden" name="game" value="tlcs" />
+                <input type="submit" value="" class="btn_go" />
+                </span>
+            </form>
+            <script type="text/javascript">
+	  function check_go(){
+		var game = $("#go_game").val();
+		var sid = $("#go_sid").val();
+		if(sid == ""){
+			alert("还没填上区服！");
+			return false;
+		}
+		if(game == "xxcq"){
+			sid = parseInt(sid) + 4;
+		}
+		
+		return false;
+	  }
+	  </script> 
+        </div>
+        <div class="service_list_tit"><span>服务器选择</span>
+            <ul class="service_list_ul" id="service">
+                <li class="current">1-20服</li>
+            </ul>
+        </div>
+        <div class="servie_list_content" id="service_content">
+            <p> <a  href="#" target="_blank"> [双线20区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线19区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线18区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线17区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线16区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线15区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线14区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线13区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线12区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线11区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线十区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线九区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线八区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线七区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线六区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线五区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线四区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线三区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线二区] <span>已开放</span></a> <a  href="#" target="_blank"> [双线一区] <span>已开放</span></a> </p>
+        </div>
+        <script type="text/javascript">
+	  $('ul.service_list_ul li').each(function(k){
+		var li = $(this);
+		(function(i){
+			li.click(function(){
+				$('.service_list_ul li').removeClass('current');
+				li.addClass('current');
+				
+				$('div.servie_list_content p').hide().eq(i).show();
+			});
+		})(k);
+	  });
+	  $('ul.service_list_ul li:last').click();
+	  </script> 
+        <!--服务器列表结束--> 
+    </div>
+    <div class="game_list_s service_right">
+        <div class="game_list_tit"> <span onclick="_switch('left')" class="left"></span> <span>游戏中心 <b id="current_game_page">0 / 0</b></span> <span onclick="_switch('right')" class="right"></span> </div>
+        <div class="game_list_wrap">
+            <div class="game_list_txt">
+                <ul>
+                    <li class="game_ly"> <a href="game_box.html"><img src="images/icon/ly.jpg" class="game_img"><span class="left">烈焰</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_cycs"> <a href="game_box.html"><img src="images/icon/cycs.jpg" class="game_img"><span class="left">赤月传说</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_ahtl"> <a href="game_box.html"><img src="images/icon/ahtl.jpg" class="game_img"><span class="left">暗黑屠龙</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_jdsj"> <a href="game_box.html"><img src="images/icon/jdsj.jpg" class="game_img"><span class="left">绝代双骄</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_lhzs"> <a href="game_box.html"><img src="images/icon/lhzs.jpg" class="game_img"><span class="left">烈火战神</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_tlcs"> <a href="game_box.html"><img src="images/icon/tlcs.jpg" class="game_img"><span class="left">屠龙传说</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_tlz"> <a href="game_box.html"><img src="images/icon/tlz.jpg" class="game_img"><span class="left">屠龙战</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_ogzq"> <a href="game_box.html"><img src="images/icon/ogzq.jpg" class="game_img"><span class="left">欧冠足球</span><span class="right">休闲竞技>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_slsyr"> <a href="game_box.html"><img src="images/icon/slsyr.jpg" class="game_img"><span class="left">胜利11人</span><span class="right">体育竞技>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_zrzs"> <a href="game_box.html"><img src="images/icon/zrzs.jpg" class="game_img"><span class="left">逐日战神</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_jz"> <a href="game_box.html"><img src="images/icon/jz.jpg" class="game_img"><span class="left">剑踪</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_jjsg"> <a href="game_box.html"><img src="images/icon/jjsg.jpg" class="game_img"><span class="left">街机三国</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_rxzj"> <a href="game_box.html"><img src="images/icon/rxzj.jpg" class="game_img"><span class="left">热血战纪</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_h.jpg" /></span></a> </li>
+                    <li class="game_wj"> <a href="game_box.html"><img src="images/icon/wj.jpg" class="game_img"><span class="left">问剑</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_xwh"> <a href="game_box.html"><img src="images/icon/xwh.jpg" class="game_img"><span class="left">新五虎上将</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_b.jpg" /></span></a> </li>
+                    <li class="game_qh"> <a href="game_box.html"><img src="images/icon/qh.jpg" class="game_img"><span class="left">枪魂</span><span class="right">休闲竞技>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_nz"> <a href="game_box.html"><img src="images/icon/nz.jpg" class="game_img"><span class="left">怒斩</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_aszt"> <a href="game_box.html"><img src="images/icon/aszt.jpg" class="game_img"><span class="left">傲视遮天</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_xxcq"> <a href="game_box.html"><img src="images/icon/xxcq.jpg" class="game_img"><span class="left">玄仙传奇</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_cy"> <a href="game_box.html"><img src="images/icon/cy.jpg" class="game_img"><span class="left">赤月</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_sxd"> <a href="game_box.html"><img src="images/icon/sxd.jpg" class="game_img"><span class="left">神仙道</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_sc"> <a href="game_box.html"><img src="images/icon/sc.jpg" class="game_img"><span class="left">沙之城主</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_sg"> <a href="game_box.html"><img src="images/icon/sg.jpg" class="game_img"><span class="left">盛世三国</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_lhtx"> <a href="game_box.php~game=lhtx.html"><img src="images/icon/lhtx.jpg" class="game_img"><span class="left">龙魂天下</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_by"> <a href="game_box.html"><img src="images/icon/by.jpg" class="game_img"><span class="left">霸域</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_n.jpg" /></span></a> </li>
+                    <li class="game_frxz2"> <a href="game_box.html"><img src="images/icon/frxz2.jpg" class="game_img"><span class="left">凡人修真2</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_hjcs"> <a href="game_box.html"><img src="images/icon/hjcs.jpg" class="game_img"><span class="left">悍将传世</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_b.jpg" /></span></a> </li>
+                    <li class="game_dpcq"> <a href="game_box.html"><img src="images/icon/dpcq.jpg" class="game_img"><span class="left">斗破苍穹2</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_bd"> <a href="game_box.html"><img src="images/icon/bd.jpg" class="game_img"><span class="left">霸刀</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_sjsg"> <a href="game_box.html"><img src="images/icon/sjsg.jpg" class="game_img"><span class="left">神将三国</span><span class="right">角色扮演>></span><span class="service_right_ico"></span></a> </li>
+                    <li class="game_sz"> <a href="game_box.html"><img src="images/icon/sz.jpg" class="game_img"><span class="left">神座</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_b.jpg" /></span></a> </li>
+                    <li class="game_lyl"> <a href="game_box.html"><img src="images/icon/lyl.jpg" class="game_img"><span class="left">炼妖录</span><span class="right">角色扮演>></span><span class="service_right_ico"><img src="images/all_b.jpg" /></span></a> </li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+		var ul = $('.game_list_txt ul');
+		while(true){
+			if(!ul.find('li:eq(10)').length) break;
+			
+			var new_ul = $('<ul></ul>');
+			for(var i = 0; i < 10; i++){
+				var last_li = ul.find('li:eq(10)');
+				if(!last_li.length) break;
+				
+				new_ul.append(last_li)
+			}
+			
+			$('.game_list_txt ul:last').after(new_ul);
+		}
+		
+		function _switch(dir, callback){
+			var div = $('div.game_list_txt');
+			var px = parseInt(div.css('margin-left').replace(/[^0-9-]/g, ''));
+			var count = div.find('ul').length;
+			var width = $('div.game_list_wrap').width();
+			var max_px = width * count - width;
+			var dis;
+			
+			if(dir == 'left'){
+				dis = px == 0 ? 0 : px + width;
+			}else{
+				dis = px <= -max_px ? -max_px : px - width;
+			}
+			
+			var current = Math.abs(Math.min(dis, 0) / width) +1;
+			current = Math.min(count, current);
+			
+			div.animate({'margin-left': dis}, 200, callback);
+			$('#current_game_page').html(current +' / '+ count);
+		}
+		
+				_switch('left');
+		$(function(){
+			var ul = $('.game_list_txt li.game_tlcs')
+				.find('a').addClass('current_game').end()
+				.parent().get(0);
+			
+			$('.game_list_txt ul').each(function(k, v){
+				if(v === ul && k > 0){
+					(function(offset){
+						var func = arguments.callee;
+						_switch('right', function(){
+							if(!--offset) return;
+							
+							func(offset);
+						});
+					})(k);
+					
+					return false;
+				}
+			});
+		});
+				</script> 
+    </div>
+    <br clear="all" />
+</div>
+
+
+<!--网站底部部分-->
+<div class="foot">
+    <p> 上海橙盛网络科技有限公司 </p>
+</div>
+<!--网站底部部分结束-->
+</body>
+</html>

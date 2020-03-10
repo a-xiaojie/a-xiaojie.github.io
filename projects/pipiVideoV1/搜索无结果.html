@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>皮皮 - 搜索无结果</title> 
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="css/global.css" type="text/css" />
+<link rel="stylesheet" href="css/pipi.css" type="text/css" />
+
+</head>
+
+<body scroll="no">
+
+<div class="top">
+<div class="header clearfix">
+
+ <div class="refresh">
+    <a class="for" href="#"></a>
+	<a class="ref" href="#"></a>
+	<a class="bac" href="#"></a>
+ </div>
+
+  <ul class="nav fleft ovhide">
+	<li><a href="#">首页</a></li>
+	<li><a href="#">电影</a></li>
+	<li class="on"><a href="#">电视剧</a></li>
+	<li><a href="#">动漫</a></li>
+	<li><a href="#">综艺</a></li>
+	<li><a href="#">实事</a></li>
+	<li><a href="#">娱乐</a></li>
+	<li><a href="#">乐天</a></li>
+  </ul><!-- .nav -->
+  
+  
+   <ul class="search clearfix" id="search">
+	  <li>
+		<input name="wd" type="text" class="so-txt" value="搜索搜索" size="15">
+		<button type="submit" class="button"><em>搜索</em></button>
+	  </li>
+   </ul><!-- .search -->
+  
+</div><!-- .header -->
+</div><!-- .top -->
+
+<div class="index">
+
+<div class="wrap clearfix">
+   
+  <div class="w950">
+     <div class="ssjg">搜索“<em>你好</em>”共有 <em>0</em> 项结果</div>
+	 
+	 <div class="result"><img src="images/result.gif" width="450" height="136" ></div>
+	 
+	 <div class="sstj">
+	    <div class="title"><h3>搜索推荐</h3></div>
+		
+		<ul class="con" id="sstj">
+		   <li>
+		     <a href="#" target="_blank"><img src="images/ss_01.gif"></a>
+			 <a href="#" target="_blank">皮皮游戏</a>	  </li>
+		   <li>
+		     <a href="#" target="_blank"><img src="images/ss_01.gif"></a>
+			 <a href="#" target="_blank">皮皮游戏</a>	   </li>  
+		   <li>
+		     <a href="#" target="_blank"><img src="images/ss_01.gif"></a>
+			 <a href="#" target="_blank">皮皮游戏</a>	  </li> 
+		   <li>
+		     <a href="#" target="_blank"><img src="images/ss_01.gif"></a>
+			 <a href="#" target="_blank">皮皮游戏</a>	   </li>
+		   <li>
+		     <a href="#" target="_blank"><img src="images/ss_01.gif"></a>
+			 <a href="#" target="_blank">皮皮游戏</a>	  </li>
+		   <li>
+		     <a href="#" target="_blank"><img src="images/ss_01.gif"></a>
+			 <a href="#" target="_blank">皮皮游戏</a>	  </li> 
+		</ul>
+		
+	 </div><!-- .sstj -->
+	    
+  </div><!-- .w950 -->
+   
+</div><!-- .wrap -->
+
+</div><!-- .index -->
+
+
+
+</body>
+
+<script>
+	function $(o){ return (typeof o == "string")?document.getElementById(o):o;}
+	var on = (function () {
+		return (document.addEventListener) ?
+			function (el, type, fn) { el.addEventListener(type, fn, false); } :
+			function (el, type, fn) { el.attachEvent('on' + type, function () { return fn.call(el, window.event); }); };
+	})();
+</script>
+
+
+<script type="text/javascript">
+var un = (function () {
+	return (document.removeEventListener) ?
+		function (el, type, fn) { el.removeEventListener(type, fn, false); } :
+		function (el, type, fn) { el.detachEvent('on' + type, function () { return fn.call(el, window.event); }); };
+})();
+var addClassName = function(obj,name){if(obj == null) return true;if(obj.className.indexOf(name) > -1) return true;var n=obj.className;obj.className=n+' '+name;};
+var removeClassName = function(obj,name){var n=obj.className;obj.className = obj.className.replace(name, '');};
+</script>
+
+
+<script>
+
+function hovers(ele){
+//	var fuz_li=ele.getElementsByTagName("li");
+	var fuz_li=ele.children;
+	var fuz_num=fuz_li.length;
+	for(var i=0;i<fuz_num;i++){
+		 on(fuz_li[i],"mouseover",function(){
+		addClassName(this,"hovers");
+	});
+	on(fuz_li[i],"mouseout",function(){
+		removeClassName(this,"hovers");
+		});
+	}
+}
+
+hovers($("search"));
+hovers($("sstj"));
+
+window.F = window.F || {};
+F.config = F.config || {};
+F.config.pagename="index";
+</script>
+
+</html>

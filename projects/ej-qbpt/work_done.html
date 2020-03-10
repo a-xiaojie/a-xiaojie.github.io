@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>个人工作台-待办工作</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="js/base.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item active">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作" class="active">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+        <div class="column">
+            <div class="col-time clearfix">
+                <div class="time-input fl"><i class="qb-icon icon-time fl"></i><label class="time-label">时间</label><input type="text" id="timeInput" class="time-text-input" onclick="WdatePicker()"></div>
+                <div class="fr" id="timeText">2014/12/3  星期三</div>
+            </div>
+        </div>
+        <div class="column mt20">
+            <div class="title">
+            	<h3 class="fl">确认情报</h3>
+                <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="10%">类型</th>
+                            <th width="15%">标题</th>
+                            <th width="25%">内容 </th>
+                            <th width="15%">确认时间 </th>
+                            <th width="15%">推送人</th>
+                            <th width="10%">状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td title="">1</td>
+                            <td title="交通事故">交通事故</td>
+                            <td title="停在路边的车被刮擦">停在路边的车被刮擦</td>
+                            <td title="停在小河佳苑路边的车被刮擦">停在小河佳苑路边的车被刮擦</td>
+                            <td title="11:47">11:47</td>
+                            <td title=""></td>
+                            <td title="确认">确认</td>
+                        </tr>
+                        <tr>
+                            <td title="2">2</td>
+                            <td title="交通事故">交通事故</td>
+                            <td title="两车追尾">两车追尾</td>
+                            <td title="沈塘桥公交车站两车追尾">沈塘桥公交车站两车追尾</td>
+                            <td title="11:46">11:46</td>
+                            <td title=""></td>
+                            <td title="确认">确认</td>
+                        </tr>
+                        <tr>
+                            <td title="3">3</td>
+                            <td title="网络信息">网络信息</td>
+                            <td title="天气">天气</td>
+                            <td title="大雾预告">大雾预告</td>
+                            <td title="09:00">09:00</td>
+                            <td title=""></td>
+                            <td title="确认">确认</td>
+                        </tr>
+                        <tr>
+                            <td title="4">4</td>
+                            <td title="交通事故">交通事故</td>
+                            <td title="电动车撞小孩">电动车撞小孩</td>
+                            <td title="文三路学院路口电动车撞小孩">文三路学院路口电动车撞小孩</td>
+                            <td title="08:30">08:30</td>
+                            <td title=""></td>
+                            <td title="确认">确认</td>
+                        </tr>
+                        <tr>
+                            <td title="5">5</td>
+                            <td title="交通秩序">交通秩序</td>
+                            <td title="逆向行驶">逆向行驶</td>
+                            <td title="浙AJW229逆向行驶">浙AJW229逆向行驶</td>
+                            <td title="08:00">08:00</td>
+                            <td title=""></td>
+                            <td title="确认">确认</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="page-box">
+                    <div class="total-count">
+                        第<span class="active">1</span>页 | 共4页，共34条记录
+                    </div>
+                    <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="column mt20">
+            <div class="title">
+                <h3 class="fl">上报(处理)情报</h3>
+                <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="15%">上报（处理）时间 </th>
+                            <th width="15%">标题</th>
+                            <th width="25%">类别</th>
+                            <th width="15%">最后处理时间</th>
+                            <th width="10%">状态</th>
+                            <th width="10%">采纳方式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td title="108:00">1</td>
+                            <td title="11:40">11:40</td>
+                            <td title="会议通知">会议通知</td>
+                            <td title="会议通知">会议通知</td>
+                            <td title="11:41">11:41</td>
+                            <td title="已反馈">已反馈</td>
+                            <td title=""></td>
+                        </tr>
+                        <tr>
+                            <td title="2">2</td>
+                            <td title="11:37">11:37</td>
+                            <td title="部门联动">部门联动</td>
+                            <td title="部门联动">部门联动</td>
+                            <td title="11:40">11:40</td>
+                            <td title="已反馈">已反馈</td>
+                            <td title=""></td>
+                        </tr>
+                        <tr>
+                            <td title="3">3</td>
+                            <td title="08:10">08:10</td>
+                            <td title="邮件收发规范">邮件收发规范</td>
+                            <td title="通知通报">通知通报</td>
+                            <td title="08:30">08:30</td>
+                            <td title="已反馈">已反馈</td>
+                            <td title=""></td>
+                        </tr>
+                        <tr>
+                            <td title="4">4</td>
+                            <td title="08:00">08:00</td>
+                            <td title="年底总结大会">年底总结大会</td>
+                            <td title="会议通知">会议通知</td>
+                            <td title="08:00">08:00</td>
+                            <td title="已反馈">已反馈</td>
+                            <td title=""></td>
+                        </tr>
+                        <tr>
+                            <td title="5">5</td>
+                            <td title="08:00">08:00</td>
+                            <td title="年底工作安排">年底工作安排</td>
+                            <td title="其他">其他</td>
+                            <td title="08:00">08:00</td>
+                            <td title="已反馈">已反馈</td>
+                            <td title=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="page-box">
+                    <div class="total-count">
+                        第<span class="active">1</span>页 | 共4页，共34条记录
+                    </div>
+                    <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="column mt20">
+            <div class="title">
+                <h3 class="fl">工作记录</h3>
+                <a href="#" class="fr more" title="更多">更多&gt;&gt;</a>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="10%">来源</th>
+                            <th width="15%">类别</th>
+                            <th width="25%">标题</th>
+                            <th width="15%">开始时间</th>
+                            <th width="15%">结束时间</th>
+                            <th width="10%">状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td title="1">1</td>
+                            <td title="工作交接">工作交接</td>
+                            <td title="学习参观">学习参观</td>
+                            <td title="陈伟杰外出培训">陈伟杰外出培训</td>
+                            <td title="11:10">11:10</td>
+                            <td title="11:20">11:20</td>
+                            <td title="签收">签收</td>
+                        </tr>
+                        <tr>
+                            <td title="2">2</td>
+                            <td title="领导交办">领导交办</td>
+                            <td title="其他">其他</td>
+                            <td title="参加比武比赛">参加比武比赛</td>
+                            <td title="11:09">11:09</td>
+                            <td title="11:20">11:20</td>
+                            <td title="签收">签收</td>
+                        </tr>
+                        <tr>
+                            <td title="3">3</td>
+                            <td title="工作交接">工作交接</td>
+                            <td title="学习参观">学习参观</td>
+                            <td title="魏旭松外出参观">魏旭松外出参观</td>
+                            <td title="11:08">11:08</td>
+                            <td title="11:10">11:10</td>
+                            <td title="签收">签收</td>
+                        </tr>
+                        <tr>
+                            <td title="">4</td>
+                            <td title="工作交接">工作交接</td>
+                            <td title="学习参观">学习参观</td>
+                            <td title="陈泽重外出培训">陈泽重外出培训</td>
+                            <td title="11:08">11:08</td>
+                            <td title="11:10">11:10</td>
+                            <td title="签收">签收</td>
+                        </tr>
+                        <tr>
+                            <td title="">5</td>
+                            <td title="工作交接">工作交接</td>
+                            <td title="学习参观">学习参观</td>
+                            <td title="来倪栋外出培训">来倪栋外出培训</td>
+                            <td title="11:08">11:08</td>
+                            <td title="11:10">11:10</td>
+                            <td title="签收">签收</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="page-box">
+                    <div class="total-count">
+                        第<span class="active">1</span>页 | 共4页，共34条记录
+                    </div>
+                    <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	var _date=new fnGetDate(new Date()).toString();
+	$('#timeInput').val(_date);
+	var _week=new fnGetDate(new Date()).getWeekDayStr();
+	$('#timeText').text(_date+' '+_week);
+})
+</script>
+</body>
+</html>

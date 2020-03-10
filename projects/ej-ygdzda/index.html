@@ -1,0 +1,1009 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8">
+	<title>员工电子档案管理系统</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/nanoscroller.css">
+	<link rel="stylesheet" type="text/css" href="css/zTreeStyle.css"> 
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.1.8.2.js"></script> 
+    <script type="text/javascript" src="jquery-ui-1.11.2/jquery-ui.js"></script>	
+    <script type="text/javascript" src="js/jquery.ztree.all-3.5.js"></script> 
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+	<div class="header admin-header">
+            <div class="logo">
+                <h1>员工电子档案管理系统</h1>
+            </div>
+            <div class="m-admin">
+            	<p>欢迎你，<a class="u-admin" id="">管理员</a></p>
+                <a class="btn set-btn" title="设置">设置</a>
+                <a class="btn pwd-btn" title="修改密码">修改密码</a>
+                <a class="btn help-btn" title="智能查询/帮助">智能查询/帮助</a>
+                <a class="btn quit-btn" title="退出">退出</a>
+            </div>
+            <div class="header-search-box">
+                
+                <div class="search-filter">
+                    <input type="text" placeholder="搜索" class="search-input" autocomplete="off">
+                    <input type="button" class="btn name-search-btn" title="搜索">
+                </div>
+                
+            </div>
+	</div>
+	<div class="main">
+		<div class="seperate-bar"></div>
+		<div class="aside">
+        	<div class="m-title">
+            	<label>部门列表</label>
+                <div class="btn-bar">
+					<a class="btn add-btn" title="添加公司/部门" id="depAdd">添加公司/部门</a>
+					<a class="btn edit-btn" title="编辑公司/部门" id="depEdit">编辑公司/部门</a>
+                    <a class="btn del-btn" title="删除公司/部门" id="depDel">删除公司/部门</a>
+					<a class="btn up-btn" title="人员排名上移" id="depUp">人员排名上移</a>
+					<a class="btn down-btn" title="人员排名下移" id="depDown">人员排名下移</a>
+				</div>
+            </div>
+			<div class="search-box">
+				<form class="search-form">
+					<div class="search-filter">
+						<input type="text" placeholder="按部门搜索"  class="search-input" autocomplete="off">
+					</div>
+					<input type="button" class="btn dep-search-btn" title="搜索">
+				</form>
+			</div>
+			<div class="dep-box">
+				<div class="nano dep-box-nano">
+					<div class="nano-content">
+						<div class="dep-tree">
+							<ul id="depTree" class="ztree"></ul>
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+		<div class="main-content">
+        	<div class="m-title">
+            	<label>人员列表</label>
+                <div class="btn-bar">
+                    <a class="btn add-btn" title="添加人员" id="recordAdd">添加人员</a>
+                    <a class="btn edit-btn" title="编辑人员" id="recordEdit">编辑人员</a>
+                    <a class="btn del-btn" title="删除人员" id="recordDel">删除人员</a>
+                    <a class="btn up-btn" title="人员排名上移" id="depUp">人员排名上移</a>
+					<a class="btn down-btn" title="人员排名下移" id="depDown">人员排名下移</a>
+                    <a class="btn transfer-btn" title="转移人员" id="recordTransfer">转移人员</a>
+                    <a class="btn export-btn" title="导出人员" id="recordExport">导出人员</a>
+                    <!--<a class="btn import-btn" title="导入人员" id="recordImport">导入人员</a> -->
+				</div>
+            </div>
+			<div class="contact-table">
+				<div class="contact-head-box">
+					<table>
+						<thead>
+							<tr>
+								<th class="col1"><input type="checkbox" /></th>
+                                <th class="col2">姓名</th>
+								<th class="col3">公司/部门</th>
+								<th class="col4">修改日期</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="contact-list-box">
+					<div class="nano contanct-list-nano">
+						<div class="nano-content">
+							<table>
+								<colgroup>
+									<col class="col1">
+									<col class="col2">
+									<col class="col3">
+                                    <col class="col4">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td><input type="checkbox" /></td>										
+										<td>张三</td>
+                                        <td>
+                                        	<span>人力资源部</span>
+                                        	<div class="btn-group">
+                                            	<a class="btn btn-view fileView" title="档案浏览"></a>
+                                                <a class="btn btn-edit fileEdit" title="档案编辑"></a>
+                                                <a class="btn btn-export fileExport" title="档案导出" id="fileExport"></a>
+                                            </div>
+                                        </td>
+										<td><span id="">2015-07-07 08:00:00</span></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>										
+										<td>张三</td>
+                                        <td>
+                                        	<span>人力资源部</span>
+                                        	<div class="btn-group">
+                                            	<a class="btn btn-view fileView" title="档案浏览"></a>
+                                                <a class="btn btn-edit fileEdit" title="档案编辑"></a>
+                                                <a class="btn btn-export fileExport" title="档案导出" id="fileExport"></a>
+                                            </div>
+                                        </td>
+										<td><span id="">2015-07-07 08:00:00</span></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>										
+										<td>张三</td>
+                                        <td>
+                                        	<span>人力资源部</span>
+                                        	<div class="btn-group">
+                                            	<a class="btn btn-view fileView" title="档案浏览"></a>
+                                                <a class="btn btn-edit fileEdit" title="档案编辑"></a>
+                                                <a class="btn btn-export fileExport" title="档案导出" id="fileExport"></a>
+                                            </div>
+                                        </td>
+										<td><span id="">2015-07-07 08:00:00</span></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>										
+										<td>张三</td>
+                                        <td>
+                                        	<span>人力资源部</span>
+                                        	<div class="btn-group">
+                                            	<a class="btn btn-view fileView" title="档案浏览"></a>
+                                                <a class="btn btn-edit fileEdit" title="档案编辑"></a>
+                                                <a class="btn btn-export fileExport" title="档案导出" id="fileExport"></a>
+                                            </div>
+                                        </td>
+										<td><span id="">2015-07-07 08:00:00</span></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>										
+										<td>张三</td>
+                                        <td>
+                                        	<span>人力资源部</span>
+                                        	<div class="btn-group">
+                                            	<a class="btn btn-view fileView" title="档案浏览"></a>
+                                                <a class="btn btn-edit fileEdit" title="档案编辑"></a>
+                                                <a class="btn btn-export fileExport" title="档案导出" id="fileExport"></a>
+                                            </div>
+                                        </td>
+										<td><span id="">2015-07-07 08:00:00</span></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>										
+										<td>张三</td>
+                                        <td>
+                                        	<span>人力资源部</span>
+                                        	<div class="btn-group">
+                                            	<a class="btn btn-view fileView" title="档案浏览"></a>
+                                                <a class="btn btn-edit fileEdit" title="档案编辑"></a>
+                                                <a class="btn btn-export fileExport" title="档案导出" id="fileExport"></a>
+                                            </div>
+                                        </td>
+										<td><span id="">2015-07-07 08:00:00</span></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>										
+										<td>张三</td>
+                                        <td>
+                                        	<span>人力资源部</span>
+                                        	<div class="btn-group">
+                                            	<a class="btn btn-view fileView" title="档案浏览"></a>
+                                                <a class="btn btn-edit fileEdit" title="档案编辑"></a>
+                                                <a class="btn btn-export fileExport" title="档案导出" id="fileExport"></a>
+                                            </div>
+                                        </td>
+										<td><span id="">2015-07-07 08:00:00</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dialog" id="depAddDia">
+		<form>
+			<p class="form-row" id="parentDep"><label class="label">当前父类：</label><span class="form-value"></span></p>
+			<p class="form-row" id="newDep"><label class="label">新增子类：</label><input type="text" class="input-text"></p>
+			<p class="form-btns"><input type="button" class="dia-btn cancel-btn" value="取 消"><input type="button" class="dia-btn submit-btn" value="确 定"></p>
+		</form>
+	</div>
+	<div class="dialog" id="recordAddDia">
+		<form>
+			<p class="form-row" id=""><label class="label">姓名：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">固定电话：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">移动电话：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">电子邮箱：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">所属公司：</label><select class="select"><option selected="select">--请选择--</option><option>银江股份通讯录</option></select></p>
+			<p class="form-row" id=""><label class="label"> </label><select class="select"><option selected="select">--请选择--</option><option>财务管理中心</option></select></p>
+			<p class="form-row" id=""><label class="label">所属部门：</label><select class="select"><option selected="select">--请选择--</option><option>管理层</option></select></p>
+			<p class="form-row" id=""><label class="label"> </label><select class="select"><option selected="select">--请选择--</option><option>技术管理</option></select></p>
+			<p class="form-row" id=""><label class="label">职位：</label><input type="text" class="input-text"></p>
+			<p class="form-row" id=""><label class="label">备注：</label><textarea class="textarea-text"></textarea></p>
+			<p class="form-btns"><input type="button" class="dia-btn cancel-btn" value="取 消"><input type="button" class="dia-btn submit-btn" value="确 定"></p>
+		</form>
+	</div>
+    <div class="dialog" id="fileViewDia">
+    	<div class="m-table">
+        	<div class="table-content nano">
+            <div class="nano-content">
+                <table width="100%" class="table1 table11">
+                    <tr>
+                        <th rowspan="2">姓名*</th>
+                        <td rowspan="2" class="w113"></td>
+                        <th>性别*</th>
+                        <td></td>
+                        <th>出生年月*</th>
+                        <td colspan="2">&nbsp;</td>
+                        <td rowspan="6"><img src="images/pic.png" /></td>               
+                    </tr>
+                    <tr>
+                        <th>民族*</th>
+                        <td></td>
+                        <th>身份证号*</th>
+                        <td colspan="2">&nbsp;</td>         
+                    </tr>
+                    <tr>
+                        <th>籍贯*</th>
+                        <td class="w113"></td>
+                        <th>婚否*</th>
+                        <td></td>
+                        <th>政治面貌*</th>
+                        <td colspan="2">&nbsp;</td>             
+                    </tr>
+                    <tr>
+                        <th>身高*</th>
+                        <td class="w113"></td>
+                        <th>体重*</th>
+                        <td></td>
+                        <th>户口所在地*</th>
+                        <td colspan="2">&nbsp;</td>              
+                    </tr>
+                    <tr>
+                        <th>手机*</th>
+                        <td class="w113"></td>
+                        <th>电子邮箱*</th>
+                        <td colspan="4"></td>               
+                    </tr>
+                    <tr>
+                        <th>学历*</th>
+                        <td class="w113"></td>
+                        <th>毕业院校*</th>
+                        <td colspan="4"></td>               
+                    </tr>
+                    <tr>
+                        <th>毕业时间*</th>
+                        <td class="w113"></td>
+                        <th>入司时间*</th>
+                        <td class="w100" colspan="2"></td> 
+                        <th>工龄*</th>
+                        <td></td> 
+                        <th>照片</th>             
+                    </tr>            
+                    <tr>
+                        <th>个人资质*</th>
+                        <td colspan="7">&nbsp;</td>               
+                    </tr>
+                </table>
+                <table width="100%" class="table11">
+                    <tr>
+                        <th rowspan="4">教育</br>培训</br>经历</th>
+                        <th>学校名称</th>
+                        <th>专业内容</th>
+                        <th colspan="3">起止时间</th>
+                        <th>证书情况</th>             
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>           
+                    <tr>
+                        <th rowspan="4">在司</br>工作</br>经历</th>
+                        <th>工作单位</th>
+                        <th>工作内容</th>
+                        <th colspan="3">起止时间</th>
+                        <th>职务/岗位</th>             
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>          
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">典型</br>项目</br>经历</th>
+                        <th>项目名称</th>
+                        <th>主要负责工作</th>
+                        <th colspan="3">起止时间</th>
+                        <th>担任职务</th>             
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>          
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="3">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th>获奖</br>情况</br>/技术</th>
+                        <td colspan="6"></td>               
+                    </tr>
+                </table>
+                <table width="100%">
+                    <tr>
+                        <th rowspan="3">家庭</br>成员</th>
+                        <th>称谓</th>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>学历</th>
+                        <th colspan="2" class="w113">工作单位</th>
+                        <th class="w113">职务</th>             
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>          
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="3">家庭</br>住址</th>
+                        <td colspan="4" rowspan="3"></td>
+                        <th class="w113">邮政编码</th>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th>紧急联系人</th>
+                        <td colspan="2"></td>
+                    </tr> 
+                    <tr>
+                        <th>紧急联系人联系电话</th>
+                        <td colspan="2"></td>
+                    </tr>
+                </table>
+                <table width="100%" class="table-attachment"> 
+                    <tr>
+                        <th rowspan="2">附件</th>
+                        <th class="w113">身份证</th>
+                        <th>学历</th>
+                        <th>年龄</th>
+                        <th>学历</th>
+                        <th class="w113" colspan="2">工作单位</th>
+                        <th class="w113">职务</th>             
+                    </tr>
+                    <tr>                
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>                                   
+                </table>                                         
+        </div>
+    	</div> 
+        <p class="m-bar"><a>下载</a><a>打印</a></p>             
+    </div>
+    <div class="dialog" id="fileEditDia">
+    	<div class="m-table">		
+        	<div class="table-content nano">
+            <div class="nano-content">
+                <table width="100%" class="table1">
+                    <tr>
+                        <th rowspan="2">姓名*</th>
+                        <td rowspan="2" class="w113"><input type="text" /></td>
+                        <th>性别*</th>
+                        <td><select><option value="0">男</option>
+                            <option value="1">女</option></select></td>
+                        <th>出生年月*</th>
+                        <td colspan="2">
+                            <input class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/>
+                        </td>
+                        <td rowspan="6"><img src="images/pic.png" /></td>               
+                    </tr>
+                    <tr>
+                        <th>民族*</th>
+                        <td><select><option>汉族</option>
+                            <option>少数民族</option></select></td>
+                        <th>身份证号*</th>
+                        <td colspan="2"><input type="text" /></td>         
+                    </tr>
+                    <tr>
+                        <th>籍贯*</th>
+                        <td class="w113"><input type="text" /></td>
+                        <th>婚否*</th>
+                        <td><select><option>已婚</option>
+                            <option>未婚</option><option>离异</option></select></td>
+                        <th>政治面貌*</th>
+                        <td colspan="2"><select><option>党员</option>
+                            <option>团员</option><option>群众</option></select></td>             
+                    </tr>
+                    <tr>
+                        <th>身高*</th>
+                        <td class="w113"><input type="text" /></td>
+                        <th>体重*</th>
+                        <td><input type="text" /></td>
+                        <th>户口所在地*</th>
+                        <td colspan="2"><input type="text" /></td>              
+                    </tr>
+                    <tr>
+                        <th>手机*</th>
+                        <td class="w113"><input type="tel" /></td>
+                        <th>电子邮箱*</th>
+                        <td colspan="4"><input type="email" /></td>               
+                    </tr>
+                    <tr>
+                        <th>学历*</th>
+                        <td class="w113"><select><option>本科</option>
+                            <option>专科</option><option>本科以上</option></select></td>
+                        <th>毕业院校*</th>
+                        <td colspan="4"><input type="text" /></td>               
+                    </tr>
+                    <tr>
+                        <th>毕业时间*</th>
+                        <td  class="w113"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/></td>
+                        <th>入司时间*</th>
+                        <td colspan="2"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/></td> 
+                        <th>工龄*</th>
+                        <td><input type="text" /></td> 
+                        <th><a class="u-expho">修改照片</a></th>             
+                    </tr>            
+                    <tr>
+                        <th>个人资质*</th>
+                        <td colspan="7"><input type="text" /></td>               
+                    </tr>
+                </table>
+                <div class="slideTxtBox">
+                    <div class="hd">
+                        <ul>
+                            <li><a href="#">教育培训经历</a></li>
+                            <li><a href="#">工作经历</a></li>
+                            <li><a href="#">项目经历</a></li>
+                            <li><a href="#">获奖情况/技术成果</a></li>
+                            <li><a href="#">家庭成员</a></li>	
+                            <li><a href="#">附件</a></li>			
+                        </ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                        	<p><a class="icon-tab icon-add">添加</a><a  class="icon-tab icon-edit">编辑</a><a class="icon-tab icon-delete">删除</a></p>
+                            <table width="100%">
+                                <tr>
+                                    <th width="20%">学校名称</th>
+                                    <th width="35%">专业内容</th>
+                                    <th width="30%">起止时间</th>
+                                    <th width="15%">证书情况</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <ul>
+                        	<p><a class="icon-tab icon-add">添加</a><a  class="icon-tab icon-edit">编辑</a><a class="icon-tab icon-delete">删除</a></p>
+                            <table width="100%">
+                                <tr>
+                                    <th width="20%">工作单位</th>
+                                    <th width="35%">工作内容</th>
+                                    <th width="30%">起止时间</th>
+                                    <th width="15%">职务/岗位</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <ul>
+                        	<p><a class="icon-tab icon-add">添加</a><a  class="icon-tab icon-edit">编辑</a><a class="icon-tab icon-delete">删除</a></p>
+                            <table width="100%">
+                                <tr>
+                                    <th width="20%">项目名称</th>
+                                    <th width="35%">主要负责工作</th>
+                                    <th width="30%">起止时间</th>
+                                    <th width="15%">担任职务</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /</td>
+                                    <td class="u-input-select"><input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/>-<input class="Wdate" type="text" id="d15" onFocus="WdatePicker({dateFmt: 'yyyy-MM',isShowClear:false,readOnly:true})"/></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <ul>
+                            <textarea class="u-txt"></textarea>
+                        </ul>
+                        <ul>
+                        	<p><a class="icon-tab icon-add">添加</a><a  class="icon-tab icon-edit">编辑</a><a class="icon-tab icon-delete">删除</a></p>
+                            <table width="100%" class="">
+                                <tr>
+                                    <th>称谓</th>
+                                    <th>姓名</th>
+                                    <th>年龄</th>
+                                    <th>学历</th>
+                                    <th colspan="2" class="w113">工作单位</th>
+                                    <th class="w113">职务</th>             
+                                </tr>
+                                <tr>                
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td colspan="2"><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                </tr>          
+                                <tr>                
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td colspan="2"><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                </tr>
+                                <tr>                
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                    <td colspan="2"><input type="text" /></td>
+                                    <td><input type="text" /></td>
+                                </tr>                                
+                            </table>
+                        </ul>
+                        <ul>
+                             <table width="100%" class="">
+                                <tr>
+                                    <th>身份证</th> 
+                                    <td></td> 
+                                    <td></td>                                               
+                                </tr>
+                                <tr>
+                                    <th>身份证</th> 
+                                    <td></td> 
+                                    <td></td>                                                
+                                </tr>  
+                                <tr>
+                                    <th>身份证</th> 
+                                    <td></td> 
+                                    <td></td>                                                
+                                </tr>  
+                                <tr>
+                                    <th>身份证</th> 
+                                    <td></td> 
+                                    <td></td>                                                
+                                </tr>                                         
+                            </table>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+			<script type="text/javascript">							
+            	jQuery(".slideTxtBox").slide();			
+            </script>                                     
+        </div>
+    	</div> 
+        <p class="m-bar"><a>保存</a><a>取消</a></p>       
+    </div>        
+	<script type="text/javascript" src="js/jquery.nanoscroller.js"></script>	
+	<script type="text/javascript" src="js/jquery.color.js"></script> 
+	<script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>   
+	<!-- 树 -->
+	<script type="text/javascript">
+		var setting = {   
+	        view: {
+				showLine: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				beforeExpand: beforeExpand,
+				onExpand: onExpand,
+				onClick: onClick
+			}
+		};  
+		  
+		var zNodes =[
+			{ name:"银江股份", open:true,iconOpen:"images/2.png",iconClose:"images/1.png",
+				children: [
+					{ name:"董事会",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"证券中心",icon:"images/3.png"},
+							{ name:"并购中心",icon:"images/3.png"},
+							{ name:"监管中心",icon:"images/3.png"},
+							{ name:"企业大战中心",icon:"images/3.png"}
+						]},
+					{ name:"公司高管",icon:"images/3.png"},
+					{ name:"中国区域总部",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"企业管理中心",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"财务管理中心",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"战略总包总部",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"资本管理中心",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"中央研究院",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"院办公室",icon:"images/3.png"},
+							{ name:"技术发展研究院",icon:"images/3.png"},
+							{ name:"智慧交通研究院",iconOpen:"images/2.png",iconClose:"images/1.png",
+								children:[
+									{ name:"集成管控研究所",icon:"images/3.png"},
+									{ name:"基础应用研究所",icon:"images/3.png"}
+								]},
+							{ name:"新品研发研究院",icon:"images/3.png"},
+							{ name:"大数据研究院",icon:"images/3.png"},
+							{ name:"产品管理研究院",icon:"images/3.png"}
+						]},
+					{ name:"交通集团",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"医疗集团",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"城市集团",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"叶子节点121",icon:"images/3.png"},
+							{ name:"叶子节点122",icon:"images/3.png"},
+							{ name:"叶子节点123",icon:"images/3.png"},
+							{ name:"叶子节点124",icon:"images/3.png"}
+						]},
+					{ name:"银江大学",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"人力人才部",icon:"images/3.png"}
+						]},
+					{ name:"健康宝互联网技术有限公司",iconOpen:"images/2.png",iconClose:"images/1.png",
+						children: [
+							{ name:"商务部",icon:"images/3.png"},
+							{ name:"行政人力部",icon:"images/3.png"},
+							{ name:"财务部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"},
+							{ name:"健康宝技术部",icon:"images/3.png"}
+						]}
+					
+				]},
+		];  
+
+
+		var curExpandNode = null;
+		function beforeExpand(treeId, treeNode) {
+			var pNode = curExpandNode ? curExpandNode.getParentNode():null;
+			var treeNodeP = treeNode.parentTId ? treeNode.getParentNode():null;
+			var zTree = $.fn.zTree.getZTreeObj("depTree");
+			for(var i=0, l=!treeNodeP ? 0:treeNodeP.children.length; i<l; i++ ) {
+				if (treeNode !== treeNodeP.children[i]) {
+					zTree.expandNode(treeNodeP.children[i], false);
+				}
+			}
+			while (pNode) {
+				if (pNode === treeNode) {
+					break;
+				}
+				pNode = pNode.getParentNode();
+			}
+			if (!pNode) {
+				singlePath(treeNode);
+			}
+
+		}
+		function singlePath(newNode) {
+			if (newNode === curExpandNode) return;
+			if (curExpandNode && curExpandNode.open==true) {
+				var zTree = $.fn.zTree.getZTreeObj("depTree");
+				if (newNode.parentTId === curExpandNode.parentTId) {
+					zTree.expandNode(curExpandNode, false);
+				} else {
+					var newParents = [];
+					while (newNode) {
+						newNode = newNode.getParentNode();
+						if (newNode === curExpandNode) {
+							newParents = null;
+							break;
+						} else if (newNode) {
+							newParents.push(newNode);
+						}
+					}
+					if (newParents!=null) {
+						var oldNode = curExpandNode;
+						var oldParents = [];
+						while (oldNode) {
+							oldNode = oldNode.getParentNode();
+							if (oldNode) {
+								oldParents.push(oldNode);
+							}
+						}
+						if (newParents.length>0) {
+							zTree.expandNode(oldParents[Math.abs(oldParents.length-newParents.length)-1], false);
+						} else {
+							zTree.expandNode(oldParents[oldParents.length-1], false);
+						}
+					}
+				}
+			}
+			curExpandNode = newNode;
+		}
+
+		function onExpand(event, treeId, treeNode) {
+			curExpandNode = treeNode;
+		}
+
+		function onClick(e,treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("depTree");
+			zTree.expandNode(treeNode, null, null, null, true);
+		}
+	</script>
+</body>
+<script type="text/javascript">
+	$(window).on('load resize',function(){
+		$('#depAddDia').dialog({
+			title:'新增公司/部门',
+			autoOpen: false,
+			resizable: false,
+			width:"340px",
+			zIndex:1000,
+			show: {
+				effect: "blind",
+		        duration: 300
+		    },
+		    hide: {
+		        effect: "explode",
+		        duration: 300
+		    },
+		    close: function() { 
+			    $(this).find('form')[0].reset();
+		    	$('.mask').remove();
+		    }	
+		})
+		$('#recordAddDia').dialog({
+			title:'添加人员',
+			autoOpen: false,
+			resizable: false,
+			width:"340px",
+			zIndex:1000,
+			show: {
+				effect: "blind",
+		        duration: 300
+		    },
+		    hide: {
+		        effect: "explode",
+		        duration: 300
+		    },
+		    close: function() { 
+			    $(this).find('form')[0].reset();
+		    	$('.mask').remove();
+		    }
+		})
+		$('#fileViewDia').dialog({
+			title:'档案信息',
+			autoOpen: false,
+			resizable: false,
+			width:"660px",
+			zIndex:1000,
+			show: {
+				effect: "blind",
+		        duration: 300
+		    },
+		    hide: {
+		        effect: "explode",
+		        duration: 300
+		    },
+		    close: function() {
+		    	$('.mask').remove();
+		    }	
+		})
+		$('#fileEditDia').dialog({
+			title:'档案编辑',
+			autoOpen: false,
+			resizable: false,
+			width:"660px",
+			zIndex:1000,
+			show: {
+				effect: "blind",
+		        duration: 300
+		    },
+		    hide: {
+		        effect: "explode",
+		        duration: 300
+		    },
+		    close: function() {
+		    	$('.mask').remove();
+		    }	
+		})
+		$('#depAdd').on('click',function(){
+			$('<div class="mask"></div>').appendTo('body');
+			$('#depAddDia').dialog('open');
+		});
+		$('.fileView').on('click',function(){
+			$('<div class="mask"></div>').appendTo('body');
+			$('#fileViewDia').dialog('open');
+		});
+		$('.fileEdit').on('click',function(){
+			$('<div class="mask"></div>').appendTo('body');
+			$('#fileEditDia').dialog('open');
+		});
+		//确定
+		$('#depAddDia .submit-btn').on('click',function(){
+			$('#depAddDia').dialog('close');
+		});
+
+		//取消
+		$('.cancel-btn,.m-bar a').on('click',function(){
+			$(this).parents('.dialog').dialog('close');
+		});
+
+		$('#recordAdd').on('click',function(){
+			$('<div class="mask"></div>').appendTo('body');
+			$('#recordAddDia').dialog('open');
+		});
+		//确定
+		$('#recordAddDia .submit-btn').on('click',function(){
+			$('#recordAddDia').dialog('close');
+		});
+	})
+</script>
+</html>

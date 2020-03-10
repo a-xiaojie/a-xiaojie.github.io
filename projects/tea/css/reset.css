@@ -1,0 +1,29 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,button,select,input,textarea,th,td{ margin: 0; padding: 0;}
+body,button,input,select,textarea{ font: 12px/1 Arial,Helvetica,sans-serif;}
+:focus{ outline: none;}
+em,i,strong{ font-style: normal; font-weight: normal;}
+h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal;}
+ul,ol{ list-style: none;}
+a{ text-decoration: none; cursor: pointer;}
+a:hover{ text-decoration: none;}
+img{ border: none; vertical-align: top;}
+button,input,select,textarea{ font-size: 100%;}
+textarea{ overflow: auto; resize: none;}
+table{ border-collapse: collapse; border-spacing: 0;}
+
+/* 浮动 */
+.fl{ float: left;}
+.fr{ float: right;}
+
+/* 清浮动 */
+.clearfix{ zoom: 1;}
+.clearfix:after{ content: ''; display: block; clear: both;}
+
+/* 去除IOS按钮美化 */
+input[type="button"], input[type="submit"], input[type="reset"] {
+-webkit-appearance: none;
+}
+/* 去除链接背景阴影 */
+a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(255,255,255,0);}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } 

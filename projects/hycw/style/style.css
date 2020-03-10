@@ -1,0 +1,106 @@
+/* CSS Document */
+/* reset */
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,th,td,select{margin:0;padding:0;}
+li{ list-style:none;}
+em{font-style:normal}
+img{ vertical-align:top; border:none;}
+a{ color:#666; text-decoration:none;}
+a:hover{ color:#fe3710;}
+table{border-collapse:collapse;}
+textarea{ resize:none;overflow:auto;}
+/* end reset */
+
+/* public */
+body{ background:#f1f1f1; color:#333;}
+.wrap{width:990px;margin:0 auto;}
+.clearfix{ zoom:1}
+.clearfix:after{ content:''; display:block; clear:both;}
+.overh{ overflow:hidden;}
+.w180{ width:180px; float:left;}
+.w780{ width:780px; float:right;}
+.side{ background:#e6ab28; }
+.cont{ background:#fff; min-height:400px;}
+.hd{ height:126px;}
+.topbar{  height:26px; background:#ebebeb; border-bottom:1px solid #e3e3e3; font-size:12px; line-height:26px; color:#666;}
+.top_list{ float:right;}
+.top_list li{ float:left; margin:0 0 0 34px;}
+.top_list li a,.top_list li span{ margin-right:34px;}
+.top_list .active a{ color:#fe3710;}
+.top_list li .t_tel{ color:#fe3710}
+.bd{ width:100%; border-top:1px solid #fff; overflow:hidden;}
+
+.logo{ float:left;}
+.nav{ float:right;}
+.nav li{ float:left; padding:5px 18px 0 52px; font:16px/94px "Microsoft Yahei"; color:#333; position:relative; z-index:100;}
+.nav li a{ color:#333; position:relative; z-index:100;}
+.nav .dropdown a{ background:url(../images/dropdown.png) no-repeat 68px 9px; _background:url(../images/dropdown.png) no-repeat 70px 11px; padding-right:15px;}
+.nav .dropdown a:hover,.nav .dropdown.active a{ background-position:68px -17px; _background-position:70px -17px;}
+.nav li a:hover,.nav li.active a{ color:#ff2a00;}
+.nav .subnav{ background:url(../images/nav-bg.png) no-repeat; width:180px; height:207px; position:absolute; z-index:99; top:27px; left:0; padding-top:50px; display:none;} 
+.nav .dropdown .subnav li{ padding:0 20px; font:12px/30px "宋体";}
+.nav .dropdown .subnav li a{ color:#666; background:none; padding-right:0;}
+.nav .dropdown .subnav li a:hover,.nav .subnav li.active a{ color:#ff2a00;}
+
+.sliders{ width:100%; height:450px; overflow:hidden; position:relative;}
+.big_pic{ position:absolute; top:0; left:0; width:100%; height:450px;}
+.big_pic li{ position:absolute; top:0; left:0; width:100%; height:450px; display:none; overflow:hidden;}
+.big_pic .pic1{ background:url(../images/slide1.jpg) no-repeat 50% 50%;}
+.big_pic .pic2{ background:url(../images/slide2.jpg) no-repeat 50% 50%;}
+.big_pic .pic3{ background:url(../images/slide3.jpg) no-repeat 50% 50%;}
+.big_pic .pic4{ background:url(../images/slide4.jpg) no-repeat 50% 50%;}
+.big_pic .pic5{ background:url(../images/slide5.jpg) no-repeat 50% 50%;}
+.big_pic  a{ display:block; width:100%; height:100%;}
+.sliders_nav{ position:absolute; bottom:28px; height:13px; width:100%; text-align:center; overflow:hidden;}
+.sliders_nav a{ display:inline-block; margin:0 4px; width:28px; height:12px; background:#b9b9b9; border-bottom:1px solid #e5e5e5; overflow:hidden;}
+.sliders_nav .active{ background:#fb9400;}
+.tel_tips{ position:absolute;}
+
+.content{ width:990px; margin:0 auto; padding-bottom:45px;}
+.type_list{ width:110%; margin-top:50px;}
+.type_list li{ float:left; width:200px; text-align:center; padding-right:68px;}
+.type_list li a{ display:block;}
+.type_list .tt{ margin-top:20px; line-height:24px; color:#333;}
+.type_list a:hover strong,.type_list a:hover span{ color:#fe3710;}
+.type_list strong{ font-size:18px; color:#333; display:block; font-weight:normal; font-family:"Microsoft Yahei";}
+.type_list span{ margin:0 14px; font-size:14px; }
+
+.fb{ background:#fff; padding:20px 0 42px;}
+.footer{ text-align:center; line-height:30px; font-size:14px; color:#666;}
+.footer .f_nav a{ margin:0 15px;}
+.footer .f_service a{ margin-right:10px;}
+.footer .f_friendlink a{ margin-right:10px;}
+/* end public */
+
+
+/* 公司介绍 */
+.pic_intro{ background:url(../images/intro.jpg) no-repeat 50% 50%; height:300px;}
+.pic_train{ background:url(../images/train.jpg) no-repeat 50% 50%; height:300px;}
+.pic_reg{ background:url(../images/reg.jpg) no-repeat 50% 50%; height:300px;}
+.pic_service{ background:url(../images/service.jpg) no-repeat 50% 50%; height:300px;}
+.pic_hr{ background:url(../images/hr.jpg) no-repeat 50% 50%; height:300px;}
+.title{ border-bottom:1px solid #edc366;}
+.news,.tel,.addr{ border-top:1px solid #d49e25; border-bottom:1px solid #edc366; color:#fff; padding:10px; font-family:"Microsoft Yahei";}
+.news h3,.addr h3{ font-size:16px; font-weight:700;}
+.news p,.tel p,.addr p{ font-size:12px; line-height:24px;letter-spacing:1px;}
+.tel h3{ font-size:16px; font-weight:700; background:url(../images/icon.png) no-repeat; height:26px; padding-left:38px; line-height:26px;}
+.tel p{ border-bottom:1px solid #e9bc58; line-height:30px;}
+.news a{ color:#fff;}
+.news a:hover{ color:#96633a; text-decoration:underline;}
+.list{ padding-top:3px; border-top:1px solid #d49e25; border-bottom:1px solid #edc366;}
+.list li{ height:40px; line-height:40px;}
+.list li a{ color:#fff; font-size:14px; font-family:"Microsoft Yahei"; display:block; padding-left:10px;}
+.list li a:hover,.list li.active a{ color:#333; background:#eec56b; text-decoration:none;}
+.article{ padding:23px 17px; border-bottom:1px  dashed #d4d4d4;}
+.cont .article.active{ border:1px solid #f5e6c2; box-shadow: 0 0 3px rgba(0,0,0,.1)}
+.article img{ float:left; padding-right:13px;}
+.article_cont{ position:relative; overflow:hidden;}
+.article_cont h3{ font-weight:18px; font-family:"Microsoft Yahei"; color:#333; font-weight:normal;}
+.article_cont p{ font-size:14px; color:#666; line-height:26px;}
+.article_cont li{ font-size:14px; color:#666; line-height:26px;}
+.article_cont li em{ display:inline-block; }
+.article_cont a{ position:absolute; right:0; bottom:0; text-align:right; color:#ff8a00; font-size:14px;_position:absolute; _right:170px; _bottom:50px;}
+.article_cont a:hover{ text-decoration:underline;}
+.article_cont .contact_list li span{ display:inline-block; font-size:16px; color:#333; font-family:"Microsoft Yahei";width:280px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.article_cont .contact_list li a{ position:relative; color:#666;}
+
+

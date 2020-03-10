@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"> 
+  	<meta content="yes" name="apple-touch-fullscreen"> 
+  	<meta content="telephone=no,email=no" name="format-detection">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<title>爱茶叶</title>
+	<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/iscroll.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+</head>
+<body>
+	<header class="header">
+        <h1>购物车</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+	</header>
+	<div class="wrap cart-wrap">
+        <div class="cart-box">
+            <div class="bar cart-bar">
+                <a href="javascript:;" class="edit">编辑</a>
+            </div>
+            <ul class="list">
+                <li>
+                    <input type="checkbox" class="checkbox">
+                    <div class="cart-item">
+                        <div class="cart-img"><img src="images/cart-img.jpg" alt=""></div>
+                        <div class="cart-info">
+                            <h3>这里你可以写一写产品的名称</h3>
+                            <p>这里可以有简单的介绍</p>
+                            <p class="cart-price">
+                                <span class="price">￥56.00</span>
+                                <del class="price">￥98</del>
+                            </p>
+                            <div class="num-box">
+                                <button class="min-btn minus">-</button><input type="text" value="1" class="txt"><button class="min-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" class="checkbox">
+                    <div class="cart-item">
+                        <div class="cart-img"><img src="images/cart-img.jpg" alt=""></div>
+                        <div class="cart-info">
+                            <h3>这里你可以写一写产品的名称</h3>
+                            <p>这里可以有简单的介绍</p>
+                            <p class="cart-price">
+                                <span class="price">￥56.00</span>
+                                <del class="price">￥98</del>
+                            </p>
+                            <div class="num-box">
+                                <button class="min-btn minus">-</button><input type="text" value="1" class="txt"><button class="min-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+	</div>
+	<footer class="footer">
+        <div class="cart-sum-box">
+            <input type="checkbox" id="all"><label for="all">全选</label>
+            <button class="btn" type="button">删除</button>
+        </div>
+	</footer>
+    <script>        
+
+    </script>
+</body>
+</html>

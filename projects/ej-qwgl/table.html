@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>岗位维度</title>
+<link rel="stylesheet" href="css/nanoscroller.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.nanoscroller.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="js/j_common.js"></script>
+</head>
+<body>
+<div class="main-content">
+    <div class="title">
+        <h3>排勤表 - 时段维度 </h3>
+        <a href="javascript:;" class="export-btn" onclick="fnDia('是否确认导出表格到本地...')">导出</a>
+        <div class="search-box arr-search-box">
+            <ul class="arr-nav slide-down-nav">
+                <li> <span>岗位类型</span>
+                    <div class="slide-down-box"> <a>岗位类型1</a> <a>岗位类型2</a> <a>岗位类型3</a> </div>
+                </li>
+                <li> <span>执勤方式</span>
+                    <div class="slide-down-box"> <a>执勤方式1</a> <a>执勤方式2</a> <a>执勤方式3</a> </div>
+                </li>
+            </ul>
+            <div class="time-search">
+                <input type="text" class="txt" placeholder="请输入警员姓名">
+                <button class="search-btn"></button>
+            </div>
+        </div> 
+    </div>
+    <div class="table-box mt10">
+    	<div class="table-content">
+            <div class="configure-border">
+                <div class="configure-bg-out">
+                    <div class="configure-bg-in"></div>
+                </div>
+                <div class="configure-border-b" style="width:99px;"></div>
+            </div>
+            <!--configure-border end-->
+            <table class="first-table" style="" id="configure-table">
+                <thead>
+                    <tr>
+                        <th class="table-tit" width="8%">部门</th>
+                        <th class="table-tit" width="8%">责任区</th>
+                        <th class="table-tit" width="8%">岗位类型</th>
+                        <th class="table-tit" width="8%">岗位名称</th>
+                        <th class="table-tit" width="8%">勤务时间</th>
+                        <th class="table-tit" width="8%">周一<br>
+                            (2014-08-11)</th>
+                        <th class="table-tit" width="8%">周二<br>
+                            (2014-08-12)</th>
+                        <th class="table-tit" width="8%">周三<br>
+                            (2014-08-13)</th>
+                        <th class="table-tit" width="8%">周四<br>
+                            (2014-08-14)</th>
+                        <th class="table-tit" width="8%">周五<br>
+                            (2014-08-15)</th>
+                        <th class="table-tit" width="8%">周六<br>
+                            (2014-08-16)</th>
+                        <th class="table-tit" width="8%">周日<br>
+                            (2014-08-17)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border-left:1px solid #4a6184">西湖大队六中队</td>
+                        <td>文三西路责任区</td>
+                        <td>一级岗</td>
+                        <td colspan="9" style="border:none"><table>
+                            <tbody>
+                                <tr>
+                                    <td>文三西路以南天目山路以北岗</td>
+                                    <td colspan="8" style="border:none"><table class="third-table">
+                                        <tbody>
+                                            <tr class="oddClass">
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr class="oddClass">
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table></td>
+                                </tr>
+                                <tr>
+                                    <td>文三西路以南天目山路以北岗</td>
+                                    <td colspan="8" style="border:none"><table class="third-table">
+                                        <tbody>
+                                            <tr class="oddClass">
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr class="oddClass">
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr class="oddClass">
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table></td>
+                                </tr>
+                                <tr>
+                                    <td>文三西路以南天目山路以北岗</td>
+                                    <td colspan="8" style="border:none"><table class="third-table">
+                                        <tbody>
+                                            <tr class="oddClass">
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                            <tr class="oddClass">
+                                                <td>07:15 - 09:15</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                                <td>民警1、协警1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table></td>
+                                </tr>
+                            </tbody>
+                        </table></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+</div>
+<div class="dia drag">
+    <div class="dia-cont"></div>
+    <div class="dia-btn mt20">
+        <input type="button" name="" class="btn save-btn" value="确 定">
+        <input type="button" name="" class="btn cancel-btn" value="取 消">
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        /* 表格隔行变色 */
+        $('.third-table tr:nth-child(odd)').addClass('oddClass');
+
+    })
+</script>
+</html>

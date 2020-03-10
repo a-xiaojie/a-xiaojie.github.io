@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户中心</title>
+<link rel="stylesheet" type="text/css" href="../style/users.css">
+<link rel="stylesheet" type="text/css" href="../style/style.css">
+<script src="../js/jquery.js" ></script>
+</head>
+
+<body>
+<!--网站头部部分-->
+<div class="main" style="*z-index:999;">
+    <div class="all_games_up" id="all_game_div" style="display: none;"> <span class="all_gemes_tra"><img src="../images/all_game_tra.jpg" width="16" height="9" /></span>
+        <p class="all_wel"><strong>欢迎来到369wan，现在就开始您的游戏之旅吧!</strong> <span> <img src="../images/all_n.jpg"  />最新游戏</span><span> <img src="../images/all_b.jpg"  />测试游戏</span><span> <img src="../images/all_h.jpg"  />热门游戏</span></p>
+        <ul class="all_games_list">
+            <li><a href="../game_box.html">烈焰</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">赤月传说</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">暗黑屠龙</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">绝代双骄</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">烈火战神</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">屠龙传说</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">屠龙战</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">欧冠足球</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">胜利11人</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">逐日战神</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">剑踪</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">街机三国</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">热血战纪</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">问剑</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">新五虎上将</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">枪魂</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">怒斩</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">傲视遮天</a> </li>
+            <li><a href="../game_box.html">玄仙传奇</a> </li>
+            <li><a href="../game_box.html">赤月</a> </li>
+            <li><a href="../game_box.html">神仙道</a> </li>
+            <li><a href="../game_box.html">沙之城主</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">盛世三国</a> </li>
+            <li><a href="../game_box.html">龙魂天下</a> </li>
+            <li><a href="../game_box.html">霸域</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">凡人修真2</a> </li>
+            <li><a href="../game_box.html">悍将传世</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">斗破苍穹2</a> </li>
+            <li><a href="../game_box.html">霸刀</a> </li>
+            <li><a href="../game_box.html">神将三国</a> </li>
+            <li><a href="../game_box.html">神座</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">炼妖录</a> <img src="../images/all_b.jpg" /> </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="main">
+        <h1 class="logo"><a href="../index.html"></a></h1>
+        <div class="top_menu"> <a href="javascript:;" onclick="if(document.all){document.body.style.behavior = 'url(#default#homepage)'; document.body.setHomePage('www.369wan.html'); }else{ alert('浏览器不支持此操作, 请手动设为首页'); }">设为首页</a><a href="javascript:;" onclick="try{ window.external.addFavorite('www.369wan.html', '369wan游戏平台'); } catch(e) {  try{ window.sidebar.addPanel('369wan游戏平台', 'www.369wan.html', ''); }catch (e) { alert('http://www.369wan.com/加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.');  } }">加入收藏</a><a href="javascript:;">把369wan保存到桌面</a><span id="all_game_hover" 369wan游戏</span> </div>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">首  页<br />
+                    <span>HOME</span></a></li>
+                <li><a href="users_index.html" rel="nofollow">用户中心<br />
+                    <span>USER</span></a></li>
+                <li><a href="../game_center.html">游戏中心<br />
+                    <span>GAME</span></a></li>
+                <li><a href="../pay/pay_index.html" target="_blank" rel="nofollow">充值中心<br />
+                    <span>PAY</span></a></li>
+                <li><a href="../kefu/kefu.html" rel="nofollow">客服中心<br />
+                    <span>SERVICE</span></a></li>
+                <li><a href="http://bbs.369wan.com/" target="_blank">官方论坛<br />
+                    <span>BBS</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var timeout = null;
+	$('#all_game_hover').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		timeout = setTimeout(function(){ $('#all_game_div').hide(); }, 300);
+	});
+	
+	$('#all_game_div').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		$('#all_game_div').hide();
+	});
+});
+</script> 
+<!--网站头部部分结束-->
+<div class="main">
+    <div class="container">
+        <div class="user_left">
+            <div class="user_left_menu_title"><a href="users_index.html"><i class="user_title_ico"></i>用户中心首页</a></div>
+            <div class="user_left_menu_title m_t"><i class="m_title_ico"></i>账号管理</div>
+            <div class="user_left_menu"> <a href="users_index8.html">上传头像</a> <a href="users_index0.html">用户资料修改</a> <a href="users_index4.html">论坛激活</a> <a href="users_index3.html">防沉迷验证</a> <a href="users_index6.html">手机验证</a> 
+            </div>
+            <div class="user_left_menu_title m_t"><i class="s_title_ico"></i>安全账号</div>
+            <div class="user_left_menu"> 
+                <a href="users_index1.html">修改密码</a> <a href="users_index2.html">密码保护</a> <a href="users_index6.html">手机绑定</a> 
+            </div>
+            <div class="service">
+                <ul class="service_li">
+                    <span class="index_service_peo"></span>
+                    <li>
+                        <p><span class="service_tel"><a href="../kefu/kefu.html" target="_blank">在线客服</a></span><span class="time">7×24</span></p>
+                        <p class="help">有什么问题客服来帮您</p>
+                    </li>
+                    <li>
+                        <p>客服电话<span class="time">7×24</span></p>
+                        <p><i class="tel">020-37039849</i></p>
+                    </li>
+                    <li>
+                        <p class="mon"><a href="../zjjh/zjjh.html" target="_blank">未成年人家长监护工程</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        <div class="col2">
+            <div class="box1 box2 wdzl">
+                <div class="tit">
+                    <div class="w">
+                        <div class="c"> 我的资料 </div>
+                    </div>
+                </div>
+                <!--个人资料-->
+                <div class="user_information">
+                    <div class="user_info_left"><a href="users_index8.html"><img src="../images/noavatar_middle.gif"></a></div>
+                    <div class="user_info_right">
+                        <ul>
+                            <li> 您好，<b>aaa</b><a href="javascript:;" class="quit">退出</a></li>
+                            <li>账号：aaaaaa</li>
+                            <li>上次登陆时间：2014-04-10 21:19</li>
+                            <li class="user_pay"><a href="../pay/pay_index.html">我要充值</a>|<a href="../kefu/kefu.html">客服中心</a></li>
+                            <li><a href="../xsk.html"><img src="../images/user/user_new_card.jpg"></a></li>
+                        </ul>
+                    </div>
+                    <br clear="all">
+                </div>
+               
+            </div>
+            
+            
+            
+        </div>
+        <div class="col3">
+            <div class="box1 box2 wdzl wwgdyx " style="height:190px; overflow:hidden;">
+                <div class="tit">
+                    <div class="w">
+                        <div class="c"> 我玩过的游戏 </div>
+                    </div>
+                </div>
+                <div class="cont">
+                    <ul>
+			            <li><span class="name">武林3</span><span class="serv">双线二区</span><a href="#" class="btns" target="_blank">进入游戏</a> </li>
+                        <li class="even"><span class="name">大海贼时代</span><span class="serv">双线一区</span><a href="#" class="btns" target="_blank">进入游戏</a> </li>
+			          </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!--用户资料-->
+        <div class="col2 zone">
+            <div class="box1 box2 blank">
+                <div class="tit">
+                    <div class="w">
+                        <div class="c user_info_title"> 用户资料
+                            <p class="modify"><a href="users_index0.html">修改资料</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="user_info_list">
+                    <ul>
+                        <li>昵称：
+                            aaaaaa <a href="users_index4.html" class="btns">立即完善</a> </li>
+                        <li class="right_border">性别：男</li>
+                        <li class="even">生日：</li>
+                        <li class="even right_border">手机： <a href="users_index6.html" class="btns">立即绑定</a> </li>
+                        <li>邮箱： <a href="users_index0.html" class="btns">立即完善</a> </li>
+                        <li class="right_border">QQ：</li>
+                        <li class="even">身份证号：11111111111111**** </li>
+                        <li class="even right_border">真实姓名：
+                            张三 </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+        <br clear="all" />
+    </div>
+    <div class="bottom_service">
+            <ul>
+                <li>
+                    <p class="title bottom_ico"> <i class="ser1">&nbsp;</i>热门游戏</p>
+                    <a href="#" target="_blank">烈&nbsp; 焰</a><a href="#" target="_blank">赤月传说</a><a href="#" target="_blank">烈火战神</a> <a href="#" target="_blank">绝代双骄</a><a href="#" target="_blank">欧冠足球</a></li>
+                <li>
+                    <p class="title bottom_ico"> <i class="play_s">&nbsp;</i>玩家服务</p>
+                    <a href="../kefu/kefu.html" rel="nofollow" target="_blank">客服首页 </a><a href="../kefu/kefu.html" rel="nofollow" target="_blank">我要提问&nbsp;</a> <a href="../customer.html" rel="nofollow" target="_blank">常见问题</a></li>
+                <li>
+                    <p class="title bottom_ico"> <i class="rechar_s">&nbsp;</i>充值服务</p>
+                    <a href="../pay/pay_index.html" rel="nofollow" target="_blank">网上银行充值</a> <a href="../pay/pay_index.html" rel="nofollow" target="_blank">支付宝充值</a> <a href="../pay/pay_index.html" rel="nofollow" target="_blank">神州付充值</a> <a href="../pay/pay_index.html" rel="nofollow" target="_blank">移动短信充值</a> <a href="../pay/pay_index.html" rel="nofollow" target="_blank">全国电话充值（V币）</a></li>
+                <li>
+                    <p class="title bottom_ico"> <i class="hot_bbs">&nbsp;</i> 热门论坛</p>
+                    <a href="#" rel="nofollow" target="_blank">烈&nbsp; 焰</a><a href="#" rel="nofollow" target="_blank">赤月传说</a><a href="#" rel="nofollow" target="_blank">烈火战神</a> <a href="#" rel="nofollow" target="_blank">绝代双骄</a> <a href="#" rel="nofollow" target="_blank">欧冠足球</a></li>
+            </ul>
+        </div>
+</div>
+
+<!--网站底部部分-->
+<div class="foot">
+    <p> 上海橙盛网络科技有限公司 </p>
+</div>
+<!--网站底部部分结束-->
+</body>
+</html>

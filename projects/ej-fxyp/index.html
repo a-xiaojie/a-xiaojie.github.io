@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
+	<title>分析研判系统-首页</title>
+	<link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="g-hd">
+		<h1 class="m-logo"><a href="index.html">警情分析研判系统</a></h1>
+		<ul class="m-infobar clearfix">
+			<li class="m-top-weather">11°</li>
+			<li class="m-top-date">2015/03/11 周三 10:30</li>
+			<li class="m-top-user"><i class="fa fa-user"></i><span>王海峰 011564</span><span>杭州交警支队</span></li>
+			<li class="m-top-set">
+				<a href="javascript:;" class="u-home" title="首页"><i class="fa fa-home"></i></a>
+				<a href="javascript:;" class="u-set" title="设置"><i class="fa fa-set"></i></a>
+				<a href="javascript:;" class="u-quit" title="退出"><i class="fa fa-quit"></i></a>
+			</li>
+		</ul>
+		<!-- 菜单 -->
+		<div class="m-menu">
+			<div class="m-menu-bar"></div>
+			<div class="m-menu-box">
+				<ul class="m-nav clearfix">
+					<li><a href="javascript:;" class="m-item">首页</a></li>
+					<li class="cur"><a href="javascript:;" class="m-item">警情分析</a>
+						<ul class="m-subnav clearfix">
+							<li><a href="javascript:;" class="m-subitem">警情总览</a></li>
+							<li class="cur"><a href="javascript:;" class="m-subitem">警情高发</a>
+							</li>
+							<li><a href="javascript:;" class="m-subitem">规律发现</a></li>
+							<li><a href="javascript:;" class="m-subitem">警情预警</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;" class="m-item">警务勤务</a>
+						<ul class="m-subnav clearfix">
+							<li><a href="javascript:;" class="m-subitem">警务评估</a></li>
+							<li><a href="javascript:;" class="m-subitem">勤务评估</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;" class="m-item">交通态势</a>
+						<ul class="m-subnav clearfix">
+							<li><a href="javascript:;" class="m-subitem">指数态势</a></li>
+							<li><a href="javascript:;" class="m-subitem">流量态势</a></li>
+							<li><a href="javascript:;" class="m-subitem">瓶颈监测</a></li>
+							<li><a href="javascript:;" class="m-subitem">异常监测</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;" class="m-item">关联分析</a>
+						<ul class="m-subnav clearfix">
+							<li><a href="javascript:;" class="m-subitem">天气与警情</a></li>
+							<li><a href="javascript:;" class="m-subitem">流量与警情</a></li>
+							<li><a href="javascript:;" class="m-subitem">指数与警情</a></li>
+							<li><a href="javascript:;" class="m-subitem">流量与指数</a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;" class="m-item">多维分析</a></li>
+					<li><a href="javascript:;" class="m-item">热词分析</a></li>
+					<li><a href="javascript:;" class="m-item">系统管理</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 主体 -->
+	<div class="g-bd">
+		<div class="g-sd">
+			<!-- 实时警情量 -->
+			<div class="m-row1">
+				<div class="m-cell">
+					<div class="m-panel">
+						<div class="m-panel-title">
+							<h3>实时警情量</h3>
+						</div>
+						<div class="m-panel-cont">
+							<div class="m-panel-list">
+								<ul>
+									<li>
+										<span>警情总量</span>
+										<div class="m-num">
+											<div class="m-num-box">
+												<em id='num' class="u-num">
+													<i style="background-position: 0px 0px;"></i><i style="background-position: 0px 0px;"></i><i style="background-position: 0px 0px;"></i><i style="background-position: 0px 0px;"></i></i>
+												</em>
+												<span class="u-num-divide"></span>
+												<div class="u-num-line-l"></div>
+												<div class="u-num-line-r"></div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<span>待处理</span>
+										<div class="m-num"><em>231</em></div>
+									</li>
+									<li>
+										<span>处理中</span>
+										<div class="m-num"><em>165</em></div>
+									</li>
+									<li>
+										<span>已完成</span>
+										<div class="m-num"><em>1384</em></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 警情总量指示计 -->
+			<div class="m-row2">
+				<div class="m-cell">
+					<div class="m-panel">
+						<div class="m-panel-title">
+							<h3>警情总量指示计</h3>
+						</div>
+						<div class="m-panel-cont">
+							<div class="m-meter-box">
+			    				<div class="m-meter-bg">
+									<ol class="m-meter-num-list">
+										<li class="m-meter-high">预计最高 2000</li>
+										<li class="m-meter-average">平均值 1400</li>
+										<li class="m-meter-low">预计最低 400</li>
+									</ol>
+			    					<div class="m-meter-mercury">
+			    					</div>
+			    					<div class="m-meter-tips"></div>
+			    				</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 实时单兵统计 -->
+			<div class="m-row3">
+				<div class="m-cell">
+					<div class="m-panel">
+						<div class="m-panel-title">
+							<h3>实时单兵统计</h3>
+						</div>
+						<div class="m-panel-cont">
+							<div class="m-panel-list">
+								<ul>
+									<li>
+										<span>路面排勤量</span>
+										<div class="m-num"><em>211</em></div>
+									</li>
+									<li>
+										<span>单兵在线量</span>
+										<div class="m-num"><em>198</em></div>
+									</li>
+									<li>
+										<span>单兵任务量</span>
+										<div class="m-num"><em>87</em></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 当前指数 -->
+			<div class="m-row4">
+				<div class="m-cell">
+					<div class="m-panel">
+						<div class="m-panel-title">
+							<h3>当前指数</h3>
+						</div>
+						<div class="m-panel-cont">
+							<div class="m-index-box">
+								<div class="m-index-top">
+									<div class="clearfix">
+										<em class="u-index-num">6.4</em>
+										<ul>
+											<li>高架指数：0</li>
+											<li>地面指数：0</li>
+										</ul>
+									</div>
+									<p>— 2015-03-06  指数 — 当天</p>
+								</div>
+								<div class="m-chart">
+									<img src="images/chart1.jpg" width="100%" height="140">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g-mn">
+			<div class="g-mnc">
+				<!-- 警情分时图 -->
+				<div class="m-row1">
+					<div class="m-cell">
+						<div class="m-panel">
+							<div class="m-panel-title">
+								<h3>警情分时图</h3>
+								<div class="m-panel-controls">
+									<a href="javascript:;" class="u-arrow-left" title="">
+										<i class="fa fa-arrow-left"></i>
+									</a>
+									<a href="javascript:;" class="u-arrow-right" title="">
+										<i class="fa fa-arrow-right"></i>
+									</a>
+								</div>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-chart-box">
+									<div class="m-chart">
+										<img src="images/chart2.png" width="100%;" height="130">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 警情分布图 -->
+				<div class="m-row2">
+					<div class="m-cell">
+						<div class="m-panel">
+							<div class="m-panel-title">
+								<h3>警情分布图</h3>
+								<div class="m-panel-controls">
+									<a href="javascript:;" class="u-arrow-left" title="">
+										<i class="fa fa-arrow-left"></i>
+									</a>
+									<a href="javascript:;" class="u-arrow-right" title="">
+										<i class="fa fa-arrow-right"></i>
+									</a>
+								</div>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-chart-box">
+									<div class="m-chart">
+										<img src="images/chart3.png" width="100%;" height="130">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 单兵列表 -->
+				<div class="m-row3">
+					<div class="m-cell m-turn">
+						<div class="m-panel m-turn-front">
+							<div class="m-panel-title">
+								<h3>单兵在线状态图</h3>
+								<div class="m-panel-controls">
+									<a href="javascript:;" class="u-arrow-up" title="">
+										<i class="fa fa-arrow-up"></i>
+									</a>
+									<a href="javascript:;" class="u-arrow-down" title="">
+										<i class="fa fa-arrow-down"></i>
+									</a>
+								</div>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-chart-box">
+									<div class="m-chart">
+										<img src="images/chart4.png" width="100%;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="m-panel m-turn-back">
+							<div class="m-panel-title">
+								<h3>单兵列表</h3>
+								<div class="m-panel-controls">
+									<a href="javascript:;" class="u-arrow-up" title="">
+										<i class="fa fa-arrow-up"></i>
+									</a>
+									<a href="javascript:;" class="u-arrow-down" title="">
+										<i class="fa fa-arrow-down"></i>
+									</a>
+								</div>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-table-box">
+									<div class="m-table">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>大队</th>
+													<th>在编人数</th>
+													<th>排班人数</th>
+													<th>在线人数</th>
+													<th>有任务人数</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>上城大队</td>
+													<td>150</td>
+													<td>72</td>
+													<td>125</td>
+													<td>49</td>
+												</tr>
+												<tr>
+													<td>下城大队</td>
+													<td>150</td>
+													<td>72</td>
+													<td>125</td>
+													<td>49</td>
+												</tr>
+												<tr>
+													<td>西湖大队</td>
+													<td>150</td>
+													<td>72</td>
+													<td>125</td>
+													<td>49</td>
+												</tr>
+												<tr>
+													<td>江干大队</td>
+													<td>150</td>
+													<td>72</td>
+													<td>125</td>
+													<td>49</td>
+												</tr>
+												<tr>
+													<td>拱墅大队</td>
+													<td>150</td>
+													<td>72</td>
+													<td>125</td>
+													<td>49</td>
+												</tr>
+												<tr>
+													<td>滨江大队</td>
+													<td>150</td>
+													<td>72</td>
+													<td>125</td>
+													<td>49</td>
+												</tr>
+												<tr>
+													<td>上城大队</td>
+													<td>150</td>
+													<td>72</td>
+													<td>125</td>
+													<td>49</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 异常路段 -->
+				<div class="m-row4">
+					<div class="m-cell">
+						<div class="m-panel">
+							<ul class="m-tab">
+								<li class="cur">异常路段</li>
+								<li>拥堵路段</li>
+								<li>区域流量</li>
+							</ul>
+							<div class="m-panel-controls">
+								<a href="javascript:;" class="u-arrow-up" title="">
+									<i class="fa fa-arrow-up"></i>
+								</a>
+								<a href="javascript:;" class="u-arrow-down" title="">
+									<i class="fa fa-arrow-down"></i>
+								</a>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-table-box">
+									<div class="m-table">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>编号</th>
+													<th>路段</th>
+													<th>方向</th>
+													<th>拥堵概率</th>
+													<th>频度</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td><i class="fa fa-up"></i></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td><i class="fa fa-down"></i></td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="m-table">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>2编号</th>
+													<th>路段</th>
+													<th>方向</th>
+													<th>拥堵概率</th>
+													<th>频度</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td><i class="fa fa-up"></i></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td><i class="fa fa-down"></i></td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="m-table">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>3编号</th>
+													<th>路段</th>
+													<th>方向</th>
+													<th>拥堵概率</th>
+													<th>频度</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td><i class="fa fa-up"></i></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td><i class="fa fa-down"></i></td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>中河高架 （西湖大道-解放路）</td>
+													<td>南向北</td>
+													<td>0.93</td>
+													<td>3</td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="g-mnr">
+				<!-- 警情热点图 -->
+				<div class="m-row5">
+					<div class="m-cell">
+						<div class="m-panel">
+							<div class="m-panel-title">
+								<h3>警情热点图</h3>
+								<div class="m-panel-selects">
+									<select name="type" id="" class="easyui-combobox">
+										<option value="" selected="selected">类型</option>
+										<option value="">类型</option>
+									</select>
+									<select name="type" id="" class="easyui-combobox">
+										<option value="" selected="selected">区域</option>
+										<option value="">区域</option>
+									</select>
+									<select name="type" id="" class="easyui-combobox">
+										<option value="" selected="selected">状态</option>
+										<option value="">状态</option>
+									</select>
+								</div>
+								<div class="m-panel-controls">
+									<a href="javascript:;" class="u-fullpage" title="全屏查看">
+										<i class="fa fa-fullpage"></i>
+									</a>
+								</div>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-map-box">
+									<div class="m-map">
+										<img src="images/pic1.jpg" style="width: 100%" >
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 单兵分布图 -->
+				<div class="m-row3">
+					<div class="m-cell">
+						<div class="m-panel">
+							<div class="m-panel-title">
+								<h3>单兵分布图</h3>
+								<div class="m-panel-selects">
+									<select name="type" id="" class="easyui-combobox">
+										<option value="" selected="selected">人员类型</option>
+										<option value="">人员类型</option>
+									</select>
+									<select name="type" id="" class="easyui-combobox">
+										<option value="" selected="selected">区域</option>
+										<option value="">区域</option>
+									</select>
+								</div>
+								<div class="m-panel-controls">
+									<a href="javascript:;" class="u-fullpage" title="全屏查看">
+										<i class="fa fa-fullpage"></i>
+									</a>
+								</div>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-map-box">
+									<div class="m-map">
+										<img src="images/pic2.jpg" style="width: 100%" >
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 路网图 -->
+				<div class="m-row4">
+					<div class="m-cell">
+						<div class="m-panel">
+							<div class="m-panel-title">
+								<h3>路网图</h3>
+								<div class="m-panel-controls">
+									<a href="javascript:;" class="u-fullpage" title="全屏查看">
+										<i class="fa fa-fullpage"></i>
+									</a>
+								</div>
+							</div>
+							<div class="m-panel-cont">
+								<div class="m-map-box">
+									<div class="m-map">
+										<img src="images/pic3.jpg" style="width: 100%" >
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="g-ft">
+		<span class="m-version">系统版本：1.3.6</span>
+		<span class="m-support">技术支持：银江股份有限公司</span>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/jquery.transit.min.js"></script>
+	<script src="js/animateBackground-plugin.js"></script>
+	<script src="js/meter.js"></script>
+	<script>
+
+
+	/*操作数字滚动js*/
+	function show_num(n){
+		while(String(n).length<4){   // 不足4位前面补零
+			n='0'+n;
+		}
+		for( var i=0; i<4; i++){
+			var num=String(n).charAt(i);
+			var y = -parseInt(num)*41;
+			var obj = $("#num i").eq(i);
+			obj.animate({
+				backgroundPosition :'(0 '+String(y)+'px)' 
+				}, 'slow','swing',function(){}
+			);
+		}
+	}
+
+	var k =15;
+	$(function(){			
+		setInterval('show_num(k);k+=1;',2000);
+	});
+
+ var runPrefixMethod = function(element, method) {
+        var usablePrefixMethod;
+        ["webkit", "moz", "ms", "o", ""].forEach(function(prefix) {
+            if (usablePrefixMethod) return;
+            if (prefix === "") {
+                // 无前缀，方法首字母小写
+                method = method.slice(0,1).toLowerCase() + method.slice(1);
+                
+            }
+            
+            var typePrefixMethod = typeof element[prefix + method];
+            
+            if (typePrefixMethod + "" !== "undefined") {
+                if (typePrefixMethod === "function") {
+                    usablePrefixMethod = element[prefix + method]();
+                } else {
+                    usablePrefixMethod = element[prefix + method];
+                }
+            }
+        });
+        
+        return usablePrefixMethod;
+    };
+
+	$(function(){
+		// 滚动条
+		$('.g-bd').niceScroll({
+			cursorborder : 'none',
+			cursorcolor : '#1d5b8c',
+			cursoropacitymin : 0.5
+		});
+
+		// tab切换
+		$('.m-tab li').on('click', function(){
+			$(this).addClass('cur').siblings().removeClass('cur');
+			$(this).parent().siblings('.m-panel-cont').find('.m-table').hide().eq($(this).index()).show();
+		});
+
+		// 翻转
+		if(navigator.appName == "Microsoft Internet Explorer"){
+			$('.m-turn-back').width('0');
+			$('.m-turn').hover(function(){
+				$(this).find(".m-turn-front").stop().animate({'width':'0'},200,function(){
+					$(this).hide().next().show();
+					$(this).next().animate({'width':'100%'},200);
+				});
+			},function(){
+				$(this).find(".m-turn-back").stop().animate({'width':'0'},200,function(){
+					$(this).hide().prev().show();
+					$(this).prev().animate({'width':'100%'},200);
+				});
+			})
+			//ie10 标准模式
+	        $('.m-turn').find(".m-turn-back").css("transform","rotateY(0deg)");
+		}
+		else{
+			$('.m-turn-back').hide();
+			$('.m-turn').hover(function(){
+				$(this).find('.m-turn-front').stop().transition({
+					rotateY:'180deg',
+					opacity:0	
+				},function(){
+					if($(this).css('opacity')==0){
+						$(this).hide();	
+					}
+				});
+				$(this).find('.m-turn-back').show().stop().transition({
+					rotateY:'0',
+					opacity:1
+				})
+			},function(){
+				$(this).find('.m-turn-front').stop().show().transition({
+					rotateY:'0',
+					opacity:1
+				});
+				$(this).find('.m-turn-back').stop().transition({
+					rotateY:'180deg',
+					opacity:0	
+				},function(){
+					if($(this).css('opacity')==0){
+						$(this).hide();	
+					}	
+				})
+			})
+		}
+
+
+		//菜单 
+		$('.m-menu-bar').mouseenter(function(){
+			$(this).hide();
+			$('.m-menu-box').show();
+			$('.m-nav>li').on({
+				mouseenter : function(){
+					$(this).find('.m-subnav').show();
+					$(this).find('.m-subnav').hover(function(){
+						$(this).parents('li').addClass('hover');
+					},function(){
+						$(this).parents('li').removeClass('hover');
+					});
+					$(this).find('.m-subnav li').click(function(e) {
+						e.stopPropagation();
+						//$('#mainFrame').attr('src', $(this).children('a').attr('data-url'));
+						$('.m-nav li').removeClass('cur');
+						$(this).addClass('cur');
+						$(this).parents('li').addClass('cur');
+					});
+				},
+				mouseleave : function(){
+					$('.m-subnav').hide();
+				},
+				click :  function(e) {
+					e.stopPropagation();
+					$('.m-nav li').removeClass('cur');
+					$(this).addClass('cur');
+					if($(this).find('.m-subnav').length>0){
+						$(this).find('.m-subnav li:first').addClass('cur');
+						//$('#mainFrame').attr('src', $(this).find('.m-subnav li:first a').attr('data-url'));
+					}
+					else{
+						//$('#mainFrame').attr('src', $(this).children('a').attr('data-url'));
+					}
+				}
+			});
+			$('.m-menu-box').on('mouseleave',function(){
+				$(this).hide();
+				$('.m-menu-bar').show();
+			});
+		});
+
+		//全屏查看
+		$('.u-fullpage').on('click',function(){
+			var $box=$(this).parents('.m-panel');
+			if(window.ActiveXObject){
+				var WshShell = new ActiveXObject('WScript.Shell');
+				WshShell.SendKeys('{F11}');
+				if($box.hasClass('m-panel-fullpaged')){
+					$(this).attr('title', '全屏查看');
+					$(this).find('.fa').toggleClass('fa-fullpage fa-fullquit');
+					$('.g-bd').css('z-index','99');
+					$box.removeClass('m-panel-fullpaged').find('.m-map').height($box.height()-21);
+				}
+				else{
+					$(this).attr('title', '退出全屏');
+					$('.g-bd').css('z-index','10000');
+					$(this).find('.fa').toggleClass('fa-fullpage fa-fullquit');
+					$box.addClass('m-panel-fullpaged').find('.m-map').height($(window).height()+53);
+				}
+			}
+			else{
+				if (runPrefixMethod(document, "FullScreen") || runPrefixMethod(document, "IsFullScreen")) {
+					runPrefixMethod(document, "CancelFullScreen");
+					this.title = this.title.replace("退出", "");
+				} else if (runPrefixMethod(document.documentElement, "RequestFullScreen")) {
+					this.title = this.title.replace("点击", "点击退出");
+				}
+			}
+		});
+
+
+	})
+	</script>
+</body>
+</html>

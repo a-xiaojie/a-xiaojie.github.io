@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>工作管理-短信发送</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item active">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送" class="active">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+    	<div class="msg-box clearfix">
+        	<div class="msg-outer msg-container">
+            	<div class="msg-inner">
+                    <div class="msg-title title">
+                        <h3 class="fl">发送短信</h3>
+                        <h3 class="fr"><a href="javascript:;" title="历史记录" class="his-btn">历史记录</a></h3>
+                    </div>
+                    <div class="msg-main">
+                        <img src="images/msg1.jpg" width="100%;" height="296px">
+                    </div>
+                </div>
+            </div>
+            <div class="msg-outer msg-history">
+            	<div class="msg-inner">
+                    <div class="msg-title title">
+                    </div>
+                    <div class="msg-main">
+                        <img src="images/msg2.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column mt10 msg-his">
+            <div class="title">
+                <h3 class="fl">历史短信列表</h3>
+                <div class="fr"><div class="msg-time fl"><label>发送时间</label><input id="startTime" type="text" class="text-input" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endTime\')}'})"> - <input id="endTime" type="text" class="text-input" onclick="WdatePicker({minDate:'#F{$dp.$D(\'startTime\')}'})"></div><div class="fl msg-content"><label>短信内容</label><input type="text" class="text-input"></div></div>
+            </div>
+            <div class="cont">
+                <div class="border-table table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>发送时间</th>
+                                <th>短信内容</th>
+                                <th>接收人</th>
+                                <th>发送人</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td title="1">1</td>
+                                <td title="2014/12/02">2014/12/02</td>
+                                <td title=""></td>
+                                <td title="张三、李四">张三、李四</td>
+                                <td title=""></td>
+                            </tr>
+                            <tr>
+                                <td title="2">2</td>
+                                <td title="2014/12/02">2014/12/02</td>
+                                <td title=""></td>
+                                <td title="张三、李四">张三、李四</td>
+                                <td title=""></td>
+                            </tr>
+                            <tr>
+                                <td title="3">3</td>
+                                <td title="2014/12/02">2014/12/02</td>
+                                <td title=""></td>
+                                <td title="张三、李四">张三、李四</td>
+                                <td title=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="page-box">
+                        <div class="total-count">
+                            第<span class="active">1</span>页 | 共4页，共34条记录
+                        </div>
+                        <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	var _date=new fnGetDate(new Date()).toString();
+	$('#selectedTime').html(_date);
+})
+</script>
+</body>
+</html>

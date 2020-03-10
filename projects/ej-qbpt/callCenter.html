@@ -1,0 +1,520 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>呼叫中心</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/zTreeStyle.css"> 
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+<script src="js/jquery.ztree.all-3.5.js"></script> 
+<!-- 树 -->
+<script type="text/javascript">
+    var setting = {   
+        view: {
+            showLine: false
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback: {
+            beforeExpand: beforeExpand,
+            onExpand: onExpand,
+            onClick: onClick
+        }
+    };  
+      
+    var zNodes =[
+        { name:"上城大队",icon:"images/police-img1.png",
+            children: [
+                { name:"朱宝善",icon:"images/police-img2.png"},
+                { name:"张汉春",icon:"images/police-img2.png"},
+                { name:"王传荣",icon:"images/police-img2.png"}
+            ]},
+        { name:"下城大队",icon:"images/police-img1.png",
+            children: [
+                { name:"陈平平",icon:"images/police-img2.png"},
+                { name:"张国平",icon:"images/police-img2.png"},
+                { name:"陆卫国",icon:"images/police-img2.png"}
+            ]}, 
+        { name:"西湖大队",icon:"images/police-img1.png",
+            children: [
+                { name:"冯勤军",icon:"images/police-img2.png"},
+                { name:"徐翔",icon:"images/police-img2.png"},
+                { name:"孟建潮",icon:"images/police-img2.png"}
+            ]}, 
+        { name:"江干大队",icon:"images/police-img1.png",
+            children: [
+                { name:"顾建平",icon:"images/police-img2.png"},
+                { name:"张身康",icon:"images/police-img2.png"},
+                { name:"赵卫平",icon:"images/police-img2.png"}
+            ]},  
+        { name:"拱墅大队",icon:"images/police-img1.png",
+            children: [
+                { name:"陈永庆",icon:"images/police-img2.png"},
+                { name:"徐晓",icon:"images/police-img2.png"},
+                { name:"楼启良",icon:"images/police-img2.png"}
+            ]}, 
+        { name:"滨江大队",icon:"images/police-img1.png",
+            children: [
+                { name:"许建明",icon:"images/police-img2.png"},
+                { name:"侯得林",icon:"images/police-img2.png"},
+                { name:"王越中",icon:"images/police-img2.png"}
+            ]}, 
+        { name:"下沙大队",icon:"images/police-img1.png",
+            children: [
+                { name:"许常贵",icon:"images/police-img2.png"},
+                { name:"张小平",icon:"images/police-img2.png"},
+                { name:"张志超",icon:"images/police-img2.png"}
+            ]},
+        { name:"机动大队",icon:"images/police-img1.png",
+            children: [
+                { name:"金燕美",icon:"images/police-img2.png"},
+                { name:"华晋程",icon:"images/police-img2.png"},
+                { name:"陈蓓",icon:"images/police-img2.png"}
+            ]},
+        { name:"绕城大队",icon:"images/police-img1.png",
+            children: [
+                { name:"郑建勇",icon:"images/police-img2.png"},
+                { name:"徐庆文",icon:"images/police-img2.png"},
+                { name:"刘峰",icon:"images/police-img2.png"}
+            ]},  
+        { name:"景区大队",icon:"images/police-img1.png",
+            children: [
+                { name:"陶炜",icon:"images/police-img2.png"},
+                { name:"信天雄",icon:"images/police-img2.png"},
+                { name:"何炜",icon:"images/police-img2.png"}
+            ]}
+    ];  
+    var zNodes2 =[
+        { name:"领导区",icon:"images/police-img1.png",
+            children: [
+                { name:"赵野松",icon:"images/police-img3.png"},
+                { name:"汪惠清",icon:"images/police-img3.png"},
+                { name:"高平强",icon:"images/police-img3.png"}
+            ]},
+        { name:"指挥长区",icon:"images/police-img1.png",
+            children: [
+                { name:"陈丹枫",icon:"images/police-img2.png"},
+                { name:"王磊波",icon:"images/police-img2.png"},
+                { name:"朱晓明",icon:"images/police-img2.png"}
+            ]},
+        { name:"交通控制区",icon:"images/police-img1.png",
+            children: [
+                { name:"孔繁纲",icon:"images/police-img2.png"},
+                { name:"罗晓明",icon:"images/police-img2.png"},
+                { name:"石晶阳",icon:"images/police-img2.png"}
+            ]}, 
+        { name:"交通诱导区",icon:"images/police-img1.png",
+            children: [
+                { name:"王国民",icon:"images/police-img2.png"},
+                { name:"闫春雷",icon:"images/police-img2.png"},
+                { name:"王萍",icon:"images/police-img2.png"}
+            ]},   
+        { name:"视频巡查区",icon:"images/police-img1.png",
+            children: [
+                { name:"万丽红",icon:"images/police-img2.png"},
+                { name:"赵剑新",icon:"images/police-img2.png"},
+                { name:"陈力",icon:"images/police-img2.png"}
+            ]}, 
+        { name:"勤务管理区",icon:"images/police-img1.png",
+            children: [
+                { name:"李洁",icon:"images/police-img2.png"},
+                { name:"连宏",icon:"images/police-img2.png"},
+                { name:"童美云",icon:"images/police-img2.png"},
+                { name:"陈建萍",icon:"images/police-img2.png"},
+                { name:"罗宏波",icon:"images/police-img2.png"},
+                { name:"于力敏",icon:"images/police-img2.png"}
+            ]}, 
+        { name:"保密室",icon:"images/police-img1.png",
+            children: [
+                { name:"方金辰",icon:"images/police-img2.png"},
+                { name:"唐辰",icon:"images/police-img2.png"}
+            ]},
+        { name:"情报信息区",icon:"images/police-img1.png",
+            children: [
+                { name:"周立",icon:"images/police-img2.png"},
+                { name:"蔚斌",icon:"images/police-img2.png"},
+                { name:"周晞鲁",icon:"images/police-img2.png"},
+                { name:"赵海明",icon:"images/police-img2.png"},
+                { name:"禹晋",icon:"images/police-img2.png"},
+                { name:"唐益鹏",icon:"images/police-img2.png"}
+            ]},
+        { name:"综合工作区",icon:"images/police-img1.png",
+            children: [
+                { name:"胡波",icon:"images/police-img2.png"},
+                { name:"孙维",icon:"images/police-img2.png"},
+                { name:"周昱",icon:"images/police-img2.png"},
+                { name:"何江林",icon:"images/police-img2.png"},
+                { name:"谢明枫",icon:"images/police-img2.png"},
+                { name:"郑颜炜",icon:"images/police-img2.png"}
+            ]}
+    ]; 
+
+    var curExpandNode = null;
+    function beforeExpand(treeId, treeNode) {
+        var pNode = curExpandNode ? curExpandNode.getParentNode():null;
+        var treeNodeP = treeNode.parentTId ? treeNode.getParentNode():null;
+        var zTree = $.fn.zTree.getZTreeObj(treeId);
+        for(var i=0, l=!treeNodeP ? 0:treeNodeP.children.length; i<l; i++ ) {
+            if (treeNode !== treeNodeP.children[i]) {
+                zTree.expandNode(treeNodeP.children[i], false);
+            }
+        }
+        while (pNode) {
+            if (pNode === treeNode) {
+                break;
+            }
+            pNode = pNode.getParentNode();
+        }
+        if (!pNode) {
+            singlePath(treeId,treeNode);
+        }
+
+    }
+    function singlePath(treeId,newNode) {
+        if (newNode === curExpandNode) return;
+        if (curExpandNode && curExpandNode.open==true) {
+            var zTree = $.fn.zTree.getZTreeObj(treeId);
+            if (newNode.parentTId === curExpandNode.parentTId) {
+                zTree.expandNode(curExpandNode, false);
+            } else {
+                var newParents = [];
+                while (newNode) {
+                    newNode = newNode.getParentNode();
+                    if (newNode === curExpandNode) {
+                        newParents = null;
+                        break;
+                    } else if (newNode) {
+                        newParents.push(newNode);
+                    }
+                }
+                if (newParents!=null) {
+                    var oldNode = curExpandNode;
+                    var oldParents = [];
+                    while (oldNode) {
+                        oldNode = oldNode.getParentNode();
+                        if (oldNode) {
+                            oldParents.push(oldNode);
+                        }
+                    }
+                    if (newParents.length>0) {
+                        zTree.expandNode(oldParents[Math.abs(oldParents.length-newParents.length)-1], false);
+                    } else {
+                        zTree.expandNode(oldParents[oldParents.length-1], false);
+                    }
+                }
+            }
+        }
+        curExpandNode = newNode;
+    }
+
+    function onExpand(event, treeId, treeNode) {
+        curExpandNode = treeNode;
+        var zTree = $.fn.zTree.getZTreeObj(treeId);
+        zTree.selectNode(treeNode);
+    }
+
+    function onClick(e,treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj(treeId);
+        zTree.expandNode(treeNode, null, null, null, true);
+    }
+</script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item active">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+    	<!-- <img src="images/call.png"> -->
+        <div class="column clearfix">
+            <div class="fl col-side">
+                <div class="call-user">
+                    <div class="call-user-tt clearfix">
+                        <span class="fl call-user-name"><i class="qb-icon icon-user-head"></i>王海峰 011564</span>
+                        <span class="fr call-user-status free">空闲</span>
+                    </div>
+                    <div class="call-user-search">
+                        <input type="text" class="search-text"><input type="button" class="search-btn qb-icon icon-search" title="搜索">
+                    </div>
+                    <div class="call-user-content tabs">
+                        <ul class="tab-list clearfix">
+                            <li>
+                                <a class="active" href="javascript:;">单兵列表</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">坐席工位</a>
+                            </li>
+                        </ul>
+                        <div class="tab-cont call-user-tree" style="display: block">
+                            <ul id="depTree" class="ztree"></ul>
+                        </div>
+                        <div class="tab-cont call-user-tree">
+                            <ul id="Tree" class="ztree"></ul>
+                        </div>
+                    </div>
+                    <div class="call-area">
+                        <div class="call-input-box">
+                            <input class="call-text" type="text" readonly="readonly">
+                            <input class="call-del-btn qb-icon icon-call-del" type="button">
+                        </div>
+                        <div class="call-numbers clearfix">
+                            <a href="javascript:;" class="number">1</a>
+                            <a href="javascript:;" class="number">2</a>
+                            <a href="javascript:;" class="number">3</a>
+                            <a href="javascript:;" class="number">4</a>
+                            <a href="javascript:;" class="number">5</a>
+                            <a href="javascript:;" class="number">6</a>
+                            <a href="javascript:;" class="number">7</a>
+                            <a href="javascript:;" class="number">8</a>
+                            <a href="javascript:;" class="number">9</a>
+                            <a href="javascript:;" class="number operate">+</a>
+                            <a href="javascript:;" class="number">0</a>
+                            <a href="javascript:;" class="number operate operate-call"><i class="qb-icon icon-call-tel"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fr col-main2">
+                <div class="title">
+                    <h3>当前通话</h3>
+                </div>
+                <div class="table call-table">
+                    <table id="callTable">
+                        <thead>
+                            <tr>
+                                <th>状态</th>
+                                <th>姓名</th>
+                                <th>号码</th>
+                                <th>大队所属</th>
+                                <th>警员编号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="qb-icon icon-green-tel"></i></td>
+                                <td>吴靖强</td>
+                                <td>13738101614</td>
+                                <td>绕城大队</td>
+                                <td>XQ5065</td>
+                            </tr>
+                            <tr>
+                                <td><i class="qb-icon icon-gray-tel"></i></td>
+                                <td>程伟东</td>
+                                <td>13588118588</td>
+                                <td>景区大队</td>
+                                <td>011530</td>
+                            </tr>
+                            <tr>
+                                <td><i class="qb-icon icon-yellow-tel"></i></td>
+                                <td>金永华</td>
+                                <td>13858066597</td>
+                                <td>上城大队</td>
+                                <td>011303</td>
+                            </tr>
+                            <tr>
+                                <td><i class="qb-icon icon-green-tel"></i></td>
+                                <td>李煜</td>
+                                <td>13705713611</td>
+                                <td>下城大队</td>
+                                <td>011406</td>
+                            </tr>
+                            <tr>
+                                <td><i class="qb-icon icon-green-tel"></i></td>
+                                <td>吴琳敏</td>
+                                <td>13805746981</td>
+                                <td>西湖大队</td>
+                                <td>011597</td>
+                            </tr>
+                            <tr>
+                                <td><i class="qb-icon icon-green-tel"></i></td>
+                                <td>傅渊</td>
+                                <td>13958193706</td>
+                                <td>江干大队</td>
+                                <td>012128</td>
+                            </tr>
+                            <tr>
+                                <td><i class="qb-icon icon-gray-tel"></i></td>
+                                <td>林垂宝</td>
+                                <td>13515710977</td>
+                                <td>拱墅大队</td>
+                                <td>011533</td>
+                            </tr>
+                            <tr>
+                                <td><i class="qb-icon icon-gray-tel"></i></td>
+                                <td>朱伟飞</td>
+                                <td>13506716886</td>
+                                <td>滨江大队</td>
+                                <td>016753</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="call-table-bottom clearfix">
+                        <div class="fl call-time">
+                            <i class="qb-icon icon-call-time"></i>
+                            通话时间<span>00:02:16</span>
+                        </div>
+                        <div class="fr call-btns">
+                            <input class="call-btn call-out-btn" type="button" value="呼叫">
+                            <input class="call-btn call-hand-btn" type="button" value="挂断">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+<div class="pop-call-dia" id="callDia">
+    <p><img src="images/tel.gif" ><span>正在拨号中...</span></p>
+    <div class="call-dia-list"></div>
+</div>
+<script>
+$(function(){
+	$.fn.zTree.init($("#depTree"), setting, zNodes);
+    $.fn.zTree.init($("#Tree"), setting, zNodes2);
+    var telephone='';
+    $('.number').not('.operate').click(function(){
+        telephone+=$(this).text();
+        $('.call-text').val(telephone);
+    });
+    $('.call-del-btn').click(function(){
+        telephone=telephone.substring(0,telephone.length-1);
+        $('.call-text').val(telephone);
+    });
+    $('.operate-call').click(function(){
+        if(telephone==''){
+            fnAlert('请输入号码！');
+            return false;
+        }
+        $('.call-dia-list').text(telephone)
+        $('#callDia').dialog('open');
+        $('.pop-mask').show();
+
+        setTimeout(function(){
+            $('#callDia').dialog('close');
+            $('.pop-mask').hide();
+            var str='';
+            str+='<tr><td><i class="qb-icon icon-green-tel"></i></td>'
+                    +'<td>庞博文</td>'
+                    +'<td>'+telephone+'</td>'
+                    +'<td>滨江大队</td>'
+                    +'<td>016753</td></tr>';
+            $('#callTable tbody').prepend(str);
+            telephone='';
+            $('.call-text').val(telephone);
+        },3000); 
+    });
+    $('#callDia').dialog({
+        autoOpen: false,
+        dialogClass: "no-close",
+        resizable: false,
+        title:'呼叫信息',
+        height:160,
+        width:300,
+        buttons: {
+            '取 消': function() {
+                telephone='';
+                $('.call-text').val(telephone);
+                $(this).dialog('close');
+                $('.pop-mask').hide();
+            }
+        }
+    }) 
+})
+</script>
+</body>
+</html>

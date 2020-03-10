@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>9377游戏平台404页面</title>
+<link href="/style/404/css/style_404.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="main">
+	<div id="main_body">
+    	<div id="header">
+        	<div class="logo"><a href="http://www.9377.com/"><img src="/style/404/images/9377_logo.jpg" /></a></div>
+		</div>
+        <div id="content">
+            <div class="news">
+                <div class="news_tit">您可以尝试访问以下页面：</div>
+                <div class="news_txt">
+                <p class="go_home"><a href="http://www.9377.com"></a></p>
+                <p class="go_service"><a href="http://www.9377.com/kf/server.html" ></a></p>
+                	<ul>
+                        <li><b>转到首页看看</b></a> - <a href="http://www.9377.com" >http://www.9377.com</a></li>
+                        <li>游戏论坛看看- <a href="http://bbs.9377.com">http://bbs.9377.com</a></li>
+                        <li>游戏大厅玩玩 - <a href="http://www.9377.com/game_box.php" >http://www.9377.com/game_box.php</a></li> 
+                        <li>充值中心 - <a href="http://www.9377.com/pay_index.php">http://www.9377.com/pay_index.php</a></li>
+					</ul>
+                </div>
+            </div>
+            <div class="gamelist">
+            	<div class="gamelist_tit">9377游戏平台向您推荐精彩网页游戏产品：</div>
+                <div class="gamelist_txt">
+                	<ul>
+                    	<li class="list">
+                        	<ul>
+                            	<li><a href="http://tlcs.9377.com/"><img src="/images/cms_style_2012/game_tlcs.jpg" />屠龙传说</a></li>
+                            	<li><a href="http://lhzs.9377.com/"><img src="/images/cms_style_2012/game_lhzs.jpg" />烈火战神</a></li>
+                                <li><a href="http://www.9377.com/ogzq/"><img src="/images/cms_style_2012/game_ogzq.jpg" />欧冠足球</a></li>
+                                <li><a href="http://aszt.9377.com/"><img src="/style/404/images/aszt_img.jpg" />傲视遮天</a></li>
+                                <li><a href="http://cy.9377.com/"><img src="/images/cms_style_2012/game_cy.jpg" />赤月</a></li>
+                            </ul>
+                        </li>
+                        <li class="list">
+                        	<ul>
+                            	<li><a href="http://bd.9377.com/"><img src="/images/cms_style_2012/game_bd.jpg" />霸刀</a></li>
+                            	<li><a href="http://sxd.9377.com/"><img src="/style/404/images/sxd_img.jpg" />神仙道</a></li>
+                                <li><a href="http://dpcq.9377.com/"><img src="/style/404/images/dpcq_img.jpg" />斗破苍穹2</a></li>
+                                <li><a href="http://sg.9377.com/"><img src="/style/404/images/sg_img.jpg" />盛世三国</a></li>
+                                <li><a href="http://sz.9377.com/"><img src="/images/cms_style_2012/game_sz.jpg" />神座</a></li>
+                            </ul>
+                        </li>
+                        <li class="list">
+                        	<ul>
+                            	<li><a href="http://www.9377.com/mjcs/"><img src="/images/cms_style_2012/game_mjcs.jpg" />名将传说</a></li>
+                            	<li><a href="http://csws.9377.com/"><img src="/images/cms_style_2012/game_csws.jpg" />传世无双</a></li>
+                                <li><a href="http://qmx.9377.com/"><img src="/images/cms_style_2012/game_qmx.jpg" />武侠全明星</a></li>
+                                <li><a href="http://ws.9377.com/"><img src="/images/cms_style_2012/game_ws.jpg" />无双</a></li>
+                                <li><a href="http://www.9377.com/xxcq/"><img src="/images/cms_style_2012/game_xxcq.jpg" />玄仙传奇</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+if(self != top){
+	var as = document.getElementsByTagName('a');
+	for(var i = 0; i < as.length; i++){
+		as[i].target = '_blank';
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>首页-每日交通</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item active">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd daily-traf">
+        <div class="column">
+            <div class="title">
+            	<h3 class="fl">首页 &gt; 每日交通</h3>
+            </div>
+            <div class="cont pd20 clearfix">
+                <p class="daily-search-result">符合条件的共有7条每日交通记录。</p>
+            	<div class="fl daily-col-main">
+                    <div class="other-news">
+                    	<div class="daily-title clearfix">
+                        	<h3 class="fl">其他信息</h3>
+                        </div>
+                        <ul class="other-news-list">
+                        	<li class="other-news-list-li">
+                            	<div class="other-news-short clearfix">
+                                    <i class="li-triangle"></i>
+                                    <p class="other-news-list-p"><a class="other-news-list-a" href="javascript:;" title="建德大队查处一起酒后驾驶的违法行为（2014-12-03  09:00:03）">建德大队查处一起酒后驾驶的违法行为（2014-12-03  09:00:03）</a><!--<i class="qb-icon icon-new"></i>--></p>
+                                </div>
+                                <div class="other-news-detail clearfix">
+                                	<h4>建德大队报告：</h4>
+                                    <p>• 2014年12月02日23时45分，刘伟（男，33岁，安徽省合肥市长丰县杜集乡振兴村中北组）驾驶浙AU070H号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.47mg/ml。</p>
+                                    <p><strong>目前上述驾驶员的违法行为均已按规定处理</strong></p>
+                                    <p class="other-news-attach"><a href="#" target="_blank"><i class="qb-icon icon-doc"></i>附件：酒后模板（发指挥系统信息平台）.doc</a></p>
+                                    <p class="other-news-his">
+                                    	<i class="qb-icon icon-eye"></i>历史浏览：23次
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="other-news-list-li">
+                            	<div class="other-news-short clearfix">
+                                    <i class="li-triangle"></i>
+                                    <p class="other-news-list-p"><a class="other-news-list-a" href="javascript:;" title="富阳大队查处3起酒后驾驶机动车的违法行为（2014-12-03  08:24:20）">富阳大队查处3起酒后驾驶机动车的违法行为（2014-12-03  08:24:20）</a><!--<i class="qb-icon icon-new"></i>--></p>
+                                </div>
+                                <div class="other-news-detail clearfix">
+                                	<h4>富阳大队报告：</h4>
+                                    <p>• 2014年12月02日23时45分，刘伟（男，33岁，安徽省合肥市长丰县杜集乡振兴村中北组）驾驶浙AU070H号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.47mg/ml。</p>
+                                    <p>• 2014年12月03日00时25分，杨继伟（男，28岁，浙江省杭州市西湖区文三路20号7室）驾驶浙A5JJ91号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼   吸测试含量为0.37mg/ml。</p>
+                                    <p>• 2014年12月03日01时08分，崔伟伟（男，安徽省蚌埠市固镇县杨庙乡严湾村岭上组48号）驾驶浙A386RX号小型轿车，途径九沙大道香槟湾小区门口时，因涉嫌酒后驾驶机动车被民警查获，经现场酒精呼吸测试含量为30mg/100ml。</p>
+                                    <p><strong>目前上述驾驶员的违法行为均已按规定处理</strong></p>
+                                    <p class="other-news-attach"><a href="#" target="_blank"><i class="qb-icon icon-doc"></i>附件：酒后模板（发指挥系统信息平台）.doc</a></p>
+                                    <p class="other-news-his">
+                                    	<i class="qb-icon icon-eye"></i>历史浏览：23次
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="other-news-list-li">
+                            	<div class="other-news-short clearfix">
+                                    <i class="li-triangle"></i>
+                                    <p class="other-news-list-p"><a class="other-news-list-a" href="javascript:;" title="上城大队查获1起酒后驾驶机动车的违法行为（2014-12-03  08:21:22）">上城大队查获1起酒后驾驶机动车的违法行为（2014-12-03  08:21:22）</a><!--<i class="qb-icon icon-new"></i>--></p>
+                                </div>
+                                <div class="other-news-detail clearfix">
+                                	<h4>上城大队报告：</h4>
+                                    <p>• 2014年12月02日23时45分，刘伟（男，33岁，安徽省合肥市长丰县杜集乡振兴村中北组）驾驶浙AU070H号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.47mg/ml。</p>
+                                    <p><strong>目前上述驾驶员的违法行为均已按规定处理</strong></p>
+                                    <p class="other-news-attach"><a href="#" target="_blank"><i class="qb-icon icon-doc"></i>附件：酒后模板（发指挥系统信息平台）.doc</a></p>
+                                    <p class="other-news-his">
+                                    	<i class="qb-icon icon-eye"></i>历史浏览：23次
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="other-news-list-li">
+                            	<div class="other-news-short clearfix">
+                                    <i class="li-triangle"></i>
+                                    <p class="other-news-list-p"><a class="other-news-list-a" href="javascript:;" title="下城大队查获3起酒后驾驶机动车的违法行为（2014-12-03  07:41:32）">下城大队查获3起酒后驾驶机动车的违法行为（2014-12-03  07:41:32）</a><!--<i class="qb-icon icon-new"></i>--></p>
+                                </div>
+                                <div class="other-news-detail clearfix">
+                                	<h4>下城大队报告：</h4>
+                                    <p>• 2014年12月02日23时45分，刘伟（男，33岁，安徽省合肥市长丰县杜集乡振兴村中北组）驾驶浙AU070H号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.47mg/ml。</p>
+                                    <p>• 2014年12月03日00时25分，杨继伟（男，28岁，浙江省杭州市西湖区文三路20号7室）驾驶浙A5JJ91号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼   吸测试含量为0.37mg/ml。</p>
+                                    <p>• 2014年12月03日01时08分，崔伟伟（男，安徽省蚌埠市固镇县杨庙乡严湾村岭上组48号）驾驶浙A386RX号小型轿车，途径九沙大道香槟湾小区门口时，因涉嫌酒后驾驶机动车被民警查获，经现场酒精呼吸测试含量为30mg/100ml。</p>
+                                    <p><strong>目前上述驾驶员的违法行为均已按规定处理</strong></p>
+                                    <p class="other-news-attach"><a href="#" target="_blank"><i class="qb-icon icon-doc"></i>附件：酒后模板（发指挥系统信息平台）.doc</a></p>
+                                    <p class="other-news-his">
+                                    	<i class="qb-icon icon-eye"></i>历史浏览：23次
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="other-news-list-li">
+                            	<div class="other-news-short clearfix">
+                                    <i class="li-triangle"></i>
+                                    <p class="other-news-list-p"><a class="other-news-list-a" href="javascript:;" title="江干大队查获4起酒后驾驶机动车的违法行为（2014-12-03  07:37:42)">江干大队查获4起酒后驾驶机动车的违法行为（2014-12-03  07:37:42)</a><!--<i class="qb-icon icon-new"></i>--></p>
+                                </div>
+                                <div class="other-news-detail clearfix">
+                                	<h4>江干大队报告：</h4>
+                                    <p>• 2014年12月02日23时45分，刘伟（男，33岁，安徽省合肥市长丰县杜集乡振兴村中北组）驾驶浙AU070H号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.47mg/ml。</p>
+                                    <p>• 2014年12月03日00时25分，杨继伟（男，28岁，浙江省杭州市西湖区文三路20号7室）驾驶浙A5JJ91号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼   吸测试含量为0.37mg/ml。</p>
+                                    <p>• 2014年12月03日01时08分，崔伟伟（男，安徽省蚌埠市固镇县杨庙乡严湾村岭上组48号）驾驶浙A386RX号小型轿车，途径九沙大道香槟湾小区门口时，因涉嫌酒后驾驶机动车被民警查获，经现场酒精呼吸测试含量为30mg/100ml。</p>
+                                    <p>•2014年11月27日00时35分，高利华（男，49岁，浙江省杭州市江干区采河南苑10幢4单元401室）驾驶浙A7HQ11号小型轿车，途径天城路附近时，因涉嫌酒后驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.32mg/ml。</p>
+                                    <p><strong>目前上述驾驶员的违法行为均已按规定处理</strong></p>
+                                    <p class="other-news-attach"><a href="#" target="_blank"><i class="qb-icon icon-doc"></i>附件：酒后模板（发指挥系统信息平台）.doc</a></p>
+                                    <p class="other-news-his">
+                                    	<i class="qb-icon icon-eye"></i>历史浏览：23次
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="other-news-list-li">
+                            	<div class="other-news-short clearfix">
+                                    <i class="li-triangle"></i>
+                                    <p class="other-news-list-p"><a class="other-news-list-a" href="javascript:;" title="西湖大队查获4起酒后驾驶机动车的违法行为（2014-12-03  7:33:26)">西湖大队查获4起酒后驾驶机动车的违法行为（2014-12-03  7:33:26)</a><!--<i class="qb-icon icon-new"></i>--></p>
+                                </div>
+                                <div class="other-news-detail clearfix">
+                                	<h4>西湖大队报告：</h4>
+                                    <p>• 2014年12月02日23时45分，刘伟（男，33岁，安徽省合肥市长丰县杜集乡振兴村中北组）驾驶浙AU070H号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.47mg/ml。</p>
+                                    <p>• 2014年12月03日00时25分，杨继伟（男，28岁，浙江省杭州市西湖区文三路20号7室）驾驶浙A5JJ91号小型轿车，途径天城路时，因涉嫌醉酒驾驶机动车被民警查获，经现场酒精呼   吸测试含量为0.37mg/ml。</p>
+                                    <p>• 2014年12月03日01时08分，崔伟伟（男，安徽省蚌埠市固镇县杨庙乡严湾村岭上组48号）驾驶浙A386RX号小型轿车，途径九沙大道香槟湾小区门口时，因涉嫌酒后驾驶机动车被民警查获，经现场酒精呼吸测试含量为30mg/100ml。</p>
+                                    <p>• 2014年12月03日00时35分，高利华（男，49岁，浙江省杭州市江干区采河南苑10幢4单元401室）驾驶浙A7HQ11号小型轿车，途径天城路附近时，因涉嫌酒后驾驶机动车被民警查获，经现场酒精呼吸测试含量为0.32mg/ml。</p>
+                                    <p><strong>目前上述驾驶员的违法行为均已按规定处理</strong></p>
+                                    <p class="other-news-attach"><a href="#" target="_blank"><i class="qb-icon icon-doc"></i>附件：酒后模板（发指挥系统信息平台）.doc</a></p>
+                                    <p class="other-news-his">
+                                    	<i class="qb-icon icon-eye"></i>历史浏览：23次
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fr daily-col-side">
+                	<div class="col-mod">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">查询往日交通信息</h3>
+                        </div>
+                        <ul class="mod-cont clearfix">
+                            <li><a href="#" title="每日交通（2014/12/3）" target="_blank">每日交通（2014/12/3）</a></li>
+                            <li><a href="#" title="每日交通（2014/12/2）" target="_blank">每日交通（2014/12/2）</a></li>
+                            <li><a href="#" title="每日交通（2014/12/1）" target="_blank">每日交通（2014/12/1）</a></li>
+                            <li><a href="#" title="每日交通（2014/11/30）" target="_blank">每日交通（2014/11/30）</a></li>
+                            <li><a href="#" title="每日交通（2014/11/29）" target="_blank">每日交通（2014/11/29）</a></li>
+                            <li><a href="#" title="每日交通（2014/11/28）" target="_blank">每日交通（2014/11/28）</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-mod">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">自定义查询</h3>
+                        </div>
+                        <div class="mod-cont">
+                            <div class="search-form">
+                                <form class="clearfix">
+                                    <div class="fl">
+                                        <p class="mt10 clearfix">
+                                            <label class="search-label" for="type">开始日期</label>
+                                            <input type="text" id="startTime" class="txt" onclick="WdatePicker({ maxDate:'#F{$dp.$D(\'endTime\')}'})">
+                                        </p>
+                                        <p class="mt10 clearfix">
+                                            <label class="search-label" for="type">结束日期</label>
+                                            <input type="text" id="endTime" class="txt" onclick="WdatePicker({minDate:'#F{$dp.$D(\'startTime\')}'})">
+                                        </p>
+                                        <p class="mt10 clearfix">
+                                            <label class="search-label" for="type">关键词</label>
+                                            <input type="text" id="keyword" class="txt">
+                                        </p>
+                                    </div>
+                                    <div class="fr">
+                                        <input type="button" class="btn" value="检索">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-mod">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">统 计</h3>
+                        </div>
+                        <div class="mod-cont">
+                            <div class="search-form">
+                                <form class="clearfix">
+                                    <div class="fl">
+                                        <p class="mt10 clearfix">
+                                            <label class="search-label" for="type">开始日期</label>
+                                            <input type="text" id="startDate" class="txt" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'endDate\')}'})">
+                                        </p>
+                                        <p class="mt10 clearfix">
+                                            <label class="search-label" for="type">结束日期</label>
+                                            <input type="text" id="endDate" class="txt" onclick="WdatePicker({minDate:'#F{$dp.$D(\'startDate\')}'})">
+                                        </p>
+                                        <p class="mt10 clearfix">
+                                            <select>
+                                            	<option selected>所有信息类别</option>
+                                            </select>
+                                        </p>
+                                        <p class="mt10 clearfix">
+                                            <select>
+                                            	<option selected>所有上报单位</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div class="fr">
+                                        <input type="button" class="btn" value="统计" style="margin-top:45px;">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-mod">
+                        <div class="mod-tit clearfix">
+                            <h3 class="fl">流量统计</h3>
+                        </div>
+                        <div class="mod-cont">
+                            <table>
+                            	<tbody>
+                                    <tr>
+                                        <th scope="col">访问来源</th>
+                                        <th scope="col">支队领导</th>
+                                        <th scope="col">支队内</th>
+                                        <th scope="col">支队外</th>
+                                        <th scope="col">总访问量</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">今日访问</th>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">总访问量</th>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+<script>
+	$(function(){
+		$('.other-news-list-li').on('click',function(){
+			if($(this).hasClass('active')){
+				$('.other-news-list-li').removeClass('active');	
+			}
+			else{
+				$(this).addClass('active').siblings().removeClass('active');	
+			}
+		})	
+	})
+</script>
+</body>
+</html>

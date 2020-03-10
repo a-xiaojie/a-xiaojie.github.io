@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>客服中心</title>
+<link rel="stylesheet" type="text/css" href="../style/style.css">
+<link rel="stylesheet" type="text/css" href="../style/form.css">
+<script src="../js/jquery.js" ></script>
+</head>
+
+<body>
+<!--网站头部部分-->
+<div class="main" style="*z-index:999;">
+    <div class="all_games_up" id="all_game_div" style="display: none;"> <span class="all_gemes_tra"><img src="../images/all_game_tra.jpg" width="16" height="9" /></span>
+        <p class="all_wel"><strong>欢迎来到369wan，现在就开始您的游戏之旅吧!</strong> <span> <img src="../images/all_n.jpg"  />最新游戏</span><span> <img src="../images/all_b.jpg"  />测试游戏</span><span> <img src="../images/all_h.jpg"  />热门游戏</span></p>
+        <ul class="all_games_list">
+            <li><a href="../game_box.html">烈焰</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">赤月传说</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">暗黑屠龙</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">绝代双骄</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">烈火战神</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">屠龙传说</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">屠龙战</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">欧冠足球</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">胜利11人</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">逐日战神</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">剑踪</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">街机三国</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">热血战纪</a> <img src="../images/all_h.jpg" /> </li>
+            <li><a href="../game_box.html">问剑</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">新五虎上将</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">枪魂</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">怒斩</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">傲视遮天</a> </li>
+            <li><a href="../game_box.html">玄仙传奇</a> </li>
+            <li><a href="../game_box.html">赤月</a> </li>
+            <li><a href="../game_box.html">神仙道</a> </li>
+            <li><a href="../game_box.html">沙之城主</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">盛世三国</a> </li>
+            <li><a href="../game_box.html">龙魂天下</a> </li>
+            <li><a href="../game_box.html">霸域</a> <img src="../images/all_n.jpg" /> </li>
+            <li><a href="../game_box.html">凡人修真2</a> </li>
+            <li><a href="../game_box.html">悍将传世</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">斗破苍穹2</a> </li>
+            <li><a href="../game_box.html">霸刀</a> </li>
+            <li><a href="../game_box.html">神将三国</a> </li>
+            <li><a href="../game_box.html">神座</a> <img src="../images/all_b.jpg" /> </li>
+            <li><a href="../game_box.html">炼妖录</a> <img src="../images/all_b.jpg" /> </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="main">
+        <h1 class="logo"><a href="../index.html"></a></h1>
+        <div class="top_menu"> <a href="javascript:;" onclick="if(document.all){document.body.style.behavior = 'url(#default#homepage)'; document.body.setHomePage('www.369wan.html'); }else{ alert('浏览器不支持此操作, 请手动设为首页'); }">设为首页</a><a href="javascript:;" onclick="try{ window.external.addFavorite('www.369wan.html', '369wan游戏平台'); } catch(e) {  try{ window.sidebar.addPanel('369wan游戏平台', 'www.369wan.html', ''); }catch (e) { alert('http://www.369wan.com/加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.');  } }">加入收藏</a><a href="javascript:;">把369wan保存到桌面</a><span id="all_game_hover" 369wan游戏</span> </div>
+        <div class="menu">
+            <ul>
+                <li><a href="../index.html">首  页<br />
+                    <span>HOME</span></a></li>
+                <li><a href="users_index.html" rel="nofollow">用户中心<br />
+                    <span>USER</span></a></li>
+                <li><a href="../game_center.html">游戏中心<br />
+                    <span>GAME</span></a></li>
+                <li><a href="../pay/pay_index.html" target="_blank" rel="nofollow">充值中心<br />
+                    <span>PAY</span></a></li>
+                <li><a href="../kefu/kefu.html" rel="nofollow">客服中心<br />
+                    <span>SERVICE</span></a></li>
+                <li><a href="http://bbs.369wan.com/" target="_blank">官方论坛<br />
+                    <span>BBS</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var timeout = null;
+	$('#all_game_hover').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		timeout = setTimeout(function(){ $('#all_game_div').hide(); }, 300);
+	});
+	
+	$('#all_game_div').mouseover(function(){
+		clearTimeout(timeout);
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		$('#all_game_div').hide();
+	});
+});
+</script> 
+<!--网站头部部分结束--> 
+
+<!--kefu_管理系统-->
+<div class="main"> 
+    <!--侧边栏部分-->
+    <div class="kefu_center_left">
+        <div class="kefu_center_menu n_bg"> <a id="user_stolen" href="submit_user_stolen.html">账号丢失申诉</a> <a id="goods_stolen" href="submit_goods_stolen.html">装备被盗申诉</a> <a id="data_modification" href="submit_data_modification.html" class="menu_on">资料修改申请</a> <a id="buy_error" href="submit_buy_error.html">充值未到账申诉</a> <a id="delay_reward" href="submit_delay_reward.html">服务器问题</a> <a id="report_plug_in" href="submit_report_plug_in.html">举报外挂非法程序</a> <a id="bug_report" href="submit_bug_report.html">游戏建议与bug反馈</a> <a id="complaints_praise" href="submit_complaints_praise.html">投诉</a> <a id="complaints_praise" href="submit_praises.html">表扬</a> </div>
+    </div>
+    <!--侧边栏部分结束-->
+    
+    <div class="kefu_center_right r_c">
+        <div class="kefu_cetner_title"><b>请您填写相关资料</b>（<span style=" color:#FF0000;">*</span>为必填项）</div>
+        <div class="question">
+            <form id="form" method="post" enctype="multipart/form-data">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th colspan="2">联系人信息</th>
+                        </tr>
+                        <!--layout start{-->
+                        <tr>
+                            <td colspan="2"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="100%"><table width="100%">
+                                                    <!--field start{-->
+                                                    
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top" width="20%">账号 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[reg_username]" name="field#[reg_username]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">所玩游戏 <span style="color:red;">*</span></td>
+                                                            <td><select name="field#[game_id]" id="field#[game_id]">
+                                                                    <option value="">请选择</option>
+                                                                    <option value="55">烈焰</option>
+                                                                    <option value="61">赤月传说</option>
+                                                                </select>
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">所在服务器 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[sid]" name="field#[sid]" value="" size="4" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">角色名称 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[role_name]" name="field#[role_name]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">注册姓名 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[reg_name]" name="field#[reg_name]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">注册时间 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[reg_time]" name="field#[reg_time]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">注册地点 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[add]" name="field#[add]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">注册邮箱 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[email]" name="field#[email]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">注册证件号码 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[card_id]" name="field#[card_id]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">账号密码找回时间 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[pw_getback_time]" name="field#[pw_getback_time]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">账号被盗时间 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[steal_time]" name="field#[steal_time]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">账号常登陆城市 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[city]" name="field#[city]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" width="20%">联系电话 <span style="color:red;">*</span></td>
+                                                            <td><input type="text" id="field#[tel]" name="field#[tel]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        
+                                                        <!--field end}-->
+                                                    </tbody>
+                                                </table></td>
+                                        </tr>
+                                    </tbody>
+                                </table></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">近期账号充值记录</th>
+                        </tr>
+                        <!--layout start{-->
+                        <tr>
+                            <td colspan="2"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="50%"><table width="100%">
+                                                    <!--field start{-->
+                                                    
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top">充值时间 </td>
+                                                            <td><input type="text" id="field#[pay_time1]" name="field#[pay_time1]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值时间 </td>
+                                                            <td><input type="text" id="field#[pay_time2]" name="field#[pay_time2]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值时间 </td>
+                                                            <td><input type="text" id="field#[pay_time3]" name="field#[pay_time3]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值时间 </td>
+                                                            <td><input type="text" id="field#[pay_time4]" name="field#[pay_time4]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值时间 </td>
+                                                            <td><input type="text" id="field#[pay_time5]" name="field#[pay_time5]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        
+                                                        <!--field end}-->
+                                                    </tbody>
+                                                </table></td>
+                                            <td width="50%"><table width="100%">
+                                                    <!--field start{-->
+                                                    
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top">充值金额 </td>
+                                                            <td><input type="text" id="field#[pay_money1]" name="field#[pay_money1]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值金额 </td>
+                                                            <td><input type="text" id="field#[pay_money2]" name="field#[pay_money2]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值金额 </td>
+                                                            <td><input type="text" id="field#[pay_money3]" name="field#[pay_money3]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值金额 </td>
+                                                            <td><input type="text" id="field#[pay_money4]" name="field#[pay_money4]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">充值金额 </td>
+                                                            <td><input type="text" id="field#[pay_money5]" name="field#[pay_money5]" value="" class="input_text">
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        
+                                                        <!--field end}-->
+                                                    </tbody>
+                                                </table></td>
+                                        </tr>
+                                    </tbody>
+                                </table></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">（把要修改的新信息详细描述写明）</th>
+                        </tr>
+                        <!--layout start{-->
+                        <tr>
+                            <td colspan="2"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="100%"><table width="100%">
+                                                    <!--field start{-->
+                                                    
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top">具体问题描述 <span style="color:red;">*</span></td>
+                                                            <td><textarea name="field#[description]" id="field#[description]" cols="80" rows="8"></textarea>
+                                                                <span class="hint"></span></td>
+                                                        </tr>
+                                                        
+                                                        <!--field end}-->
+                                                    </tbody>
+                                                </table></td>
+                                        </tr>
+                                    </tbody>
+                                </table></td>
+                        </tr>
+                        <!--layout end}-->
+                    </tbody>
+                </table>
+                <div align="center">
+                    <input type="submit" value="提交" class="que_submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--管理系统结束--> 
+<br clear="all" />
+
+<!--网站底部部分-->
+<div class="foot">
+    <p> 上海橙盛网络科技有限公司 </p>
+</div>
+<!--网站底部部分结束-->
+</body>
+</html>

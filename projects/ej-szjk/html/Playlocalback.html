@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>本地播放——杭州交警数字监控联网平台</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/inner.css">
+<link rel="stylesheet" href="../css/theme/default/skin.css">
+<link rel="stylesheet" href="../css/layout.css">
+<script src="../js/jquery.min.1.8.2.js"></script>
+<script src="../js/ztree/js/jquery.ztree.core-3.5.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+<div class="g-hd">
+	<h1 class="m-logo">
+		<p>杭州交警数字监控联网平台</p>
+		<p><span>Hangzhou Traffic Police Digital Monitoring Network Platform</span></p>
+	</h1>
+	<div class="m-nav">
+		<ul class="clearfix" id="ulMenu">
+			<li><a href="RealtimeVideo.html"><i class="icon icon-realtime"></i>实时监控</a></li>
+			<li class="cur"><a href="Playback.html"><i class="icon icon-remote"></i>监控回放</a></li>
+			<li><a href="gis.html"><i class="icon icon-gis"></i>电子地图</a></li>
+			<li><a href="system.html"><i class="icon icon-system"></i>系统设置</a></li>
+			<li><a href="javascript:;"><i class="icon icon-help"></i>使用帮助</a></li></ul>
+	</div>
+	<div class="m-attr-box"> 
+		<ul>
+			<li><label>CPU</label>
+			<div class="u-attr-bar" id="u-attr-bar">
+			<div class="u-attr-active" id="cpu_u_attr_active" style="width:0px"></div>
+			</div></li>
+			<li><label>内存</label>
+			<div class="u-attr-bar">
+			<div class="u-attr-active" id="m_u_attr_active"></div></div></li>
+		</ul>
+	</div>
+	<div class="m-top-nav">
+		<ul class="m-top-menu clearfix">
+			<li class="m-user">
+				<div class="m-dropdown">
+					<a class="u-dropdown-btn" href="javascript:;"><img src="http://localhost:8080/ejvideo//images/user-head.png"><span>Admin</span><em class="arrow-down"></em></a>
+					<ul class="m-dropdown-list">
+						<li><a onclick="getLimit()" href="javascript:;">权限申请<em></em></a></li>
+						<li><a onclick="changePwd()" href="javascript:;">密码修改<em></em></a></li>
+					</ul>
+					<iframe class="m-iframe" frameborder="0"></iframe>
+				</div>
+				<p id="pTime">2015-05-19 09:31</p>
+			</li>
+			<li><a href="javascript:;" class="u-quit" onclick="aLogOut_click()" title="退出"><i class="icon icon-quit"></i></a></li>
+		</ul>
+	</div>
+</div>	
+<!-- 主体 -->
+<div class="g-bd">
+	<div class="g-inner clearfix">
+		<div style="display:none">
+		<label id="btSavePath1" style="display: none; width:0px; height:0px"></label>
+		<input type="hidden" id="hDate" value=""></input>
+		</div>
+		<div class="g-sd">
+			<div class="g-sdc">
+				<div class="m-tab-box">
+					<ul class="m-tab">
+						<li onclick="remoteback()">远程回放</li>
+						<li id="local" class="cur">本地播放</li>
+					</ul>
+					<div class="m-tab-cont" style="display:none">
+						
+					</div>
+					<div class="m-tab-cont m-side-cont">
+						<div class="m-list-toolbar">
+							<div class="m-btns-group g-posr">
+								<!-- <a href="javascript:;" title="添加" class="minbtn minbtn-add"></a> -->
+								<a href="javascript:;" title="删除" onclick="deleteLocalVideo();" class="icon-btn icon-btn-del"></a>
+								<a href="javascript:;" title="清除" onclick="clearLocalVideo();" class="icon-btn icon-btn-empty"></a>
+							</div>
+						</div>
+						<div class="m-list-panel">
+							<ul class="m-list-cont m-list" id="LocalList">
+								<li><a href="#">DVR210_20150120134440<span>05-29 11:22</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g-mn" >
+			<!-- 本地播放 -->
+			<div class="g-mnc" id="localPlayBack">
+				<div class="m-video-panel">
+					<div class="m-video-show">
+						<div class="m-video-box">
+							<div class="m-video-cell" id="div_video">
+								<object id="axPlayerCOM1" style="width: 100%;height:100%;background-color: #000000;"
+				                    classid="CLSID:F2CE9C90-224C-491D-942C-811BAC8BB913">
+				                    <param name="_Version" value="65536" />
+				                    <param name="_ExtentX" value="22357" />
+				                    <param name="_ExtentY" value="16589" />
+				                    <param name="_StockProps" value="0" />
+				                </object>
+							</div>
+							
+							<div id="speedbarbg">
+			                    <div id="speedbar">
+			                    </div>
+							</div>
+							<div class="m-videobar">
+			                
+								<div class="m-btns-group g-posl" id="videoPlayBtns">
+									<a id="aOpen" title="文件播放" class="video-btn" onclick="openplay();" href="javascript:;"></a>
+									<a id="aPause" href="javascript:;" title="暂停" onclick="objLocalVideo.Pause();" class="video-btn"></a>
+									<a id="aStop" href="javascript:;" title="停止" onclick="objLocalVideo.Stop();" class="video-btn"></a>
+									<a id="aPlay" href="javascript:;" title="前进" onclick="objLocalVideo.Play();objLocalVideo.PlayNormal();" class="video-btn"></a>
+									<a id="aFastForward" href="javascript:;" title="快进" onclick="clickFast();" class="video-btn"></a>
+									<a id="aFrameBack" href="javascript:;" title="单帧后退" class="video-btn"></a>
+									<a id="aFramePlay" href="javascript:;" title="单帧播放" onclick="objLocalVideo.PlayFrame();" class="video-btn"></a>
+									
+								</div>
+								 <div style="display:none">
+	                            <li id="showCapturePic"></li>
+	                        </div>
+								<div class="m-btns-group g-posr">
+									<a id="aCapture" href="javascript:;" title="抓图" onclick="objLocalVideo.CapturePic();" class="video-btn"></a>
+									<!-- <a href="javascript:;" title="保存" class="video-btn"></a> -->
+									<a id="aSynchro" href="javascript:;" title="重播" onclick="objLocalVideo.GotoStart();" class="video-btn"></a>
+									<!-- <a href="javascript:;" title="目录" class="video-btn"></a> -->
+								</div>
+							</div>
+							<input id="HFSavePath" type="hidden" value="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function remoteback(){
+		window.location="Playback.html";
+	}
+
+	$(window).on("load resize",function(){
+		var $height=$(".g-inner").height();
+		$(".m-tab-cont").height($height-$(".m-tab").height());
+		$(".m-side-list").height($(".m-side-cont").height()-38);
+		$("#localPlayBack .m-video-cell").height($height-37-20-20);
+	});
+</script>	
+</body>
+</html>

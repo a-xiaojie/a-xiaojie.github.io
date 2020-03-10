@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"> 
+  	<meta content="yes" name="apple-touch-fullscreen"> 
+  	<meta content="telephone=no,email=no" name="format-detection">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<title>爱茶叶</title>
+	<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/iscroll.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+</head>
+<body>
+	<header class="header">
+		<div class="search-box">
+			<div class="search-form"><input type="text" class="txt search-txt"><i class="icon icon-search"></i></div>
+		</div>
+		<div class="msg">
+			<i class="icon icon-msg"></i>
+			<span>消息</span>
+		</div>
+	</header>
+	<div class="wrap" id="wrapper">
+        <div id="scroller">
+            <div id="slide" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/slide1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slide2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slide1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/slide2.jpg" alt=""></div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="sale">
+                <div class="sale-title">
+                    <h3>新人专享<span>限时抢购</span></h3>
+                </div>
+                <ul class="tab">
+                    <li><span>00:00</span>正在疯抢</li>
+                    <li class="active"><span>10:00</span>正在疯抢</li>
+                </ul>
+                <div class="tab-cont">
+                    <div class="sale-cont clearfix">
+                        <div class="fl sale-img"><img src="images/sale-pic1.jpg" alt=""></div>
+                        <div class="fr sale-info">
+                            <span class="name">这里你可以写一写产品的名称</span>
+                            <p><span class="price">￥35</span><del class="price">￥159</del></p>
+                            <div class="sale-bar">
+                                <h4>正在疯抢</h4>
+                                <div class="sale-bar-cont" style="width:50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tea-section">
+                <div class="tea-title">
+                    <h3><i class="icon icon-gold"></i>好茶推荐<span>总有适合你的茶</span></h3>
+                </div>
+                <div class="tea-cont">
+                    <ul class="tea-list clearfix">
+                        <li>
+                            <a href="detail.html">
+                                <div class="tea-img"><img src="images/list-pic1.jpg" alt=""></div>
+                                <span class="name">这里是输入公众号名称的地方商城</span>
+                                <span class="price">￥86</span>
+                                <del class="price">180</del>
+                                <span class="sale-off">4.8折</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="detail.html">
+                                <div class="tea-img"><img src="images/list-pic2.jpg" alt=""></div>
+                                <span class="name">这里是输入公众号名称的地方商城</span>
+                                <span class="price">￥86</span>
+                                <del class="price">180</del>
+                                <span class="sale-off">4.8折</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="tea-img"><img src="images/list-pic1.jpg" alt=""></div>
+                                <span class="name">这里是输入公众号名称的地方商城</span>
+                                <span class="price">￥86</span>
+                                <del class="price">180</del>
+                                <span class="sale-off">4.8折</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="tea-img"><img src="images/list-pic2.jpg" alt=""></div>
+                                <span class="name">这里是输入公众号名称的地方商城</span>
+                                <span class="price">￥86</span>
+                                <del class="price">180</del>
+                                <span class="sale-off">4.8折</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="tea-img"><img src="images/list-pic1.jpg" alt=""></div>
+                                <span class="name">这里是输入公众号名称的地方商城</span>
+                                <span class="price">￥86</span>
+                                <del class="price">180</del>
+                                <span class="sale-off">4.8折</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="tea-img"><img src="images/list-pic2.jpg" alt=""></div>
+                                <span class="name">这里是输入公众号名称的地方商城</span>
+                                <span class="price">￥86</span>
+                                <del class="price">180</del>
+                                <span class="sale-off">4.8折</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tea-banner">
+                <a href="zhuanti.html">
+                    <img src="images/banner.jpg" alt="">
+                </a>
+            </div>
+            <div class="tea-section">
+                <div class="tea-title">
+                    <h3><i class="icon icon-horn"></i>特卖专场<span>优惠好货享不停</span></h3>
+                </div>
+                <div class="tea-cont">
+                    <ul class="ad-list clearfix">
+                        <li>
+                            <a href="#">
+                                <div class="ad-img"><img src="images/ad-pic1.jpg" alt=""></div>
+                                <div class="ad-info">
+                                    <span class="sale-off">2.6折起</span>
+                                    <span class="name">舌尖上的茶香</span>
+                                    <span class="time">仅剩2天</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="ad-img"><img src="images/ad-pic1.jpg" alt=""></div>
+                                <div class="ad-info">
+                                    <span class="sale-off">2.6折起</span>
+                                    <span class="name">舌尖上的茶香</span>
+                                    <span class="time">仅剩2天</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="ad-img"><img src="images/ad-pic1.jpg" alt=""></div>
+                                <div class="ad-info">
+                                    <span class="sale-off">2.6折起</span>
+                                    <span class="name">舌尖上的茶香</span>
+                                    <span class="time">仅剩2天</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p class="company"><img src="images/logo.png" alt=""></p>
+                <p>联系电话：18072701375 </p>
+                <p>版权所有：爱宝贝母婴有限公司</p>
+            </div>
+        </div>
+	</div>
+	<footer class="footer">
+		<nav class="nav">
+			<ul>
+				<li class="active"><a href="index.html"><i class="icon icon-home"></i>首页</a></li>
+                <li><a href="type.html"><i class="icon icon-type"></i>分类</a></li>
+                <li><a href="cart.html"><i class="icon icon-cart"></i>购物车</a></li>
+                <li><a href="user.html"><i class="icon icon-user"></i>我的</a></li>
+			</ul>
+		</nav>
+	</footer>
+    <script>        
+       $(function () {
+            var mySwiper = new Swiper ('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                loop: true
+            }) 
+       })      
+    </script>
+    <script>
+        var myScroll;
+
+        function loaded () {
+            myScroll = new IScroll('#wrapper', {
+                preventDefault:false,
+
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('DOMContentLoaded', loaded, false);
+        window.onload = function () {
+            setTimeout(function(){
+                myScroll.refresh();
+            }, 100);
+        }
+    </script>
+</body>
+</html>

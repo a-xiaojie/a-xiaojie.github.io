@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>皮皮 - 无记录</title> 
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="css/global.css" type="text/css" />
+<link rel="stylesheet" href="css/pipi.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/z.jquery.index.js"></script>
+
+</head>
+
+<body scroll="no">
+
+<div class="top">
+<div class="header clearfix">
+
+ <div class="refresh">
+    <a class="for" href="#"></a>
+	<a class="ref" href="#"></a>
+	<a class="bac" href="#"></a>
+ </div>
+
+  <ul class="nav fleft ovhide">
+	<li><a href="#">首页</a></li>
+	<li><a href="#">电影</a></li>
+	<li class="on"><a href="#">电视剧</a></li>
+	<li><a href="#">动漫</a></li>
+	<li><a href="#">综艺</a></li>
+	<li><a href="#">实事</a></li>
+	<li><a href="#">娱乐</a></li>
+	<li><a href="#">乐天</a></li>
+  </ul><!-- .nav -->
+  
+  
+   <ul class="search clearfix" id="search">
+	  <li>
+		<input name="wd" type="text" class="so-txt" value="搜索搜索" size="15">
+		<button type="submit" class="button"><em>搜索</em></button>
+	  </li>
+   </ul><!-- .search -->
+  
+</div><!-- .header -->
+</div><!-- .top -->
+
+<div class="index">
+
+<div class="wrap clearfix">
+
+  <div class="L700">
+     <div class="fleft"><img src="images/50x50.gif"></div>
+  
+     <ul class="teb">
+        <li class="on">历史观看</li>
+		<li>我的收藏</li>
+	  </ul>
+	   
+	  <div class="ztcon">
+      
+          <div class="nolieb">
+             <p>共有 <font color="#FF6600">0</font> 条历史观看</p>
+             <div class="cen">
+                <a href="#">去随便看看</a> 
+             </div>
+	      </div><!-- .nolieb -->
+          
+
+	  </div>
+      
+	  <div class="ztcon" style="display:none">
+  
+          <div class="nolieb">
+             <p>共有 <font color="#FF6600">0</font> 条收藏</p>
+             <div class="con">
+                <a href="#"><img src="images/xin.gif"></a>
+                <span>点击“爱心”按钮可以帮您保存喜欢的视频</br>方便您随时查找和播放观看。</span>
+             </div>
+	      </div><!-- .nolieb -->
+
+	  </div>
+
+  </div><!-- .L700 -->
+  
+  <div class="R240 clearfix">
+     <div class="adv3">
+	    <a href="#" target="_blank" onFocus="this.blur();"><img src="images/240x180.gif" width="240" height="180"></a>	 </div>	   
+         
+     <div class="gengd mt10">
+	    <div class="title"><h3>也许你还喜欢</h3></div>
+		
+		<ul class="con">
+		   <li>
+		     <a href="详情页.html"><img src="images/diany_01.gif"></a>
+			 <div class="right">
+			    <a href="详情页.html">百变大咖秀(瞿颖变身龚琳娜献唱忐忑 谢娜扮包青)</a>
+                
+                <div class="stars pingf clearfix">
+			    <strong>0</strong>
+			    <span class="strack"><span class="fen f0"></span></span></div> 
+                         
+			    <p>米国队长米国队长米国队长米国队长米国队长米国队长</p>
+			 </div>
+		   </li>
+		   
+		   <li>
+		      <div class="left" id="sbimg2">
+		      <a href="详情页.html"><img src="images/diany_01.gif"></a>
+			  </div>
+			  <div class="right">
+			    <a href="详情页.html">米国队长</a>
+                
+                <div class="stars pingf clearfix">
+			    <strong>6.0</strong>
+			    <span class="strack"><span class="fen f6"></span></span></div>
+                
+			    <p>米国队长米国队长米国队长米国队长米国队长米国队长</p>
+			 </div>
+		   </li>
+		</ul>
+	 </div><!-- .gengd -->
+  </div><!-- .R240 -->
+   
+</div><!-- .wrap -->
+
+</div><!-- .index -->
+
+
+
+</body>
+<script>
+	function $(o){ return (typeof o == "string")?document.getElementById(o):o;}
+	var on = (function () {
+		return (document.addEventListener) ?
+			function (el, type, fn) { el.addEventListener(type, fn, false); } :
+			function (el, type, fn) { el.attachEvent('on' + type, function () { return fn.call(el, window.event); }); };
+	})();
+</script>
+
+
+<script type="text/javascript">
+var un = (function () {
+	return (document.removeEventListener) ?
+		function (el, type, fn) { el.removeEventListener(type, fn, false); } :
+		function (el, type, fn) { el.detachEvent('on' + type, function () { return fn.call(el, window.event); }); };
+})();
+var addClassName = function(obj,name){if(obj == null) return true;if(obj.className.indexOf(name) > -1) return true;var n=obj.className;obj.className=n+' '+name;};
+var removeClassName = function(obj,name){var n=obj.className;obj.className = obj.className.replace(name, '');};
+</script>
+
+
+<script>
+
+function hovers(ele){
+//	var fuz_li=ele.getElementsByTagName("li");
+	var fuz_li=ele.children;
+	var fuz_num=fuz_li.length;
+	for(var i=0;i<fuz_num;i++){
+		 on(fuz_li[i],"mouseover",function(){
+		addClassName(this,"hovers");
+	});
+	on(fuz_li[i],"mouseout",function(){
+		removeClassName(this,"hovers");
+		});
+	}
+}
+hovers($("search"));
+
+window.F = window.F || {};
+F.config = F.config || {};
+F.config.pagename="index";
+</script>
+
+</html>

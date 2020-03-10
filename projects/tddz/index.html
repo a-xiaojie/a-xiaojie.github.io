@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>团队定制</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="http://www.yinjucn.com/style/base.css">
+<link rel="stylesheet" type="text/css" href="style/base-v3.css">
+<link rel="stylesheet" type="text/css" href="style/style-v3.css">
+<link rel="stylesheet" type="text/css" href="style/im-chat-v3.css">
+
+<!--[if lt IE9]> 
+<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script>
+$(window).load(function(){
+	DD_belatedPNG.fix('*'); 
+});
+</script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="big-container">
+    <div class="chat-wrap">
+        <div class="chat-main-field"> 
+            <!-- 咨询定制 -->
+            <div class="chat-main-box">
+                <div id="chat_online" class="chat-r-top">
+                    <div class="six-img" style="display:none;"><span class="six-online"></span></div>
+                    <i class="six-txt" style="display:none;">在线</i> <span class="butler-name">定制我的行程</span> <span class="butler-name">旅行顾问1对1服务</span> <span class="chat-top-tel"><i class="icon-tel"></i>400-008-6868</span>
+                    <div class="outline-tips no-line" style="display:none;">
+                        <p><span class="corange">当前客服不在线，暂时无法及时回应您，</span><br>
+                            我们会在工作时间尽快处理您的旅行需求。</p>
+                        <span class="tips-colse-btn" onclick="$('div.chat-r-top div.no-line').hide().attr('hand','1');"></span></div>
+                </div>
+                <div class="chat-dialog clearfix">
+                    <div class="chat-r-left"> 
+                        
+                        <!-- 继续咨询 -->
+                        <div id="mask_disable" class="mask-disable" style="display:none;">
+                            <div class="mask-box"></div>
+                            <div class="mask-tips">
+                                <div class="mask-tips-txt">
+                                    <p class="tc f18">您已经有一个咨询是否继续？</p>
+                                    <div class="mask-tips-opr"> <span class="btn-base mk-cancel-chat mr20" onclick="newChat();">重新咨询</span> <span
+
+class="btn-base mk-goahead-chat" onclick="continueChat();">继续上次咨询</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 继续咨询 end --> 
+                        <!-- 对话区域 -->
+                        <div class="im-box">
+                            <div id="im_scroll" class="im-wrap">
+                                <div class="im-field">
+                                    <ul id="trip_order" class="im-list clearfix">
+                                        <div class="chat-panel-v2 clearfix">
+                                            <div id="load_more" class="load-more-box more-msg" style="display: none;"
+
+onclick="imChat.preReadScrollType=1;imChat.getPreMsg();"><span class="load-more">点击加载更多</span></div>
+                                            <div class="loading" style="display: none;"><img src="img/loading.gif">正在加载</div>
+                                        </div>
+                                        <div class="inputing" id="load_inputing" style="display:none;"><span class="input-loading"></span></div>
+                                        <li class="im-item me" id="first_pg">
+                                            <div class="im-content max-wrap">
+                                                <div class="im-title"> Hi，我是隐居网旅游管家！为您提供：<br>
+                                                    <p class="service-txt"><span class="igreen">行程规划、贴身管家、全程预订</span>等服务；<br>
+                                                        来一次不拼团、零操心的自主旅行。</p>
+                                                </div>
+                                                <div class="im-info">
+                                                    <div class="brand-txt">
+                                                        <p><i class="icon-success"></i><span class=" igreen">30秒</span>了解您的需求</p>
+                                                        <p><i class="icon-success"></i><span class=" igreen">专业管家</span>推荐行程和价格</p>
+                                                    </div>
+                                                </div>
+                                                <div class="im-btns"> <a href="javascript:void(0)" class="im-btn btn-normal">选择我的目的地</a>
+                                                    <input type="hidden" name="server_hour" id="server_hour" value="">
+                                                    <input type="hidden" name="order_id" id="order_id" value="">
+                                                    <input type="hidden" name="order_sn" id="order_sn" value="">
+                                                    <input type="hidden" name="token" id="token" value="0480ae625df237775df9acd37f7cae5a">
+                                                </div>
+                                                <span class="chat-triangle"></span> </div>
+                                        </li>
+                                        <li class="im-item me" id="second_pg">
+                                            <div class="im-content max-wrap">
+                                                <div class="im-title">您准备去什么地方旅游？</div>
+                                                <div class="city-list">
+                                                    <ul class="list-row inland clearfix">
+                                                        <li class="col3"><span class="col-btn col-selected ">杭州</span></li>
+                                                        <li class="col3"><span class="col-btn ">宁波</span></li>
+                                                        <li class="col3"><span class="col-btn ">温州</span></li>
+                                                        <li class="col3"><span class="col-btn ">舟山</span></li>
+                                                        <li class="col3"><span class="col-btn ">绍兴</span></li>
+                                                        <li class="col3"><span class="col-btn ">嘉兴</span></li>
+                                                    </ul>
+                                                    <ul class="list-row abroad clearfix">
+                                                        <li class="col3"><span class="col-btn ">湖州</span></li>
+                                                        <li class="col3"><span class="col-btn ">台州</span></li>
+                                                        <li class="col3"><span class="col-btn ">丽水</span></li>
+                                                        <li class="col3"><span class="col-btn ">衢州</span></li>
+                                                    </ul>
+                                                    <div class="im-change"> <a href="javascript:void(0)" class="im-btn btn-other">其他目的地</a>
+                                                        <textarea id="destination" name="destination" class="area-txt" placeholder="在这里填写目的地" style="display:none;"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="im-btns"> <a href="javascript:void(0)" class="im-btn btn-normal">确认选择</a> </div>
+                                                <div class="finished-sel" style="display:none;">
+                                                    <div class="sel-item-l"><i class="icon-success mr5"></i>已选择</div>
+                                                    <div class="sel-item-r">
+                                                        <button class="im-btn resel-btn" type="button">重新提交</button>
+                                                    </div>
+                                                </div>
+                                                <span class="chat-triangle"></span> </div>
+                                        </li>
+                                        <li class="im-item you" id="second_tips" style="">
+                                            <div class="im-content">
+                                                <div class="im-info">
+                                                    <p class="im-you-txt">我想要去杭州</p>
+                                                </div>
+                                                <span class="chat-triangle"></span> </div>
+                                        </li>
+                                        <li class="im-item me" id="four_pg">
+                                            <div class="im-content max-wrap">
+                                                <div class="im-title">游玩天数</div>
+                                                <div class="city-list">
+                                                    <ul class="list-row clearfix">
+                                                        <li class="col3"><span class="col-btn"><i class="f24" rel="">3</i>天</span></li>
+                                                    </ul>
+                                                    <div class="im-change"> <a href="javascript:void(0)" class="im-btn btn-other col-disabled" disabled="disabled" style="display: inline-block;">自己设定</a>
+                                                        <input name="set_days" id="set_days" type="text" class="ipt-txt col-disabled" placeholder="在这里填写游玩天数" value="" style="display: none;" disabled="disabled">
+                                                    </div>
+                                                </div>
+                                                <div class="im-btns" style="display: none;">
+                                                    <button class="im-btn btn-normal" type="button">确认选择</button>
+                                                </div>
+                                                <div class="finished-sel" style="">
+                                                    <div class="sel-item-l igreen"><i class="icon-success mr5"></i>已选择</div>
+                                                    <div class="sel-item-r">
+                                                        <button class="im-btn resel-btn" type="button">重新提交</button>
+                                                    </div>
+                                                </div>
+                                                <span class="chat-triangle"></span> </div>
+                                        </li>
+                                        <li class="im-item you" id="four_tips" style="">
+                                            <div class="im-content">
+                                                <div class="im-info">
+                                                    <p class="im-you-txt">我选择了3天的行程</p>
+                                                </div>
+                                                <span class="chat-triangle"></span> </div>
+                                        </li>
+                                        <li class="im-item me" id="five_pg">    <div class="im-content max-wrap">        <div class="im-title">为您推荐了<span class=" corange">1个参考行程</span></div>        <div class="jour-cont">            <ul class="jour-list">                <li class="jour-item clearfix">                    <div class="jour-tit"><span class="j-xc-num">行程1</span><a href="/xingcheng/4020" target="_blank">【情迷西塘3日游】《谍中谍3》拍摄地，感受江南水乡的独特魅力</a></div>                    <div class="jour-cost">参考价格：<i class="jour-price">960～1160</i>元 <span class="clude-txt">不含往返大交通</span></div>                    <div class="jour-wp clearfix">                        <div class="jour-img"><a href="/xingcheng/4020" target="_blank"><img src="http://www.6renyou.com/uploads/trip/1/1/4020/180x120_535a2f8da3119.jpg" width="220" height="145/"></a></div>                        <div class="jour-line">                            <div class="jour-dw">                                <div class="jour-line-list">                                    <dl class="j-day-dl">                                        <dt>DAY1</dt>                                        <dd>出发地 — 杭州 — “中国最好的水乡”乌镇西栅</dd>                                    </dl>                                    <dl class="j-day-dl">                                        <dt>DAY2</dt>                                        <dd>西塘 — 西湖 — 虎跑梦泉</dd>                                    </dl>                                    <dl class="j-day-dl">                                        <dt>DAY3</dt>                                        <dd>西溪湿地公园</dd>                                    </dl>                                </div>                                <p class="pt10"><a href="javascript:void(0)" class="j-more">查看更多...</a></p>                            </div>                            <div class="jour-btns">                                <div class="left col2"><a href="/xingcheng/4020" target="_blank" class="im-btn btn-yellow mr15">查看详细</a></div>                                <div class="left col2"><a href="javascript:void(0)" class="im-btn btn-green" rel="4020">参考并询价</a></div>                            </div>                        </div>                    </div>                </li>                </ul>            </div>        <div class="im-btns">            <span class="im-txt">都不符合我的要求，请</span>            <a href="javascript:;" class="im-btn btn-normal">重新帮我规划一个</a>            <input type="hidden" name="trip_id" id="trip_id" value="">        </div>        <span class="chat-triangle"></span>    </div></li>
+                                        <li class="im-item you" id="five_tips" style="">    <div class="im-content">        <div class="im-info">            <p class="im-you-txt">请对行程1帮我报价</p>        </div>        <span class="chat-triangle"></span>    </div></li>
+                                        <li class="im-item me" id="six_pg">    <div class="im-content max-wrap">        <div class="im-title">请提供您的人数和服务要求</div>        <div class="im-form">            <ul class="form-list">                <li>                    <h3>几个人出游：</h3>                    <div class="fRight">                        <div class="pepnum">                            <span class="peptxt">成人</span>                            <div class="valuecomb">                                <span class="decrease" onclick="minus_people(this);"></span>                                <span class="ct"><input name="adult_num" id="adult_num" type="text" class="textbox" value="1"></span>                                <span class="increase" onclick="add_people(this);"></span>                            </div>                        </div>                        <div class="pepnum">                            <span class="peptxt">儿童</span>                            <div class="valuecomb">                                <span class="decrease valuecomb_disable" onclick="minus_people(this);"></span>                                <span class="ct"><input name="child_num" id="child_num" type="text" class="textbox" value="0"></span>                                <span class="increase" onclick="add_people(this);"></span>                            </div>                            <span class="peptxtsmall">0-11岁</span>                        </div>                        <div class="pepnum">                            <span class="peptxt">老人</span>                            <div class="valuecomb">                                <span class="decrease valuecomb_disable" onclick="minus_people(this);"></span>                                <span class="ct"><input name="old_num" id="old_num" type="text" class="textbox" value="0"></span>                                <span class="increase" onclick="add_people(this);"></span>                            </div>                            <span class="peptxtsmall">65岁以上</span>                        </div>                    </div>                </li>                <li>                    <h3>其它要求：</h3>                    <div class="fRight">                        <textarea name="trip_content" id="trip_content" class="area-txt" placeholder="在这里填写您的要求"></textarea>                    </div>                </li>            </ul>        </div>        <div class="im-btns">            <button href="javascript:;" class="im-btn btn-normal" type="button">确认提交</button>        </div>        <div class="finished-sel" style="display: none;">            <ul class="finished-sel-list">               <li class="sel-item-l"><i class="icon-success mr5"></i>已选择</li>               <li class="sel-item-r"><button class="im-btn resel-btn" type="button">重新提交</button></li>           </ul>        </div>        <span class="chat-triangle"></span>    </div></li>
+                                        <li class="im-item you" id="six_tips" style="">    <div class="im-content">        <div class="im-info">            <p class="im-you-txt">我们一共1个人</p>        </div>        <span class="chat-triangle"></span>    </div></li>
+                                        <li class="im-item me" id="seven_pg">    <div class="im-content max-wrap">        <div class="im-title">请留下您的联系方式，方便报价过程中和您沟通</div>        <div class="im-form">            <ul class="form-list">                <li>                    <h3>您的称呼：</h3>                    <span class="fRight">                            <input type="text" class="ipt-txt" name="username" id="username" maxlength="20" placeholder="请输入您的称呼" value="">                     </span>                </li>                <li>                    <h3>联系方式：</h3>                    <span class="fRight">                        <input type="text" class="ipt-txt" name="contact" id="contact" maxlength="20" placeholder="请输入您的手机号码" value="">                    </span>                </li>            </ul>        </div>        <div class="im-btns">            <button class="im-btn btn-normal" type="button">确认选择</button>        </div>        <div class="finished-sel" style="display: none;">            <ul class="finished-sel-list">                <li class="sel-item-l"><i class="icon-success mr5"></i>已选择</li>                <li class="sel-item-r"><button class="im-btn resel-btn" type="button">重新提交</button></li>            </ul>        </div>        <span class="chat-triangle"></span>    </div></li>
+                                        <li class="im-item you" id="seven_tips">    <div class="im-content">        <div class="im-info">            <p class="im-you-txt">我的称呼是张三，我的联系方式是15858585858</p>        </div>        <span class="chat-triangle"></span>    </div></li>
+                                        <li class="im-item me" id="eight_pg">    <div class="im-content max-wrap">        <div class="thanks-cont"> <div class="thanks-top"> <div class="thank-flag"><span class="thank-icon"></span></div><div class="thank-txt">感谢您选择隐居网团队定制服务</div></div><div class="thanks-dw"><p class="c9">1对1旅行管家已经收到您的定制需求，会和您电话沟通细节和初步行程报价。<i class="igreen">0571-56050351</i>，请注意接听。</p></div></div><span class="chat-triangle"></span></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--留言-->
+                            <div class="chat-send-v2" id="send_input_box" style="display:none;">
+                                <div>
+                                    <div class="chat-tips radius5 please_wait" style="display:none;">
+                                        <div class="chat-tips-field">
+                                            <p>1对1客服已收到您的消息，请耐心等待回应...</p>
+                                        </div>
+                                        <span class="pop-pointer-bottom"><b class="b1">◆</b><b class="b2">◆</b></span> </div>
+                                    <div class="chat-send-inner">
+                                        <div class="chat-send-left">
+                                            <div class="chat-send-input">
+                                                <textarea class="chat-send-area" id="message_input" onfocus="imChat.resetTipTitle()"
+
+onclick="imChat.resetTipTitle()"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-send-right">
+                                        <input type="submit" class="chat-send-btn" value="发送" onclick="imChat.sendMsg(this)">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--留言结束--> 
+                            <!-- 提示 -->
+                            <div id="alert_tips" class="tips-container tips-pos-middle" style="display:none;">
+                                <div class="tips-item"> <span class="tips-img tips-img-error"></span>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                            <!-- 提示 end --> 
+                        </div>
+                        <!--对话区域 end --> 
+                    </div>
+                    <div id="chat_order_right" class="chat-r-right">
+                        <div class="flow-ibox"> <img src="img/order-flow.png"> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 咨询定制 End --> 
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/public.min.js"></script>
+<script type="text/javascript">
+    var newStatus = 0;
+    var continueStatus = 0;
+    var mastDisableStatus = 0;
+    var orderSn = "";
+    var orderSnId = 0;
+    var paramDest = "";
+    var solidDestList = {"list":{"546":"杭州","503":"湖州","369":"宁波","524":"温州","368":"绍兴","405":"嘉兴"},"out":{"344":"舟山","341":"丽水","358":"台州","388":"衢州","348":"金华"}};
+    var paramTripId = 0;
+    var paramFrom = 1;
+    var zoomOrderSn = orderSn;
+    var operatorUid = 0;
+
+    function checkCookie() {
+        return pcOrderCookie.checkCookie();
+    }
+
+    function clearCookie() {
+        pcOrderCookie.clearCookie();
+        return true;
+    }
+
+    function show_zoom(_id){
+        show_trip_detail(_id, zoomOrderSn);
+    }
+
+    if( checkCookie() && !orderSn ) {
+        mastDisableStatus = 1;
+        $("#mask_disable").show();
+    }
+</script>
+
+<script src="js/order.js"></script>
+<script src="js/order_load.js"></script>
+</body>
+</html>

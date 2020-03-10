@@ -1,0 +1,55 @@
+html, body { height: 100%; width: 100%; overflow: hidden; }
+
+header { position: fixed; top: 0; left: 0; width: 100%; height: 50px; padding-top: 10px; z-index: 1000; }
+header a { float: left; width: 140px; height: 40px; margin-left: 10%; line-height: 40px; text-align: center; font-size: 14px; color: #999; background: #fff; border-radius: 20px; transition: .5s; }
+header a.home { background: #008499; color: #fff; }
+
+#goBack { position: fixed; right: -60px; bottom: 30px; z-index: 9999; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.8); }
+
+#proHome { background: #333; }
+#proHome h3 { position: absolute; left: 0; top: 50%; width: 70px; margin-top: -140px; font-size: 60px; line-height: 70px; background: -webkit-gradient(linear, left top, right bottom, from(#008499), to(#95f1ff)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+#proHome .project-list-panel { position: absolute; top: 40%; right: 0; width: 70%; height: 380px; margin-top: -190px; }
+#proHome .project-list-panel .pro-title { padding-bottom: 10px; color: #008499; font-size: 28px; text-align: right; border-bottom: 2px solid #008499; }
+#proHome .project-list-panel .pro-list { position: absolute; bottom: 0; font-size: 14px; }
+#proHome .project-list-panel .pro-list li { float: right; padding: 0 20px; margin: 5px; border-radius: 28px; }
+#proHome .project-list-panel .pro-list li a { display: block; height: 28px; line-height: 28px; color: #333; }
+#proHome .project-list-panel .pro-list li:nth-child(5n+1) { background: #089E67; }
+#proHome .project-list-panel .pro-list li:nth-child(5n+2) { background: #36ABFF; }
+#proHome .project-list-panel .pro-list li:nth-child(5n+3) { background: #f06; }
+#proHome .project-list-panel .pro-list li:nth-child(5n+4) { background: #ff0; }
+#proHome .project-list-panel .pro-list li:nth-child(5n) { background: #8350FF; }
+
+#pro1 { background: #f5e653; }
+
+#pro2 { background: #92f6ed; }
+
+#pro3 { background: #92c3f6; }
+
+#pro4 { background: #E6A770; }
+
+#pro5 { background: #D3EC6D; }
+
+#pro6 { background: #9ED5FB; }
+
+#pro7 { background: #6CBEFF; }
+
+#pro8 { background: #C4D5F3; }
+
+#pro9 { background: #1163BF; }
+
+.section { position: relative; width: 100%; min-width: 320px; }
+.section .page-content { position: relative; width: 80%; height: 100%; margin: 0 auto; }
+
+.pro-info { position: relative; text-align: center; height: 100%; }
+.pro-info .pro-info-text { display: none; position: relative; height: 60%; font-size: 14px; line-height: 24px; color: #333; }
+.pro-info .pro-info-text .pro-info-name { padding-top: 150px; margin-bottom: 20px; font-size: 30px; line-height: 36px; }
+.pro-info .pro-info-text .pro-info-detail { margin-bottom: 20px; font-size: 16px; }
+.pro-info .pro-info-text .pro-info-link { padding: 5px 35px 5px 45px; background: #fff; border-radius: 30px; color: #008499; }
+.pro-info .pro-info-img { display: none; width: 100%; height: 40%; margin: 0 auto; border-radius: 10px 10px 0 0; background-size: cover; }
+
+.spinner { position: absolute; top: 50%; left: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; }
+.spinner > div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: #67cf22; opacity: 0.6; -webkit-animation: bounce 2.0s infinite ease-in-out; animation: bounce 2.0s infinite ease-in-out; }
+.spinner .double-bounce2 { -webkit-animation-delay: -1.0s; animation-delay: -1.0s; }
+
+@keyframes bounce { 0%, 100% { transform: scale(0); }
+  50% { transform: scale(1); } }

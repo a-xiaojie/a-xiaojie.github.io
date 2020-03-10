@@ -1,0 +1,46 @@
+/* 20131213修改 */
+.top{ position:relative; z-index:1000;width:100%; height:42px; margin:0 auto; background-color:#1A1A1A;}
+.header{ position:relative; width:950px; height:42px; margin:0 auto;}
+
+.back{ float:left; background:url(../images/star.png?d=1216) no-repeat -303px 0; width:20px; height:15px; margin:13px 1px 14px;}
+.back:hover{ background-position:-303px -15px;}
+
+.nav{ height:42px; font:14px/40px "Microsoft Yahei"; background:url(../images/star.png?d=1216) no-repeat right -221px; padding-right:2px; overflow:hidden;}
+.nav li{ float:left; padding:0 1px 0 5px;}
+.nav li a{ float:left; height:40px; padding:2px 20px 0; color:#fff; }
+.nav li a:hover,.nav li a.on{ background:#313131; border-top:2px solid #f00; padding:0px 20px; color:#fff;}
+
+.subnav{ font:12px/14px "宋体"; background:url(../images/star.png?d=1216) no-repeat right -221px; padding:0 20px 0 1px;}
+.subnav li{ float:left; height:14px; padding-left:19px; position:relative; padding-top:16px; padding-bottom:12px;}
+.subnav a{ color:#bbb;}
+.subnav a:hover{ color:#f60;}
+.plan{ padding-right:17px; background:url(../images/star.png?d=1216) no-repeat -323px 0;}
+.panel_list{ display:none; position:absolute; top:42px; right:-8px; background:#000; width:77px; padding:6px 0 7px;}
+.panel_list li{ clear:left; padding:0; width:77px; height:30px; line-height:30px; text-align:center;}
+.panel_list a{ color:#ccc;}
+.panel_list a:hover{ color:#f60;}
+
+.userlog{ font:12px/12px "宋体";}
+.his{ position:relative;}
+.his .handle{ float:right; height:12px; margin-top:10px; background:url(../images/star.png?d=1216) no-repeat -396px 7px; padding:7px 16px 13px 30px;_padding:8px 16px 12px 30px; line-height:12px;}
+.his .handle_on{ background:url(../images/star.png?d=1216) no-repeat -547px -41px;}
+.his_nav{ display:none; position:absolute; right:0; top:42px; background:#000; width:200px; line-height:18px;}
+.his_tab { padding-top:18px;}
+.his_tab li{ float:left; margin-left:14px; display:inline; padding:0 6px; height:21px;}
+.his_tab a,.his_tab a:hover{ color:#fff;}
+.his_tab li.on{ background:url(../images/star.png?d=1216) no-repeat -556px 0;}
+.his_panel{ padding:8px 13px 1px 14px;}
+.his_list li{ height:50px; border-bottom:1px solid #3c3a3a; position:relative;}
+.his_list .his_tt{ position:absolute; color:#ccc; top:7px; height: 18px; width: 173px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.his_list .his_tt:hover{ color:#f60;}
+.his_list .his_stat{ position:absolute; top:25px;}
+.his_list .his_action{ display:none; position:absolute; top:25px; right:0; color:#8ec0f2;}
+.his_list .his_action:hover{ color:#f00;}
+.his_list .del{ display:none; position:absolute; top:10px; right:2px; width:8px; height:8px; background:url(../images/star.png?d=1216) no-repeat -303px -30px;}
+.his_list .del:hover{ background-position:-314px -30px;}
+.his_more{ line-height:42px; height:42px; text-align:center;}
+.his_more a{ color:#ece2b4;}
+.his_more a:hover{ color:#f60;}
+.user{ width:40px; height:42px; padding-left:4px; position:relative;}
+.login{ float:right; width:24px; height:12px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; background:url(../images/star.png?d=1216) no-repeat -471px 17px; padding-top:17px;_padding-top:18px; padding-left:15px;}
+.user .panel_list{ top:42px;}

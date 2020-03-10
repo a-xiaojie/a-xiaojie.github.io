@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+<meta charset="utf-8">
+<title>工作管理-文本指令</title>
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.11.2/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.1.8.2.js"></script>
+<script src="js/base.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div id="header" class="hd">
+    	<div id="logo">
+        	<h1>杭州公安交通指挥（情报）平台</h1>
+            <p>Hangzhou Public Security Traffic Management Command (intelligence) Platform</p>
+        </div>
+        <div class="top-info">
+        	<span class="user-info mr10">2014/12/3 ，欢迎回来，<em>王海峰  011564 </em>单位：杭州市公安局交通警察支队</span>
+            <ul class="quick-menu">
+					<li class="setting menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="#" rel="nofollow" title="设置"><span class="icon-set"></span><b></b></a>
+							<div class="menu-bd">
+								<div class="menu-bd-panel">
+									<dl>
+										<dt>
+											<span>基本设置</span>
+										</dt><dd>
+											<a href="javascript:;" title="个人信息">个人信息</a> 
+											<a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+										</dd>
+									</dl>
+
+									<dl class="last">
+										<dt>
+											<span>安全设置</span>
+										</dt><dd>
+											<a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<!--全屏:Start-->
+					<li class="fullscreen menu-item">
+						<div class="menu">
+							<a class="menu-hd" href="javascript:;;" rel="nofollow" title="全屏" id="fullscreenA"><span class="icon-fullscreen"></span></a>
+						</div>
+					</li>
+					<!--退出:Start-->
+					<li class="quit menu-item">
+						<div class="menu">
+							<a id="logoutA" class="menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="icon-quit"></span></a>
+						</div>
+					</li>
+				</ul>
+        </div>
+    </div>
+    <div id="nav" class="nav">
+        <ul class="clearfix">
+            <li><a href="index.html" title="首页" class="item">首页</a></li>
+            <li>
+                <a href="javascript:;" title="个人工作台" class="item">个人工作台</a>
+                <div class="nav-bd">
+                    <a href="work_todo.html" title="待办工作">待办工作</a>
+                    <a href="work_done.html" title="已办工作">已办工作</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="情报流转" class="item">情报流转</a>
+                <div class="nav-bd">
+                    <a href="qbReport.html" title="情报收集">情报收集</a>
+                    <a href="qbManage.html" title="情报处理">情报处理</a>
+                    <a href="qbSearch.html" title="情报检索">情报检索</a>
+                    <a href="qbCount.html" title="情报统计">情报统计</a>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;" title="工作管理 " class="item active">工作管理 </a>
+                <div class="nav-bd">
+                    <a href="zbManage.html" title="值班管理">值班管理</a>
+                    <a href="textMsg.html" title="文本指令" class="active">文本指令</a>
+                    <a href="shortMsg.html" title="短息发送">短息发送</a>
+                </div>
+            </li>
+            <li>
+                <a href="callCenter.html" title="呼叫中心 " class="item">呼叫中心 </a>
+            </li>
+            <li class="last">
+            	<a href="javascript:;" title="系统管理" class="item">系统管理</a>
+            	<div class="nav-bd">
+                    <a href="info.html" title="辅助信息">辅助信息</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="bd">
+    	<div class="msg-box clearfix">
+        	<div class="msg-outer msg-container">
+            	<div class="msg-inner">
+                    <div class="msg-title title">
+                        <h3 class="fl">文本指令</h3>
+                        <h3 class="fr"><a href="javascript:;" title="历史记录" class="his-btn">历史记录</a></h3>
+                    </div>
+                    <div class="msg-main">
+                        <div class="msg-cont">
+                            <div class="msg-row">
+                                <h4><span class="msg-username">支队</span><span class="msg-time">10:15:33</span></h4>
+                                <p class="msg-info">关于十一月份情报信息上报和记分考核情况请及时上报<span class="msg-info-to">@西湖</span><span class="msg-info-to">@滨江</span></p>
+                            </div>
+                            <div class="msg-row">
+                                <h4><span class="msg-username">西湖大队</span><span class="msg-time">10:16:33</span></h4>
+                                <p class="msg-info">收到，已处理<span class="msg-info-to">@支队</span></p>
+                            </div>
+                        </div>
+                        <div class="msg-toolbar">
+                            <ul class="clearfix">
+                                <li><a href="javascript:;">支队</a></li>
+                                <li><a href="javascript:;">上城</a></li>
+                                <li><a href="javascript:;">下城</a></li>
+                                <li><a href="javascript:;">西湖</a></li>
+                                <li><a href="javascript:;">江干</a></li>
+                                <li><a href="javascript:;">拱墅</a></li>
+                                <li><a href="javascript:;">滨江</a></li>
+                                <li><a href="javascript:;">下沙</a></li>
+                                <li><a href="javascript:;">机动</a></li>
+                                <li><a href="javascript:;">绕城</a></li>
+                                <li><a href="javascript:;">景区</a></li>
+                            </ul>
+                        </div>
+                        <div class="msg-input">
+                            <textarea class="msg-textarea" autocomplete="off" autofocus></textarea>
+                        </div>
+                        <div class="msg-toolbar clearfix">
+                            <input type="button" value="发 送" class="btn fr">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="msg-outer msg-history">
+            	<div class="msg-inner">
+                    <div class="msg-title title">
+                    </div>
+                    <div class="msg-main">
+                        <div class="msg-cont">
+                            <div class="msg-row">
+                                <h4><span class="msg-username">支队</span><span class="msg-time">10:15:33</span></h4>
+                                <p class="msg-info">关于十一月份情报信息上报和记分考核情况请及时上报<span class="msg-info-to">@西湖</span><span class="msg-info-to">@滨江</span></p>
+                            </div>
+                            <div class="msg-row">
+                                <h4><span class="msg-username">西湖大队</span><span class="msg-time">10:16:33</span></h4>
+                                <p class="msg-info">收到，已处理<span class="msg-info-to">支队</span></p>
+                            </div>
+                        </div>
+                        <div class="msg-toolbar clearfix">
+                            <div class="pages fr">
+                                <div class="page-list"><a>&lt;&lt;</a><a>&lt;</a><a class="active">1</a><a title="第2页">2</a><a title="第3页">3</a><a title="第4页">4</a><a title="下一页">&gt;</a><a title="最后一页">&gt;&gt;</a></div>
+                            </div>
+                            <span id="selectedTime" class="fr"></span>
+                            <img src="My97DatePicker/skin/datePicker.gif" onclick="WdatePicker({el:'selectedTime'})" class="fr">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	var _date=new fnGetDate(new Date()).toString();
+	$('#selectedTime').html(_date);
+})
+</script>
+</body>
+</html>

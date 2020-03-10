@@ -1,0 +1,133 @@
+{
+	"name": "李林洁",
+	"birthday": "1989.12.26",
+	"tel": "15858173887",
+	"email": "li-linjie@foxmail.com",
+	"metto": "梦想还是要有的，万一实现了呢！",
+	"college": "浙江科技学院",
+	"major": "数字媒体技术",
+	"degree": "本科",
+	"job": "前端工程师",
+	"skills": {
+		"HTML": ["85%","#fbfb00"],
+		"CSS": ["80%","#ff6a00"],
+		"HTML5": ["50%","#858ef7"],
+		"CSS3": ["55%","#faaaff"],
+		"Javascript": ["60%","#85f7f7"],
+		"jQuery": ["75%","#f79f85"],
+		"Zepto": ["60%","#acf785"],
+		"Bootstrap": ["60%","#ea6975"],
+		"SASS": ["50%","#ea69e0"],
+		"LESS": ["50%","#eae669"],
+		"Grunt": ["40%","#17e44d"]
+	}
+	,
+	"project": [
+		{
+			"name": "团队定制",
+			"bgColor": "#f5e653",
+			"img": "images/pro01.jpg",
+			"type": "0",
+			"link": "project/pro1/index.html",
+			"info": ""
+		},
+		{
+			"name": "隐居网web端",
+			"bgColor": "#f5e653",
+			"img": "images/pro02.jpg",
+			"type": "0",
+			"link": "project/pro2/index.html",
+			"info": ""
+		},
+		{
+			"name": "厚源财务官网",
+			"bgColor": "#f5e653",
+			"img": "images/pro03.jpg",
+			"type": "0",
+			"link": "project/pro3/index.html",
+			"info": ""
+		},
+		{
+			"name": "大屏控制系统",
+			"bgColor": "#f5e653",
+			"img": "images/pro04.jpg",
+			"type": "1",
+			"link": "project/pro4/index.html",
+			"info": ""
+		},
+		{
+			"name": "电子档案管理系统",
+			"bgColor": "#f5e653",
+			"img": "images/pro05.jpg",
+			"type": "1",
+			"link": "project/pro5/index.html",
+			"info": ""
+		},
+		{
+			"name": "短息服务平台",
+			"bgColor": "#f5e653",
+			"img": "images/pro06.jpg",
+			"type": "1",
+			"link": "project/pro6/index.html",
+			"info": ""
+		},
+		{
+			"name": "分析研判系统",
+			"bgColor": "#f5e653",
+			"img": "images/pro07.jpg",
+			"type": "1",
+			"link": "project/pro7/index.html",
+			"info": ""
+		},
+		{
+			"name": "勤务管理系统",
+			"bgColor": "#f5e653",
+			"img": "images/pro08.jpg",
+			"type": "1",
+			"link": "project/pro8/index.html",
+			"info": ""
+		},
+		{
+			"name": "视频监控系统",
+			"bgColor": "#f5e653",
+			"img": "images/pro09.jpg",
+			"type": "1",
+			"link": "project/pro9/index.html",
+			"info": ""
+		},
+		{
+			"name": "北极光微商公众号",
+			"bgColor": "#f5e653",
+			"img": "images/pro10.jpg",
+			"type": "2",
+			"link": "project/pro10/index.html",
+			"info": ""
+		}
+	],
+	"works": [
+		{
+			"time": "2011.3 - 2012.4",
+			"name": "杭州东部智汇科技有限公司",
+			"logo": "",
+			"work": ""
+		},
+		{
+			"time": "2012.5 - 2014.3",
+			"name": "杭州搜视网络有限公司",
+			"logo": "",
+			"work": ""
+		},
+		{
+			"time": "2014.4 - 2014.8",
+			"name": "杭州世翔信息技术有限公司",
+			"logo": "",
+			"work": ""
+		},
+		{
+			"time": "2014.8 - 至今",
+			"name": "浙江银江研究院有限公司",
+			"logo": "",
+			"work": ""
+		}
+	]
+}

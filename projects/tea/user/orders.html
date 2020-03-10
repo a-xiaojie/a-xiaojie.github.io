@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>爱茶叶</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/iscroll.js"></script>
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>我的订单</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="../index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+    </header>
+    <div class="wrap nofoot-wrap">
+        <ul class="tab order-tab">
+            <li class="active">全部</li>
+            <li>待付款</li>
+            <li>待发货</li>
+            <li>待收货</li>
+            <li>待评价</li>
+        </ul>
+        <div class="tab-cont">
+            <!-- 全部 -->
+            <div class="order-tab-cont" style="display: block;">
+                <p class="tips">您还没有订单，去商城首页看看呗！</p>
+            </div>
+            <!-- 待付款 -->
+            <div class="order-tab-cont">
+                <ul class="order-list">
+                    <li>
+                        <div class="order-tit">
+                            <p class="order-num">订单编号：135896532</p>
+                            <span class="status">待付款</span>
+                        </div>
+                        <div class="order-item">
+                            <ul class="order-tea-list">
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="order-sum">
+                                共2件商品
+                                <span class="price-sum">合计：112.00（含运费0.00）</span>
+                            </div>
+                        </div>
+                        <div class="order-extra">
+                            <button class="btn" type="button">立即支付</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 待发货 -->
+            <div class="order-tab-cont">
+                <ul class="order-list">
+                    <li>
+                        <div class="order-tit">
+                            <p class="order-num">订单编号：135896532</p>
+                            <span class="status">待发货</span>
+                        </div>
+                        <div class="order-item">
+                            <ul class="order-tea-list">
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="order-sum">
+                                共2件商品
+                                <span class="price-sum">合计：112.00（含运费0.00）</span>
+                            </div>
+                        </div>
+                        <div class="order-extra">
+                            <button class="btn" type="button">我要催单</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 待收货 -->
+            <div class="order-tab-cont">
+                <ul class="order-list">
+                    <li>
+                        <div class="order-tit">
+                            <p class="order-num">订单编号：135896532</p>
+                            <span class="status">待收货</span>
+                        </div>
+                        <div class="order-item">
+                            <ul class="order-tea-list">
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="order-sum">
+                                共2件商品
+                                <span class="price-sum">合计：112.00（含运费0.00）</span>
+                            </div>
+                            <div class="tracking-num">
+                                运单号：5556565656366
+                            </div>
+                        </div>
+                        <div class="order-extra">
+                            <button class="btn" type="button">确认收货</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 待评价 -->
+            <div class="order-tab-cont">
+                <ul class="order-list">
+                    <li>
+                        <div class="order-tit">
+                            <p class="order-num">订单编号：135896532</p>
+                            <span class="status">待评价</span>
+                        </div>
+                        <div class="order-item">
+                            <ul class="order-tea-list">
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="orderDetail.html">
+                                        <div class="order-img"><img src="../images/order-img.jpg" alt=""></div>
+                                        <div class="order-tea-info">
+                                            <h3>这里你可以写一写产品的名称</h3>
+                                            <p>这里可以有简单的介绍</p>
+                                        </div>
+                                        <div class="order-tea-price">
+                                            <span class="price">￥7.40</span>
+                                            <del class="price">￥19.90</del>
+                                            <span class="num">X1</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="order-sum">
+                                共2件商品
+                                <span class="price-sum">合计：112.00（含运费0.00）</span>
+                            </div>
+                            <div class="tracking-num">
+                                运单号：5556565656366
+                            </div>
+                        </div>
+                        <div class="order-extra">
+                            <button class="btn" type="button">我要评价</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            $('.tab li').click(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                $(this).parent().next().find('.order-tab-cont').hide().eq($('.tab li').index(this)).show();
+            })
+        })
+    </script>
+</body>
+</html>

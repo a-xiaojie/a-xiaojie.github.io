@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>爱茶叶</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/iscroll.js"></script>
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>我的积分</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+        <a class="posR home-btn" href="../index.html">
+            <i class="icon icon-go-home"></i>
+        </a>
+    </header>
+    <div class="wrap nofoot-wrap" id="wrapper">
+        <div id="scroller">
+            <div class="credit-bar">
+                可用积分：286
+                <div class="fr">
+                    <a href="creditRules.html">积分规则</a>
+                    <a href="sign.html" class="mainColor">我要签到</a>
+                </div>
+            </div>
+            <ul class="tea-list clearfix">
+                <li>
+                    <a href="../detail.html">
+                        <div class="tea-img"><img src="../images/list-pic1.jpg" alt=""></div>
+                        <span class="name">这里是输入公众号名称的地方商城</span>
+                        <span class="price">￥86</span>
+                        <del class="price">180</del>
+                        <span class="sale-off">4.8折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../detail.html">
+                        <div class="tea-img"><img src="../images/list-pic2.jpg" alt=""></div>
+                        <span class="name">这里是输入公众号名称的地方商城</span>
+                        <span class="price">￥86</span>
+                        <del class="price">180</del>
+                        <span class="sale-off">4.8折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../detail.html">
+                        <div class="tea-img"><img src="../images/list-pic1.jpg" alt=""></div>
+                        <span class="name">这里是输入公众号名称的地方商城</span>
+                        <span class="price">￥86</span>
+                        <del class="price">180</del>
+                        <span class="sale-off">4.8折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../detail.html">
+                        <div class="tea-img"><img src="../images/list-pic2.jpg" alt=""></div>
+                        <span class="name">这里是输入公众号名称的地方商城</span>
+                        <span class="price">￥86</span>
+                        <del class="price">180</del>
+                        <span class="sale-off">4.8折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../detail.html">
+                        <div class="tea-img"><img src="../images/list-pic1.jpg" alt=""></div>
+                        <span class="name">这里是输入公众号名称的地方商城</span>
+                        <span class="price">￥86</span>
+                        <del class="price">180</del>
+                        <span class="sale-off">4.8折</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../detail.html">
+                        <div class="tea-img"><img src="../images/list-pic2.jpg" alt=""></div>
+                        <span class="name">这里是输入公众号名称的地方商城</span>
+                        <span class="price">￥86</span>
+                        <del class="price">180</del>
+                        <span class="sale-off">4.8折</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var myScroll;
+
+        function loaded () {
+            myScroll = new IScroll('#wrapper', {
+                preventDefault:false,
+
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('DOMContentLoaded', loaded, false);
+        window.onload = function () {
+            setTimeout(function(){
+                myScroll.refresh();
+            }, 100);
+        }
+    </script>
+</body>
+</html>

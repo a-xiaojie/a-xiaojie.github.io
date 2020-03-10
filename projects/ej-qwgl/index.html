@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<link rel="stylesheet" href="css/nanoscroller.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.nanoscroller.js"></script>
+<script src="My97DatePicker/WdatePicker.js"></script>
+<script src="js/j_common.js"></script>
+</head>
+<body>
+<div class="header">
+    <h1><a href="index.html" title="返回首页">杭州交警支队勤务管理系统</a></h1>
+    <div class="header-info">
+        <p class="h-user-info">欢迎回来，<span>王海峰</span> <em>011564 </em>单位：杭州市公安局交通警察支队</p>
+        <ul class="quick-menu">
+            <li class="h-menu-item" id="setting">
+                <a class="h-menu-hd" href="javascript:;" rel="nofollow" title="设置"><span class="ico-set"></span><b></b></a>
+                <div class="h-menu-bd">
+                    <dl>
+                        <dt><span>基本设置</span></dt>
+                        <dd>
+                            <a href="javascript:;" title="个人信息">个人信息</a> 
+                            <a id="moduleSetA" href="javascript:;" title="模块设置">模块设置</a>
+                        </dd>
+                    </dl>
+                    <dl class="last">
+                        <dt><span>安全设置</span></dt>
+                        <dd>
+                           <a id="uPasswordA" href="javascript:;" title="修改密码">修改密码</a> 
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            <li id="fullscreen">
+                <a class="h-menu-hd" href="javascript:;" rel="nofollow" title="全屏"><span class="ico-fullscreen"></span></a>
+            </li>
+            <li id="logout">
+                <a class="h-menu-hd" href="javascript:;" rel="nofollow" title="退出"><span class="ico-quit"></span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="main"> <img src="images/map.jpg" width="100%">
+    <div class="pos" id="pos1"> <a href="javascript:;" class="pos-btn"><img src="images/pos-new.png" alt="">一</a>
+        <div class="pos-police"> <span class="pos-police1"><img src="images/police1.png"></span> <span class="pos-police2"><img src="images/police2.png"></span> </div>
+        <div class="pos-box">
+            <div class="pos-detail">
+                <div class="pos-cont-t"></div>
+                <div class="pos-cont-m">
+                    <div class="pos-tit"><a href="javascript:;">文三西路以南天目山路以北 岗</a></div>
+                    <div class="pos-cont">
+                        <p>一类岗</p>
+                        <p>岗位已排：<span>XXX民警/ XXX协警</span></p>
+                        <p>执勤方式：<span>定点</span></p>
+                        <p>所属责任区：<span>XXXX</span></p>
+                        <p>负责人：<span>XXX</span></p>
+                        <p>当前已排人员：<span>XXX/ XXX</span></p>
+                        <p>备注：<span>XXXXXXXXXXXXXXXXXXXXX</span></p>
+                    </div>
+                </div>
+                <div class="pos-cont-b"></div>
+                <a class="close-btn" title="关闭"></a>
+            </div>
+            <div class="pos-detail sub-pos-detail">
+                <div class="pos-cont-t"></div>
+                <div class="pos-cont-m">
+                    <ul>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                    </ul>
+                </div>
+                <div class="pos-cont-b"></div>
+                <i></i>
+            </div>
+        </div>
+    </div>
+    <div class="pos" id="pos2"> <a href="javascript:;" class="pos-btn"><img src="images/pos-new.png" alt="">二</a>
+        <div class="pos-police"> <span class="pos-police1"><img src="images/police1.png"></span> <span class="pos-police2"><img src="images/police2.png"></span> </div>
+        <div class="pos-box">
+            <div class="pos-detail">
+                <div class="pos-cont-t"></div>
+                <div class="pos-cont-m">
+                    <div class="pos-tit"><a href="javascript:;">文三西路以南天目山路以北 岗</a></div>
+                    <div class="pos-cont">
+                        <p>一类岗</p>
+                        <p>岗位已排：<span>XXX民警/ XXX协警</span></p>
+                        <p>执勤方式：<span>定点</span></p>
+                        <p>所属责任区：<span>XXXX</span></p>
+                        <p>负责人：<span>XXX</span></p>
+                        <p>当前已排人员：<span>XXX/ XXX</span></p>
+                        <p>备注：<span>XXXXXXXXXXXXXXXXXXXXX</span></p>
+                    </div>
+                </div>
+                <div class="pos-cont-b"></div>
+                <a class="close-btn" title="关闭"></a>
+            </div>
+            <div class="pos-detail sub-pos-detail">
+                <div class="pos-cont-t"></div>
+                <div class="pos-cont-m">
+                    <ul>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                        <li><span>07:00-09:30</span><span>路人甲/ 路人乙/ 张三/ 王五/ 李四</span></li>
+                    </ul>
+                </div>
+                <div class="pos-cont-b"></div>
+                <i></i>
+            </div>
+        </div>
+    </div>
+    <div class="pos" id="pos3"> <a href="javascript:;" class="pos-btn disabled-btn"><img src="images/pos-new-no.png" alt=""></a> </div>
+</div>
+
+<!-- 左侧菜单 -->
+<div class="left-bar">
+    <ul id="menu">
+        <li> <a href="javascript:;" class="item" id="gwlb" onclick="fnOpenWin('post.html','post')">岗位管理</a>
+        </li>
+        <li> <a href="#" class="item">勤务管理</a>
+            <ul>
+                <li><a href="search.html">勤务排班</a></li>
+                <li><a href="#">季节性布警要求</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">考核管理</a>
+            <ul>
+                <li><a href="#">考核管理</a></li>
+                <li><a href="#">考核指标维护</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">查询统计</a>
+            <ul>
+                <li><a href="#">责任区查询统计</a></li>
+                <li><a href="#">岗位查询统计</a></li>
+                <li><a href="#">警力投入情况统计</a></li>
+                <li><a href="#">各时段警力统计</a></li>
+                <li><a href="#">民警勤务时间统计</a></li>
+                <li><a href="#">考核统计</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">基础信息管理</a>
+            <ul>
+                <li><a href="#">机构信息维护</a></li>
+                <li><a href="#">警员信息维护</a></li>
+                <li><a href="#">责任区维护</a></li>
+                <li><a href="#">车辆设备维护</a></li>
+            </ul>
+        </li>
+        <li> <a href="#" class="item">系统管理</a>
+            <ul>
+                <li><a href="#">数据字典维护</a></li>
+                <li><a href="#">角色信息维护</a></li>
+                <li><a href="#">菜单信息维护</a></li>
+                <li><a href="#">用户权限配置</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="bar-btn bar-open"> </div>
+</div>
+
+<!-- 右侧图 -->
+<div class="right-bar">
+    <div class="time-search mb20 ml10">
+        <input type="text" class="txt" placeholder="请输入搜索条件">
+        <button class="search-btn"></button>
+    </div>
+    <img src="images/pic.jpg">
+    <div class="bar-btn bar-open"> </div>
+</div>
+
+<div class="police-info">
+    <div class="police-info-t"></div>
+    <div class="police-info-m">
+       <h3> <img src="images/police1.png"><span>警员信息</span></h3>
+       <p>警号：011661</p>
+       <p>警员姓名：梁浩</p>
+       <p>联系电话：123456</p>
+       <p>所属单位：上城四中队</p>
+       <p>所属单位：上城四中队</p>
+       <p>排班状态：已排班</p>
+       <div class="police-link"><a href="#" title="排版情况">排班情况</a><a href="#" title="脱岗情况">脱岗情况</a><a href="#" title="请假信息">请假信息</a><a href="#" title="轨迹回放">轨迹回放</a><a href="#" title="任务列表">任务列表</a><a href="#" title="目标跟踪">目标跟踪</a></div>
+    </div>
+    <div class="police-info-b"></div>
+	<a class="close-btn" title="关闭"></a>
+</div>
+
+<!-- 修改密码对话框 -->
+<div class="edit-dia" id="uPasswordDia">
+	<div class="dia-tit-l">
+    	<div class="dia-tit-r">
+        	<div class="dia-tit">
+            	<h3>修改密码</h3>
+                <a class="dia-close-btn" href="javascript:;" title="关闭"></a>
+            </div>
+        </div>
+    </div>
+    <div class="dia-cont">
+    	<div class="dia-form login-form">
+        	<div class="form-row">
+					<div class="input-box"><label for="pno">原始密码</label><input type="text" id="password" name="password" value=""></div>
+				</div>
+				<div class="form-row">
+					<div class="input-box"><label for="password">新密码</label><input type="password" id="password2" name="password2" value=""></div>
+				</div>
+				<div class="form-row">
+					<div class="input-box"><label for="password">新密码验证</label><input type="text" id="" name="" value=""></div>
+				</div>
+				<div class="form-row">
+					<p class="error-tips">用户名或密码错误，请重新输入</p>
+				</div>
+				<div class="form-btn">
+					<input type="button" value="提交" class="btn save-btn">
+					<input type="button" value="取消" class="btn cancel-btn">
+				</div>
+        </div>
+    </div>
+    <div class="dia-f-l">
+    	<div class="dia-f-r">
+        	<div class="dia-f"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+	$(function(){
+		/* 岗位 */
+		$('.pos-btn').click(function(){
+            $(this).parent().css('z-index',10);
+			if(!$(this).hasClass('disabled-btn')){
+				$(this).hide().siblings('.pos-box').show('fast').siblings('.pos-police').addClass('pos-over');
+                var _this=$(this);
+                $('.pos-police span img').click(function(e){
+                    var iX=e.clientX;
+                    var iY=e.clientY;
+                    $('.police-info').css({"left":iX,"top":iY,"z-index":99}).slideDown('fast');
+                    _this.parents('.pos').find('.pos-btn').show().siblings('.pos-box').hide('fast').siblings('.pos-police').removeClass('pos-over');
+                    $('.police-info .close-btn').click(function(){
+                        $('.police-info').slideUp('fast');
+                    })
+                })
+			}
+			else{
+				alert('未排班！');
+			}
+            $('.pos .pos-box .close-btn').click(function(){
+                $(this).parent().next('.sub-pos-detail').hide();
+                $(this).parents('.pos').attr('style','').find('.pos-btn').show().siblings('.pos-box').hide('fast').siblings('.pos-police').removeClass('pos-over');
+            })
+		});
+
+		/* 警员 */
+		$('.pos-police span img').click(function(e){
+			var iX=e.clientX;
+			var iY=e.clientY;
+			$('.police-info').css({"left":iX,"top":iY,"z-index":99}).slideDown('fast');
+            $('.police-info .close-btn').click(function(){
+                $('.police-info').slideUp('fast');
+            })
+		})
+
+        $('.pos-detail .pos-tit a').click(function(){
+            var _height=parseInt($(this).parents('.pos-detail').next('.sub-pos-detail').css('height'));
+            $(this).parents('.pos-detail').next('.sub-pos-detail').find('i').css('top',_height/2)
+            $(this).parents('.pos-detail').next('.sub-pos-detail').show();
+        })
+
+		/* 修改密码 */
+		$('#uPasswordA').click(function(){
+			$('#uPasswordDia').css('margin-top',-($('#uPasswordDia').height()/2)+'px').show();
+			$(".edit-dia :input").focus(function(){
+				$(this).prev('label').hide();
+			}).blur(function(){
+				if ($(this).val() == '') {
+					$(this).prev('label').show();
+				}
+			});
+			$('.edit-dia .save-btn').click(function(){
+				alert('提交！');
+				$('.edit-dia').hide();
+			});
+			$('.edit-dia .cancel-btn, .edit-dia .dia-close-btn').click(function(){
+				$('.edit-dia').hide();
+			});
+		})
+        
+	})
+</script>
+<script src="js/jquery.select.js"></script>
+</html>

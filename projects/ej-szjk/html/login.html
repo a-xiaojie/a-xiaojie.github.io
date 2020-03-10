@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户登录--杭州交警数字监控联网平台</title>
+<link rel="stylesheet" href="../css/jquery-ui/jquery-ui-1.9.2.custom.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/inner.css">
+<link rel="stylesheet" href="../css/theme/default/skin.css">
+<link rel="stylesheet" href="../css/login.css">
+<script src="../js/jquery.min.1.8.2.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.js"></script>
+</head>
+<body class="m-login-bg">
+	<div class="m-login-box">
+		<div class="m-login-form">
+			<div class="m-login-logo">
+				<h1>杭州交警数字监控联网平台</h1>
+				<p><span>Hangzhou Traffic Police Digital Monitoring Network Platform</span></p>
+			</div>
+			<div class="m-login">
+				<ul class="m-login-tab">
+					<li>PKI登录</li>
+					<li class="cur">用户登录</li>
+				</ul>
+				<div class="m-login-tabcont">
+					<div class="m-pki-box">
+						<a href="javascript:;" title="PKI登录"><img src="../images/pki.gif" alt="PKI登录"></a>
+					</div>
+				</div>
+				<ul class="m-login-tabcont" style="display: block;">
+		        	<li><label>警&emsp;号：</label><input type="text" class="ipt" id="username" name="user_name" tabindex="1"></li>
+		            <li><label>密&emsp;码：</label><input type="password" class="ipt" id="pwd" name="user_pwd" tabindex="2"></li>
+		            <li class="m-login-btns">
+		            	<label><input type="checkbox" id="checkbox" class="ckb">记住密码</label>
+		            	 <input type="button" id="login" value="登录" class="btn btn-login" tabindex="3" onclick="login()">
+		            </li>
+		        </ul>
+			</div>
+			<p class="m-login-guid"><a href="#" target="_blank">如果你是第一次使用该系统，可以通过帮助向导学习。  &gt;&gt;&gt;</a></p>
+	        <div class="m-login-ft">
+	        	<p class="m-copyright">Copyright © 2015  杭州交警支队 版权所有</p>
+	        	<ul class="m-login-help">
+	        		<li><a href="../file/EnjoyorVideoOCX.exe" title="控件下载"><img src="../images/download-btn.png">控件下载</a></li>
+	        		<li><a href="javascript:;" title="注册" onclick="register()"><img src="../images/reg-btn.png">注册</a></li>
+	        		<li><a href="#" title="帮助"><img src="../images/help-btn.png">帮助</a></li>
+	        	</ul>
+	        </div>
+	    </div>
+	</div>
+	<div class="pop-box" id="registerDiv">
+		<div class="m-content-main pop-main">
+			<div class="pop-cont">
+				<ul class="m-form-list clearfix">
+					<li><label>警号（用户名）：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt" id="adduserid" style="display:none;">
+							<input type="text" class="u-ipt" id="addusername">
+							<p class="u-tips"><span class="u-req">*</span>(1～18个字符，无非法字符)</p>
+						</div>
+					</li>
+					<li><label>姓名：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt" id="addrealname">
+							<p class="u-tips"><span class="u-req">*</span>(1～18个字符，无非法字符)</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li><label>密码：</label>
+						<div class="m-controls">
+							<input type="password" class="u-ipt" id="adduserpwd">
+							<p class="u-tips"><span class="u-req">*</span>(4～18个字符，无非法字符)</p>
+						</div>
+					</li>
+					<li><label>确认密码：</label>
+						<div class="m-controls">
+							<input type="password" class="u-ipt" id="adduserpwd2">
+							<p class="u-tips"></p>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li><label>所属区域：</label>
+						<div class="m-controls">
+							<select class="u-sel" id="addzoneid">
+								<option selected="selected">杭州市</option>
+							</select>
+						</div>
+					</li>
+					<li><label>角色：</label>
+						<div class="m-controls">
+							<select class="u-sel" id="addrolenum">
+								<option selected="selected">超级管理员</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li class="wfull"><label>备注：</label>
+						<div class="m-controls">
+							<textarea id="addremark" class="u-textarea"></textarea>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li><label>电话：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt" id="addtel">
+							<p class="u-tips"><span class="u-req">*</span>(电话号码，4～13个字符，中间无空格)</p>
+						</div>
+					</li>
+					<li><label>E-mail：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt" id="addemail">
+							<p class="u-tips">(格式：用户名@邮件服务器)</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="m-form-list clearfix">
+					<li><label>身份证：</label>
+						<div class="m-controls">
+							<input type="text" class="u-ipt" id="addpkikey">
+						</div>
+					</li>
+					<li><label>单位：</label>
+						<div class="m-controls">
+							<select class="u-sel" id="addunitno">
+								<option selected="selected">市交警支队</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="pop-btn">
+				<button class="u-btn" type="button" id="addBtn"  onclick="addBtn()">注册</button>
+				<button class="u-btn" type="button" id="cancelBtn" onclick="cancelBtn()">取消</button>
+			</div>
+		</div>
+	</div>
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+	<script type="text/javascript" src="js/IE6PNG.js"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix('.m-login-form, h1, .m-login-tab li, .btn, img');
+	</script>
+<![endif]--> 
+<script>
+function register(){
+	var $divHeight=$("#registerDiv").height()>500?500:"auto";
+	$("#registerDiv").dialog({
+		resizable : false,
+		modal : true,
+		width : 850,
+		height : $divHeight,
+		title : "注册"
+	});
+}
+function login(){
+	if($.trim($("#username").val())==null || $.trim($("#username").val())==""){
+		alert("警号为空！");
+		$("#username").focus();
+		return;
+	}
+	if($.trim($("#pwd").val())==null || $.trim($("#pwd").val())==""){
+		alert("密码为空");
+		$("#pwd").focus();
+		return;
+	}
+	window.location.href="RealtimeVideo.html"
+}
+//验证是否为空，格式
+function Experimental(val){
+	var flag=true;
+	if($("#addusername").val()==null || $("#addusername").val()==''){
+		alert("用户名为空");
+		flag = false;
+	}
+	if($("#addrealname").val()==null || $("#addrealname").val()==''){
+		alert("用户姓名为空");
+		flag = false;
+	}	
+	if(val==1){
+		if($("#adduserpwd").val()==null || $("#adduserpwd").val()==''){
+			alert("密码为空");
+			flag = false;
+		}	
+	}
+	if($("#adduserpwd").val()!=null && $("#adduserpwd").val()!='' && $("#adduserpwd").val()!= $("#adduserpwd2").val()){
+		alert("2次密码输入不同");
+		flag = false;
+	}
+	return flag;
+}
+$(function(){
+	$("#username").focus();
+	document.onkeydown = function () {
+		if(event.keyCode==13)
+		{
+			login();
+		}
+	}
+})
+</script>
+</body>
+</html>

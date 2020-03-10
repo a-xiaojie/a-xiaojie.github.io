@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>短信管理 - 短信服务平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.1.8.2.js"></script>
+    <script src="js/ztree/js/jquery.ztree.core-3.5.js"></script>
+    <script src="js/My97DatePicker/WdatePicker.js"></script>
+    <script src="js/placeholder.js"></script>
+</head>
+<body>
+<div class="g-layout">
+    <div class="g-inner">
+        <div class="g-sd">
+            <div class="m-panel m-full-panel">
+                <div class="m-title">
+                    <h3>通讯录</h3>
+                </div>
+                <div class="m-cont">
+                    <div class="m-search-form">
+                        <form action="">
+                            <div class="m-search-box">
+                                <input type="text" class="u-ipt" placeholder="查找联系人"/>
+                                <a class="u-search-btn" title="搜索"><i class="icon icon-search"></i></a>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="ztree" id="treeNode"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="g-mn">
+            <div class="m-panel m-full-panel">
+                <div class="m-title">
+                    <h3>短信管理</h3>
+                    <div class="m-tool-btns">
+                        <a href="javascript:;" class="u-icon-btn u-export" title="导出"><i class="icon icon-export"></i></a>
+                        <a href="javascript:;" class="u-icon-btn u-empty" title="清空"><i class="icon icon-empty"></i></a>
+                    </div>
+                </div>
+                <div class="m-cont">
+                    <div class="m-table-form">
+                        <div class="m-form-row clearfix">
+                            <div class="m-form-cell">
+                                <label>手机号码：</label><input type="text" class="u-ipt"/>
+                            </div>
+                            <div class="m-form-cell">
+                                <label>联系人：</label><input type="text" class="u-ipt"/>
+                            </div>
+                            <div class="m-form-cell">
+                                <label>短信内容：</label><input type="text" class="u-ipt"/>
+                            </div>
+                        </div>
+                        <div class="m-form-row clearfix">
+                            <div class="m-form-cell">
+                                <label>发送日期：</label>
+                                <span class="m-controls"><input type="text" id="startTime" class="u-ipt" onclick="WdatePicker({dateFmt:'yyyy-MM-dd H:mm:ss',maxDate:'#F{$dp.$D(\'endTime\')}'})"/><a class="u-cal" onclick="WdatePicker({dateFmt:'yyyy-MM-dd H:mm:ss',el:'startTime',maxDate:'#F{$dp.$D(\'endTime\')}'})"><i class="icon icon-cal"></i></a></span>
+                            </div>
+                            <div class="m-form-cell">
+                                <em>至</em>
+                                <span class="m-controls"><input type="text" id="endTime" class="u-ipt" onclick="WdatePicker({dateFmt:'yyyy-MM-dd H:mm:ss',minDate:'#F{$dp.$D(\'startTime\')}'})"/><a class="u-cal" onclick="WdatePicker({dateFmt:'yyyy-MM-dd H:mm:ss',el:'endTime',minDate:'#F{$dp.$D(\'startTime\')}'})"><i class="icon icon-cal"></i></a></span>
+                            </div>
+                            <div class="m-form-cell">
+                                <button class="u-btn u-search-btn">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-table-box">
+                        <table class="m-table">
+                            <thead>
+                                <tr>
+                                    <th width="5%"><input type="checkbox"></th>
+                                    <th width="15%">手机号</th>
+                                    <th width="10%">姓名</th>
+                                    <th width="20%">内容</th>
+                                    <th width="5%">字数</th>
+                                    <th width="5%">方式</th>
+                                    <th width="15%">定时时间</th>
+                                    <th width="15%">发送时间</th>
+                                    <th width="10%">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>136********</td>
+                                    <td>张三</td>
+                                    <td>最新提醒，你的车辆有违法未处理，请及时...</td>
+                                    <td>60</td>
+                                    <td>即时</td>
+                                    <td></td>
+                                    <td>2015-07-07 08:00:00</td>
+                                    <td><a href="javascript:;">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>136********</td>
+                                    <td>张三</td>
+                                    <td>最新提醒，你的车辆有违法未处理，请及时...</td>
+                                    <td>60</td>
+                                    <td>即时</td>
+                                    <td></td>
+                                    <td>2015-07-07 08:00:00</td>
+                                    <td><a href="javascript:;">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>136********</td>
+                                    <td>张三</td>
+                                    <td>最新提醒，你的车辆有违法未处理，请及时...</td>
+                                    <td>60</td>
+                                    <td>即时</td>
+                                    <td></td>
+                                    <td>2015-07-07 08:00:00</td>
+                                    <td><a href="javascript:;">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>136********</td>
+                                    <td>张三</td>
+                                    <td>最新提醒，你的车辆有违法未处理，请及时...</td>
+                                    <td>60</td>
+                                    <td>即时</td>
+                                    <td></td>
+                                    <td>2015-07-07 08:00:00</td>
+                                    <td><a href="javascript:;">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>136********</td>
+                                    <td>张三</td>
+                                    <td>最新提醒，你的车辆有违法未处理，请及时...</td>
+                                    <td>60</td>
+                                    <td>即时</td>
+                                    <td></td>
+                                    <td>2015-07-07 08:00:00</td>
+                                    <td><a href="javascript:;">删除</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>136********</td>
+                                    <td>张三</td>
+                                    <td>最新提醒，你的车辆有违法未处理，请及时...</td>
+                                    <td>60</td>
+                                    <td>即时</td>
+                                    <td></td>
+                                    <td>2015-07-07 08:00:00</td>
+                                    <td><a href="javascript:;">删除</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="pager" class="m-pager">
+                            <a href="javascript:;" class="u-btn u-page-btn u-prev-btn disabled"><i class="icon icon-prev"></i></a><span><em>1</em>/2</span><a href="javascript:;" class="u-btn u-page-btn u-next-btn"><i class="icon icon-next"></i></a>第<input type="text" class="u-ipt u-page-ipt"/>页<button class="u-btn u-page-btn">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/IE6PNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+<script>
+    $(window).on("load resize",function(){
+        var innerHeight = $('.g-layout').height();
+        $('.m-full-panel').height(innerHeight - 20 - 2);
+        $('.ztree').height($('.m-full-panel').height() - $('.m-title').height() - $('.m-search-form').outerHeight() - 20 -1);
+        $('.m-table-box').height($('.m-full-panel').height() - $('.m-title').height() - $('.m-table-form').outerHeight() -$('.m-pager').outerHeight() -20 - 1);
+    });
+</script>
+<script>
+    var setting = {
+        view: {
+            showLine: false,
+            selectedMulti: false,
+            dblClickExpand: false
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback: {
+            beforeExpand: beforeExpand,
+            onExpand: onExpand,
+            onClick: onClick
+        }
+    };
+
+    var zNodes =[
+        { id:1, pId:0, name:"上城大队"},
+        { id:11, pId:1, name:"张警员 挂起",iconSkin:"icon_police_error"},
+        { id:12, pId:1, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:13, pId:1, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:2, pId:0, name:"下城大队"},
+        { id:21, pId:2, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:22, pId:2, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:23, pId:2, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:3, pId:0, name:"西湖大队"},
+        { id:31, pId:3, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:32, pId:3, name:"张警员 挂起",iconSkin:"icon_police_error"},
+        { id:33, pId:3, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:4, pId:0, name:"江干大队"},
+        { id:41, pId:4, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:42, pId:4, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:43, pId:4, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:5, pId:0, name:"拱墅大队"},
+        { id:51, pId:5, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:52, pId:5, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:53, pId:5, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:6, pId:0, name:"滨江大队"},
+        { id:61, pId:6, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:62, pId:6, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:63, pId:6, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:7, pId:0, name:"下沙大队"},
+        { id:71, pId:7, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:72, pId:7, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:73, pId:7, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:8, pId:0, name:"景区大队"},
+        { id:81, pId:8, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:82, pId:8, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:83, pId:8, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:9, pId:0, name:"绕城大队"},
+        { id:91, pId:9, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:92, pId:9, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:93, pId:9, name:"张警员 123456",iconSkin:"icon_police"}
+    ];
+
+    var curExpandNode = null;
+    function beforeExpand(treeId, treeNode) {
+        var pNode = curExpandNode ? curExpandNode.getParentNode():null;
+        var treeNodeP = treeNode.parentTId ? treeNode.getParentNode():null;
+        var zTree = $.fn.zTree.getZTreeObj("depTree");
+        for(var i=0, l=!treeNodeP ? 0:treeNodeP.children.length; i<l; i++ ) {
+            if (treeNode !== treeNodeP.children[i]) {
+                zTree.expandNode(treeNodeP.children[i], false);
+            }
+        }
+        while (pNode) {
+            if (pNode === treeNode) {
+                break;
+            }
+            pNode = pNode.getParentNode();
+        }
+        if (!pNode) {
+            singlePath(treeNode);
+        }
+
+    }
+    function singlePath(newNode) {
+        if (newNode === curExpandNode) return;
+        if (curExpandNode && curExpandNode.open==true) {
+            var zTree = $.fn.zTree.getZTreeObj("treeNode");
+            if (newNode.parentTId === curExpandNode.parentTId) {
+                zTree.expandNode(curExpandNode, false);
+            } else {
+                var newParents = [];
+                while (newNode) {
+                    newNode = newNode.getParentNode();
+                    if (newNode === curExpandNode) {
+                        newParents = null;
+                        break;
+                    } else if (newNode) {
+                        newParents.push(newNode);
+                    }
+                }
+                if (newParents!=null) {
+                    var oldNode = curExpandNode;
+                    var oldParents = [];
+                    while (oldNode) {
+                        oldNode = oldNode.getParentNode();
+                        if (oldNode) {
+                            oldParents.push(oldNode);
+                        }
+                    }
+                    if (newParents.length>0) {
+                        zTree.expandNode(oldParents[Math.abs(oldParents.length-newParents.length)-1], false);
+                    } else {
+                        zTree.expandNode(oldParents[oldParents.length-1], false);
+                    }
+                }
+            }
+        }
+        curExpandNode = newNode;
+    }
+
+    function onExpand(event, treeId, treeNode) {
+        curExpandNode = treeNode;
+        var zTree = $.fn.zTree.getZTreeObj("treeNode");
+        zTree.selectNode(treeNode);
+    }
+
+    function onClick(e,treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj("treeNode");
+        zTree.expandNode(treeNode, null, null, null, true);
+    }
+
+    $(function() {
+        $.fn.zTree.init($("#treeNode"), setting, zNodes);
+    });
+</script>
+</body>
+</html>

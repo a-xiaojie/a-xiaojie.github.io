@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>系统管理-电视墙拼接控制系统</title>
+	<link rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<script src="js/jquery.min.1.8.2.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="js/ztree/js/jquery.ztree.all-3.5.js"></script>
+</head>
+<body>
+<div class="g-bg"><img src="images/bg.jpg"></div>
+<!-- 头部 -->
+<div class="g-hd">
+    <div class="m-top">
+     	<div class="m-userinfo g-posl"><span><i class="icon icon-user"></i>Admin</span></div>
+     	<h1 class="m-logo"><span>电视墙拼接控制系统</span></h1>
+     	<a href="javascript:;" class="m-close"><i class="icon icon-close"></i></a>
+    </div>
+    <div class="m-nav-box">
+     	<a class="m-nav-btn" href="javascript:;"></a>
+		<ul class="m-nav">
+			<li><a href="javascript:;" title="开启屏幕"><i class="icon icon-open-screen"></i><span>开启屏幕</span></a></li>
+			<li><a href="javascript:;" title="关闭屏幕"><i class="icon icon-close-screen"></i><span>关闭屏幕</span></a></li>
+			<li><a href="javascript:;" title="重启设备"><i class="icon icon-restart-equip"></i><span>重启设备</span></a></li>
+			<li><a href="javascript:;" title="保存场景"><i class="icon icon-save-scene"></i><span>保存场景</span></a></li>
+			<li style="margin-left: 87px"><a href="sceneCarousel.html" title="场景轮播"><i class="icon icon-scene-carousel"></i><span>场景轮播</span></a></li>
+			<li><a href="signalCarousel.html" title="信号轮播"><i class="icon icon-signal-carousel"></i><span>信号轮播</span></a></li>
+			<li><a href="javascript:;" title="节目管理"><i class="icon icon-program-manage"></i><span>节目管理</span></a></li>
+			<li class="cur"><a href="system.html" title="系统管理"><i class="icon icon-system-manage"></i><span>系统管理</span></a></li>
+		</ul>
+    </div>
+</div>
+<!-- 主体 -->
+<div class="g-bd">
+	<div class="g-sd">
+		<div class="g-sdc">
+			<div class="m-menu-box">
+				<ul class="m-menu">
+					<li class="open">
+						<a href="javascript:;"><i class="icon icon-menu-user"></i>用户管理</a>
+						<em class="arrow"></em>
+						<ul class="m-submenu" style="display:block">
+							<li>
+								<a href="javascript:;" class="active">用户管理</a>
+								<a href="javascript:;">角色管理</a>
+								<a href="javascript:;">用户审核</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><i class="icon icon-menu-device"></i>设备管理</a>
+						<em class="arrow"></em>
+						<ul class="m-submenu">
+							<li><a href="javascript:;"></a></li>
+							<li><a href="javascript:;"></a></li>
+							<li><a href="javascript:;"></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><i class="icon icon-menu-operate"></i>运行维护</a>
+						<em class="arrow"></em>
+						<ul class="m-submenu">
+							<li><a href="javascript:;"></a></li>
+							<li><a href="javascript:;"></a></li>
+							<li><a href="javascript:;"></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;"><i class="icon icon-menu-log"></i>日志管理</a>
+						<em class="arrow"></em>
+						<ul class="m-submenu">
+							<li><a href="javascript:;"></a></li>
+							<li><a href="javascript:;"></a></li>
+							<li><a href="javascript:;"></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="g-mn">
+	    <div class="g-mnc2">
+	    	<div class="m-panel">
+	    		<div class="m-table-panel">
+		    		<div class="m-form-box">
+		    			<div class="m-panel-title">
+		    				<h3>查询条件</h3>
+		    			</div>
+		    			<div class="m-table-form">
+			                <div class="m-form-row clearfix">
+			                    <div class="m-form-cell">
+			                        <label>用户名：</label><input type="text" class="u-ipt"/>
+			                    </div>
+			                    <div class="m-form-cell">
+			                        <label>角色：</label><select name="" id="" class="u-sel"></select>
+			                    </div>
+			                </div>
+			                <div class="m-form-row clearfix">
+			                    <div class="m-form-cell">
+			                        <button class="u-btn u-search-btn">查询</button>
+			                    </div>
+			                </div>
+			            </div>
+		    		</div>
+	    			<div class="m-table-box mt20">
+	    				<div class="m-table-toolbar">
+	    					<div class="m-toolbar">
+	    						<ul>
+	    							<li><a href="javascript:;" onclick="fnAdd()"><i class="icon icon-add"></i>添加</a></li>
+	    							<li><a href="javascript:;"><i class="icon icon-edit"></i>编辑</a></li>
+	    							<li><a href="javascript:;"><i class="icon icon-del"></i>删除</a></li>
+	    							<li><a href="javascript:;"><i class="icon icon-export"></i>导出</a></li>
+	    							<li><a href="javascript:;"><i class="icon icon-import"></i>导入</a></li>
+	    							<li><a href="javascript:;"><i class="icon icon-print"></i>打印</a></li>
+	    						</ul>
+	    					</div>
+	    				</div>
+						<div class="m-table-cont">
+							<table class="m-table">
+								<thead>
+									<tr>
+										<th><input type="checkbox"></th>
+										<th>序号</th>
+										<th>用户名</th>
+										<th>真实姓名</th>
+										<th>角色</th>
+										<th>注册时间</th>
+										<th>最后登录时间</th>
+										<th>有效期</th>
+										<th>是否开通</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>1</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(1)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>2</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(2)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>3</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(3)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>4</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(4)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>5</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(5)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>5</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(6)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>5</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(7)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>5</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(8)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>5</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(9)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="checkbox">
+											<td>5</td>
+											<td>admin</td>
+											<td>张三</td>
+											<td>管理员</td>
+											<td>15-08-08 08:00:00</td>
+											<td>15-08-12 08:00:00</td>
+											<td>永久</td>
+											<td>是</td>
+											<td>
+												<a href="javascript:;" onclick="fnEdit(10)">编辑</a>
+												<a href="javascript:;">删除</a>
+												<a href="javascript:;">授权</a>
+											</td>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="pager" class="m-pager">
+                            <a href="javascript:;" class="u-btn u-page-btn u-prev-btn disabled"><i class="icon icon-prev"></i></a><span><em>1</em>/2</span><a href="javascript:;" class="u-btn u-page-btn u-next-btn"><i class="icon icon-next"></i></a>第<input type="text" class="u-ipt u-page-ipt">页<button class="u-btn u-page-btn">确定</button>
+                        </div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+</div>
+<!-- 底部 -->
+<div class="g-ft">
+    <p class="m-statue fl"><i class="icon icon-normal"></i><span>设备链接正常</span></p>
+    <p class="m-time fr">当前时间：<span>10:18</span></p>
+</div>
+<!--弹出框-->
+<div class="m-pop-box" id="popDiv">
+	<div class="m-pop-cont">
+		<div class="m-form-row clearfix">
+			<div class="m-form-cell">
+				<label>用户名：</label><input type="text" class="u-ipt" id="username"/>
+			</div>
+			<div class="m-form-cell">
+				<label>真实姓名：</label><input type="text" class="u-ipt" id="realname"/>
+			</div>
+			<div class="m-form-cell">
+				<label>角色：</label><select name="" class="u-sel" id="role">
+				<option value=""></option>
+			</select>
+			</div>
+			<div class="m-form-cell">
+				<label>权限：</label>
+				<div class="m-controls">
+					<label><input type="checkbox"/> 权限1</label>
+					<label><input type="checkbox"/> 权限2</label>
+					<label><input type="checkbox"/> 权限3</label>
+				</div>
+			</div>
+			<div class="m-form-cell">
+				<label>是否开通：</label>
+				<div class="m-controls">
+					<label><input type="radio" name="radio" id="radio1"/> 是</label>
+					<label><input type="radio" name="radio" id="radio2"/> 否</label>
+				</div>
+			</div>
+			<div class="m-form-cell">
+				<label>描述：</label><textarea class="u-textarea"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="m-pop-btn">
+		<button type="button" class="u-btn u-save-btn">保存</button>
+		<button type="button" class="u-btn u-cancel-btn">取消</button>
+	</div>
+</div>
+<script>
+$(window).on('load resize',function(){
+	$('.m-table-box').height($('.g-mn').height() - $('.m-form-box').outerHeight() - 40);
+	$('.m-table-cont').css('min-height', $('.m-table-box').height() - $('.m-table-toolbar').outerHeight() - $('.m-pager').outerHeight());
+});
+
+function fnAdd(){
+	$('#popDiv').dialog({title: '添加'}).dialog('open');
+}
+function fnEdit(id){
+	$('#popDiv').dialog({title: '编辑'}).dialog('open');
+}
+$(function(){
+	$('.m-menu>li').on('click',function() {
+		if(!$(this).hasClass('open')){
+            $(this).addClass('open').siblings().removeClass('open');
+            $('.m-submenu').slideUp();
+            $(this).children('.m-submenu').slideDown();
+        }
+	});
+	$(".m-submenu a").on("click",function(){
+		$(".m-submenu a").removeClass("active");
+		$(this).addClass("active");
+	});
+	// 获取时间
+    getTime();
+    function getTime(){
+        var d=new Date();
+        var year=d.getFullYear();
+        var month=(d.getMonth()+1)<10?"0"+(d.getMonth()+1):d.getMonth()+1;
+        var date=d.getDate()<10?"0"+d.getDate():d.getDate();
+        var hour=d.getHours()<10?"0"+d.getHours():d.getHours();
+        var minute=d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes();
+        var second=d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds();
+        var day=d.getDay();
+        $(".m-time span").html(year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second);
+        setTimeout(getTime,1000);
+    };
+
+	$('#popDiv').dialog({
+		autoOpen: false,
+		resizable : false,
+		modal : true,
+		width: 390
+	});
+	$('#popDiv .u-btn').on('click',function(){
+		$('#popDiv').dialog('close');
+	});
+});
+</script>
+</body>
+</html>

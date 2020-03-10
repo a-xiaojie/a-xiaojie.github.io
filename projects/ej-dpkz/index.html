@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>电视墙拼接控制系统</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<script src="js/jquery.min.1.8.2.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="js/ztree/js/jquery.ztree.all-3.5.js"></script>
+</head>
+<body>
+<div class="g-bg"><img src="images/bg.jpg"></div>
+<!-- 头部 -->
+<div class="g-hd">
+    <div class="m-top">
+     	<div class="m-userinfo g-posl"><span><i class="icon icon-user"></i>Admin</span></div>
+     	<h1 class="m-logo"><span>电视墙拼接控制系统</span></h1>
+     	<a href="javascript:;" class="m-close"><i class="icon icon-close"></i></a>
+    </div>
+    <div class="m-nav-box">
+     	<a class="m-nav-btn" href="javascript:;"></a>
+		<ul class="m-nav">
+			<li><a href="javascript:;" title="开启屏幕"><i class="icon icon-open-screen"></i><span>开启屏幕</span></a></li>
+			<li><a href="javascript:;" title="关闭屏幕"><i class="icon icon-close-screen"></i><span>关闭屏幕</span></a></li>
+			<li><a href="javascript:;" title="重启设备"><i class="icon icon-restart-equip"></i><span>重启设备</span></a></li>
+			<li><a href="javascript:;" title="保存场景"><i class="icon icon-save-scene"></i><span>保存场景</span></a></li>
+			<li style="margin-left: 87px"><a href="sceneCarousel.html" title="场景轮播"><i class="icon icon-scene-carousel"></i><span>场景轮播</span></a></li>
+			<li><a href="signalCarousel.html" title="信号轮播"><i class="icon icon-signal-carousel"></i><span>信号轮播</span></a></li>
+			<li><a href="javascript:;" title="节目管理"><i class="icon icon-program-manage"></i><span>节目管理</span></a></li>
+			<li><a href="system.html" title="系统管理"><i class="icon icon-system-manage"></i><span>系统管理</span></a></li>
+		</ul>
+    </div>
+</div>
+<!-- 主体 -->
+<div class="g-bd">
+	<div class="g-sd">
+		<div class="g-sdc">
+			<div class="m-title">
+				<ul class="m-tab clearfix">
+					<li class="cur"><a href="javascript:;">场&ensp;景</a></li>
+					<li><a href="javascript:;">视&ensp;频</a></li>
+					<li><a href="javascript:;">屏&ensp;幕</a></li>
+				</ul>
+			</div>
+			<div class="m-tab-content">
+				<div class="m-tab-cont" style="display:block;">
+					<div class="m-search-box">
+						<form action="">
+							<input type="text" class="m-txt m-search-txt">
+							<a href="javascript:;" class="u-search"><i class="icon icon-search"></i></a>
+						</form>
+					</div>
+					<div class="m-scroll-box">
+						<ul class="m-list" id="screenList">
+							<li>
+								<a href="javascript:;"><img src="images/screen-01.gif" alt="" ><span>4屏 (Balanced)</span></a>
+								<div class="btn-groups screen-tool-btns">
+									<a href="javascript:;" title="删除" class="btn-del"><i class="icon icon-del"></i></a>
+									<a href="javascript:;" title="编辑" class="btn-edit"><i class="icon icon-edit"></i></a>
+									<a href="javascript:;" title="启用" class="btn-used" onclick="toggleUsed(this)"><i class="icon icon-used"></i></a>
+								</div>
+							</li>
+							<li class="active">
+								<a href="javascript:;"><img src="images/screen-02.gif" alt=""><span>2屏 (Balanced)</span></a>
+								<div class="btn-groups screen-tool-btns">
+									<a href="javascript:;" title="删除" class="btn-del"><i class="icon icon-del"></i></a>
+									<a href="javascript:;" title="编辑" class="btn-edit"><i class="icon icon-edit"></i></a>
+									<a href="javascript:;" title="启用" class="btn-used" onclick="toggleUsed(this)"><i class="icon icon-used"></i></a>
+								</div>
+							</li>
+							<li >
+								<a onclick="showscreendata()"  href="javascript:;"><img src="images/screen-03.gif" alt=""><span>3屏 (Top)</span></a>
+								<div class="btn-groups screen-tool-btns">
+									<a href="javascript:;" title="删除" class="btn-del"><i class="icon icon-del"></i></a>
+									<a href="javascript:;" title="编辑" class="btn-edit"><i class="icon icon-edit"></i></a>
+									<a href="javascript:;" title="启用" class="btn-used" onclick="toggleUsed(this)"><i class="icon icon-used"></i></a>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;"><img src="images/screen-04.gif" alt=""><span>3屏 (Bottom)</span></a>
+								<div class="btn-groups screen-tool-btns">
+									<a href="javascript:;" title="删除" class="btn-del"><i class="icon icon-del"></i></a>
+									<a href="javascript:;" title="编辑" class="btn-edit"><i class="icon icon-edit"></i></a>
+									<a href="javascript:;" title="启用" class="btn-used" onclick="toggleUsed(this)"><i class="icon icon-used"></i></a>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;"><img src="images/screen-05.gif" alt=""><span>3屏 (Right)</span></a>
+								<div class="btn-groups screen-tool-btns">
+									<a href="javascript:;" title="删除" class="btn-del"><i class="icon icon-del"></i></a>
+									<a href="javascript:;" title="编辑" class="btn-edit"><i class="icon icon-edit"></i></a>
+									<a href="javascript:;" title="启用" class="btn-used" onclick="toggleUsed(this)"><i class="icon icon-used"></i></a>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;"><img src="images/screen-06.gif" alt=""><span>3屏 (Left)</span></a>
+								<div class="btn-groups screen-tool-btns">
+									<a href="javascript:;" title="删除" class="btn-del"><i class="icon icon-del"></i></a>
+									<a href="javascript:;" title="编辑" class="btn-edit"><i class="icon icon-edit"></i></a>
+									<a href="javascript:;" title="启用" class="btn-used" onclick="toggleUsed(this)"><i class="icon icon-used"></i></a>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;"><img src="images/screen-07.gif" alt=""><span>6屏 (Balanced)</span></a>
+								<div class="btn-groups screen-tool-btns">
+									<a href="javascript:;" title="删除" class="btn-del"><i class="icon icon-del"></i></a>
+									<a href="javascript:;" title="编辑" class="btn-edit"><i class="icon icon-edit"></i></a>
+									<a href="javascript:;" title="启用" class="btn-used" onclick="toggleUsed(this)"><i class="icon icon-used"></i></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="m-tab-cont">
+					<div class="m-search-box">
+						<form action="">
+							<input type="text" class="m-txt m-search-txt">
+							<a href="javascript:;" class="u-search"><i class="icon icon-search"></i></a>
+						</form>
+					</div>
+					<div class="m-scroll-box">
+						<ul class="ztree" id="video_tree"></ul>
+					</div>
+				</div>
+				<div class="m-tab-cont">
+					<div class="m-search-box">
+						<form action="">
+							<input type="text" class="m-txt m-search-txt">
+							<a href="javascript:;" class="u-search"><i class="icon icon-search"></i></a>
+						</form>
+					</div>
+					<div class="m-scroll-box">
+						<ul class="m-list"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="g-mn">
+	    <div class="g-mnc">
+	    	<div id="drawBox" class="m-draw-box" unselectable="on" onselectstart="return false;">
+		    	<ul class="m-screen-group clearfix" id="ScreenGroup"></ul>
+	    	</div>
+	    </div>
+	</div>
+</div>
+<!-- 底部 -->
+<div class="g-ft">
+    <p class="m-statue fl"><i class="icon icon-normal"></i><span>设备链接正常</span></p>
+    <p class="m-time fr">当前时间：<span>10:18</span></p>
+</div> 
+<ul id="contextmenu">
+	<li><a href="javascript:;" onclick="fnDel()">删除当前窗口</a></li>
+	<li><a href="javascript:;" onclick="fnDelAll()">删除所有窗口</a></li>
+	<li><a href="javascript:;">替换信号源</a></li>
+	<li class="divider"></li>
+	<li><a href="javascript:;" onclick="fnToBottom()">置于底层</a></li>
+	<li><a href="javascript:;" onclick="fnHide()">隐藏</a></li>
+	<li><a href="javascript:;">窗口透明</a></li>
+	<li><a href="javascript:;">最大化</a></li>
+</ul>
+<script>
+var offsetX    = $("#drawBox").offset().left;
+var offsetY    = $("#drawBox").offset().top;
+var screenData = {};
+
+var rectNum=1;
+var zIndex=1;
+var x_down=0,y_down=0,new_width=0,new_height=0;
+var x_original=0, y_original=0;
+var original_flag=true, down_flag=false, move_flag=false;
+var x_point=0,y_point=0;
+var append_html;
+var timer = null;
+var screenDataArr = [];
+var menu=$("#contextmenu");
+function fnDel(){
+	var divId=menu.attr("data-name");
+	$('div[name="'+divId+'"]').remove();
+	saveScreenData();
+}
+
+function fnDelAll(){
+	$(".new-rect").remove();
+	saveScreenData();
+}
+function fnHide(){
+	var divId=menu.attr("data-name");
+	$('div[name="'+divId+'"]').hide();
+}
+// 置于底层
+function fnToBottom () { 
+	var divId=menu.attr("data-name");
+	var data_zIndex = $('div[name="'+divId+'"]').css('z-index');
+	$('div[name="'+divId+'"]').attr('data-zIndex',data_zIndex).css('z-index', '0');
+}
+
+// 新建的div上操作的内容
+function rectFunction (obj) {
+	$(obj).on({
+		dblclick : function(e){ // 双击div使其铺满选中的区域
+			clearTimeout(timer);
+			var rectDivNum = $(this).attr("name")
+			var $activeLi  = $("#ScreenGroup li.active"+rectDivNum);
+			var minLeft=$activeLi.eq(0).offset().left+1,
+				maxRight=minLeft+$activeLi.width()+1,
+				minTop=$activeLi.eq(0).offset().top+1,
+				maxBottom=minTop+$activeLi.height()+1;
+			$activeLi.each(function(index, el) {
+				var oLiLeft=$(this).offset().left+1,
+					oLiRight=oLiLeft+$(this).width()+1,
+					oLiTop=$(this).offset().top+1,
+					oLiBottom=oLiTop+$(this).height()+1;
+				oLiLeft<=minLeft?(minLeft=oLiLeft):minLeft;
+				oLiRight>=maxRight?(maxRight=oLiRight):maxRight;
+				oLiTop<=minTop?(minTop=oLiTop):minTop;
+				oLiBottom>=maxBottom?(maxBottom=oLiBottom):maxBottom;
+			});
+			$(this).css({
+				top : minTop-offsetY,
+				left : minLeft-offsetX,
+				width : maxRight-minLeft-2,
+				height : maxBottom-minTop-2
+			})
+			.find('.rect-x').text(minLeft-offsetX).end()
+			.find('.rect-y').text(minTop-offsetY).end()
+			.find('.rect-w').text(maxRight-minLeft-2).end()
+			.find('.rect-h').text(maxBottom-minTop-2);
+			
+			saveScreenData();
+		},
+		mousedown : function(e){
+			$("#drawBox").off("mousedown",MouseDown);
+			$("#drawBox").off("mousemove",MouseMove);
+		},
+		mouseup : function(e){
+			$("#drawBox").on("mousedown",MouseDown);
+			$("#drawBox").on("mousemove",MouseMove);
+		},
+		contextmenu : function(e){  // 右键自定义菜单
+			var left=e.pageX,
+				top=e.pageY;
+
+		    if (left + menu.width() >= $(window).width()) {
+		        left -= menu.width();
+		    }
+		    if (top + menu.height() >= $(window).height()) {
+		        top -= menu.height();
+		    }
+			menu.show().css({
+				top:top,
+				left:left
+			})
+			.on("contextmenu",function(){ return false;})
+			.attr("data-name",$(this).attr("name"));
+			return false;
+		},
+		click : function (e) {    //单击添加active类
+			var _this=$(this);
+			clearTimeout(timer);
+			timer = setTimeout(function () {
+				_this.addClass('active').siblings().removeClass('active');
+				saveScreenData();
+			},300)
+		}
+	})
+}
+function MouseDown (e) {
+	down_flag=true;
+	x_down=e.pageX;
+	y_down=e.pageY;
+	if(original_flag){
+		x_original=e.pageX;
+		y_original=e.pageY;
+		original_flag=false;
+	}
+}
+function MouseMove (e) {
+	if(down_flag){
+		x_down  = e.pageX;
+		y_down  = e.pageY;
+		x_point = x_original;
+		y_point = y_original;
+
+		new_width=x_down-x_original;
+		if(new_width<0){
+			new_width=-new_width;
+			x_point=x_down;
+		}
+		new_height=y_down-y_original;
+		if(new_height<0){
+			new_height=-new_height;
+			y_point=y_down;
+		}
+
+		if( new_width>10 && new_height>10){
+			move_flag=true;
+			$('div[name="'+rectNum+'"]').remove();
+			append_html='<div class="new-rect" style="left:'+(x_point-offsetX)+'px;top:'+(y_point-offsetY)+'px; width:'+new_width+'px; height:'+new_height+'px" name="'+rectNum+'" title="第'+rectNum+'个">';
+			append_html+='<p>群组：'+rectNum+'</p>';
+			append_html+='<p>分组：'+rectNum+'</p>';
+			append_html+='<p>视频名称：<span class="video-name"></span></p>';
+			append_html+='<p>视频ID：<span class="video-id"></span></p>'
+			append_html+='<p>位置：</p>';
+			append_html+='<p>X:<span class="rect-x">'+(x_point-offsetX)+'</span>; Y:<span class="rect-y">'+(y_point-offsetY)+'</span>; W:<span class="rect-w">'+new_width+'</span>; H:<span class="rect-h">'+new_height+'</span></p>';
+			append_html+='</div>';
+			$("#drawBox").append(append_html);
+		}
+	}
+}
+function MouseUp (e) {
+	e.stopPropagation();
+	if(move_flag){
+		down_flag=false;
+		move_flag=false;
+		original_flag=true;
+		var x1=x_point,
+			x2=x_point+new_width,
+			y1=y_point,
+			y2=y_point+new_height;
+		$("#ScreenGroup li").each(function(index, el) {
+			var liOffsetLeft   = $(this).offset().left+1;
+			var liOffsetRight  = liOffsetLeft+$(this).width()+1;
+			var liOffsetTop    = $(this).offset().top+1;
+			var liOffsetBottom = liOffsetTop+$(this).height()+1;
+
+			if((liOffsetLeft<x1 && liOffsetRight>x1) || (liOffsetLeft>x1 && liOffsetLeft<x2))
+			{
+				if((liOffsetTop<y1 && liOffsetBottom>y1) || (liOffsetTop>y1 && liOffsetTop <y2)){
+					$(this).addClass("active"+rectNum);
+				}
+			}
+		});
+
+		saveScreenData();
+		drawBox(screenDataArr); // 根据保存的数组信息绘制区域
+		rectFunction('div[name="'+rectNum+'"]');
+		rectNum++;
+		zIndex++;
+	}
+}
+
+// 根据保存的数组信息绘制区域
+function drawBox (arr) {
+	if(arr.length==0)return;
+	$("#drawBox .new-rect").remove();
+	for( var i=0; i<arr.length; i++){
+		var drawBoxLeft, drawBoxTop, drawBoxWidth, drawBoxHeight;
+		for( var j=0; j<arr[i].activeScreen.length; j++){
+			$('#ScreenGroup li[data-id="'+arr[i].activeScreen[j]+'"]').addClass('active'+arr[i].screenId);
+		};
+		drawBoxLeft = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[0]+'"]').offset().left - offsetX + 1;
+		drawBoxTop = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[0]+'"]').offset().top - offsetY + 1;
+		drawBoxWidth = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[arr[i].activeScreen.length-1]+'"]').offset().left - drawBoxLeft + $('#ScreenGroup li').width() - offsetX;
+		drawBoxHeight = $('#ScreenGroup li[data-id="'+arr[i].activeScreen[arr[i].activeScreen.length-1]+'"]').offset().top - drawBoxTop + $('#ScreenGroup li').height() - offsetY;
+
+
+		var _appendHtml = '';
+		_appendHtml += '<div class="new-rect" style="left:' + drawBoxLeft + 'px;top:' + drawBoxTop + 'px; width:' + drawBoxWidth + 'px; height:' + drawBoxHeight + 'px; z-index:'+zIndex+'" name="' + arr[i].screenId + '" title="第' + arr[i].screenId + '个">'+
+			'<p>群组：' + arr[i].screenId + '</p>'+
+			'<p>分组：' + arr[i].screenId + '</p>'+
+			'<p>视频名称：<span class="video-name">' + arr[i].videoName + '</span></p>'+
+			'<p>视频ID：<span class="video-id">' + arr[i].videoId + '</span></p>'+
+			'<p>位置：</p>'+
+			'<p>X:<span class="rect-x">' + drawBoxLeft + '</span>; Y:<span class="rect-y">' + drawBoxTop + '</span>; W:<span class="rect-w">' + drawBoxWidth + '</span>; H:<span class="rect-h">' + drawBoxHeight + '</span></p>'+
+		'</div>';
+		$("#drawBox").append(_appendHtml);
+		rectNum = arr[i].screenId>rectNum? (parseInt(arr[i].screenId)+1): rectNum;
+
+		rectFunction('.new-rect');
+	}
+}
+// 保存场景
+function saveScreenData(){
+	screenDataArr=[];
+	$('.new-rect').each(function(index, el) {
+		var _this=$(this);
+		var activeScreen = [];  
+		$("#ScreenGroup li").each(function() {
+			if($(this).hasClass('active' + _this.attr('name'))){
+				activeScreen.push($(this).attr('data-id'));
+			}
+		});
+		screenData = {
+			/*posX: _this.find('.rect-x').text(),
+			posY: _this.find('.rect-y').text(),
+			screenWidth: _this.find('.rect-w').text(),
+			screenHeight: _this.find('.rect-h').text(), */
+			videoId: _this.find('.video-id').text(),
+			videoName: _this.find('.video-name').text(),
+			screenId: _this.attr('name'),
+			activeScreen: activeScreen   // 选中的屏幕
+		}
+		screenDataArr.push(screenData);
+	});
+	console.log(screenDataArr)  // 屏幕场景信息保存到这个数组里
+}
+// 启用
+function toggleUsed(obj) {
+	if ($(obj).closest('.screen-tool-btns').hasClass('active')) {
+		$(obj).attr('title','启用').closest('.screen-tool-btns').removeClass('active');
+	}
+	else{
+		$(obj).attr('title','取消启用').closest('.screen-tool-btns').addClass('active');
+	}
+}
+window.onresize = function() {
+	 
+	var percent =3/4;
+	var col     =5;  // 列数
+	var row     =4;  // 行数
+	var str     = '';
+	for(var i = 0; i < col*row; i++){
+		str += '<li data-id="screen_' + (i+1) + '"></li>';
+	}
+	$("#ScreenGroup").html(''); // 添加屏幕
+	$("#ScreenGroup").append(str); // 添加屏幕
+	$oWidth     =$("#drawBox").width();
+	$("#ScreenGroup li").width($oWidth/col-5);
+	//$("#ScreenGroup li").height($("#ScreenGroup li").width()*percent);
+	
+	
+	$oheight =$(window).height()-$(".g-hd").height();
+	$("#ScreenGroup li").height($oheight/row-13);
+		drawBox(screenDataArr); // 根据保存的数组信息绘制区域
+ };
+ 
+$(window).on("load",function(){
+	window.onresize();
+	$("#drawBox").on({
+		mousedown : MouseDown,
+		mousemove : MouseMove,
+		mouseup : MouseUp
+	});
+
+
+	$(document).on("click",function(){
+		$("#contextmenu").hide();
+	});
+
+	// tab切换
+	$(".m-tab li").on("click",function(){
+		$(this).addClass('cur').siblings().removeClass('cur');
+		$(this).closest('.m-title').next().children('.m-tab-cont').hide().eq($('.m-tab li').index(this)).show();
+	});
+	// 场景切换
+	$("#screenList li").on({
+		click: function() {
+			$(this).addClass('active').siblings().removeClass('active');
+		},
+		mouseover: function() {
+			$(this).addClass('hover');
+		},
+		mouseout: function() {
+			$(this).removeClass('hover');
+		}
+	});
+
+	// 获取时间
+    getTime();
+    function getTime(){
+        var d=new Date();
+        var year=d.getFullYear();
+        var month=(d.getMonth()+1)<10?"0"+(d.getMonth()+1):d.getMonth()+1;
+        var date=d.getDate()<10?"0"+d.getDate():d.getDate();
+        var hour=d.getHours()<10?"0"+d.getHours():d.getHours();
+        var minute=d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes();
+        var second=d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds();
+        var day=d.getDay();
+        $(".m-time span").html(year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second);
+        setTimeout(getTime,1000);
+    }
+});
+
+$(window).on("load resize",function(){
+	$(".m-scroll-box").height($(".g-sdc").height() - $(".m-title").outerHeight() - $(".m-search-box").outerHeight() - 20)
+})
+</script>
+<script>
+	var TreeMove = {
+		dragTree2Dom: function(treeId, treeNodes) {
+			return !treeNodes[0].isParent;
+		},
+		// 移动节点
+		dragMove: function(e, treeId, treeNodes) {
+			$('#drawBox').off('mouseup');
+			$('.new-rect').removeClass('active');
+			var treeNodeX = $('.zTreeDragUL').offset().left;
+			var treeNodeY = $('.zTreeDragUL').offset().top;
+			$('.new-rect').each(function(){
+				var thisRectLeft = $(this).offset().left;
+				var thisRectTop = $(this).offset().top;
+				var thisRectRight = thisRectLeft + $(this).width() + 1;
+				var thisRectBottom = thisRectTop + $(this).height() + 1;
+				if( thisRectLeft < treeNodeX && thisRectRight > treeNodeX && thisRectTop < treeNodeY && thisRectBottom > treeNodeY){
+					$(this).addClass('active');
+				}
+			})
+		},
+		// 将节点放置在div上
+		dropTree2Dom: function(e, treeId, treeNodes, targetNode, moveType) {
+			if($(e.target).hasClass('new-rect')){
+				$(e.target).find('.video-id').text(treeNodes[0].id).end()
+					.find('.video-name').hide().text(treeNodes[0].name).show(500);
+			}
+			else if($(e.target).parents().hasClass('new-rect')){
+				$(e.target).parents('.new-rect').find('.video-id').text(treeNodes[0].id).end()
+					.find('.video-name').hide().text(treeNodes[0].name).show(500);
+			}
+			$("#drawBox").on("mouseup", MouseUp);
+			saveScreenData();
+		}
+	};
+    var setting = {
+        view: {
+            showLine: false,
+            selectedMulti: false,
+            dblClickExpand: false
+        },
+        edit: {
+        	enable: true,
+        	showRemoveBtn: false,
+        	showRenameBtn: false
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback: {
+            beforeExpand: beforeExpand,
+            onExpand: onExpand,
+            onClick: onClick,
+            beforeDrag: TreeMove.dragTree2Dom,
+            onDrop: TreeMove.dropTree2Dom,
+            onDragMove: TreeMove.dragMove
+        }
+    };
+
+    var zNodes =[
+		{ id:1, pId:0, name:"杭州市", open:true},
+			{ id:11, pId:1, name:"上城区", open:true},
+				{ id:111, pId:11, name:"南山路"},
+				{ id:112, pId:11, name:"河坊街"},
+			{ id:12, pId:1, name:"下城区"},
+				{ id:121, pId:12, name:"潮王路"},
+			{ id:13, pId:1, name:"西湖区"},
+				{ id:131, pId:13, name:"文三路"},
+			{ id:14, pId:1, name:"江干区"},
+				{ id:141, pId:14, name:"文三路"},
+			{ id:15, pId:1, name:"拱墅区"},
+				{ id:151, pId:15, name:"文三路"},
+			{ id:16, pId:1, name:"滨江区"},
+				{ id:161, pId:16, name:"文三路"},
+			{ id:17, pId:1, name:"下沙"},
+				{ id:171, pId:17, name:"下沙"},
+			{ id:18, pId:1, name:"机动指挥"},
+				{ id:181, pId:18, name:"下沙"},
+			{ id:19, pId:1, name:"景区"},
+				{ id:191, pId:19, name:"景区"},
+			{ id:20, pId:1, name:"支队热控室录像"},
+				{ id:201, pId:20, name:"景区"},
+			{ id:21, pId:1, name:"绕城"}
+	];
+
+    var curExpandNode = null;
+    function beforeExpand(treeId, treeNode) {
+        var pNode = curExpandNode ? curExpandNode.getParentNode():null;
+        var treeNodeP = treeNode.parentTId ? treeNode.getParentNode():null;
+        var zTree = $.fn.zTree.getZTreeObj("video_tree");
+        for(var i=0, l=!treeNodeP ? 0:treeNodeP.children.length; i<l; i++ ) {
+            if (treeNode !== treeNodeP.children[i]) {
+                zTree.expandNode(treeNodeP.children[i], false);
+            }
+        }
+        while (pNode) {
+            if (pNode === treeNode) {
+                break;
+            }
+            pNode = pNode.getParentNode();
+        }
+        if (!pNode) {
+            singlePath(treeNode);
+        }
+
+    }
+    function singlePath(newNode) {
+        if (newNode === curExpandNode) return;
+        if (curExpandNode && curExpandNode.open==true) {
+            var zTree = $.fn.zTree.getZTreeObj("video_tree");
+            if (newNode.parentTId === curExpandNode.parentTId) {
+                zTree.expandNode(curExpandNode, false);
+            } else {
+                var newParents = [];
+                while (newNode) {
+                    newNode = newNode.getParentNode();
+                    if (newNode === curExpandNode) {
+                        newParents = null;
+                        break;
+                    } else if (newNode) {
+                        newParents.push(newNode);
+                    }
+                }
+                if (newParents!=null) {
+                    var oldNode = curExpandNode;
+                    var oldParents = [];
+                    while (oldNode) {
+                        oldNode = oldNode.getParentNode();
+                        if (oldNode) {
+                            oldParents.push(oldNode);
+                        }
+                    }
+                    if (newParents.length>0) {
+                        zTree.expandNode(oldParents[Math.abs(oldParents.length-newParents.length)-1], false);
+                    } else {
+                        zTree.expandNode(oldParents[oldParents.length-1], false);
+                    }
+                }
+            }
+        }
+        curExpandNode = newNode;
+    }
+
+    function onExpand(event, treeId, treeNode) {
+        curExpandNode = treeNode;
+        var zTree = $.fn.zTree.getZTreeObj("video_tree");
+        zTree.selectNode(treeNode);
+    }
+
+    function onClick(e,treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj("video_tree");
+        zTree.expandNode(treeNode, null, null, null, true);
+    }
+
+    $(function() {
+        $.fn.zTree.init($("#video_tree"), setting, zNodes);
+    });
+    
+    function showscreendata(){
+	screenDataArr = [
+		{
+			activeScreen: ["screen_1", "screen_2","screen_7","screen_8"],
+			/*posX: "96",
+			posY: "68",
+			screenHeight: "214",
+			screenWidth: "184",*/
+			screenId: "1",
+			videoId: "111",
+			videoName: "南山路"
+		},
+		{
+			activeScreen: ["screen_3", "screen_4","screen_9","screen_10"],
+			/*posX: "475",
+			posY: "60",
+			screenHeight: "232",
+			screenWidth: "275",*/
+			screenId: "2",
+			videoId: "112",
+			videoName: "河坊街"
+		}
+	]
+	
+	screenDataArr=[{"videoId":"111","videoName":"南山路","screenId":"11","activeScreen":["screen_1","screen_2","screen_3","screen_4","screen_5","screen_6","screen_7","screen_8","screen_9","screen_10"]},{"videoId":"112","videoName":"河坊街","screenId":"22","activeScreen":["screen_11","screen_12","screen_16","screen_17"]},{"videoId":"121","videoName":"潮王路","screenId":"33","activeScreen":["screen_13","screen_14","screen_15","screen_18","screen_19","screen_20"]}];
+	drawBox(screenDataArr); // 根据保存的数组信息绘制区域
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>爱茶叶</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/iscroll.js"></script>
+    <script src="../js/zepto.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>我要评价</h1>
+        <a href="javascript:history.go(-1);" class="posL back-btn"><i class="icon icon-back"></i></a>
+    </header>
+    <div class="wrap nofoot-wrap">
+        <p class="comment-tips">
+            sunny，您的订单已经支付成功，<span>5</span>s后跳转回首页
+        </p>
+    </div>
+    <script>
+        $(function() {
+            var time=5;
+            setInterval(function() {
+                $('.comment-tips span').text(time);
+                time--;
+                if(time<0){
+                    window.history.go(-1);
+                    time=0;
+                }
+            },1000);
+            
+        })
+    </script>
+</body>
+</html>

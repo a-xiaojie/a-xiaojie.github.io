@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>短信发送 - 短信服务平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.1.8.2.js"></script>
+    <script src="js/ztree/js/jquery.ztree.core-3.5.js"></script>
+    <script src="js/ztree/js/jquery.ztree.excheck-3.5.min.js"></script>
+    <script src="js/My97DatePicker/WdatePicker.js"></script>
+    <script src="js/placeholder.js"></script>
+</head>
+<body>
+<div class="g-layout">
+    <div class="g-inner">
+        <div class="g-sd">
+            <div class="m-panel m-full-panel">
+                <div class="m-title">
+                    <h3>通讯录</h3>
+                </div>
+                <div class="m-cont">
+                    <div class="m-search-form">
+                        <form action="">
+                            <div class="m-search-box">
+                                <input type="text" class="u-ipt" placeholder="查找联系人"/>
+                                <a class="u-search-btn" title="搜索"><i class="icon icon-search"></i></a>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="ztree" id="treeNode"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="g-mn">
+            <div class="m-panel m-phone-panel">
+                <div class="m-title">
+                    <h3>接收号码</h3>
+                    <div class="m-tool-btns">
+                        <div class="u-add-tel fl">
+                            <input class="u-tel-ipt" type="text" id="addtel_input" placeholder="输入号码" />
+                            <a href="javascript:;" class="u-icon-btn u-tel" title="添加号码"><i class="icon icon-tel"></i></a>
+                        </div>
+                        <a href="javascript:;" class="u-icon-btn u-add" title="添加"><i class="icon icon-add"></i></a>
+                        <a href="javascript:;" class="u-icon-btn u-empty" title="清空"><i class="icon icon-empty"></i></a>
+                    </div>
+                </div>
+                <div class="m-cont">
+                    <ul class="m-phone-list clearfix">
+                        <li class="m-phone-cell"><i class="icon icon-unit"></i>西湖大队<a href="javascript:;" class="u-close" title="删除"><i class="icon icon-close"></i></a></li>
+                        <li class="m-phone-cell"><i class="icon icon-people"></i>张警员<a href="javascript:;" class="u-close" title="删除"><i class="icon icon-close"></i></a></li>
+                        <li class="m-phone-cell"><i class="icon icon-people"></i>张警员<a href="javascript:;" class="u-close" title="删除"><i class="icon icon-close"></i></a></li>
+                        <li class="m-phone-cell"><i class="icon icon-people"></i>张警员<a href="javascript:;" class="u-close" title="删除"><i class="icon icon-close"></i></a></li>
+                        <li class="m-phone-cell"><i class="icon icon-people"></i>张警员<a href="javascript:;" class="u-close" title="删除"><i class="icon icon-close"></i></a></li>
+                        <li class="m-phone-cell"><i class="icon icon-people"></i>张警员<a href="javascript:;" class="u-close" title="删除"><i class="icon icon-close"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-sms-content m-toggle-on mt10">
+                <div class="m-panel m-content-panel">
+                    <div class="m-title">
+                        <h3>短信内容</h3>
+                        <div class="m-tool-btns">
+                            <a href="javascript:;" class="u-icon-btn u-save" title="保存"><i class="icon icon-save"></i></a>
+                            <div class="m-toggle">
+                                <a href="javascript:;" class="u-toggle" title="隐藏"><i class="icon icon-toggle-off"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-cont">
+                        <div class="m-text-box">
+                            <textarea class="u-txtarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-tool-bar mt10">
+                    <div class="m-timesend-box">
+                        <label>定时发送：</label>
+                        <a href="javascript:;" class="u-timesend-btn"><i class="icon icon-radio-unchecked"></i></a>
+                        <span class="m-controls"><input type="text" id="sendTime" class="u-ipt" onclick="WdatePicker({dateFmt:'yyyy-MM-dd H:mm:ss'})"/><a class="u-cal" onclick="WdatePicker({dateFmt:'yyyy-MM-dd H:mm:ss',el:'sendTime'})"><i class="icon icon-cal"></i></a></span>
+                    </div>
+                    <div class="m-send-btns">
+                        <button class="u-btn u-cancel-btn">取消</button>
+                        <button class="u-btn u-send-btn"><i class="icon icon-send-min"></i>发送</button>
+                    </div>
+                </div>
+                <div class="m-panel m-tab-panel">
+                    <ul class="m-tab">
+                        <li class="cur">常用语</li>
+                        <li>历史记录</li>
+                    </ul>
+                    <div class="m-tab-cont" style="display: block">
+                        <div class="m-search-form">
+                            <form action="">
+                                <div class="m-search-box">
+                                    <input type="text" class="u-ipt" placeholder="输入关键字"/>
+                                    <a class="u-search-btn" title="搜索"><i class="icon icon-search"></i></a>
+                                </div>
+                            </form>
+                        </div>
+                        <ul class="m-list">
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                        </ul>
+                    </div>
+                    <div class="m-tab-cont">
+                        <div class="m-search-form">
+                            <form action="">
+                                <div class="m-search-box">
+                                    <input type="text" class="u-ipt" placeholder="输入关键字"/>
+                                    <a class="u-search-btn" title="搜索"><i class="icon icon-search"></i></a>
+                                </div>
+                            </form>
+                        </div>
+                        <ul class="m-list">
+                            <li><a href="javascript:;">真诚的祝愿带给远方的你，愿你事事顺心、快乐相随</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ie6 png图片透明 -->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/IE6PNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+<script>
+    $(window).on("load resize",function(){
+        var innerHeight = $('.g-layout').height() - 20;
+        $('.m-full-panel').height(innerHeight - 2);
+        $('.m-sms-content').height(innerHeight - $('.m-phone-panel').outerHeight() - 10);
+        $('.m-tab-panel').height($('.m-sms-content').height() - 2);
+        $('.m-tab-panel .m-list').height($('.m-tab-panel').height() - $('.m-tab').height() - $('.m-search-form').outerHeight() - 20 - 1).css('overflow','auto');
+        $('.m-content-panel').height($('.m-sms-content').height() - $('.m-tool-bar').outerHeight()- 10 - 2);
+        $('.m-text-box').height($('.m-content-panel').height() - $('.m-title').height());
+        $('.u-txtarea').width($('.m-text-box').width() - 40).height($('.m-text-box').height() - 30);
+        $('.ztree').height($('.m-full-panel').height() - $('.m-title').height() - $('.m-search-form').outerHeight() - 20 -1);
+        $('.m-phone-list').height($('.m-phone-panel').height() - $('.m-title').height() - 10).css('overflow','auto');
+    });
+    $(function(){
+        /* 隐藏与显示 */
+        $('.u-toggle').on('click', function () {
+            /* $(this).children().toggleClass('icon-toggle-on icon-toggle-off');
+            $(this).closest('.m-sms-content').toggleClass('m-toggle-on');
+            $('.m-tab-panel').toggle();
+            $('.u-txtarea').width($('.m-text-box').width() - 40).height($('.m-text-box').height() - 30); */
+         if($(this).children().hasClass('icon-toggle-on')){
+				$('.m-content-panel').animate({marginRight: 326+'px'},500);	
+				$('.m-tab-panel').show().animate({width: 314+'px'},500,function(){
+					$('.u-txtarea').width($('.m-text-box').width() - 40);
+				});
+				$('.m-send-btns').animate({ right: 326 + 'px'},500);
+			}
+			else{
+				$('.m-content-panel').animate({marginRight: 0},500);	
+				$('.m-send-btns').animate({ right: 0},500);
+				$('.m-tab-panel').animate({width: 0},500,function(){
+					$(this).hide();	
+					$('.u-txtarea').width($('.m-text-box').width() - 40);
+				});
+			}
+			$(this).children().toggleClass('icon-toggle-on icon-toggle-off');
+        });
+
+        /* tab */
+        $('.m-tab li').on('click',function(){
+            $(this).addClass('cur').siblings().removeClass('cur');
+            $(this).parent().siblings('.m-tab-cont').hide().eq($('.m-tab li').index(this)).show();
+        });
+        /* 常用语的选择 */
+        $('.m-tab-panel li').on('dblclick', function () {
+            var text=$('.u-txtarea').text();
+            $('.u-txtarea').text(text + $(this).text());
+        })
+
+        /* 删除接收号码 */
+        $('.m-phone-cell .u-close').on('click',function(){
+            $(this).parent().fadeOut(500,function(){
+				$(this).remove();	
+			});
+        });
+        /* 清空接收号码 */
+        $('.u-empty').on('click', function () {
+            $('.m-phone-list').empty();
+        });
+        /* 定时发送 */
+        $('.u-timesend-btn').on('click',function(){
+            $(this).children().toggleClass('icon-radio-checked icon-radio-unchecked');
+        });
+		/* 手工添加号码 */
+		$('.u-tel').on('click',function(){
+			if($('.u-add-tel').hasClass('open')){
+				$('.u-add-tel').removeClass('open');
+				
+				$('.u-tel-ipt').animate({width: 0 + 'px'},500,function(){
+					$(this).hide();	
+				});
+				$('.u-add-tel').animate({width: 23 + 'px'},500,function(){
+					$(this).css('margin-right','10px');
+				    $('.u-add').hide();
+					$('.u-tel').children().removeAttr('style');
+				});
+			}
+			else{
+				$('.u-add-tel').addClass('open');
+				$(this).children().css('background-position','-260px -32px');
+				$('.u-add').show();	
+				$('.u-tel-ipt').show().animate({width: 79 + 'px'},500);
+				$('.u-add-tel').css('margin-right',0).animate({width: 111 + 'px'},500);	
+			}
+		});
+    })
+</script>
+<script>
+    var setting = {
+        view: {
+            showLine: false,
+            selectedMulti: false,
+            dblClickExpand: false
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        check: {
+            enable: true
+        },
+        callback: {
+            beforeExpand: beforeExpand,
+            onExpand: onExpand,
+            onClick: onClick
+        }
+    };
+
+    var zNodes =[
+        { id:1, pId:0, name:"上城大队"},
+        { id:11, pId:1, name:"张警员 挂起",iconSkin:"icon_police_error"},
+        { id:12, pId:1, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:13, pId:1, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:2, pId:0, name:"下城大队"},
+        { id:21, pId:2, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:22, pId:2, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:23, pId:2, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:3, pId:0, name:"西湖大队"},
+        { id:31, pId:3, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:32, pId:3, name:"张警员 挂起",iconSkin:"icon_police_error"},
+        { id:33, pId:3, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:4, pId:0, name:"江干大队"},
+        { id:41, pId:4, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:42, pId:4, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:43, pId:4, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:5, pId:0, name:"拱墅大队"},
+        { id:51, pId:5, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:52, pId:5, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:53, pId:5, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:6, pId:0, name:"滨江大队"},
+        { id:61, pId:6, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:62, pId:6, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:63, pId:6, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:7, pId:0, name:"下沙大队"},
+        { id:71, pId:7, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:72, pId:7, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:73, pId:7, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:8, pId:0, name:"景区大队"},
+        { id:81, pId:8, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:82, pId:8, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:83, pId:8, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:9, pId:0, name:"绕城大队"},
+        { id:91, pId:9, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:92, pId:9, name:"张警员 123456",iconSkin:"icon_police"},
+        { id:93, pId:9, name:"张警员 123456",iconSkin:"icon_police"}
+    ];
+
+    var curExpandNode = null;
+    function beforeExpand(treeId, treeNode) {
+        var pNode = curExpandNode ? curExpandNode.getParentNode():null;
+        var treeNodeP = treeNode.parentTId ? treeNode.getParentNode():null;
+        var zTree = $.fn.zTree.getZTreeObj("depTree");
+        for(var i=0, l=!treeNodeP ? 0:treeNodeP.children.length; i<l; i++ ) {
+            if (treeNode !== treeNodeP.children[i]) {
+                zTree.expandNode(treeNodeP.children[i], false);
+            }
+        }
+        while (pNode) {
+            if (pNode === treeNode) {
+                break;
+            }
+            pNode = pNode.getParentNode();
+        }
+        if (!pNode) {
+            singlePath(treeNode);
+        }
+
+    }
+    function singlePath(newNode) {
+        if (newNode === curExpandNode) return;
+        if (curExpandNode && curExpandNode.open==true) {
+            var zTree = $.fn.zTree.getZTreeObj("treeNode");
+            if (newNode.parentTId === curExpandNode.parentTId) {
+                zTree.expandNode(curExpandNode, false);
+            } else {
+                var newParents = [];
+                while (newNode) {
+                    newNode = newNode.getParentNode();
+                    if (newNode === curExpandNode) {
+                        newParents = null;
+                        break;
+                    } else if (newNode) {
+                        newParents.push(newNode);
+                    }
+                }
+                if (newParents!=null) {
+                    var oldNode = curExpandNode;
+                    var oldParents = [];
+                    while (oldNode) {
+                        oldNode = oldNode.getParentNode();
+                        if (oldNode) {
+                            oldParents.push(oldNode);
+                        }
+                    }
+                    if (newParents.length>0) {
+                        zTree.expandNode(oldParents[Math.abs(oldParents.length-newParents.length)-1], false);
+                    } else {
+                        zTree.expandNode(oldParents[oldParents.length-1], false);
+                    }
+                }
+            }
+        }
+        curExpandNode = newNode;
+    }
+
+    function onExpand(event, treeId, treeNode) {
+        curExpandNode = treeNode;
+        var zTree = $.fn.zTree.getZTreeObj("treeNode");
+        zTree.selectNode(treeNode);
+    }
+
+    function onClick(e,treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj("treeNode");
+        zTree.expandNode(treeNode, null, null, null, true);
+    }
+
+    $(function() {
+        $.fn.zTree.init($("#treeNode"), setting, zNodes);
+    });
+</script>
+</body>
+</html>
