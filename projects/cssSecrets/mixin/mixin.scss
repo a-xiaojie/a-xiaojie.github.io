@@ -1,0 +1,90 @@
+@mixin polka($size, $dot, $base, $accent) {
+  background: $base;
+  background-image:
+      radial-gradient($accent $dot, transparent 0),
+      radial-gradient($accent $dot, transparent 0);
+  background-size: $size $size;
+  background-position: 0 0, $size/2, $size/2;
+}
+
+@mixin checkerboard($size, $base, $accent: rgba(0, 0, 0, .25)) {
+  background: $base;
+  background-image:
+          linear-gradient(45deg, $accent 25%, transparent 0, transparent 75%, $accent 0),
+          linear-gradient(45deg, $accent 25%, transparent 0, transparent 75%, $accent 0);
+  background-size: 2 * $size, 2 * $size;
+  background-position: 0 0, $size $size;
+}
+
+/* 切角 */
+@mixin beveled-corners ($bg, $tl:0, $tr:$tl, $br:$tl, $bl: $tr) {
+  background: $bg;
+  background:
+      linear-gradient(135deg, transparent $tl, $bg 0),
+      linear-gradient(225deg, transparent $tr, $bg 0),
+      linear-gradient(-45deg, transparent $br, $bg 0),
+      linear-gradient(45deg, transparent $bl, $bg 0);
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* 弧形切角 */
+@mixin scoop-corners ($bg, $tl:0, $tr:$tl, $br:$tl, $bl: $tr) {
+  background: $bg;
+  background:
+      radial-gradient(circle at top left, transparent $tl, $bg 0) top left,
+      radial-gradient(circle at top right, transparent $tr, $bg 0) top right,
+      radial-gradient(circle at bottom right, transparent $br, $bg 0) bottom right,
+      radial-gradient(circle at bottom left, transparent $bl, $bg 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* 折角效果 */
+@mixin folded-corner($background, $size,
+$angle: 30deg) {
+  position: relative;
+  background: $background; /* 回退样式 */
+  background:
+          linear-gradient($angle - 180deg,
+                  transparent $size, $background 0);
+  border-radius: .5em;
+  $x: $size / sin($angle);
+  $y: $size / cos($angle);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    background: linear-gradient(to left bottom,
+            transparent 50%, rgba(0,0,0,.2) 0,
+            rgba(0,0,0,.4)) 100% 0 no-repeat;
+    width: $y; height: $x;
+    transform: translateY($y - $x)
+    rotate(2*$angle - 90deg);
+    transform-origin: bottom right;
+    border-bottom-left-radius: inherit;
+    box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.2);
+  }}
+
+/* 文字3D效果*/
+@mixin text-3d($color: white, $depth: 5) {
+  $shadows: ();
+  $shadow-color: $color;
+  @for $i from 1 through $depth {
+    $shadow-color: darken($shadow-color, 10%);
+    $shadows: append($shadows,
+            0 ($i * 1px) $shadow-color, comma);
+  }
+  color: $color;
+  text-shadow: append($shadows,
+          0 ($depth * 1px) 10px black, comma);
+}
+
+/* 文字复古效果*/
+@function text-retro($color: black, $depth: 8) {
+  $shadows: (1px 1px $color,);
+  @for $i from 2 through $depth {
+    $shadows: append($shadows, ($i*1px) ($i*1px) $color, comma);
+  }
+  @return $shadows;
+}

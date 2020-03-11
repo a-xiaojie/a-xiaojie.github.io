@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      display: inline-block;
+      margin: 30px;
+    }
+    .box:nth-child(1) {
+      width: 200px;
+      font-size: 16px;
+    }
+    .box:nth-child(1) p {
+      font-size: 20px;
+      padding: 10px;
+      hyphens: auto
+    }
+    .box:nth-child(2) dt, .box:nth-child(2) dd {
+      display: inline;
+    }
+    .box:nth-child(2) dd {
+      margin: 0;
+      font-weight: bold;
+    }
+    .box:nth-child(2) dd + dt::before {
+      content: '\A';
+      white-space: pre;
+    }
+    .box:nth-child(2) dd + dd::before {
+      content: ', ';
+      margin-left: -.25em;
+      font-weight: normal;
+    }
+    .box:nth-child(3) p {
+      width: 200px;
+      padding: .5em;
+      line-height: 1.5;
+      background: beige;
+      background-image: linear-gradient(rgba(0, 0, 0, .2) 50%, transparent 0);
+      background-size: auto 3em;
+      background-origin: content-box;
+    }
+    .box:nth-child(4) {
+      width: 200px;
+    }
+    .box:nth-child(4) pre {
+      font-family: monospace;
+      display: block;
+      margin: 1em 0;
+      white-space: pre;
+      tab-size: 4;
+    }
+    .box:nth-child(5) a {
+      color: #333;
+      text-decoration: none;
+      background: linear-gradient(gray, gray) no-repeat;
+      background-size: 100% 1px;
+      background-position: 0 1.15em;
+      text-shadow: .05em 0 white, -.05em 0 white;
+    }
+    .box:nth-child(5) a:nth-child(2) {
+      background: linear-gradient(90deg,
+      gray 66%, transparent 0) repeat-x;
+      background-size: .5em 1px;
+      background-position: 0 1.1em;
+    }
+    .box:nth-child(6) p {
+      width: 200px;
+      padding: 10px;
+      background: hsl(210, 13%, 60%);
+      color: hsl(210, 13%, 30%);
+      text-shadow: 0 .03em .03em hsla(0, 0%, 100%, .8);
+    }
+    .box:nth-child(7) p {
+      width: 200px;
+      padding: 10px;
+      background: hsl(210, 13%, 40%);
+      color: hsl(210, 13%, 75%);
+      text-shadow: 0 -.03em -.03em black;
+    }
+    .box:nth-child(8) {
+      width: 200px;
+      background: deeppink;
+      color: #fff;
+      text-shadow: 0 0 1px black, 0 0 1px black,
+      0 0 1px black, 0 0 1px black,
+      0 0 1px black, 0 0 1px black;
+      /*text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;*/
+    }
+    .box:nth-child(9) h1{
+      font: 500%/1 Rockwell, serif;
+      background: deeppink;
+      color: #fff;
+    }
+    .box:nth-child(9) h1 text {
+      fill: currentColor;
+    }
+    .box:nth-child(9) h1 svg {
+      overflow: visible;
+    }
+    .box:nth-child(9) h1 use {
+      stroke: black;
+      stroke-width: 6;
+      stroke-linejoin: round;
+    }
+    .box:nth-child(10) a {
+      display: block;
+      font-size: 3em;
+      text-align: center;
+      line-height: 2em;
+      background: #203;
+      color: #fff;
+      transition: 1s;
+    }
+    .box:nth-child(10) a:hover {
+      color: transparent;
+      text-shadow: 0 0 .1em white, 0 0 .3em white;
+    }
+    .box:nth-child(11) a {
+      display: block;
+      font-size: 3em;
+      text-align: center;
+      line-height: 2em;
+      background: #203;
+      color: #fff;
+      transition: 1s;
+    }
+    .box:nth-child(11) a:hover {
+      filter: blur(.1em);
+    }
+    .box:nth-child(12) a {
+      display: block;
+      font-size: 3em;
+      text-align: center;
+      line-height: 2em;
+      background: #58a;
+      color: white;
+      text-shadow:
+          0 1px hsl(0, 0%, 85%),
+          0 2px hsl(0, 0%, 80%),
+          0 3px hsl(0, 0%, 75%),
+          0 4px hsl(0, 0%, 70%),
+          0 5px hsl(0, 0%, 65%),
+          0 5px 10px black;
+      /* @include text-3d(#eee, 4); */
+    }
+    .box:nth-child(13) a {
+      display: block;
+      font-size: 3em;
+      text-align: center;
+      line-height: 2em;
+      color: white;
+      background: hsl(0,50%,45%);
+      text-shadow: 1px 1px black, 2px 2px black,
+      3px 3px black, 4px 4px black,
+      5px 5px black, 6px 6px black,
+      7px 7px black, 8px 8px black;
+    }
+    .box:nth-child(14) {
+      width: 10em;
+      height: 10em;
+      margin: 3em auto 0;
+    }
+    .box:nth-child(14) path {
+      fill: none;
+    }
+    .box:nth-child(14) svg {
+      display: block;
+      overflow: visible;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    1.连字符断行
+    <p>The only way to get rid of a temptation is to yield to it.</p>
+  </div>
+  <div class="box">
+    2.插入换行
+    <dl>
+      <dt>Name:</dt>
+      <dd>Lea Verou</dd>
+      <dt>Email:</dt>
+      <dd>lea@verou.me</dd>
+      <dd>lea@verou.me</dd>
+      <dt>Location:</dt>
+      <dd>Earth</dd>
+    </dl>
+  </div>
+  <div class="box">
+    3.文本行的斑马条纹
+    <p>The only way to get rid of a temptation is to yield to it.</p>
+  </div>
+  <div class="box">
+    4.调整tab的宽度
+    <pre>
+      while (true) {
+        var d = new Date();
+        if (d.getDate() == 1 && d.getMonth() === 3 {
+          alert('TROLOLOL')
+        }
+      }
+    </pre>
+  </div>
+  <div class="box">
+    5.自定义下划线
+    <p>The only way to <a href="#">get rid of a temptation</a> is to <a href="#">yield</a> to it.</p>
+  </div>
+  <div class="box">
+    6.现实中的文字效果
+    <p>The only way to get rid of a temptation is to yield to it.</p>
+  </div>
+  <div class="box">
+    6.现实中的文字效果
+    <p>The only way to get rid of a temptation is to yield to it.</p>
+  </div>
+  <div class="box">
+    6.现实中的文字效果 空心字效果
+  </div>
+  <div class="box">
+    6.现实中的文字效果 空心字效果 SVG
+    <h1>
+      <svg width="2em" height="1.2em">
+        <use xlink:href="#css"/>
+        <text id="css" y="1em">CSS</text>
+      </svg>
+    </h1>
+  </div>
+  <div class="box">
+    6.现实中的文字效果 文字外发光效果
+    <a>Glow</a>
+  </div>
+  <div class="box">
+    6.现实中的文字效果 文字外发光效果
+    <a>Glow</a>
+  </div>
+  <div class="box">
+    6.现实中的文字效果 文字凸起效果
+    <a>CSS3d</a>
+  </div>
+  <div class="box">
+    6.现实中的文字效果 文字凸起效果
+    <a>RETRO</a>
+  </div>
+  <div class="box">
+    7.环形文字
+    <svg viewBox="0 0 100 100">
+      <path d="M 0,50 a 50,50 0 1,1 0,1 z"
+            id="circle" />
+      <text><textPath xlink:href="#circle">
+        circular reasoning works because
+      </textPath></text>
+    </svg>
+  </div>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. 形状</title>
+  <style>
+    .box {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+    }
+    .box:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;  /* 当任意两个相邻圆角的半径之和超过 border box 的尺寸时，用户代理必须按比例减小各个边框半径所使用的值，直到它们不会相互重叠为止 */
+      background: #fb3;
+    }
+    .box:nth-child(2) {
+      width: 200px;
+      height: 100px;
+      background: #fb3;
+      border-radius: 50%;
+    }
+    .box:nth-child(3) {
+      width: 200px;
+      height: 100px;
+      background: #fb3;
+      border-radius: 50% / 100% 100% 0 0; /* 说到 border-radius，有一个鲜为人知的真相：它可以单独指定水平和垂直半径，只要用一个斜杠（/）分隔这两个值即可 */
+    }
+    .box:nth-child(4) {
+      width: 200px;
+      height: 100px;
+      background: #fb3;
+      border-radius: 100% 0 0 100% / 50%;
+    }
+    .box:nth-child(5) {
+      width: 200px;
+      height: 100px;
+      background: #fb3;
+      border-radius: 100% 0 0 0;
+    }
+    /* 平行四边形*/
+    .box:nth-child(6) {
+      width: 200px;
+      height: 100px;
+      background: #58a;
+      transform: skewX(-45deg);
+    }
+    .box:nth-child(6) div {
+      transform: skewX(45deg);
+    }
+    .box:nth-child(7) {
+      position: relative;
+      width: 200px;
+      height: 100px;
+    }
+    .box:nth-child(7)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: #58a;
+      transform: skew(45deg);
+    }
+    .picture {
+      display: inline-block;
+      position: relative;
+      width: 200px;
+      transform: rotate(45deg);
+      overflow: hidden;
+    }
+    .picture span {
+      position: absolute;
+      z-index: 1;
+    }
+    .picture > img {
+      max-width: 100%;
+      transform: rotate(-45deg) scale(1.42);
+    }
+    .img {
+      display: inline-block;
+      width: 200px;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      transition: 1s clip-path;
+    }
+    .img:hover {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .box:nth-child(10) {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background: #58a;
+      background: linear-gradient(-45deg, transparent 10px, #58a 0);
+    }
+    .box:nth-child(11) {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background: #58a;
+      background: linear-gradient(-45deg, transparent 10px, #58a 0) right,
+                  linear-gradient(45deg, transparent 10px, #655 0) left;
+      background-size: 50% 100%;
+      background-repeat: no-repeat;
+    }
+    .box:nth-child(12) {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background: #58a;
+      background: linear-gradient(135deg, transparent 10px, #58a 0) top left,
+                  linear-gradient(-135deg, transparent 10px, #58a 0) top right,
+                  linear-gradient(-45deg, transparent 10px, #58a 0) bottom right,
+                  linear-gradient(45deg, transparent 10px, #58a 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      /* @include beveled-corners(#58a, 10px, 5px) */
+    }
+    .box:nth-child(13) {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background: #58a;
+      background:
+          radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
+          radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+          radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right,
+          radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    .box:nth-child(14) {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      border: 15px solid #58a;
+      border-image: 1 url('data:image/svg+xml,\
+ <svg xmlns="http://www.w3.org/2000/svg"\
+      width="3" height="3" fill="%2358a">\
+      <polygon points="0,1 1,0 2,0 3,1 3,2 2,3 1,3 0,2"/>\
+      </svg>');
+      background: #58a;
+      background-clip: padding-box;
+    }
+    .box:nth-child(15) {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      background: #58a;
+      clip-path: polygon(
+          20px 0, calc(100% - 20px) 0, 100% 20px,
+          100% calc(100% - 20px), calc(100% - 20px) 100%,
+          20px 100%, 0 calc(100% - 20px), 0 20px
+      );
+    }
+    .box:nth-child(16) {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 50px;
+      padding: .5em 1em .35em;
+      /*background: rgba(0, 0, 0, .5);*/
+    }
+    .box:nth-child(16)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: #58a;
+      transform:  scaleY(1.7) perspective(.5em) rotateX(5deg);;
+      transform-origin: bottom;
+    }
+    .nav {
+      display: inline-block;
+    }
+    .nav > a {
+      position: relative;
+      display: inline-block;
+      padding: .3em 1em 0;
+      color: #333;
+      line-height: 2;
+      text-decoration: none;
+    }
+    .nav > a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: #ccc;
+      background-image: linear-gradient(hsla(0, 0%, 100%, .6), hsla(0, 0%, 100%, 0));
+      border: 1px solid rgba(0, 0, 0, .4);
+      border-bottom: none;
+      border-radius: .5em .5em 0 0;
+      box-shadow: 0 .15em white inset;
+      transform: perspective(.5em) rotateX(5deg);
+      transform-origin: bottom;
+    }
+    .box:nth-child(18) {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, #655 0);
+    }
+    .box:nth-child(18)::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: inherit;
+      transform-origin: left;
+      animation: spin 3s linear infinite, bg 6s step-end infinite;
+    }
+    .pie {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      border-radius: 50%;
+      color: transparent;
+      text-align: center;
+      background: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, #655 0);
+    }
+    .pie::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: inherit;
+      transform-origin: left;
+      animation: spin 50s linear infinite, bg 100s step-end infinite;
+      animation-play-state: paused;
+      animation-delay: inherit;
+    }
+    @keyframes spin {
+      to {transform: rotate(.5turn)}
+    }
+    @keyframes bg {
+      50% { background: #655; }
+    }
+    .box:nth-child(21) svg {
+      transform: rotate(-90deg);
+      background: yellowgreen;
+      border-radius: 50%;
+    }
+    .box:nth-child(21) circle {
+      fill: yellowgreen;
+      stroke: #655;
+      stroke-width: 50;
+      stroke-dasharray: 60 158 /* 虚线的线段长度为20且间隙长度为10 */  /* 2π × 25 ≈ 158 */
+    }
+    .box:nth-child(22) svg {
+      transform: rotate(-90deg);
+      background: yellowgreen;
+      border-radius: 50%;
+    }
+    .box:nth-child(22) circle {
+      fill: yellowgreen;
+      stroke: #655;
+      stroke-width: 50;
+      stroke-dasharray: 0 158; /* 虚线的线段长度为20且间隙长度为10 */  /* 2π × 25 ≈ 158 */
+      animation: fillup 5s linear infinite;
+    }
+    @keyframes fillup {
+      to { stroke-dasharray: 158 158; }
+    }
+    .box:nth-child(23) svg {
+      width: 100px;
+      height: 100px;
+      transform: rotate(-90deg);
+      background: yellowgreen;
+      border-radius: 50%;
+    }
+    .box:nth-child(23) circle {
+      fill: yellowgreen;
+      stroke: #655;
+      stroke-width: 32;
+      stroke-dasharray: 38 100; /* 可得到比率为38%的扇区*/
+    }
+    .box:nth-child(24) {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: conic-gradient(#655 45%, yellowgreen 0);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">1. 圆形</div>
+  <div class="box">2. 自适应的椭圆</div>
+  <div class="box">2. 自适应的椭圆(半椭圆)</div>
+  <div class="box">2. 自适应的椭圆(半椭圆)</div>
+  <div class="box">2. 自适应的椭圆(四分之一椭圆)</div>
+
+  <div class="box"><div>3. 平行四边形(嵌套元素方案)</div></div>
+  <div class="box">3. 平行四边形(伪元素方案)</div>
+  <div class="picture">
+    <span>4.菱形</span>
+    <img src="../img/2.jpeg" alt="">
+  </div>
+  <img class="img" src="../img/2.jpeg" alt="">
+
+  <div class="box">5. 切角效果</div>
+  <div class="box">5. 切角效果</div>
+  <div class="box">5. 切角效果</div>
+  <div class="box">5. 切角效果(弧形切角)</div>
+  <div class="box">5. 切角效果(内联SVG与border-image方案)</div>
+  <div class="box">5. 切角效果(裁切路径方案)</div>
+  <div class="box">6. 梯形标签页</div>
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+  </div>
+  <div class="box">7. 简单的饼图</div>
+  <div class="box pie" style="animation-delay: -20s">7. 简单的饼图 20%</div>
+  <div class="box pie" style="animation-delay: -60s">7. 简单的饼图 60%</div>
+  <div class="box">
+    <svg width="100" height="100">
+      <circle r="25" cx="50" cy="50"/>
+    </svg>
+  </div>
+  <div class="box">
+    <svg width="100" height="100">
+      <circle r="25" cx="50" cy="50"/>
+    </svg>
+  </div>
+  <div class="box">
+    <svg viewBox="0 0 32 32">
+      <circle r="16" cx="16" cy="16"/>
+    </svg>
+  </div>
+  <div class="box">45%</div>
+</body>
+</html>

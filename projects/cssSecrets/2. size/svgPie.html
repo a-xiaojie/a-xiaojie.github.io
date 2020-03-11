@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>svg饼图</title>
+  <style>
+    svg {
+      width: 100px;
+      height: 100px;
+      transform: rotate(-90deg);
+      background: yellowgreen;
+      border-radius: 50%;
+    }
+    circle {
+      fill: yellowgreen;
+      stroke: #655;
+      stroke-width: 32;
+    }
+  </style>
+</head>
+<body>
+  <div class="pie">20%</div>
+  <div class="pie">60%</div>
+  <script>
+    var pies = document.querySelectorAll('.pie')
+    pies.forEach(function (pie) {
+      var p = parseFloat(pie.textContent)
+      var NS = "http://www.w3.org/2000/svg";
+      var svg = document.createElementNS(NS, "svg");
+      var circle = document.createElementNS(NS, "circle");
+      var title = document.createElementNS(NS, "title");
+      circle.setAttribute('r', 16)
+      circle.setAttribute('cx', 16)
+      circle.setAttribute('cy', 16)
+      circle.setAttribute("stroke-dasharray", p + " 100");
+      svg.setAttribute("viewBox", "0 0 32 32");
+      title.textContent = pie.textContent;
+      pie.textContent = '';
+      svg.appendChild(title);
+      svg.appendChild(circle);
+      pie.appendChild(svg);
+    })
+  </script>
+</body>
+</html>

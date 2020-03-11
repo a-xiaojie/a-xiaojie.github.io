@@ -19,9 +19,10 @@ header a.home { background: #008499; color: #fff; }
 #proHome .project-list-panel .pro-list li:nth-child(5n+4) { background: #ff0; }
 #proHome .project-list-panel .pro-list li:nth-child(5n) { background: #8350FF; }
 
-#pro1 { background: #f5e653; }
+#pro1 { background: #f5e0be; }
+#pro1 a { color: #666;}
 
-#pro2 { background: #92f6ed; }
+#pro2 { background: #0db97f; }
 
 #pro3 { background: #92c3f6; }
 
@@ -41,7 +42,7 @@ header a.home { background: #008499; color: #fff; }
 .section .page-content { position: relative; width: 80%; height: 100%; margin: 0 auto; }
 
 .pro-info { position: relative; text-align: center; height: 100%; }
-.pro-info .pro-info-text { display: none; position: relative; height: 60%; font-size: 14px; line-height: 24px; color: #333; }
+.pro-info .pro-info-text { display: none; position: relative; height: 100%; font-size: 14px; line-height: 24px; color: #333; }
 .pro-info .pro-info-text .pro-info-name { padding-top: 150px; margin-bottom: 20px; font-size: 30px; line-height: 36px; }
 .pro-info .pro-info-text .pro-info-detail { margin-bottom: 20px; font-size: 16px; }
 .pro-info .pro-info-text .pro-info-link { padding: 5px 35px 5px 45px; background: #fff; border-radius: 30px; color: #008499; }

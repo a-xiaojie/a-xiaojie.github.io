@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>背景和边框</title>
+  <style>
+    body {
+      padding-top: 30px;
+    }
+    .box {
+      float: left;
+      width: 200px;
+      height: 120px;
+      font-size: 14px;
+      margin: 0 20px 20px 0;
+    }
+    .box:nth-child(1) {
+      border: 10px solid hsla(0, 0%, 100%, .5);
+      background: white;
+      background-clip: padding-box;
+    }
+    .box:nth-child(2) {
+      background: yellowgreen;
+      box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink, 0 2px 5px 15px rgba(0, 0, 0, .6);
+      /* box-shadow是层层叠加的，第一层投影位于最顶层，依次类推*/
+    }
+    .box:nth-child(3) {
+      background: yellowgreen;
+      border: 10px solid #655;
+      outline: 1px dashed deeppink;
+      outline-offset: -5px; /*可以通过 outline-offset 属性来控制它跟
+元素边缘之间的间距*/
+    }
+    .box:nth-child(4) {
+      background: url("../img/balloon.svg") no-repeat bottom right #58a;
+      background-position: right 20px bottom 10px;
+    }
+    .box:nth-child(5) {
+      padding: 10px;
+      background: url("../img/balloon.svg") no-repeat #58a bottom right;
+      background-origin: content-box;
+    }
+    .box:nth-child(6) {
+      background: url("../img/balloon.svg") no-repeat #58a;
+      background-position: calc(100% - 20px) calc(100% - 10px);
+    }
+    .box:nth-child(7) {
+      background: tan;
+      border-radius: .8em;
+      padding: 1em;
+      box-shadow: 0 0 0 .6em #655; /* box-shadow 会刚好填补描边和容器圆角之间的空隙 */
+      outline: .6em solid #655; /* 描边并不会跟着元素的圆角走,因而显示出直角 */
+    }
+    .box:nth-child(8) {
+      background: linear-gradient(#fb3, #58a);
+    }
+    .box:nth-child(9) {
+      background: linear-gradient(#fb3 20%, #58a 80%);
+    }
+    .box:nth-child(10) {
+      background: linear-gradient(#fb3 50%, #58a 50%);
+    }
+    .box:nth-child(11) {
+      background: linear-gradient(#fb3 50%, #58a 50%);
+      background-size: 100% 20px;
+    }
+    .box:nth-child(12) {
+      background: linear-gradient(#fb3 30%, #58a 0); /* 如果我们把第二个色标的位置值设置为 0，那它的位置就
+总是会被浏览器调整为前一个色标的位置值 */
+      background-size: 100% 20px;
+    }
+    .box:nth-child(13) {
+      background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+      background-size: 100% 40px;
+    }
+    .box:nth-child(14) {
+      background: linear-gradient(to right,  /* 或 90deg*/
+        #fb3 50%, #58a 0);
+      background-size: 20px 100%
+    }
+    .box:nth-child(15) {
+      background: linear-gradient(45deg,
+        #fb3 25%, #58a 0, #58a 50%,
+        #fb3 0, #fb3 75%, #58a 0);
+      background-size: 28.28px 28.28px;  /* 条纹粗细应为 2 * 10 * 1.414 ~ 28.28*/
+    }
+    .box:nth-child(16) {
+      /*background: repeating-linear-gradient(45deg, #fb3, #58a 20px);*/
+      background: repeating-linear-gradient(45deg,
+        #fb3, #fb3 10px, #58a 0, #58a 20px);
+    }
+    .box:nth-child(17) {
+      background: repeating-linear-gradient(60deg, #fb3, #fb3 10px, #58a 0, #58a 20px);
+    }
+    .box:nth-child(18) {
+      background: repeating-linear-gradient(30deg, #79b, #79b 10px, #58a 0, #58a 20px);
+    }
+    .box:nth-child(19) {
+      background: #58a;
+      background-image: repeating-linear-gradient(30deg,
+        hsla(0, 0%, 100%, .1),
+        hsla(0, 0%, 100%, .1) 10px,
+        transparent 0, transparent 20px);
+    }
+    .box:nth-child(20) {
+      background: white;
+      background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0),
+                        linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
+      background-size: 20px 20px;
+    }
+    .box:nth-child(21) {
+      background: #58a;
+      background-image:
+          linear-gradient(white 1px, transparent 0),
+          linear-gradient(90deg, white 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+    .box:nth-child(22) {
+      background: #58a;
+      background-image:
+          linear-gradient(white 2px, transparent 0),
+          linear-gradient(90deg, white 2px, transparent 0),
+          linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+          linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+      background-size: 60px 60px, 60px 60px, 10px 10px, 10px 10px;
+    }
+    .box:nth-child(23) {
+      background: #655;
+      background-image: radial-gradient(tan 30%, transparent 0),
+                        radial-gradient(tan 30%, transparent 0);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      /* @include polka(20px, 30%, #655, tan); */
+    }
+    .box:nth-child(24) {
+      background: #eee;
+      background-image: linear-gradient(45deg, #bbb 50%, transparent 0);
+      background-size: 20px 20px;
+    }
+    .box:nth-child(25) {
+      background: #eee;
+      background-image: linear-gradient(45deg, transparent 75%, #bbb 0);
+      background-size: 20px 20px;
+    }
+    .box:nth-child(26) {
+      background: #eee;
+      background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+                        linear-gradient(45deg, transparent 75%, #bbb 0);
+      background-size: 20px 20px;
+    }
+    .box:nth-child(27) {
+      background: #eee;
+      background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+                        linear-gradient(45deg, transparent 75%, #bbb 0);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+    }
+    .box:nth-child(28) {
+      background: #eee;
+      background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+                        linear-gradient(45deg, transparent 75%, #bbb 0),
+                        linear-gradient(45deg, #bbb 25%, transparent 0),
+                        linear-gradient(45deg, transparent 75%, #bbb 0);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px, 10px 10px, 20px 20px;
+    }
+    .box:nth-child(29) {
+      background: #eee;
+      background-image:
+          linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .25) 0),
+          linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .25) 0);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      /* @include checkerboard(15px, #58a, tan); */
+    }
+    .box:nth-child(30) {
+      background: #eee url('data:image/svg+xml,\
+ <svg xmlns="http://www.w3.org/2000/svg" \
+ width="100" height="100" \
+ fill-opacity=".25">\
+ <rect x="50" width="50" height="50" /> \
+ <rect y="50" width="50" height="50" /> \
+ </svg>');
+      background-size: 20px 20px;
+    }
+    .box:nth-child(31) {
+      background: linear-gradient(90deg, #fb3 15%, #655 0, #655 40%, #ab4 0, #ab4 65%, hsl(20, 40%, 90%) 0);
+      background-size: 80px 100%;
+    }
+    .box:nth-child(32) {
+      background: hsl(20, 40%, 90%);
+      background-image:
+          linear-gradient(90deg, #fb3 10px, transparent 0),
+          linear-gradient(90deg, #ab4 20px, transparent 0),
+          linear-gradient(90deg, #655 20px, transparent 0);
+      background-size: 80px 100%, 60px 100%, 40px 100%;
+    }
+    .box:nth-child(33) {
+      background: hsl(20, 40%, 90%);
+      background-image:
+          linear-gradient(90deg, #fb3 11px, transparent 0),
+          linear-gradient(90deg, #ab4 23px, transparent 0),
+          linear-gradient(90deg, #655 41px, transparent 0);
+      background-size: 41px 100%, 61px 100%, 83px 100%;
+    }
+    .box:nth-child(34) {
+      padding: 1em;
+      border: 1em solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 5em 5em;
+    }
+    @keyframes ants {
+      to {
+        background-position: 100%;
+      }
+    }
+    .marching-ants {
+      padding: 1em;
+      border: 1px solid transparent;
+      background:
+          linear-gradient(white, white) padding-box,
+          repeating-linear-gradient(-45deg,
+          black 0, black 25%, white 0, white 50%
+          ) 0 / .6em .6em;
+      animation: ants 12s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">1.半透明边框</div>
+  <div class="box">2.多重边框(box-shadow方案)</div>
+  <div class="box">2.多重边框(outline方案)</div>
+  <div class="box">3.灵活的背景定位(background-position)</div>
+  <div class="box">3.灵活的背景定位(background-origin)</div>
+  <div class="box">3.灵活的背景定位(calc())</div>
+  <div class="box">4.边框内圆角</div>
+  <div class="box">5.条纹背景</div>
+  <div class="box">5.条纹背景</div>
+  <div class="box">5.条纹背景</div>
+  <div class="box">5.条纹背景</div>
+  <div class="box">5.条纹背景(宽度不等的条纹)</div>
+  <div class="box">5.条纹背景(多重颜色的条纹)</div>
+  <div class="box">5.条纹背景(垂直条纹)</div>
+  <div class="box">5.条纹背景(斜向条纹)</div>
+  <div class="box">5.条纹背景(更好的斜向条纹)</div>
+  <div class="box">5.条纹背景(更好的斜向条纹60°)</div>
+  <div class="box">5.条纹背景(灵活的同色系条纹)</div>
+  <div class="box">5.条纹背景(灵活的同色系条纹)</div>
+  <div class="box">6.复杂的背景图案(网格)</div>
+  <div class="box">6.复杂的背景图案(网格)</div>
+  <div class="box">6.复杂的背景图案(网格)</div>
+  <div class="box">6.复杂的背景图案(波点)</div>
+  <div class="box">6.复杂的背景图案(棋盘)</div>
+  <div class="box">6.复杂的背景图案(棋盘)</div>
+  <div class="box">6.复杂的背景图案(棋盘)</div>
+  <div class="box">6.复杂的背景图案(棋盘)</div>
+  <div class="box">6.复杂的背景图案(棋盘)</div>
+  <div class="box">6.复杂的背景图案(棋盘)</div>
+  <div class="box">6.复杂的背景图案(棋盘svg)</div>
+  <div class="box">7.伪随机背景</div>
+  <div class="box">7.伪随机背景</div>
+  <div class="box">7.伪随机背景</div>
+  <div class="box">8.连续的图像边框</div>
+  <div class="box marching-ants"></div>
+</body>
+</html>
