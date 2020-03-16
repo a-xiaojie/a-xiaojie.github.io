@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    h1 {
+      margin: 0;
+      font-size: 1em;
+      line-height: 2;
+    }
+    p {
+      margin: 0;
+    }
+    /*绝对定位*/
+    /*main {*/
+    /*  position: absolute;*/
+    /*  top: 50%;*/
+    /*  left: 50%;*/
+    /*  margin-top: -3em;*/
+    /*  margin-left: -9em;*/
+    /*  width: 20em;*/
+    /*  height: 6em;*/
+    /*}*/
+
+    /*calc*/
+    /*main {
+      position: absolute;
+      top: calc(50% - 3em);
+      left: calc(50% - 9em);
+      width: 18em;
+      height: 6em;
+    }*/
+
+    /*translate*/
+    /*main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }*/
+
+    /*基于视口单位的解决方案*/
+    /*main {
+      width: 18em;
+      padding: 1em 1.5em;
+      margin: 50vh auto 0;
+      transform: translateY(-50%);
+    }*/
+    /*基于 Flexbox 的解决方案*/
+    body {
+      display: flex;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 18em;
+      margin: auto;
+      color: #fff;
+      background: tan;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Am I centered yet?</h1>
+    <p>Center me, please!</p>
+  </main>
+</body>
+</html>

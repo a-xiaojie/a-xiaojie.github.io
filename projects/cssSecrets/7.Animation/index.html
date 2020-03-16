@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7.过渡与动画</title>
+  <style>
+    /*弹跳动画*/
+    @keyframes bounce {
+      60%, 80%, to {
+        transform: translateY(400px);
+        animation-timing-function: ease;
+      }
+      70% {
+        transform: translateY(300px);
+      }
+      90% {
+        transform: translateY(360px)
+      }
+    }
+    .ball {
+      width: 50px;
+      height: 50px;
+      background: tan;
+      border-radius: 50%;
+      animation: bounce 3s cubic-bezier(.1, .25, 1, .25);
+    }
+    .username {
+      position: relative;
+    }
+    .username input {
+      width: 200px;
+      height: 20px;
+    }
+    .username input:not(:focus) + .callout {
+      transform: scale(0);
+    }
+    .username input:focus + .callout {
+      animation: elastic-grow .5s;
+    }
+    .username .callout {
+      position: absolute;
+      top: 30px;
+      left: 110px;
+      background: tan;
+      padding: .3em;
+      width: 300px;
+      /*transition: .5s transform;*/
+      transform-origin: 1.4em -.4em;
+    }
+    @keyframes elastic-grow {
+      from {
+        transform: scale(0);
+      }
+      70% {
+        transform: scale(1.1);
+        animation-timing-function: cubic-bezier(.1, .25, 1, .25); /*反向的ease*/
+      }
+    }
+
+
+    /*逐帧动画*/
+    @keyframes loader {
+      to {background-position: -800px 0}
+    }
+    .loader {
+      width: 100px;
+      height: 100px;
+      /*background: url("../img/loader.png") 0 0;*/
+      animation: loader 1s infinite steps(8);
+      text-indent: 200%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    /*闪烁效果*/
+    @keyframes blink-smooth {
+      50% {
+        color: transparent;
+      }
+    }
+    .highlight {
+      animation: 1s blink-smooth 3 steps(1);
+    }
+
+    /*打字动画*/
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+    @keyframes caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+    .typewriting {
+      font-family: Arial;
+      width: 15ch; /* 文本的宽度 */
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .05em solid;
+      animation: typing 6s steps(15),
+                  caret 1s steps(1) infinite;
+    }
+
+    /* 状态平滑的动画 */
+    @keyframes panoramic {
+      to {
+        background-position: 100% 0;
+      }
+    }
+    .panoramic {
+      width: 150px;
+      height: 150px;
+      background: url("../img/img1.png");
+      background-size: auto 100%;
+      animation: panoramic 10s linear infinite alternate;
+      animation-play-state: paused;
+    }
+    .panoramic:hover, .panoramic:focus {
+      animation-play-state: running;
+    }
+
+    /* 沿环形路径平移的动画 */
+    @keyframes spin {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+    @keyframes span-reverse {
+      from {
+        transform: rotate(1turn);
+      }
+    }
+    .path {
+      width: 300px;
+      height: 300px;
+      padding: 10px;
+      text-align: center;
+      background: gold;
+      border-radius: 50%;
+    }
+    .path .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      animation: spin 3s infinite linear;
+      transform-origin: 50% 150px;
+    }
+    .path1 {
+      width: 300px;
+      height: 300px;
+      padding: 10px;
+      background: gold;
+      border-radius: 50%;
+    }
+    .path1 .avatar {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 50%;
+      animation: spin 3s infinite linear;
+      transform-origin: 50% 150px;
+    }
+    .path1 .avatar img {
+      width: inherit;
+      animation: span-reverse 3s infinite linear;
+    }
+    .path2 {
+      width: 300px;
+      height: 300px;
+      padding: 10px;
+      background: gold;
+      border-radius: 50%;
+    }
+    .path2 .avatar {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 50%;
+      animation: spin 3s infinite linear;
+      transform-origin: 50% 150px;
+    }
+    .path2 .avatar img {
+      width: inherit;
+      animation: inherit;
+      animation-direction: reverse;
+    }
+
+    @keyframes spin1 {
+      from {
+        transform:
+            rotate(0turn)
+            translateY(-150px) translateY(50%)
+            rotate(1turn)
+      }
+      to {
+        transform:
+            rotate(1turn)
+            translateY(-150px) translateY(50%)
+            rotate(0turn)
+      }
+    }
+    .path3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      padding: 10px;
+      background: gold;
+      border-radius: 50%;
+    }
+    .path3 .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      animation: spin1 3s infinite linear;
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+  <label for="username" class="username">
+    Your username: <input type="text" id="username" autocomplete="off" />
+    <span class="callout">Only letters, numbers,
+ underscores (_) and hyphens (-) allowed!</span>
+  </label>
+  <div class="loader">Loading...</div>
+  <div class="highlight">闪烁效果</div>
+
+  <div class="typewriting">CSS is awesome!</div>
+
+  <script>
+    var textDom = document.querySelector('.typewriting')
+    var len = textDom.textContent.length, s = textDom.style;
+    s.width = len + 'ch';
+    s.animationTimingFunction = 'steps(' + len + '), steps(1)'
+  </script>
+
+  <div class="panoramic"></div>
+
+
+  需要两个元素的解决方案
+  <div class="path">
+  </div>
+  <div class="path1">
+    <div class="avatar">
+      <img src="../img/2.jpeg" alt="">
+    </div>
+  </div>
+  <div class="path2">
+    <div class="avatar">
+      <img src="../img/2.jpeg" alt="">
+    </div>
+  </div>
+
+  单个元素的解决方案
+  <div class="path3">
+    <img src="../img/2.jpeg" alt="" class="avatar" />
+  </div>
+</body>
+</html>

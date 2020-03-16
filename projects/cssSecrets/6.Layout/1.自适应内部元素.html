@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6.结构与布局 - 自适应内部元素</title>
+  <style>
+    figure {
+      max-width: 300px;
+      max-width: min-content;
+      margin: auto;
+    }
+    figure > img {
+      max-width: inherit;
+    }
+  </style>
+</head>
+<body>
+<p>假设还需要给它添加一些基本的样式，比如一道边框。在默认情况下，
+  它看起来如图 7-1 所示。但我们实际上希望这个 figure 元素能跟它所包含
+  的图片一样宽（图片的尺寸往往不是固定的），而且是水平居中的。目前这
+  个渲染结果距离我们的期望还有不小的差距：文本行比图片要宽多了。如何
+  让 figure 的宽度由它内部的图片来决定，而不是由它的父元素来决定呢 1①？
+  闯荡江湖这么多年，相信你已经积攒了一套顺手的 CSS 代码大全。在这个
+  代码库里，你可能会找到</p>
+<figure>
+  <img src="../img/2.jpeg" />
+  <figcaption>
+    The great Sir Adam Catlace was named after
+    Countess Ada Lovelace, the first programmer.
+  </figcaption>
+</figure>
+<p>假设还需要给它添加一些基本的样式，比如一道边框。在默认情况下，
+  它看起来如图 7-1 所示。但我们实际上希望这个 figure 元素能跟它所包含
+  的图片一样宽（图片的尺寸往往不是固定的），而且是水平居中的。目前这
+  个渲染结果距离我们的期望还有不小的差距：文本行比图片要宽多了。如何
+  让 figure 的宽度由它内部的图片来决定，而不是由它的父元素来决定呢 1①？
+  闯荡江湖这么多年，相信你已经积攒了一套顺手的 CSS 代码大全。在这个
+  代码库里，你可能会找到</p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*header {
+      height: 2.5em;
+      overflow: hidden;
+    }
+    footer {
+      height: 7em;
+      overflow: hidden;
+    }
+    main {
+      min-height: calc(100vh - 2.5em - 7em);
+      box-sizing: border-box;
+    }*/
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Site name</h1>
+</header>
+<main>
+  <p>在网页设计中，存在一个相当古老但又相当常见的问题，它是前端工程
+    师绕不开的坎。这个问题可以简单地概括如下：有一个具有块级样式的页脚
+    （比如它设置了背景或阴影），当页面内容足够长时它一切正常，而当页面较
+    短时（比如错误信息页面）就会出现问题 1①。此时的问题在于，页脚不能像我
+    们期望中那样“紧贴”在视口的最底部，而是紧跟在内容的下方。
+    这个问题不仅普遍存在，而且乍看起来确实相当简单。因此，在所 有“隐蔽大坑”式的难题中②，2
+    它简直就是教科书般的典型案例。不仅如此，
+    CSS 2.1 基本上拿它没有办法：几乎所有的经典解决方案都需要给页脚设置
+    固定的高度，而这显然是不健壮的，也是不实际的。此外，所有这些解决方
+    案都太过复杂、太像 hack 了，而且往往要求网页按照特定的结构来写。在
+    那个年代，受制于 CSS 2.1 有限的能力范围，这已是我们所能达到的最好结
+    果了。不过，在现代 CSS 的协助下，我们可以做得更好吗？如果答案是肯
+    定的，又该如何去做？</p>
+</main>
+<footer>
+  <p>© 2015 No rights reserved.</p>
+  <p>Made with ♥ by an anonymous pastafarian.</p>
+</footer>
+</body>
+</html>

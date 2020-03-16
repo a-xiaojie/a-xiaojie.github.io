@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3.根据兄弟元素的数量来设置样式</title>
+  <style>
+    li{
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 10px;
+      text-align: center;
+      line-height: 20px;
+      color: #fff;
+      font-size: 12px;
+      background: tan;
+      border-radius: .1em;
+      list-style: none;
+    }
+    li:only-child {
+      /* 只有一个列表项时的样式*/
+      background: deeppink;
+    }
+    li:first-child:nth-last-child(1) {
+      /* 只有一个列表项时的样式*/
+      background: lightpink;
+    }
+    li:first-child:nth-last-child(4) {
+      background: yellowgreen;
+    }
+    /*
+    li {
+      @include n-items(4) {
+        对应的属性
+      }
+    }
+    */
+    /* 在列表项的总数是 8 或更多时选中所有列表 */
+    li:first-child:nth-last-child(n+8),
+    li:first-child:nth-last-child(n+8) ~ li {
+      background: darkseagreen;
+    }
+    /* -n+b 这种形式的表达式可以选中开头的 b 个元素。 */
+    .ul4 li:first-child:nth-last-child(-n + 6),
+    .ul4 li:first-child:nth-last-child(-n + 6) ~ li {
+      background: mediumpurple;
+    }
+    /* 希望在列表包含 2 ～ 6 个列表项时命中所有的列表项 */
+    .ul5 li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
+    .ul5 li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
+      background: orange;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+  </ul>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+  </ul>
+  <ul class="ul4">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <ul class="ul4">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <ul class="ul4">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+  </ul>
+  <ul class="ul5">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+  </ul>
+  <ul class="ul5">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <ul class="ul5">
+    <li>1</li>
+    <li>2</li>
+  </ul>
+  <ul class="ul5">
+    <li>1</li>
+  </ul>
+</body>
+</html>
