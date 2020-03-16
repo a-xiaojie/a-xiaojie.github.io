@@ -3,21 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>CSS揭秘</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .box {
+      position: relative;
+      width: 400px;
+      padding: 20px 10px;
+      color: #fff;
+      background: linear-gradient(-150deg, transparent 1.5em, #0db97f 0);
+      border-radius: .5em;
+    }
+    .box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, .4)) 100% 0 no-repeat;
+      width: 1.73em;
+      height: 3em;
+      transform: translateY(-1.3em) rotate(-30deg);
+      transform-origin: bottom right;
+      border-bottom-left-radius: inherit;
+      box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, .15);
+    }
+    h2 {
+      font-size: 30px;
+      margin: 0 auto 20px;
+      padding: 0 10px;
+      color: #fff;
+      text-shadow:
+          0 1px hsl(0, 0%, 85%),
+          0 5px 10px black;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 0 20px;
+      list-style: none;
+      font-size: 14px;
+      line-height: 30px;
+      border-bottom: 1px dashed #fff;
+    }
+    li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      transition: transform .5s;
+    }
+    li a:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-  <ul>
-    <li><a href="1.background&border">背景与边框</a></li>
-    <li><a href="2.size">背景与边框</a></li>
-    <li><a href="3.Visual%20Effects">视觉效果</a></li>
-    <li><a href="4.Font%20typesetting">字体排印</a></li>
-    <li><a href="5.UE">用户体验</a></li>
-    <li><a href="6.Layout/1.自适应内部元素.html">结构与布局 - 自适应内部元素</a></li>
-    <li><a href="6.Layout/2.精确控制表格列宽.html">结构与布局 - 精确控制表格列宽</a></li>
-    <li><a href="6.Layout/3.根据兄弟元素的数量来设置样式.html">结构与布局 - 根据兄弟元素的数量来设置样式</a></li>
-    <li><a href="6.Layout/4.满幅的背景，定宽的内容.html">结构与布局 - 满幅的背景，定宽的内容</a></li>
-    <li><a href="6.Layout/5.垂直居中.html">结构与布局 - 垂直居中</a></li>
-    <li><a href="6.Layout/6.紧贴底部的页脚.html">结构与布局 - 紧贴底部的页脚</a></li>
-    <li><a href="7.Animation">过渡与动画</a></li>
-  </ul>
+  <div class="box">
+    <h2>CSS揭秘相关代码</h2>
+    <ul>
+      <li><a href="1.background&border">背景与边框</a></li>
+      <li><a href="2.size">形状</a></li>
+      <li><a href="3.Visual%20Effects">视觉效果</a></li>
+      <li><a href="4.Font%20typesetting">字体排印</a></li>
+      <li><a href="5.UE">用户体验</a></li>
+      <li><a href="6.Layout/1.自适应内部元素.html">结构与布局 - 自适应内部元素</a></li>
+      <li><a href="6.Layout/2.精确控制表格列宽.html">结构与布局 - 精确控制表格列宽</a></li>
+      <li><a href="6.Layout/3.根据兄弟元素的数量来设置样式.html">结构与布局 - 根据兄弟元素的数量来设置样式</a></li>
+      <li><a href="6.Layout/4.满幅的背景，定宽的内容.html">结构与布局 - 满幅的背景，定宽的内容</a></li>
+      <li><a href="6.Layout/5.垂直居中.html">结构与布局 - 垂直居中</a></li>
+      <li><a href="6.Layout/6.紧贴底部的页脚.html">结构与布局 - 紧贴底部的页脚</a></li>
+      <li><a href="7.Animation">过渡与动画</a></li>
+    </ul>
+  </div>
 </body>
 </html>
